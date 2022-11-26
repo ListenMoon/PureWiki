@@ -1,0 +1,43 @@
+@mixin media-pc($type...) {
+  @each $screen in $type {
+    @if $screen == xs {
+      @media (max-width: 768px) {
+        @content;
+      }
+    } @else if $screen == sm {
+      @media (max-width: 920px) {
+        @content;	
+      }
+    } @else if $screen == md {
+      @media (max-width: 1200px) {
+        @content;
+      }
+    } @else if $screen == lg {
+      @media (max-width: 1366px) {
+        @content;
+      }
+    }
+  }
+}
+// 优先移动端
+@mixin media-mobile($type...) {
+  @each $screen in $type {
+    @if $screen == xs {
+      @media (min-width: 768px) {
+        @content;
+      }
+    } @else if $screen == sm {
+      @media (min-width: 920px) {
+        @content;
+      }
+    } @else if $screen == md {
+      @media (min-width: 1200px) {
+        @content;
+      }
+    } @else if $screen == lg {
+      @media (min-width: 1366px) {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+---
+import { single, published, getPost } from '@blog/utils';
+import type { PostProps } from '#/post';
+import Base from "./_ui/Base.astro"
+export interface extendProps {
+	title: string
+	description: string
+	hideSide?: boolean
+}
+export type Props = Partial<PostProps> & extendProps
+
+let { title, description, hideSide } = getPost(Astro.props as Props) as Props
+---
+<Base title={title} description={description} hideSide={hideSide}><slot /></Base>

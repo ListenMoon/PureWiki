@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详细</title>
+    <style>
+        .red{
+            background: red;
+            display: inline;
+        }
+
+        .red::before{
+            content: "";
+            display: block;
+            margin-top: 25px;
+        }
+
+        .red::after{
+            content: "";
+            display: block;
+            margin-bottom: 15px;
+        }
+        /* .bottom{
+            margin-top: 25px;
+        } */
+
+    </style>
+</head>
+
+<body>
+    <div id="a">aaaaaa</div>
+    <div id="output1"></div>
+    
+    <div class="top">top</div>
+    <div class="red">aaaaaa</div>
+    <div class="bottom">bottom</div>
+    <div id="output2"></div>
+    <script>
+        document.getElementById("output1").innerText = `普通元素高度为：${document.querySelector('#a').offsetHeight}px`
+        document.getElementById("output2").innerText = `中间元素的高度为：${document.querySelector('.red').offsetHeight}px`
+    </script>
+</body>
+</html>

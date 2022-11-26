@@ -1,0 +1,50 @@
+---
+import DocTreeSelf from "./DocTreeSelf.astro"
+import {githubNewURL, githubURL} from "@blog/config"
+import { betterDirectorySort } from "@blog/utils/better-directory-sort"
+export type One = {
+  name: string
+  path: string
+  active: string
+  filePath: string
+  data?: any
+  children: One[]
+}
+
+export interface Props {
+  list: One[]
+}
+
+const { list } = Astro.props as Props
+
+function isActive(url: string){
+  let pathArr = decodeURIComponent(Astro.url.pathname).slice(1).replace(/\/$/, '').split("/")
+  let urlArr = url.slice(1).split("/")
+  for (let i = 0; i < urlArr.length; i++) {
+    const one = urlArr[i];
+    if(one !== pathArr[i]) return false
+  }
+  return true
+//   return decodeURIComponent(Astro.url.pathname).replace(/\/$/, '').startsWith(url);
+}
+
+const showList = list.sort((a, b) => {
+  return betterDirectorySort(
+    { name: a.name, isDirectory: !a.data },
+    { name: b.name, isDirectory: !b.data },
+  );
+});
+---
+
+{showList.map(v=>{
+    const url = v.path
+    const vpath = !v.data?v.active:'' as any
+    return <details data-path={vpath || false} open={isActive(v.active)}>
+        <summary>
+            
+        {!v.data && <><span title={v.name} class:list={["tree-item", !!v.data && isActive(v.active)?'active':'']}>{v.name}</span><a target="_blank" href={githubNewURL+url} class="op">新建</a></>}
+        {!!v.data && <><a rel={isActive(v.active)?"":"prefetch"} href={v.data.url} title={v.name} class:list={["tree-item tree-md-file", !!v.data && isActive(v.active)?'active':'']}>{v.name}</a><a target="_blank" href={githubURL + v.filePath} class="op">编辑</a></>}
+      </summary>
+      {Array.isArray(v.children) && <Astro.self list={v.children} />}
+    </details>
+  })}

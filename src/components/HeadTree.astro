@@ -1,0 +1,67 @@
+---
+export interface Props {
+  head: any[]
+}
+const { head } = Astro.props as Props
+---
+
+  <ul>
+			<div class="title">目录</div>
+		{
+                            !!head &&
+                            !!head.length && (
+                                <>
+																{head.map((v) => (
+                                                <>{v.level <=  3 && <li><a
+                                                    class="head"
+                                                    style={{
+                                                        marginLeft:
+                                                            (v.level - 1) * 10 +
+                                                            "px",
+                                                        "overflow-x": "hidden",
+                                                        "white-space": "nowrap",
+                                                        "text-overflow": "ellipsis",
+																												"display": "block",
+                                                    }}
+																										title={v.title}
+                                                    href={"#" + v.id}
+                                                >
+                                                    # {v.title}
+                                                </a></li>}</>
+                                            ))}
+																</>
+                            )
+		}
+        {!head.length && <div style="margin: 0 20px;">无</div>}
+		</ul>
+
+    <style lang="scss">
+			ul{
+                margin-top: 1em;
+				.title{
+                    height: 35px;
+					line-height: 35px;
+					font-weight: bold;
+                    padding: 0 1em;
+				}
+                li{
+                    padding: 0 1em;
+                    a {
+                        color: #19171199;
+                    }
+                }
+                .active{
+                    background-color: #1abc9c27;
+                    position: relative;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        bottom: 0;
+                        background-color: #1abc9c;
+                        width: 4px;
+                    }
+                }
+			}
+		</style>

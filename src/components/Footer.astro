@@ -1,0 +1,13 @@
+---
+import { GithubName, GithubAuthor } from "@blog/config";
+const today = new Date();
+---
+
+<footer>
+    &copy; {today.getFullYear()}
+    {GithubAuthor}. All rights reserved.
+    <p>
+        Built with ♥ by <a href="https://github.com/npmrun/pure-blog"
+            >{GithubName}</a>
+    </p>
+</footer>

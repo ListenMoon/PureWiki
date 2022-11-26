@@ -1,0 +1,232 @@
+/* 提供 serif 版本的字体设置: iOS 下中文自动 fallback 到 sans-serif */
+.serif {
+  font-family: Palatino, Optima, Georgia, serif;
+}
+
+.typo code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: .875em;
+  margin: 0 4px;
+}
+.typo pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre;
+  background-color: transparent;
+  border-radius: 0;
+  margin: 0;
+}
+/* 保证块/段落之间的空白隔行 */
+.typo p,
+.typo pre,
+.typo ul,
+.typo ol,
+.typo dl,
+.typo form,
+.typo hr,
+.typo table,
+blockquote {
+  margin-bottom: 1.2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei,
+    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+  font-weight: 600;
+  /* color: #000; */
+  line-height: 1.35;
+}
+
+/* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
+.typo h1,
+.typo h2,
+.typo h3,
+.typo h4,
+.typo h5,
+.typo h6 {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  line-height: 1.35;
+  position: relative;
+}
+
+.typo h1 {
+  font-size: 2em;
+}
+
+.typo h2 {
+  font-size: 1.8em;
+}
+
+.typo h3 {
+  font-size: 1.6em;
+}
+
+.typo h4 {
+  font-size: 1.4em;
+}
+
+.typo h5,
+.typo h6 {
+  font-size: 1.2em;
+}
+
+/* 在文章中，应该还原 ul 和 ol 的样式 */
+.typo ul {
+  margin-left: 1.7em;
+  list-style: disc;
+}
+
+.typo ol {
+  list-style: decimal;
+  margin-left: 1.6em;
+}
+
+.typo li+li {
+    margin-top: .25em;
+}
+
+.typo li ul,
+.typo li ol {
+  margin-bottom: 0.8em;
+  margin-left: 2em;
+}
+
+.typo li ul {
+  list-style: circle;
+}
+
+.typo li ul li ul{
+    list-style: square;
+}
+
+/* 同 ul/ol，在文章中应用 table 基本格式 */
+.typo table th,
+.typo table td,
+.typo table caption {
+  border: 1px solid #ddd;
+  padding: 0.5em 1em;
+  color: #666;
+}
+
+.typo table th {
+  background: #fbfbfb;
+}
+
+.typo table thead th {
+  background: #f1f1f1;
+}
+
+.typo table caption {
+  border-bottom: none;
+}
+
+
+/* 去除 webkit 中 input 和 textarea 的默认样式  */
+/* .typo input,
+.typo textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+} */
+
+.typo input {
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.typo .task-list-item {
+  list-style-type: none;
+}
+.typo .task-list-item > input:nth-child(1) {
+  margin-right: 6px;
+}
+.typo .task-list-item label {
+  font-weight: 400;
+}
+
+.typo .task-list-item.enabled label {
+  cursor: pointer;
+}
+
+.typo .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.typo .task-list-item .handle {
+  display: none;
+}
+
+.typo .task-list-item input[type="checkbox"] {
+  margin: 0 .2em .1em -1.1em;
+  vertical-align: middle;
+  width: .9em;
+  height:.9em;
+}
+.typo .contains-task-list{
+  margin-left: 1.3em;
+}
+.typo .contains-task-list:dir(rtl) .task-list-item input[type="checkbox"] {
+  margin: 0 -1.6em .25em .2em;
+}
+
+.typo ::-webkit-calendar-picker-indicator {
+  filter: invert(50%);
+}
+
+
+.typo em,
+legend,
+caption {
+  color: #000;
+  font-weight: inherit;
+}
+
+/* 着重号，只能在少量（少于100个字符）且全是全角字符的情况下使用 */
+.typo em {
+  position: relative;
+}
+
+.typo em:after {
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+  content: '・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・';
+}
+
+/* Responsive images */
+.typo img {
+  max-width: 100%;
+}
+
+.typo ul.toc li{
+  list-style-type: none;
+}
+.typo ul.toc li a {
+  text-decoration: none;
+  border: 0;
+  list-style-type: none;
+}
+
+.typo .mermaid{
+    display: none;
+}
+.typo .mermaid[data-processed="true"]{
+    display: flex;
+    justify-content: center;
+}

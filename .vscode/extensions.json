@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "hancel.markdown-image",
+    "d3vnu1l.template-generator-vscode",
+    "antfu.browse-lite",
+    "jsynowiec.vscode-insertdatestring"
+  ],
+  "unwantedRecommendations": []
+}

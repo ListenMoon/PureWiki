@@ -1,0 +1,8 @@
+---
+import BlogPage from "../layouts/BlogPage.astro"
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import HomeMD from "@blog/md/index.md"
+---
+<BlogPage title={SITE_TITLE} description={SITE_DESCRIPTION} filePath="/src/pages/index.astro">
+  <HomeMD></HomeMD>
+</BlogPage>

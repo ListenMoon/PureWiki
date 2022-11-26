@@ -1,0 +1,17 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "module": "ESNext",
+    "lib": ["DOM"],
+    "moduleResolution": "Node",
+    "baseUrl": ".",
+    "isolatedModules": false,
+    "downlevelIteration": true,
+    "paths": {
+      "@root/*": ["./*"],
+      "@blog/*": ["src/*"],
+      "#/*": ["typings/*"]
+    }
+  }
+}

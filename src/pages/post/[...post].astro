@@ -1,0 +1,24 @@
+---
+import { published } from "@blog/utils";
+import type { Post } from "#/post";
+import BlogPost from "../../layouts/BlogPost.astro"
+
+export async function getStaticPaths() {
+	const posts = await published();
+	return posts.map((post) => {
+		return {
+			params: { post: post.slug },
+			props: { post },
+		};
+	});
+}
+
+// Destructure to get both `Astro.props.post` and `Astro.props.post.Content`
+const {
+	post: { Content, _rawString, _images, _head },
+	post,
+} = Astro.props as { post: Post };
+---
+<BlogPost {...post}>
+	<Content />
+</BlogPost>

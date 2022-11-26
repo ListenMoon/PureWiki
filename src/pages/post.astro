@@ -1,0 +1,45 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Page from "../layouts/Page.astro"
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import {published, publishedTree} from "@blog/utils"
+
+const posts = await published()
+---
+	<style>
+			ul {
+				list-style-type: none;
+				padding: unset;
+			}
+			ul li {
+				display: flex;
+			}
+			ul li time {
+				flex: 0 0 130px;
+				font-style: italic;
+				color: #595959;
+			}
+			ul li a:visited {
+				color: #8e32dc;
+			}
+		</style>
+<Page title={SITE_TITLE + '-文章'} description={SITE_DESCRIPTION} hideSide>
+	<section style="padding: 1em 1.2em 1em;">
+				<ul>
+					{posts.map((post) => (
+						<li>
+							<time datetime={post.pubDate}>
+								{new Date(post.pubTimestamp).toLocaleDateString('zh-cn', {
+									year: 'numeric',
+									month: 'short',
+									day: 'numeric',
+								})}
+							</time>
+							<a href={post.url}>{post.title}</a>
+						</li>
+					))}
+				</ul>
+			</section>
+</Page>

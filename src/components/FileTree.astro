@@ -1,0 +1,23 @@
+---
+type One = {
+  name: string
+  data?: any
+  children: One[]
+}
+
+export interface Props {
+  list: One[]
+}
+
+let { list } = Astro.props as Props
+---
+  
+<ul>
+  {list.map(v=>{
+    return <li {v.data && `data-data=${v.data.url}`}>
+      <div>{v.name}</div>
+      {Array.isArray(v.children) && <Astro.self list={v.children} />}
+    </li>
+  })}
+</ul>
+
