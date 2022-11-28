@@ -14,7 +14,7 @@ import rehypeMathjax from 'rehype-mathjax'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://pure-blog.netlify.app/',
+  site: 'https://pure-wiki.netlify.app/',
   markdown: {
     syntaxHighlight: 'prism',
     extendDefaultPlugins: true,

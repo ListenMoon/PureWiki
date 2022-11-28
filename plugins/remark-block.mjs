@@ -157,7 +157,7 @@ export default function calloutsPlugin() {
                 node.__handled = true
                 data.hName = "div"
                 data.hProperties = {
-                    style: "position:relative;overflow:hidden;"
+                    style: "position:relative;overflow:hidden;margin: 1.5em 0;"
                 }
                 node.children = [
                     {
@@ -196,7 +196,7 @@ export default function calloutsPlugin() {
             const str = node.children.reduce((a, b)=>(a+'\n'+b.value), "")
             data.hName = "div"
             data.hProperties = {
-                style: "position:relative;overflow:hidden;"
+                style: "position:relative;overflow:hidden;margin: 1.5em 0;"
             }
             let { html, classLanguage } = runHighlighterWithAstro(
                 'html',
