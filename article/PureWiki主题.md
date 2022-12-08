@@ -42,12 +42,46 @@ updatedDate: 2022/11/15 16:05:56
     横排排版演示
     :::
     ::::
+
+    ::::card{#vertical}
+    竖排排版演示
+    :::card-title
+    竖排排版演示
+    :::
+    ::::
+
+    ::::card{#vertical.center}
+    竖排居中排版演示
+    :::card-title
+    竖排居中排版演示
+    :::
+    ::::
     ```
     横排已经可以了，竖排感觉也没啥用。
 5. 可配置头图为文章中的第一张图片，只需要将配置的`showArticleHeroImage`设置为true即可。
 6. 文章提供了直接在github编辑功能，自行配置即可
 7. 增加`mermaid`渲染流程图时序图（暂时提供两个）
+    ```
+        ```flow
+        flowchart TD
+            A[/Christmas\]
+            A -->|Get money| B[\Go shopping/]
+            B --> C{Let me thinksssss<br/>ssssssssssssssssssssss<br/>sssssssssssssssssssssssssss}
+            C -->|One| D[/Laptop/]
+            C -->|Two| E[\iPhone\]
+            C -->|Three| F[Car]
+        ```
+    ```
+    ```
+        ```sequence
+        ```
+    ```
 8. 增加`mathjax`渲染公式
+    ```
+    $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
+
+    $$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+    ```
 9. 提供`iframe`命令和`iframec`命令  
     `iframe`为收缩框默认打开  
     `iframec`为收缩框默认关闭
@@ -64,21 +98,25 @@ updatedDate: 2022/11/15 16:05:56
 10. 提供`demo`命令
 
     ```
-    :::demo
-    <div>
-        <div>before content<div>
-        text
-        <div>after content<div>
-    </div>
-    :::
+        :::demo
+        ```html
+        <div>
+            <div>before content<div>
+            text
+            <div>after content<div>
+        </div>
+        ```
+        :::
     ```
     效果：
     :::demo
+    ```html
     <div>
         <div>before content<div>
         text
         <div>after content<div>
     </div>
+    ```
     :::
     
     ```

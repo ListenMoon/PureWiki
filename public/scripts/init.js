@@ -6,7 +6,10 @@ let temp = localStorage.getItem("openFolder")
     if(temp){
         openFolder = JSON.parse(temp)
         openFolder.forEach(v=>{
-            document.querySelector(`.layout .left .wrapper details[data-path="${v}"]`).setAttribute("open", "true")
+            const el = document.querySelector(`.layout .left .wrapper details[data-path="${v}"]`)
+            if(el){
+                el.setAttribute("open", "true")
+            }
         })
     }
     // setTimeout(() => {
