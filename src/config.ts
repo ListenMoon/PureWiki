@@ -6,7 +6,7 @@ export const isDev = MODE === 'development';
 export const isProd = MODE === 'production';
 
 export const SITE_LANG = "zh-cn"
-export const SITE_TITLE = 'PureWiki';
+export const SITE_TITLE = '编程百科';
 export const SITE_DESCRIPTION = '花径不曾缘客扫，蓬门今始为君开!';
 
 export const open_deep = 3; // 默认展开3层文件夹
