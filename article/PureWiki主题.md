@@ -1,7 +1,7 @@
 ---
 title: PureWiki主题
 description: 一个简单的主题
-heroImage: https://tva1.sinaimg.cn/large/005QfeMjgy1h8fzntjxv3j32h41bz4qp.jpg
+heroImage: https://i.328888.xyz/2023/01/05/WOBoa.jpeg
 heroPosition: top
 top: true
 pubDate: 2022/11/15 16:05:35

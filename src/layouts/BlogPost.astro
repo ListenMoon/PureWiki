@@ -1,7 +1,7 @@
 ---
 import { single, published, getPost } from '@blog/utils';
 import type { Post, PostProps } from '#/post';
-import { showArticleHeroImage, githubURL } from "@blog/config"
+import { getEditURL, enableRemote } from "@blog/config"
 import Base from "./_ui/Base.astro"
 import HeadTree from "@blog/components/HeadTree.astro"
 
@@ -20,7 +20,7 @@ let { title, description, pubTimestamp, updatedTimestamp, heroImage, _images, fi
 <Base title={title} description={description} hideSide={hideSide}>
 		{heroImage && <img class="hero-image" src={heroImage} alt="" />}
 		<article class:list={["typo article",mode]}>
-                {filePath && <div style="font-size: .75em;color: #bdbdbd;">{filePath.slice(1).replace(/\//g," > ")}</div>}
+                <!-- {filePath && <div style="font-size: .75em;color: #bdbdbd;">{filePath.slice(1).replace(/\//g," > ")}</div>} -->
 				<h1 class="title">{title}</h1>
 				<div style="line-height: 1.5;">
                     {!!pubTimestamp && <div style="font-size: 0.75em;color: #bdbdbd;"><time>
@@ -46,7 +46,7 @@ let { title, description, pubTimestamp, updatedTimestamp, heroImage, _images, fi
                         </div>
                     )}
                 </div>
-				{filePath && <a href={githubURL+"/article"+filePath} target="_blank" style="margin: 6px 0;display: inline-block;">在Github编辑</a>}
+				{enableRemote && filePath && <a href={getEditURL("/article"+filePath)} target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>}
 				<hr />
 				<div class="article__content">
                     <slot />

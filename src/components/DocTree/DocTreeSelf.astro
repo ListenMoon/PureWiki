@@ -1,6 +1,5 @@
 ---
-import DocTreeSelf from "./DocTreeSelf.astro"
-import {githubNewURL, githubURL} from "@blog/config"
+import {getEditURL, getNewURL, open_deep, enableRemote} from "@blog/config"
 import { betterDirectorySort } from "@blog/utils/better-directory-sort"
 export type One = {
   name: string
@@ -17,9 +16,10 @@ export interface Props {
 
 const { list } = Astro.props as Props
 
-function isActive(url: string){
+function isActive(url: string, isFolder?:boolean){
   let pathArr = decodeURIComponent(Astro.url.pathname).slice(1).replace(/\/$/, '').split("/")
   let urlArr = url.slice(1).split("/")
+  if(urlArr.length <= open_deep && isFolder) return true // 默认展开三层文件夹
   for (let i = 0; i < urlArr.length; i++) {
     const one = urlArr[i];
     if(one !== pathArr[i]) return false
@@ -39,11 +39,11 @@ const showList = list.sort((a, b) => {
 {showList.map(v=>{
     const url = v.path
     const vpath = !v.data?v.active:'' as any
-    return <details data-path={vpath || false} open={isActive(v.active)}>
+    return <details data-path={vpath || false} open={isActive(v.active, !v.data)}>
         <summary>
             
-        {!v.data && <><span title={v.name} class:list={["tree-item", !!v.data && isActive(v.active)?'active':'']}>{v.name}</span><a target="_blank" href={githubNewURL+url} class="op">新建</a></>}
-        {!!v.data && <><a rel={isActive(v.active)?"":"prefetch"} href={v.data.url} title={v.name} class:list={["tree-item tree-md-file", !!v.data && isActive(v.active)?'active':'']}>{v.name}</a><a target="_blank" href={githubURL + v.filePath} class="op">编辑</a></>}
+        {!v.data && <><span title={v.name} class:list={["tree-item", !!v.data && isActive(v.active)?'active':'']}>{v.name}</span>{enableRemote && <a target="_blank" href={getNewURL(url)} class="op">新建</a>}</>}
+        {!!v.data && <><a rel={isActive(v.active)?"":"prefetch"} href={v.data.url} title={v.name} class:list={["tree-item tree-md-file", !!v.data && isActive(v.active)?'active':'']}>{v.name}</a>{enableRemote && <a target="_blank" href={getEditURL(v.filePath)} class="op">编辑</a>}</>}
       </summary>
       {Array.isArray(v.children) && <Astro.self list={v.children} />}
     </details>

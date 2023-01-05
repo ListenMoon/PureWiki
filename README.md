@@ -22,7 +22,7 @@ mode: "chinese"            <!-- 文章出现段落缩进 -->
 
 ## 开发注意
 
-不要在`.astro`文件中使用 `<style></style>` 这种作用域样式，可以在上面加上`is:global`变成全局样式。否则的话会生成`:where`选择器，导致低版本浏览器不兼容而导致样式错乱
+不要在`.astro`文件中使用 `<style></style>` 这种作用域样式，可以在上面加上`is:global`变成全局样式。否则的话会生成`:where`选择器，导致低版本浏览器不兼容而导致样式错乱（例如微信浏览器）
 
 ## 部署
 [![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/npmrun/pure-blog)
@@ -34,7 +34,7 @@ mode: "chinese"            <!-- 文章出现段落缩进 -->
 ## Demo
 https://pure-blog.netlify.app/
 
-## 是否可支持特性
+## 讨论特性
 
 考虑可能添加的特性，有具体方案的可以提issue。
 
@@ -43,6 +43,7 @@ https://pure-blog.netlify.app/
 
 
 ## 致谢开源项目
+如使用了却不存在以下列表中，请提issue提醒我，感谢！
 - [astro](https://github.com/withastro/astro) 
 - [type.css](https://github.com/sofish/typo.css) 
 - [heti](https://github.com/sivan/heti)

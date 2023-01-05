@@ -5,15 +5,11 @@ const { MODE } = import.meta.env;
 export const isDev = MODE === 'development';
 export const isProd = MODE === 'production';
 
-if(isDev){
-    import.meta.glob("@root/aDemo/**/*.html", {
-        eager: true,
-    })
-}
-
 export const SITE_LANG = "zh-cn"
 export const SITE_TITLE = 'PureWiki';
 export const SITE_DESCRIPTION = '花径不曾缘客扫，蓬门今始为君开!';
+
+export const open_deep = 3; // 默认展开3层文件夹
 
 // If any images in article, then show the first on the top.
 export const showArticleHeroImage = false
@@ -21,6 +17,15 @@ export const showArticleHeroImage = false
 export const GithubAuthor = 'NPMRUN';
 export const GithubName = 'pure-blog';
 
-// 注意最后的main为当前所在分支
-export const githubURL = 'https://github.com/npmrun/pure-blog/edit/main'
-export const githubNewURL = 'https://github.com/npmrun/pure-blog/new/main'
+// 远程地址，可自行修改对应的操作
+export const enableRemote = true // 是否显示远程编辑按钮
+const bitbucketNewURL = "https://bitbucket.org/qqvv/pure-wiki/create-file/33bf038960e3e8f3ef4e93c9f0d18906cfcb364e__placeholder__/?at=master"
+const bitbucketEidtURL = "https://bitbucket.org/qqvv/pure-wiki/src/master__placeholder__?mode=edit&at=master"
+const githubEditURL = 'https://github.com/npmrun/pure-blog/edit/main__placeholder__'
+const githubNewURL = 'https://github.com/npmrun/pure-blog/new/main__placeholder__'
+export function getEditURL(url: string) {
+    return bitbucketEidtURL.replace("__placeholder__", url)
+}
+export function getNewURL(url: string) {
+    return bitbucketNewURL.replace("__placeholder__", url)
+}

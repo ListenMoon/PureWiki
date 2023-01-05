@@ -1,7 +1,7 @@
 ---
 import { single, published, getPost } from '@blog/utils';
 import type { Post, PostProps } from '#/post';
-import { githubURL } from "@blog/config"
+import { getEditURL, enableRemote } from "@blog/config"
 import Base from "./_ui/Base.astro"
 import HeadTree from "@blog/components/HeadTree.astro"
 
@@ -16,8 +16,8 @@ let { title, description, filePath, _head, heroImage, hideSide = false } = getPo
 <Base title={title} description={description} hideSide={hideSide}>
 	{heroImage && <img class="hero-image" src={heroImage} alt="" />}
 	<article class="typo article">
-	{filePath && <a href={githubURL+filePath} target="_blank" style="margin: 6px 0;display: inline-block;">在Github编辑</a>}
-		{filePath && <hr>}
+	{enableRemote && filePath && <a href={getEditURL(filePath)} target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>}
+	{enableRemote && filePath && <hr>}
 		<slot />
 	</article>
 	<HeadTree slot="side" head={_head}></HeadTree>

@@ -1,6 +1,6 @@
 ---
 import DocTreeSelf from "./DocTreeSelf.astro"
-import {githubNewURL} from "@blog/config"
+import { getNewURL, enableRemote } from "@blog/config"
 export type One = {
   name: string
   path: string
@@ -18,7 +18,7 @@ export interface Props {
     <details open="true">
       <summary>
         <span class="tree-item">文章</span>
-        <a href={githubNewURL+"/article"} target="_blank" class="op">新建</a>
+        { enableRemote && <a href={getNewURL("/article")} target="_blank" class="op">新建</a>}
       </summary>
       <DocTreeSelf {...Astro.props}></DocTreeSelf>
     </details>
