@@ -8,6 +8,8 @@ import remarkBreaks from 'remark-breaks'
 import Directive from 'remark-directive';
 import robotsTxt from "astro-robots-txt";
 import sitemap from "@astrojs/sitemap";
+import browserslist from "browserslist";
+import { resolveToEsbuildTarget } from "esbuild-plugin-browserslist";
 
 import remarkMath from 'remark-math'
 import rehypeMathjax from 'rehype-mathjax'
@@ -30,6 +32,11 @@ export default defineConfig({
     robotsTxt(),
   ],
   vite: {
+    build: {
+        cssTarget: resolveToEsbuildTarget(browserslist(), {
+            printUnknownTargets: false
+        })
+    },
     css: {
       preprocessorOptions: {
         scss: {
