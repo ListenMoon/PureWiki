@@ -1,13 +1,13 @@
 ---
-import { GithubName, GithubAuthor } from "@blog/config";
+import { FooterAuthor, FooterName, FooterRepo } from "@blog/config";
 const today = new Date();
 ---
 
 <footer>
     &copy; {today.getFullYear()}
-    {GithubAuthor}. All rights reserved.
+    {FooterAuthor}. All rights reserved.
     <p>
-        Built with ♥ by <a href="https://github.com/npmrun/pure-blog"
-            >{GithubName}</a>
+        Built with ♥ by <a href={FooterRepo}
+            >{FooterName}</a>
     </p>
 </footer>

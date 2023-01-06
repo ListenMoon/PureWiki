@@ -14,8 +14,9 @@ export const open_deep = 3; // 默认展开3层文件夹
 // If any images in article, then show the first on the top.
 export const showArticleHeroImage = false
 
-export const GithubAuthor = 'NPMRUN';
-export const GithubName = 'pure-blog';
+export const FooterAuthor = 'NPMRUN';
+export const FooterName = '编程百科';
+export const FooterRepo = 'https://bitbucket.org/qqvv/pure-wiki';
 
 // 远程地址，可自行修改对应的操作
 export const enableRemote = true // 是否显示远程编辑按钮
