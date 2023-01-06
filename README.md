@@ -36,8 +36,6 @@ https://pure-blog.netlify.app/
 
 ## 讨论特性
 
-考虑可能添加的特性，有具体方案的可以提issue。
-
 - [ ] 备份
 - [ ] 导出
 
