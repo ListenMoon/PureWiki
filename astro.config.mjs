@@ -17,6 +17,9 @@ import rehypeMathjax from 'rehype-mathjax'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://pure-wiki.netlify.app/',
+  server: {
+    port: 3311
+  },
   markdown: {
     syntaxHighlight: 'prism',
     extendDefaultPlugins: true,
