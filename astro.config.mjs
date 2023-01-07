@@ -4,6 +4,7 @@ import prefetch from '@astrojs/prefetch';
 import path from 'path';
 import remarkBlock from './plugins/remark-block.mjs';
 import remarkFlow from './plugins/remark-flow.mjs';
+import remarkCollect from './plugins/remark-collect.mjs';
 import remarkBreaks from 'remark-breaks'
 import Directive from 'remark-directive';
 import robotsTxt from "astro-robots-txt";
@@ -23,7 +24,7 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: 'prism',
     extendDefaultPlugins: true,
-    remarkPlugins: [Directive, [remarkBlock, {}], remarkMath, remarkFlow, remarkBreaks],
+    remarkPlugins: [Directive, remarkCollect, [remarkBlock, {}], remarkMath, remarkFlow, remarkBreaks],
     rehypePlugins: [rehypeMathjax],
   },
   integrations: [
