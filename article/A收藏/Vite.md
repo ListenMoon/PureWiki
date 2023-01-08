@@ -21,26 +21,25 @@ console.log(nativeObject)
 
 ## 测试
 
-::collect[百度]{url="//baidu.com" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
+::collect[百度||搞啥啊]{url="//baidu.com" Demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
 
 ## 测试
 
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" desc="搞啥啊"}
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" }
