@@ -22,24 +22,9 @@ console.log(nativeObject)
 ## 测试
 
 ::collect[百度||搞啥啊]{url="//baidu.com" Demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
+::collect[博客||一个简单的个人博客]{url="https://xieyaxin.top/"}
 
 ## 测试
 
 ::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度||搞啥啊]{url="//baidu.com" demo="/post/记事/大实话" }
-::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" }
 ::collect[百度]{url="//baidu.com" demo="/post/记事/大实话" }
