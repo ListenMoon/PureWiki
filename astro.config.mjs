@@ -17,7 +17,7 @@ import rehypeMathjax from 'rehype-mathjax'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://blog.xieyaxin.top/',
+  site: 'https://blog.xieyaxin.top/',
   server: {
     port: 3311
   },
