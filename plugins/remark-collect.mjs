@@ -20,23 +20,29 @@ export default function collectPlugin() {
                 const attributes = node.attributes || {};
                 const children = node.children || [];
                 const url = attributes.url;
-                const demo = attributes.demo;
-                const desc = attributes.desc;
                 node.type = "leafDirective";
                 node.__handled = true;
                 data.hName = "div";
                 data.hProperties = { class: "doc-card" };
-                const dd = (node.children = [
+                let title = ""
+                let desc = ""
+                if(children.length !== 0 && children[0].type === "text"){
+                    const text = children[0].value.split("||")
+                    !!text[0] && (title = text[0])
+                    !!text[1] && (desc = text[1])
+                }
+                node.children = [
                     Block(
-                        "a",
+                        "div",
                         {
-                            href: url,
-                            title: url,
                             class: "doc-card-a",
-                            target: "_blank",
+                            title: desc
                         },
                         [
-                            Block("div", { class: "doc-card-title" }, children),
+                            Block("div", { class: "doc-card-title" }, [{
+                                type: "text",
+                                value: title
+                            }]),
                             Block("div", { class: "doc-card-describe" }, [
                                 {
                                     type: "text",
@@ -45,26 +51,50 @@ export default function collectPlugin() {
                             ]),
                         ]
                     ),
-                ]);
-                if (!!demo) {
-                    node.children.push(
-                        Block("div", { class: "doc-card-bottom" }, [
-                            Block(
-                                "a",
+                ];
+                const child = []
+                if (!!url) {
+                    child.push(
+                        Block(
+                            "a",
+                            {
+                                href: url,
+                                class: "doc-card-tag",
+                            },
+                            [
                                 {
-                                    href: demo,
-                                    class: "doc-card-tag",
+                                    type: "text",
+                                    value: "网址",
                                 },
-                                [
-                                    {
-                                        type: "text",
-                                        value: "Demo",
-                                    },
-                                ]
-                            ),
-                        ])
-                    );
+                            ]
+                        )
+                    )
                 }
+                for (const key in attributes) {
+                    if (Object.hasOwnProperty.call(attributes, key)) {
+                        const element = attributes[key];
+                        if(key !== "url" && key !== "desc" && element){
+                            child.push(
+                                Block(
+                                    "a",
+                                    {
+                                        href: element,
+                                        class: "doc-card-tag",
+                                    },
+                                    [
+                                        {
+                                            type: "text",
+                                            value: key,
+                                        },
+                                    ]
+                                )
+                            )
+                        }
+                    }
+                }
+                node.children.push(
+                    Block("div", { class: "doc-card-bottom" }, child)
+                )
             }
             return node;
         });

@@ -134,7 +134,7 @@ body {
         padding: 1em 1.2em 1em;
     }
     &.collect a[href] + a[href] {
-        margin-left: 20px;
+        margin-left: 8px;
     }
     &.chinese .article__content {
         text-indent: 1.5em;
@@ -315,7 +315,12 @@ footer {
             display: flex;
             align-items: center;
             min-height: 25px;
-            // flex-wrap: wrap;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scrollbar-width: none; // 火狐隐藏滚动条
+            &::-webkit-scrollbar{
+                display: none; // chrome隐藏滚动条
+            }
         }
         .doc-card-bottom .doc-card-tag {
             display: inline-block;
@@ -325,6 +330,7 @@ footer {
             padding: 2px 4px;
             font-size: 12px;
             cursor: pointer;
+            white-space: nowrap;
             margin-right: 5px;
             margin-top: 5px;
             &::before {
