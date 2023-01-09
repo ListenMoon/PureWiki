@@ -17,7 +17,7 @@ import rehypeMathjax from 'rehype-mathjax'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://pure-wiki.netlify.app/',
+  site: 'http://blog.xieyaxin.top/',
   server: {
     port: 3311
   },
