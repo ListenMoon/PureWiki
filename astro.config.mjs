@@ -28,6 +28,7 @@ export default defineConfig({
     rehypePlugins: [rehypeMathjax],
   },
   integrations: [
+    mdx(),
     prefetch({
       selector: "a[href^='/post']",
       throttle: 3
