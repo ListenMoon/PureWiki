@@ -1,5 +1,5 @@
 ---
-import {getEditURL, getNewURL, open_deep, enableRemote} from "@blog/config"
+import {getEditURL, getNewURL, enableRemote} from "@blog/config"
 import { betterDirectorySort } from "@blog/utils/better-directory-sort"
 export type One = {
   name: string
@@ -19,13 +19,21 @@ const { list } = Astro.props as Props
 function isActive(url: string, isFolder?:boolean){
   let pathArr = decodeURIComponent(Astro.url.pathname).slice(1).replace(/\/$/, '').split("/")
   let urlArr = url.slice(1).split("/")
-  if(urlArr.length <= open_deep && isFolder) return true // 默认展开三层文件夹
   for (let i = 0; i < urlArr.length; i++) {
     const one = urlArr[i];
     if(one !== pathArr[i]) return false
   }
   return true
 //   return decodeURIComponent(Astro.url.pathname).replace(/\/$/, '').startsWith(url);
+}
+
+function haveFolderInChildren(v: One) {
+  if(v.data) return false
+  if(v.children.find(v=>!v.data)){
+    return true
+  } else {
+    return false
+  }
 }
 
 const showList = list.sort((a, b) => {
@@ -39,7 +47,7 @@ const showList = list.sort((a, b) => {
 {showList.map(v=>{
     const url = v.path
     const vpath = !v.data?v.active:'' as any
-    return <details data-path={vpath || false} open={isActive(v.active, !v.data)}>
+    return <details data-path={vpath || false} open={isActive(v.active, !v.data) || haveFolderInChildren(v)}>
         <summary>
             
         {!v.data && <><span title={v.name} class:list={["tree-item", !!v.data && isActive(v.active)?'active':'']}>{v.name}</span>{enableRemote && <a target="_blank" href={getNewURL(url)} class="op">新建</a>}</>}
