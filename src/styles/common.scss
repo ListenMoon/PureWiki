@@ -89,14 +89,17 @@ body {
     }
     .left {
         background: #fff;
-        direction: rtl;
+        // direction: rtl;
         overflow-y: auto;
         position: sticky;
         height: 100vh;
         margin: 0;
         top: 0;
         .wrapper {
-            direction: ltr;
+            // direction: ltr;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         @include media-pc(sm) {
             margin: 0;
