@@ -1,6 +1,6 @@
 import rss from '@astrojs/rss';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_LANG } from '@blog/config';
-import { published } from '@blog/utils';
+import { publishedList } from '@blog/utils';
 
 const posts = await publishedList();
 
