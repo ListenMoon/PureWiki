@@ -36,15 +36,9 @@ function haveFolderInChildren(v: One) {
   }
 }
 
-const showList = list.sort((a, b) => {
-  return betterDirectorySort(
-    { name: a.name, isDirectory: !a.data },
-    { name: b.name, isDirectory: !b.data },
-  );
-});
 ---
 
-{showList.map(v=>{
+{list.map(v=>{
     const url = v.path
     const vpath = !v.data?v.active:'' as any
     return <details data-path={vpath || false} open={isActive(v.active, !v.data) || haveFolderInChildren(v)}>

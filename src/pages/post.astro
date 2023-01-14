@@ -4,9 +4,17 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Page from "../layouts/Page.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
-import {published, publishedTree} from "@blog/utils"
+import {publishedList, publishedTree} from "@blog/utils"
 
-const posts = await published()
+let posts = await publishedList()
+
+posts = posts.sort((a, b) => {
+    if (b.pubTimestamp && a.pubTimestamp) {
+        return b.pubTimestamp - a.pubTimestamp;
+    } else {
+        return -1;
+    }
+});
 ---
 	<style>
 			ul {

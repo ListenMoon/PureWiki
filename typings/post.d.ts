@@ -38,6 +38,8 @@ export type PostProps = {
   heroImage: string,
   description: string,
   filePath: string
+  nextArticle?: Post
+  beforeArticle?: Post
 }
 
 export type Post = {

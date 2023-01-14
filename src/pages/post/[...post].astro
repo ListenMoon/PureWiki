@@ -1,10 +1,10 @@
 ---
-import { published } from "@blog/utils";
+import { published, publishedList } from "@blog/utils";
 import type { Post } from "#/post";
 import BlogPost from "../../layouts/BlogPost.astro"
 
 export async function getStaticPaths() {
-	const posts = await published();
+	const posts = await publishedList();
 	return posts.map((post) => {
 		return {
 			params: { post: post.slug },
@@ -19,6 +19,43 @@ const {
 	post,
 } = Astro.props as { post: Post };
 ---
+<style is:global lang="scss">
+    .paging{
+        margin: 15px 0;
+        display: flex;
+        text-indent: 0;
+        .before{
+            flex: 1;
+        }
+        .next{
+            text-align: right;
+            flex: 1;
+        }
+        @include media-pc(sm) {
+            display: block;
+            text-align: left;
+            .before{
+                flex: auto;
+            }
+            .next{
+                text-align: left;
+                flex: auto;
+            }
+        }
+    }
+</style>
 <BlogPost {...post}>
 	<Content />
+    <div class="paging">
+        <div class="before">
+            {
+                post.beforeArticle && <div>上一页：<a href={post.beforeArticle?.url}>{post.beforeArticle?.title}</a></div>
+            }
+        </div>
+        <div class="next">
+            {
+                post.nextArticle && <div>下一页：<a href={post.nextArticle?.url}>{post.nextArticle?.title}</a></div>
+            }
+        </div>
+    </div>
 </BlogPost>

@@ -2,7 +2,7 @@ import rss from '@astrojs/rss';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_LANG } from '@blog/config';
 import { published } from '@blog/utils';
 
-const posts = await published();
+const posts = await publishedList();
 
 /**
  * 10篇最新的文章

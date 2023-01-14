@@ -9,6 +9,8 @@ export const SITE_LANG = "zh-cn"
 export const SITE_TITLE = '编程百科';
 export const SITE_DESCRIPTION = '花径不曾缘客扫，蓬门今始为君开!';
 
+export const TreeTitle = "文章"
+
 // If any images in article, then show the first on the top.
 export const showArticleHeroImage = false
 
