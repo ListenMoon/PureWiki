@@ -1,5 +1,5 @@
 ---
-import {getEditURL, getNewURL, enableRemote} from "@blog/config"
+import {getEditURL, getNewURL, enableRemote, expandTreeType} from "@blog/config"
 import { betterDirectorySort } from "@blog/utils/better-directory-sort"
 export type One = {
   name: string
@@ -29,10 +29,13 @@ function isActive(url: string, isFolder?:boolean){
 
 function haveFolderInChildren(v: One) {
   if(v.data) return false
-  if(v.children.find(v=>!v.data)){
-    return true
-  } else {
-    return false
+  if(expandTreeType === "always") return true
+  if(expandTreeType === "dir") {
+    if(v.children.find(v=>!v.data)){
+        return true
+    } else {
+        return false
+    }
   }
 }
 
