@@ -1,7 +1,8 @@
 // https://www.npmjs.com/package/better-directory-sort
 
 function defaultComparator(a, b) {
-  return a.localeCompare(b, undefined, {
+  // b, undefined
+  return a.localeCompare(b, "zh-Hans-CN", {
     numeric: true,
     sensitivity: "base",
   });

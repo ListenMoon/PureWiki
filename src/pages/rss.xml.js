@@ -1,8 +1,8 @@
 import rss from '@astrojs/rss';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_LANG } from '@blog/config';
-import { publishedList } from '@blog/utils';
+import { sortPublishedList } from '@blog/utils';
 
-const posts = await publishedList();
+let posts = await sortPublishedList();
 
 /**
  * 10篇最新的文章

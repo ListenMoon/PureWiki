@@ -112,6 +112,18 @@ export async function publishedList() {
     return sorted.map(v => v.data)
 }
 
+export async function sortPublishedList() {
+    let posts = await publishedList()
+    posts = posts.sort((a, b) => {
+        if (b.pubTimestamp && a.pubTimestamp) {
+            return b.pubTimestamp - a.pubTimestamp;
+        } else {
+            return -1;
+        }
+    });
+    return posts
+}
+
 /**
  * 处理单个文章信息
  */
