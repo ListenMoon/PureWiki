@@ -1,0 +1,82 @@
+---
+import SearchInput from "./SearchInput.astro"
+---
+
+<div
+    id="search-mask"
+>
+</div>
+<div
+    id="search-container"
+    class="md:w-[800px]"
+>
+    <div
+        id="search-content"
+        class="bg-white transition-opacity duration-300 opacity-0 rounded-[6px] md:p-[3px] p-[8px] overflow-hidden"
+    >
+        <SearchInput></SearchInput>
+    </div>
+</div>
+<style is:global lang="scss">
+    #search-mask{
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.30);
+        z-index: 98;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity linear .3s;
+    }
+    #search-container{
+        pointer-events: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50% , -50%);
+        z-index: 99;
+        width: 80%;
+    }
+    #search-content{
+        background-color: white;
+        opacity: 0;
+        transition: opacity linear .3s;
+        border-radius: 6px;
+        padding: 8px;
+        overflow: hidden;
+    }
+    .search-show {
+        pointer-events: auto !important;
+        div {
+            opacity: 1 !important;
+        }
+    }
+</style>
+<script lang="ts">
+    const searchBoxEl = document.getElementById("searchBox");
+    
+    const searchMask = document.getElementById("search-mask");
+    const searchButton = document.getElementById("searchButton");
+    const searchContainer = document.getElementById("search-container");
+    searchButton.addEventListener("click", () => {
+        let isHave = searchContainer.classList.contains("search-show");
+        if (!isHave) {
+            searchContainer.classList.add("search-show");
+            searchMask.style.opacity = 1;
+            searchMask.style.pointerEvents = "auto";
+            searchBoxEl.focus()
+            document.body.style.setProperty("overflow", "hidden", "important");
+        }
+    });
+    searchMask.addEventListener("click", () => {
+        let isHave = searchContainer.classList.contains("search-show");
+        if (isHave) {
+            searchContainer.classList.remove("search-show");
+            searchMask.style.opacity = 0;
+            searchMask.style.pointerEvents = "none";
+            document.body.style.setProperty("overflow", "auto");
+        }
+    });
+</script>

@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "npm run prepareIndex && astro build",
     "preview": "astro preview",
+    "prepareIndex": "tsx ./scripts/search/prepare-index.ts",
     "astro": "astro"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@types/node": "^18.11.9",
     "browserslist": "^4.21.4",
-    "esbuild-plugin-browserslist": "^0.6.0"
+    "esbuild-plugin-browserslist": "^0.6.0",
+    "tsx": "^3.12.2"
   }
 }
