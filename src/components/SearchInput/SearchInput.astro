@@ -193,7 +193,9 @@
                     resultPage.append(resultBody);
                 }
                 searchResults.append(resultPage);
-                instance.mark(query);
+            });
+            instance.mark(query, {
+                className: "highlight"
             });
         };
         initLunr();

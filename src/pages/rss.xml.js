@@ -15,7 +15,7 @@ export const get = () => {
     stylesheet: true,
     customData: `<language>${SITE_LANG || 'en-us'}</language>`,
     site: import.meta.env.SITE,
-    items: posts.filter(v=>((v.rss === undefined || v.rss) && (v.mode !== "collect"))).slice(0, 10).map((post) => ({
+    items: posts.filter(v=>((v.rss === undefined || v.rss) && (v.mode !== "collect") && !v.isDraft)).slice(0, 10).map((post) => ({
       link: post.url,
       title: post.title,
       pubDate: post.pubDate,

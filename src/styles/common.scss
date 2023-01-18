@@ -78,6 +78,13 @@ body {
     }
 }
 
+mark.highlight{
+    background-color: #f9f2f4;
+    color: #c7254e;
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
 // 顶部进度条
 .reading {
     position: relative;
