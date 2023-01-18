@@ -1,8 +1,9 @@
 import { visit } from "unist-util-visit";
+import { h } from 'hastscript';
 
 function Block(divName, properties, children = []) {
     return {
-        type: "leafDirective",
+        type: "textDirective",
         __handled: true,
         data: {
             hName: divName,
@@ -15,19 +16,19 @@ function Block(divName, properties, children = []) {
 export default function collectPlugin() {
     return (tree, file) => {
         visit(tree, (node) => {
-            if (node.type === "leafDirective" && (node.name === "collect" || node.name === "collect_block")) {
+            if ((node.type === 'textDirective' || node.type === 'leafDirective') && (node.name === "collect" || node.name === "collect_block")) {
                 const data = node.data || (node.data = {});
                 const attributes = node.attributes || {};
                 const children = node.children || [];
                 const url = attributes.url;
-                node.type = "leafDirective";
                 node.__handled = true;
-                data.hName = "div";
+                const tagName = node.type === 'textDirective' ? 'span' : 'div'
+                data.hName = tagName // 这里使用div会导致前面的行内元素放置在p元素中导致换行
                 let className = "enshrine"
                 if(node.name === "collect_block"){
                     className += " mg"
                 }
-                data.hProperties = { class: className };
+                data.hProperties = h(data.hName, { class: className }).properties;
                 let title = ""
                 let desc = ""
                 if(children.length !== 0 && children[0].type === "text"){
@@ -37,7 +38,7 @@ export default function collectPlugin() {
                 }
                 const _children = [
                     Block(
-                        "div",
+                        "span",
                         {
                             class: "doc-card-a",
                             title: desc
@@ -47,7 +48,7 @@ export default function collectPlugin() {
                             //     type: "text",
                             //     value: title
                             // }]),
-                            Block("div", { class: "doc-card-describe" }, [
+                            Block("span", { class: "doc-card-describe" }, [
                                 {
                                     type: "text",
                                     value: desc,
@@ -97,15 +98,15 @@ export default function collectPlugin() {
                     }
                 }
                 _children.push(
-                    Block("div", { class: "doc-card-bottom" }, child)
+                    Block("span", { class: "doc-card-bottom" }, child)
                 )
                 node.children = [
                     Block("a", { class: "text", style: "text-decoration: wavy underline #1abc9c;text-underline-offset: .3em;" }, [{
                         type: "text",
                         value: title
                     }]),
-                    Block("div", { class: "dropdown" }, [
-                        Block("div", { class: "doc-card" }, _children),
+                    Block("span", { class: "dropdown" }, [
+                        Block("span", { class: "doc-card" }, _children),
                     ]),
                 ]
             }
