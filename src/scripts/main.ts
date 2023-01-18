@@ -1,14 +1,14 @@
 import View from "viewerjs";
 import mermaid from "mermaid"
 
-mermaid.initialize({
+mermaid.init({
     theme: 'neutral',
     // logLevel: 3,
     securityLevel: 'loose',
     flowchart: { curve: 'basis' },
     gantt: { axisFormat: '%m/%d/%Y' },
     sequence: { actorMargin: 50 },
-});
+}, `.article .mermaid`);
 
 //===== 顶部进度条 ===== Start
 if(location.pathname.startsWith("/post")){
@@ -53,9 +53,9 @@ for (let i = 0, linksLength = links.length; i < linksLength; i++) {
 
 // 文章详情页
 const allTitleSelector =
-    ".article>h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]";
+    ".article h1[id],.article h2[id],.article h3[id],.article h4[id],.article h5[id],.article h6[id]";
 const allHeadSelector = "a.head";
-const offset = 10
+const offset = 50
 let activeIndex = 0;
 function initColor() {
     const headElement = document.querySelectorAll(allHeadSelector);
