@@ -38,17 +38,17 @@ export default function collectPlugin() {
                 }
                 const _children = [
                     Block(
-                        "span",
+                        tagName,
                         {
                             class: "doc-card-a",
                             title: desc
                         },
                         [
-                            // Block("div", { class: "doc-card-title" }, [{
+                            // Block("tagName", { class: "doc-card-title" }, [{
                             //     type: "text",
                             //     value: title
                             // }]),
-                            Block("span", { class: "doc-card-describe" }, [
+                            Block(tagName, { class: "doc-card-describe" }, [
                                 {
                                     type: "text",
                                     value: desc,
@@ -98,15 +98,15 @@ export default function collectPlugin() {
                     }
                 }
                 _children.push(
-                    Block("span", { class: "doc-card-bottom" }, child)
+                    Block(tagName, { class: "doc-card-bottom" }, child)
                 )
                 node.children = [
                     Block("a", { class: "text", style: "text-decoration: wavy underline #1abc9c;text-underline-offset: .3em;" }, [{
                         type: "text",
                         value: title
                     }]),
-                    Block("span", { class: "dropdown" }, [
-                        Block("span", { class: "doc-card" }, _children),
+                    Block(tagName, { class: "dropdown" }, [
+                        Block(tagName, { class: "doc-card" }, _children),
                     ]),
                 ]
             }
