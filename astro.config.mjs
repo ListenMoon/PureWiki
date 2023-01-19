@@ -5,6 +5,7 @@ import path from 'path';
 import remarkBlock from './plugins/remark-block.mjs';
 import remarkFlow from './plugins/remark-flow.mjs';
 import remarkCollect from './plugins/remark-collect.mjs';
+import remarkGlobalComponent from './plugins/remark-global-component.mjs';
 import remarkBreaks from 'remark-breaks'
 import Directive from 'remark-directive';
 import robotsTxt from "astro-robots-txt";
@@ -28,7 +29,9 @@ export default defineConfig({
     rehypePlugins: [rehypeMathjax],
   },
   integrations: [
-    mdx(),
+    mdx({
+        remarkPlugins: [remarkGlobalComponent]
+    }),
     prefetch({
       selector: "a[href^='/post']",
       throttle: 3

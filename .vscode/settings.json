@@ -372,7 +372,7 @@
   "scss.lint.unknownAtRules": "ignore",
   "scss.validate": false,
   "markdown-image.local.path": "/public/article", 
-  "markdown-image.local.referencePath": "/article/${mdname}",
+  "markdown-image.local.referencePath": "/article/${mdname}/",
   "markdown-image.base.fileNameFormat": "${mdname}/${YY}-${MM}-${DD}_${DD}-${HH}-${mm}-${ss}",
   "markdown-image.base.urlEncode": false,
   "templateGenerator.fields.author": "Dash",

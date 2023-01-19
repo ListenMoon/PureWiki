@@ -60,24 +60,29 @@ h6 {
 }
 
 .typo h1 {
-  font-size: 2em;
+  font-size: 2em; /* 2 * 16 = 32px */
+  font-size: 1.8em; /* 2 * 16 = 32px */
 }
 
 .typo h2 {
-  font-size: 1.8em;
+  font-size: 1.8em; /* 1.8 * 16 = 28.8px */
+  font-size: 1.6em; /* 1.8 * 16 = 28.8px */
 }
 
 .typo h3 {
-  font-size: 1.6em;
+  font-size: 1.6em; /* 1.6 * 16 = 25.6px */
+  font-size: 1.4em; /* 1.6 * 16 = 25.6px */
 }
 
 .typo h4 {
-  font-size: 1.4em;
+  font-size: 1.4em; /* 1.4 * 16 = 22.4px */
+  font-size: 1.2em; /* 1.4 * 16 = 22.4px */
 }
 
 .typo h5,
 .typo h6 {
-  font-size: 1.2em;
+  font-size: 1.2em; /* 1.2 * 16 = 19.2px */
+  font-size: 1em; /* 1.2 * 16 = 19.2px */
 }
 
 /* 在文章中，应该还原 ul 和 ol 的样式 */
