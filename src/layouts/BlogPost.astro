@@ -47,7 +47,7 @@ let { title, description, pubTimestamp, updatedTimestamp, heroImage, _images, fi
                     )}
                 </div>
 				{enableRemote && filePath && <a href={getEditURL("/article"+filePath)} target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>}
-				<hr />
+				{enableRemote && filePath && <hr>}
 				<div class="article__content">
                     <slot />
                 </div>
