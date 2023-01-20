@@ -27,8 +27,8 @@ export const expandTreeType: "always" | "dir" = "dir"
 export const showArticleHeroImage = false
 
 export const FooterAuthor = 'NPMRUN';
-export const FooterName = '编程百科';
-export const FooterRepo = 'https://bitbucket.org/qqvv/pure-wiki';
+export const FooterName = 'PureWiki';
+export const FooterRepo = 'https://github.com/ListenMoon/PureWiki';
 
 // 远程地址，可自行修改对应的操作
 export const enableRemote = true // 是否显示远程编辑按钮
