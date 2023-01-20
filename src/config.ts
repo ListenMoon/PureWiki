@@ -34,11 +34,11 @@ export const FooterRepo = 'https://bitbucket.org/qqvv/pure-wiki';
 export const enableRemote = true // 是否显示远程编辑按钮
 const bitbucketNewURL = "https://bitbucket.org/qqvv/pure-wiki/create-file/33bf038960e3e8f3ef4e93c9f0d18906cfcb364e__placeholder__/?at=master"
 const bitbucketEidtURL = "https://bitbucket.org/qqvv/pure-wiki/src/master__placeholder__?mode=edit&at=master"
-const githubEditURL = 'https://github.com/npmrun/pure-blog/edit/main__placeholder__'
-const githubNewURL = 'https://github.com/npmrun/pure-blog/new/main__placeholder__'
+const githubEditURL = 'https://github.com/ListenMoon/PureWiki/edit/master__placeholder__'
+const githubNewURL = 'https://github.com/ListenMoon/PureWiki/new/master__placeholder__'
 export function getEditURL(url: string) {
-    return bitbucketEidtURL.replace("__placeholder__", url)
+    return githubEditURL.replace("__placeholder__", url)
 }
 export function getNewURL(url: string) {
-    return bitbucketNewURL.replace("__placeholder__", url)
+    return githubNewURL.replace("__placeholder__", url)
 }
