@@ -16,7 +16,3 @@ kk1549469775@gmail.com
 ## Github
 
 [npmrun](https://github.com/npmrun)
-
-## 博客
-
-[xieyaxin.top](https://xieyaxin.top)
