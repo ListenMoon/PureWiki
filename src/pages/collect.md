@@ -14,3 +14,8 @@ pubDate: 2023/1/19 22:34:31
 ## 游戏
 
 ::collect[GBT乐赏空间||很多的游戏，都是种子，不知道有毒没有]{url="http://gbtgame.ysepan.com/||网址"}
+
+## 国外
+
+::collect[yandex||俄罗斯搜索引擎，速度挺快的]{url="https://yandex.com/||网址"}
+
