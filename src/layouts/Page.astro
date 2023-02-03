@@ -6,9 +6,10 @@ export interface extendProps {
 	title: string
 	description: string
 	hideSide?: boolean
+	hideMenu?: boolean
 }
 export type Props = Partial<PostProps> & extendProps
 
-let { title, description, hideSide } = getPost(Astro.props as Props) as Props
+let { title, description, hideSide, hideMenu } = getPost(Astro.props as Props) as Props
 ---
-<Base title={title} description={description} hideSide={hideSide}><slot /></Base>
+<Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu}><slot /></Base>
