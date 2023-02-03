@@ -13,14 +13,7 @@ export interface extendProps {
 }
 export type Props = Partial<PostProps> & extendProps
 let { title, description, filePath, _head, heroImage, hideSide = false, hideMenu = false, mode, comment } = getPost(Astro.props as Props) as Props
----
-<Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu}>
-	{heroImage && <img class="hero-image" src={heroImage} alt="" />}
-	<article class:list={["typo article",mode]}>
-	{enableRemote && filePath && <a href={getEditURL(filePath)} target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>}
-	{enableRemote && filePath && <hr>}
-		<slot />
-	</article>
+
     // {
     //     isProd && comment && (
     //         <script src="https://giscus.app/client.js"
@@ -42,5 +35,13 @@ let { title, description, filePath, _head, heroImage, hideSide = false, hideMenu
     //         <div class="giscus-frame" style="padding: 25px;box-sizing: border-box;"></div>
     //     )
     // }
+---
+<Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu}>
+	{heroImage && <img class="hero-image" src={heroImage} alt="" />}
+	<article class:list={["typo article",mode]}>
+	{enableRemote && filePath && <a href={getEditURL(filePath)} target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>}
+	{enableRemote && filePath && <hr>}
+		<slot />
+	</article>
 	<HeadTree slot="side" head={_head}></HeadTree>
 </Base>
