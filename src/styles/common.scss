@@ -31,6 +31,11 @@ body {
             top: -15px;
         }
     }
+    a.text:hover{
+        &::before{
+            border: 0;
+        }
+    }
     &:hover .dropdown{
         display: block;
     }
@@ -38,7 +43,7 @@ body {
         display: none;
         position: absolute;
         left: -6px;
-        top: -6px;
+        top: calc(100% - 6px);
         z-index: 999;
         min-width: 200px;
         @include media-pc(sm) {
