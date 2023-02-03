@@ -1,18 +1,18 @@
 ---
 import { single, published, getPost } from '@blog/utils';
 import type { Post, PostProps } from '#/post';
-import { getEditURL, enableRemote } from "@blog/config"
+import { getEditURL, enableRemote, isProd } from "@blog/config"
 import Base from "./_ui/Base.astro"
 import HeadTree from "@blog/components/HeadTree.astro"
 
 export interface extendProps {
 	filePath: string
 	hideSide: boolean
-	hideMenu: boolean
+    hideMenu: boolean
+    comment: boolean
 }
 export type Props = Partial<PostProps> & extendProps
-
-let { title, description, filePath, _head, heroImage, hideSide = false, hideMenu = false, mode } = getPost(Astro.props as Props) as Props
+let { title, description, filePath, _head, heroImage, hideSide = false, hideMenu = false, mode, comment } = getPost(Astro.props as Props) as Props
 ---
 <Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu}>
 	{heroImage && <img class="hero-image" src={heroImage} alt="" />}
@@ -21,5 +21,26 @@ let { title, description, filePath, _head, heroImage, hideSide = false, hideMenu
 	{enableRemote && filePath && <hr>}
 		<slot />
 	</article>
+    {
+        isProd && comment && (
+            <script src="https://giscus.app/client.js"
+                data-repo="ListenMoon/PureWiki"
+                data-repo-id="R_kgDOIzwtbQ"
+                data-category="Announcements"
+                data-category-id="DIC_kwDOIzwtbc4CT-AZ"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="light_tritanopia"
+                data-lang="zh-CN"
+                crossorigin="anonymous"
+                async>
+            </script>
+            <div class="giscus" style="padding: 25px;box-sizing: border-box;"></div>
+            <div class="giscus-frame" style="padding: 25px;box-sizing: border-box;"></div>
+        )
+    }
 	<HeadTree slot="side" head={_head}></HeadTree>
 </Base>
