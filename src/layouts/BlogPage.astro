@@ -21,26 +21,26 @@ let { title, description, filePath, _head, heroImage, hideSide = false, hideMenu
 	{enableRemote && filePath && <hr>}
 		<slot />
 	</article>
-    {
-        isProd && comment && (
-            <script src="https://giscus.app/client.js"
-                data-repo="ListenMoon/PureWiki"
-                data-repo-id="R_kgDOIzwtbQ"
-                data-category="Q&A"
-                data-category-id="DIC_kwDOIzwtbc4CT-Ab"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="top"
-                data-theme="light_tritanopia"
-                data-lang="zh-CN"
-                crossorigin="anonymous"
-                async>
-            </script>
-            <div class="giscus" style="padding: 25px;box-sizing: border-box;"></div>
-            <div class="giscus-frame" style="padding: 25px;box-sizing: border-box;"></div>
-        )
-    }
+    // {
+    //     isProd && comment && (
+    //         <script src="https://giscus.app/client.js"
+    //             data-repo="ListenMoon/PureWiki"
+    //             data-repo-id="R_kgDOIzwtbQ"
+    //             data-category="Q&A"
+    //             data-category-id="DIC_kwDOIzwtbc4CT-Ab"
+    //             data-mapping="pathname"
+    //             data-strict="0"
+    //             data-reactions-enabled="1"
+    //             data-emit-metadata="0"
+    //             data-input-position="top"
+    //             data-theme="light_tritanopia"
+    //             data-lang="zh-CN"
+    //             crossorigin="anonymous"
+    //             async>
+    //         </script>
+    //         <div class="giscus" style="padding: 25px;box-sizing: border-box;"></div>
+    //         <div class="giscus-frame" style="padding: 25px;box-sizing: border-box;"></div>
+    //     )
+    // }
 	<HeadTree slot="side" head={_head}></HeadTree>
 </Base>
