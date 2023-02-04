@@ -43,20 +43,30 @@ let { title, description, filePath, _head, heroImage, hideSide = false, hideMenu
 	{enableRemote && filePath && <hr>}
 		<slot />
 	</article>
-    <link is:raw rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <script is:raw src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-    <div id="gitalk-container" style="padding: 25px;box-sizing: border-box;"></div>
+    <link is:raw rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script is:raw src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <div id="comments" style="padding: 25px;box-sizing: border-box;"></div>
     <script is:raw>
-        var gitalk = new Gitalk({
-            clientID: '159640417e68f64450cd',
-            clientSecret: '110efc6c4598048ad0d38f420b484c6d5a24bcad',
-            repo: 'PureWiki',
+        const gitment = new Gitment({
             owner: 'ListenMoon',
-            admin: ['npmrun'],
-            id: location.pathname,      // Ensure uniqueness and length less than 50
-            distractionFreeMode: false  // Facebook-like distraction free mode
+            repo: 'PureWiki',
+            oauth: {
+                client_id: '159640417e68f64450cd',
+                client_secret: '110efc6c4598048ad0d38f420b484c6d5a24bcad',
+            },
         })
-        gitalk.render('gitalk-container')    
+
+        gitment.render('comments')
+        // var gitalk = new Gitalk({
+        //     clientID: '159640417e68f64450cd',
+        //     clientSecret: '110efc6c4598048ad0d38f420b484c6d5a24bcad',
+        //     repo: 'PureWiki',
+        //     owner: 'ListenMoon',
+        //     admin: ['npmrun'],
+        //     id: location.pathname,      // Ensure uniqueness and length less than 50
+        //     distractionFreeMode: false  // Facebook-like distraction free mode
+        // })
+        // gitalk.render('gitalk-container')    
     </script>
 	<HeadTree slot="side" head={_head}></HeadTree>
 </Base>
