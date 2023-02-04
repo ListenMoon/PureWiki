@@ -16,6 +16,11 @@ pubDate: 2023/1/19 22:34:31
 
 ::collect[yandex||俄罗斯搜索引擎，速度挺快的]{url="https://yandex.com/||网址"}
 
+## 技术推荐
+
+::collect[build-your-own-x||从零开始构建一门技术]{url="https://github.com/codecrafters-io/build-your-own-x||网址"}
+
+
 >## 格式
 >**如需收纳请按照如下方式评论：**
 >卡片状：
