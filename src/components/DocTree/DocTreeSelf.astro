@@ -48,7 +48,7 @@ function haveFolderInChildren(v: One) {
         <summary>
             
         {!v.data && <><span title={v.name} class:list={["tree-item", !!v.data && isActive(v.active)?'active':'']}>{v.name}</span>{enableRemote && <a target="_blank" href={getNewURL(url)} class="op">新建</a>}</>}
-        {!!v.data && <><a rel={isActive(v.active)?"":"prefetch"} href={v.data.url} title={v.name} class:list={["tree-item tree-md-file", !!v.data && isActive(v.active)?'active':'', v.name.endsWith(".mdx")?'mdx-file':'']}>{v.name}</a>{enableRemote && <a target="_blank" href={getEditURL(v.filePath)} class="op">编辑</a>}</>}
+        {!!v.data && <><a rel={isActive(v.active)?"":"prefetch"} href={v.data.url} title={v.name} class:list={["tree-item tree-md-file", !!v.data && isActive(v.active)?'active':'', v.name.endsWith(".mdx")?'mdx-file':'']}><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{v.name}</div></a>{enableRemote && <a target="_blank" href={getEditURL(v.filePath)} class="op">编辑</a>}</>}
       </summary>
       {Array.isArray(v.children) && <Astro.self list={v.children} />}
     </details>
