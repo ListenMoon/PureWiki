@@ -39,6 +39,20 @@ body {
     &:hover .dropdown{
         display: block;
     }
+    @include media-pc(sm) {
+        &:active:hover .dropdown{
+            display: block;
+        }
+    }
+    &.popup .dropdown{
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 300px;
+    }
+    &.popup .doc-card-describe{
+        height: auto !important;
+        -webkit-line-clamp: unset !important;
+    }
     .dropdown {
         display: none;
         position: absolute;

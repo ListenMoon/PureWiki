@@ -13,12 +13,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.11.5",
-    "@astrojs/prefetch": "^0.1.1",
-    "@astrojs/rss": "^1.0.3",
-    "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/mdx": "^0.16.0",
+    "@astrojs/prefetch": "^0.1.2",
+    "@astrojs/rss": "^2.1.0",
+    "@astrojs/sitemap": "^1.0.1",
     "astro": "^2.0.6",
-    "astro-robots-txt": "^0.3.10",
+    "astro-robots-txt": "^0.3.11",
     "github-slugger": "^2.0.0",
     "hast-util-to-string": "^2.0.0",
     "mermaid": "^9.2.2",
@@ -27,13 +27,13 @@
     "remark-breaks": "^3.0.2",
     "remark-directive": "^2.0.1",
     "remark-math": "^5.1.1",
-    "sass": "^1.56.1",
-    "viewerjs": "^1.11.1"
+    "sass": "^1.58.0",
+    "viewerjs": "^1.11.2"
   },
   "devDependencies": {
-    "@types/node": "^18.11.9",
-    "browserslist": "^4.21.4",
-    "esbuild-plugin-browserslist": "^0.6.0",
+    "@types/node": "^18.11.19",
+    "browserslist": "^4.21.5",
+    "esbuild-plugin-browserslist": "^0.7.0",
     "tsx": "^3.12.2"
   }
 }
