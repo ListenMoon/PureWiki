@@ -24,10 +24,14 @@ export default function collectPlugin() {
                 node.__handled = true;
                 const tagName = node.type === 'textDirective' ? 'span' : 'div'
                 const isCard = node.type === 'textDirective' ? false : true
+                const isPopup = attributes.popup !== undefined ? true : false
                 data.hName = tagName // 这里使用div会导致前面的行内元素放置在p元素中导致换行
                 let className = "enshrine"
                 if(node.name === "collect_block"){
                     className += " mg"
+                }
+                if(isPopup){
+                    className += " popup"
                 }
                 if(isCard){
                     className = "doc-card"
@@ -92,9 +96,11 @@ export default function collectPlugin() {
                         }
                     }
                 }
-                _children.push(
-                    Block(tagName, { class: "doc-card-bottom" }, child)
-                )
+                if(child.length){
+                    _children.push(
+                        Block(tagName, { class: "doc-card-bottom" }, child)
+                    )
+                }
                 if(isCard){
                     node.children = _children
                 }else{

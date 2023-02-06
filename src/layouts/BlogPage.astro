@@ -43,5 +43,27 @@ let { title, description, filePath, _head, heroImage, hideSide = false, hideMenu
 	{enableRemote && filePath && <hr>}
 		<slot />
 	</article>
+    {
+        isProd && comment && (
+            <style is:global>
+                .utterances{
+                    max-width: 100% !important;
+                    
+                }    
+                .utterances iframe{
+                    padding: 0 25px;
+                    box-sizing: border-box;
+                }
+            </style>
+            <script is:raw src="https://utteranc.es/client.js"
+                repo="ListenMoon/PureWiki"
+                    issue-term="pathname"
+                    label="收录"
+                    theme="github-light"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        )
+    }
 	<HeadTree slot="side" head={_head}></HeadTree>
 </Base>

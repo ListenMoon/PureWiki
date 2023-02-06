@@ -9,12 +9,12 @@
   "markdown-image.base.urlEncode": false,
   "templateGenerator.fields.author": "Dash",
   "templateGenerator.fields.email": "1549469775",
-  "templateGenerator.fields.link": "https://pure-blog.netlify.app",
+  "templateGenerator.fields.link": "https://blog.xieyaxin.top",
   "templateGenerator.templatesPath": "${rootPath}/template",
   // linux的edge位置
-  // "browse-lite.chromeExecutable": "/usr/bin/microsoft-edge-dev",
+  "browse-lite.chromeExecutable": "/usr/bin/microsoft-edge-dev",
   // window的edge位置
-  "browse-lite.chromeExecutable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  // "browse-lite.chromeExecutable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
   "browse-lite.startUrl": "http://localhost:3311",
   "insertDateString.format": "YYYY/MM/DD hh:mm:ss",
   "insertDateString.formatDate": "YYYY/MM/DD",

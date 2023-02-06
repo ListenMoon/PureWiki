@@ -14,14 +14,20 @@ export default function remarkGlobalComponent() {
         const list = fg
             .sync(["src/mdxGlobal/**/*"])
             .map((v) => {
-                let result = v.match(/src\/mdxGlobal\/(.*?)\./);
+                let result = v.match(/src\/mdxGlobal\/(.*?)$/);
                 if (result && result[1]) {
                     return result[1];
                 }
             })
             .filter((v) => v);
         const components = list
-            .map((v) => `import ${v} from '@blog/mdxGlobal/${v}.astro'\r\n`)
+            .map((v) => {
+                const name = v.match(/(.*?)\./)
+                if(name && name[1]){
+                    return `import ${name[1]} from '@blog/mdxGlobal/${v}'\r\n`
+                }
+            })
+            .filter((v) => v)
             .join("");
         const compTree = fromMarkdown(components, {
             extensions: [mdxjsEsm({ acorn, addResult: true })],

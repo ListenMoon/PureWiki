@@ -30,7 +30,10 @@ export default defineConfig({
   },
   integrations: [
     mdx({
-        remarkPlugins: [remarkGlobalComponent]
+      extendMarkdownConfig: false,
+      syntaxHighlight: 'prism',
+      remarkPlugins: [remarkGlobalComponent, Directive, remarkCollect, [remarkBlock, {}], remarkMath, remarkFlow, remarkBreaks],
+      rehypePlugins: [rehypeMathjax],
     }),
     prefetch({
       selector: "a[href^='/post']",
