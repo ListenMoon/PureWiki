@@ -195,6 +195,11 @@ mark.highlight{
     @include media-pc(sm) {
         padding: 1em 1.2em 1em;
     }
+    &.collect .article__content {
+        a:not(.text){
+            margin-right: 4px;
+        }
+    }
     &.chinese .article__content {
         text-indent: 1.5em;
         font-weight: 300;

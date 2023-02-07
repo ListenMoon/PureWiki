@@ -1,9 +1,9 @@
 ---
 layout: "@blog/layouts/BlogPage.astro"
-title: 留言板
+title: 自述
 description: ""
 comment: true
 heroImage: /hero/cc.png
 ---
 
-评论由[utteranc.es](https://utteranc.es/)提供支持，请加载出来再评论。
+以上就是全部想说的话。
