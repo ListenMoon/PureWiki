@@ -8,7 +8,6 @@ let posts = await sortPublishedList();
  * 10篇最新的文章
  */
 export const get = () => {
-  
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
@@ -18,7 +17,7 @@ export const get = () => {
     items: posts.filter(v=>((v.rss === undefined || v.rss) && (v.mode !== "collect") && !v.isDraft)).slice(0, 10).map((post) => ({
       link: post.url,
       title: post.title,
-      pubDate: post.pubDate,
+      pubDate: post.pubDate || "",
       description: post.description,
     })),
   });
