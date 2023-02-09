@@ -1,4 +1,4 @@
-# 编程百科
+# 编程百科![](https://img.shields.io/github/stars/ListenMoon/PureWiki.svg?style=flat&label=Star)
 
 一个简单展示文章的界面。
 
