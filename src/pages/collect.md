@@ -11,6 +11,7 @@ pubDate: 2023/1/19 22:34:31
 ## 导航
 
 ::collect[北斗导航||自己瞎做的一些导航]{url="http://nav.xieyaxin.top/#/light||网址"}
+::collect[前端网站及资源导航||前端网站及资源导航]{url="https://github.com/jnoodle/f2e-collect||网址"}
 
 ## 国外
 
