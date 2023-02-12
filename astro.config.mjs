@@ -5,6 +5,7 @@ import path from 'path';
 import remarkBlock from './plugins/remark-block.mjs';
 import remarkFlow from './plugins/remark-flow.mjs';
 import remarkCollect from './plugins/remark-collect.mjs';
+import popupPlugin from './plugins/remark-popup.mjs';
 import remarkGlobalComponent from './plugins/remark-global-component.mjs';
 import remarkBreaks from 'remark-breaks'
 import Directive from 'remark-directive';
@@ -25,14 +26,14 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: 'prism',
     extendDefaultPlugins: true,
-    remarkPlugins: [Directive, remarkCollect, [remarkBlock, {}], remarkMath, remarkFlow, remarkBreaks],
+    remarkPlugins: [Directive, remarkCollect, popupPlugin, [remarkBlock, {}], remarkMath, remarkFlow, remarkBreaks],
     rehypePlugins: [rehypeMathjax],
   },
   integrations: [
     mdx({
       extendMarkdownConfig: false,
       syntaxHighlight: 'prism',
-      remarkPlugins: [remarkGlobalComponent, Directive, remarkCollect, [remarkBlock, {}], remarkMath, remarkFlow, remarkBreaks],
+      remarkPlugins: [remarkGlobalComponent, Directive, remarkCollect, popupPlugin, [remarkBlock, {}], remarkMath, remarkFlow, remarkBreaks],
       rehypePlugins: [rehypeMathjax],
     }),
     prefetch({

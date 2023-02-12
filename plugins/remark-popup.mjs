@@ -13,42 +13,24 @@ function Block(divName, properties, children = []) {
     };
 }
 
-export default function collectPlugin() {
+export default function popupPlugin() {
     return (tree, file) => {
         visit(tree, (node) => {
-            if ((node.type === 'textDirective' || node.type === 'leafDirective') && (node.name === "collect" || node.name === "collect_block")) {
+            if ((node.type === 'textDirective') && (node.name === "popup")) {
                 const data = node.data || (node.data = {});
                 const attributes = node.attributes || {};
                 const children = node.children || [];
-                const url = attributes.url;
                 node.__handled = true;
-                const tagName = node.type === 'textDirective' ? 'span' : 'div'
-                const isCard = node.type === 'textDirective' ? false : true
-                const isPopup = attributes.popup !== undefined ? true : false
+                const tagName = "span"
                 data.hName = tagName // 这里使用div会导致前面的行内元素放置在p元素中导致换行
-                let className = "enshrine"
-                if(node.name === "collect_block"){
-                    className += " mg"
-                }
-                if(isPopup){
-                    className += " popup"
-                }
-                if(isCard){
-                    className = "doc-card"
-                }
+                let className = "enshrine popup"
                 data.hProperties = h(data.hName, { class: className }).properties;
                 let title = ""
                 let desc = ""
                 if(children.length !== 0 && children[0].type === "text"){
-                    if(children[0].value.includes("||")){
-                        const text = children[0].value.split("||")
-                        !!text[0] && (title = text[0])
-                        !!text[1] && (desc = text[1])
-                    }else{
-                        const text = children[0].value.split("::")
-                        !!text[0] && (title = text[0])
-                        !!text[1] && (desc = text[1])
-                    }
+                    const text = children[0].value.split("::")
+                    !!text[0] && (title = text[0])
+                    !!text[1] && (desc = text[1])
                 }
                 const _children = [
                     Block(
@@ -57,18 +39,7 @@ export default function collectPlugin() {
                             class: "doc-card-a",
                             title: desc
                         },
-                        isCard ? [
-                            Block("tagName", { class: "doc-card-title" }, [{
-                                type: "text",
-                                value: title
-                            }]),
-                            Block(tagName, { class: "doc-card-describe" }, [
-                                {
-                                    type: "text",
-                                    value: desc,
-                                },
-                            ]),
-                        ] : [
+                        [
                             Block(tagName, { class: "doc-card-describe" }, [
                                 {
                                     type: "text",
@@ -107,19 +78,15 @@ export default function collectPlugin() {
                         Block(tagName, { class: "doc-card-bottom" }, child)
                     )
                 }
-                if(isCard){
-                    node.children = _children
-                }else{
-                    node.children = [
-                        Block("a", { class: "text", style: "text-decoration: wavy underline #1abc9c;text-underline-offset: .3em;" }, [{
-                            type: "text",
-                            value: title
-                        }]),
-                        Block(tagName, { class: "dropdown" }, [
-                            Block(tagName, { class: "doc-card" }, _children),
-                        ]),
-                    ]
-                }
+                node.children = [
+                    Block("a", { class: "text", style: "text-decoration: wavy underline #1abc9c;text-underline-offset: .3em;" }, [{
+                        type: "text",
+                        value: title
+                    }]),
+                    Block(tagName, { class: "dropdown" }, [
+                        Block(tagName, { class: "doc-card" }, _children),
+                    ]),
+                ]
             }
             return node;
         });

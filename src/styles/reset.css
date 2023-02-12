@@ -183,6 +183,11 @@ th {
   text-align: left;
 }
 
+caption[align="center"],
+th[align="center"] {
+  text-align: center;
+}
+
 q:before,
 q:after {
   content: '';
