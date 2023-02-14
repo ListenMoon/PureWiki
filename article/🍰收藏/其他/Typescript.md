@@ -10,3 +10,12 @@ title: Typescript
 ## 挑战
 
 ::collect[类型体操||一个挑战Typescript的题库]{ url="https://github.com/type-challenges/type-challenges||Github" }
+
+
+* ts-node
+* ts-node-dev
+* tsconfig-paths
+* cross-env
+
+
+- https://ts-morph.com/
