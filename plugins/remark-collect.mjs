@@ -102,11 +102,11 @@ export default function collectPlugin() {
                         }
                     }
                 }
-                if(child.length){
+                // if(child.length){
                     _children.push(
                         Block(tagName, { class: "doc-card-bottom" }, child)
                     )
-                }
+                // }
                 if(isCard){
                     node.children = _children
                 }else{
