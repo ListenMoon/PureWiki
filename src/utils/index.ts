@@ -28,11 +28,16 @@ function co(data: any, cb: any) {
             if (!cur.length) {
                 // 文件夹
                 let v = {
-                    name: temp,
+                    name: temp, // 
+                    // 用于匹配激活菜单
                     active: "/post/" + tempArr.slice(1).slice(0, num).join('/').replace(/\.(md|mdx)$/g, ''),
+                    // 用于github的仓库地址完整路径,应该是跟下面那个差不多
                     path: "/article/" + tempArr.slice(1).slice(0, num).join('/').replace(/\.(md|mdx)$/g, ''),
+                    // 文件地址，用于github的仓库地址完整路径
                     filePath: "/article/" + tempArr.slice(1).slice(0, num).join('/'),
+                    // 数据存放
                     data: undefined,
+                    // 子文件
                     children: []
                 }
                 if (num === tempArr.length - 1) {
@@ -52,24 +57,22 @@ function co(data: any, cb: any) {
     return result
 }
 
+const readFiles = import.meta.glob('@root/article/**/*.{md,mdx}', {
+    eager: true,
+});
+
 /**
  * 获取所有的文章
  */
 export async function getPosts() {
-    const obj = await import.meta.glob('@root/article/**/*.{md,mdx}', {
-        eager: true,
-    });
-    return Object.values(obj) as MarkdownInstance<any>[];
+    return Object.values(readFiles) as MarkdownInstance<any>[];
 }
 
 /**
  * 获取文件树
  */
 export async function publishedTree() {
-    const obj = await import.meta.glob('@root/article/**/*.{md,mdx}', {
-        eager: true,
-    });
-    let tree = co(obj, function (post) {
+    let tree = co(readFiles, function (post) {
         return single(post)
     });
     // 排序

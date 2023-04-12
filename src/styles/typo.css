@@ -1,6 +1,6 @@
 /* 提供 serif 版本的字体设置: iOS 下中文自动 fallback 到 sans-serif */
 .serif {
-  font-family: Palatino, Optima, Georgia, serif;
+  /* font-family: Palatino, Optima, Georgia, serif; */
 }
 
 .typo code {
@@ -44,8 +44,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei,
-    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
   font-weight: 600;
   /* color: #000; */
   line-height: 1.35;
