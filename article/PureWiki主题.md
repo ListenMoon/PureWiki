@@ -1,7 +1,7 @@
 ---
 title: PureWiki主题
 description: 一个简单的主题
-heroImage: https://w.wallhaven.cc/full/0w/wallhaven-0wmv17.jpg
+heroImage: https://img1.imgtp.com/2023/04/12/JBgAjWiS.jpg
 heroPosition: top
 top: true
 pubDate: 2022/11/15 16:05:35
