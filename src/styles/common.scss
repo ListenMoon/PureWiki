@@ -1,4 +1,4 @@
-@import 'lxgw-wenkai-lite-webfont/style.css';
+@import "lxgw-wenkai-lite-webfont/style.css";
 @import "./reset.css";
 @import "./prism.scss";
 @import "./card.css";
@@ -9,46 +9,48 @@ html,
 body {
     background: #eee;
     height: 100%;
-    font-family: "LXGW WenKai Mono Lite", PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei,
-    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
-    font-display: fallback
+    font-family: "LXGW WenKai Mono Lite", "Hiragino Sans GB","冬青黑", PingFang SC, Verdana, Helvetica Neue,
+        Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif,
+        WenQuanYi Micro Hei, sans-serif;
+    font-display: fallback;
 }
 
-pre,code {
+pre,
+code {
     /* Lite version */
     font-family: "LXGW WenKai Mono Lite" var(--prism-font-family) !important;
-    font-display: fallback
+    font-display: fallback;
 }
 
 .enshrine {
     position: relative;
     display: inline-block;
-    &.mg{
+    &.mg {
         margin: 15px;
         .dropdown {
             left: -15px;
             top: -15px;
         }
     }
-    a.text:hover{
-        &::before{
+    a.text:hover {
+        &::before {
             border: 0;
         }
     }
-    &:hover .dropdown{
+    &:hover .dropdown {
         display: block;
     }
     @include media-pc(sm) {
-        &:active:hover .dropdown{
+        &:active:hover .dropdown {
             display: block;
         }
     }
-    &.popup .dropdown{
+    &.popup .dropdown {
         left: 50%;
         transform: translateX(-50%);
         min-width: 300px;
     }
-    &.popup .doc-card-describe{
+    &.popup .doc-card-describe {
         height: auto !important;
         -webkit-line-clamp: unset !important;
     }
@@ -66,7 +68,7 @@ pre,code {
             transform: translate(-50%, -50%);
             width: 80%;
         }
-        .doc-card{
+        .doc-card {
             width: 100%;
         }
     }
@@ -96,7 +98,7 @@ pre,code {
     }
 }
 
-mark.highlight{
+mark.highlight {
     background-color: #f9f2f4;
     color: #c7254e;
     border-radius: 4px;
@@ -195,7 +197,7 @@ mark.highlight{
         padding: 1em 1.2em 1em;
     }
     &.collect .article__content {
-        a:not(.text){
+        a:not(.text) {
             margin-right: 4px;
         }
     }
@@ -286,7 +288,7 @@ footer {
     .doc-card {
         display: inline-block;
         box-sizing: border-box;
-        width: calc(100% / 4 - 14px);
+        width: calc(100% / 4 - 18px);
         margin: 10px;
         margin-left: 0;
         @include media-pc(lg) {
@@ -391,7 +393,7 @@ footer {
             flex-wrap: nowrap;
             overflow-x: auto;
             scrollbar-width: none; // 火狐隐藏滚动条
-            &::-webkit-scrollbar{
+            &::-webkit-scrollbar {
                 display: none; // chrome隐藏滚动条
             }
         }
