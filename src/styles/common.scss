@@ -286,14 +286,24 @@ footer {
     .doc-card {
         display: inline-block;
         box-sizing: border-box;
+        width: calc(100% / 4 - 14px);
+        margin: 10px;
+        margin-left: 0;
+        @include media-pc(lg) {
+            width: calc(100% / 3 - 16px);
+            margin: 10px;
+            margin-left: 0;
+        }
+        @include media-pc(md) {
+            width: calc(100% / 2 - 16px);
+            margin: 10px;
+            margin-left: 0;
+        }
         @include media-pc(sm) {
             width: 100%;
             margin: 10px;
             margin-left: 0;
         }
-        width: calc(100% / 4 - 14px);
-        margin: 10px;
-        margin-left: 0;
         /* min-width: 20%; */
         padding: 10px;
         background: white;

@@ -30,6 +30,7 @@ function isActive(url: string, isFolder?:boolean){
 function haveFolderInChildren(v: One) {
   if(v.data) return false
   if(expandTreeType === "always") return true
+  if(expandTreeType === "close") return false
   if(expandTreeType === "dir") {
     if(v.children.find(v=>!v.data)){
         return true

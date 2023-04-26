@@ -1,0 +1,61 @@
+---
+import { published, publishedList } from "@blog/utils/collect";
+import type { Post } from "#/post";
+import BlogPost from "../../layouts/BlogPost.astro"
+
+export async function getStaticPaths() {
+	const posts = await publishedList();
+	return posts.map((post) => {
+		return {
+			params: { collect: post.slug },
+			props: { post },
+		};
+	});
+}
+
+// Destructure to get both `Astro.props.post` and `Astro.props.post.Content`
+const {
+	post: { Content, _rawString, _images, _head },
+	post,
+} = Astro.props as { post: Post };
+---
+<style is:global lang="scss">
+    .paging{
+        margin: 15px 0;
+        display: flex;
+        text-indent: 0;
+        .before{
+            flex: 1;
+        }
+        .next{
+            text-align: right;
+            flex: 1;
+        }
+        @include media-pc(sm) {
+            display: block;
+            text-align: left;
+            .before{
+                flex: auto;
+            }
+            .next{
+                text-align: left;
+                flex: auto;
+            }
+        }
+    }
+</style>
+<BlogPost {...post}>
+	<Content />
+    <div class="paging">
+        <div class="before">
+            {
+                post.beforeArticle && <div>上一篇：<a href={post.beforeArticle?.url}>{post.beforeArticle?.title}</a></div>
+            }
+        </div>
+        <div class="next">
+            {
+                post.nextArticle && <div>下一篇：<a href={post.nextArticle?.url}>{post.nextArticle?.title}</a></div>
+            }
+        </div>
+    </div>
+</BlogPost>

@@ -3,12 +3,19 @@ import BaseHead from '@blog/components/BaseHead.astro';
 import Header from '@blog/components/Header.astro';
 import Footer from '@blog/components/Footer.astro';
 import { publishedTree, getTopPublished } from "@blog/utils"
+import { publishedTree as aaa } from "@blog/utils/collect"
 import DocTree from "@blog/components/DocTree/DocTree.astro"
 import Search from "@blog/components/SearchInput/Search.astro"
 import PostTop from "@blog/components/PostTop.astro"
-import { SITE_LANG } from '@blog/config';
+import { SITE_LANG, TreeTitle, CollectTitle  } from '@blog/config';
 
-const articles = await publishedTree()
+let articles = await publishedTree()
+let isCollect = false
+if(Astro.url.pathname.startsWith("/collect")){
+    articles = await aaa()
+    isCollect = true
+}
+
 const topArticles = await getTopPublished()
 
 export interface Props {
@@ -33,7 +40,7 @@ let { title, description, hideSide, hideMenu } = Astro.props as Props
       <div class="left">
         <div class="wrapper">
           <Header title={title}/>
-          <DocTree list={articles}></DocTree>
+          <DocTree title={isCollect?CollectTitle:TreeTitle} list={articles}></DocTree>
           <!-- 为了快速将元素设置 -->
           <script is:inline src="/scripts/init.js"></script>
         </div>

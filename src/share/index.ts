@@ -10,3 +10,5 @@ import { normalizePath } from 'vite'
 export const cwd = process.cwd(); // 路径符号不同的操作系统可能不同
 export const articleDir = normalizePath(resolve(cwd, './article'));
 export const articleRoute = normalizePath(resolve(cwd, './src/pages'));
+
+export const collectDir = normalizePath(resolve(cwd, './collect'));

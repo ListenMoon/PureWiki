@@ -13,13 +13,14 @@ export const SITE_DESCRIPTION = '花径不曾缘客扫，蓬门今始为君开!'
  * 左侧文件夹标题
  */
 export const TreeTitle = "文章"
+export const CollectTitle = "🍬收藏"
 
 /**
  * 左侧文件夹打开遵循方式
  * always: 总是打开文件夹
  * dir:    只打开子文件全是文件夹的文件夹
  */
-export const expandTreeType: "always" | "dir" = "dir"
+export const expandTreeType: "always" | "dir" | "close" = "close"
 
 /**
  * true: 如果没有头图且文章中存在图片，则显示第一个图片替代头图
