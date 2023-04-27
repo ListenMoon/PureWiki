@@ -1,0 +1,105 @@
+---
+title: img之间存在间隙
+description: ""
+pubDate: 2023/4/27 16:07:10
+---
+
+
+## 现象
+
+根据如下Demo,你可以清楚的看到图片之间有着明显的间隔。
+
+:::demo
+```html
+<style>
+.box{
+    border: 1px solid #efefef;
+    padding: 5px;
+}
+</style>
+<div class="box">
+    <div style="background-color: green;">
+        <img style="background-color:red;" src="https://blog.xieyaxin.top/favicon.svg" alt="">
+        <img style="background-color:red;" src="https://blog.xieyaxin.top/favicon.svg" alt="">
+        <img style="background-color:red;" src="https://blog.xieyaxin.top/favicon.svg" alt="">
+        <img style="background-color:red;" src="https://blog.xieyaxin.top/favicon.svg" alt="">
+        <span style="background-color:red;">文字</span>
+    </div>
+</div>
+```
+:::
+## 原因
+
+img本身是行内元素，当多个img排列在一起的时候,它们之间如果有回车换行或者空格就会形成空隙。
+其实如图片文字等内联元素，它默认对齐方式都是和它的父级的 baseline 去进行对齐的，但是你对齐的是 baseline，撑开高度的却是元素整体的高度（bottom line），这样肯定就会造成一定的间隙。
+
+## 解决办法
+
+### 消除上下间隙
+
+1. 改变其垂直对齐方式–将其改变为block元素，但是该方法直接改变了img行内块的性质。
+```css
+img{ display:block};
+```
+2. 改变其垂直对齐方式(无效)
+```css
+img{vertical-align:top;}
+```
+3. 将最外层行高设为0
+```css
+div{ line-height:0 };
+```
+
+### 消除左右间隙
+
+1. 多个标签写在一行，不可有空格或者回车
+
+```html
+<img src="..." style="..."><img src="..." style="...">
+```
+
+2. 使用letter-spacing属性(会导致文字显示问题)
+```html
+<div style="letter-spacing:-800px">
+    <img src="..." style="...">
+    <img src="..." style="...">
+</div>
+```
+
+3. 使用float进行浮动
+
+```css
+img{float: left;}
+```
+
+### 额外解决办法
+
+直接用`flex`布局
+
+## 最终效果
+
+:::demo
+```html
+<style>
+.box{
+    border: 1px solid #efefef;
+    padding: 5px;
+}
+.box > div:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.box img, .box span{float: left;vertical-align:bottom;}
+</style>
+<div class="box">
+    <div style="background-color: green;">
+        <img style="background-color:red;" src="https://blog.xieyaxin.top/favicon.svg" alt="">
+        <img style="background-color:red;" src="https://blog.xieyaxin.top/favicon.svg" alt="">
+        <img style="background-color:red;" src="https://blog.xieyaxin.top/favicon.svg" alt="">
+        <img style="background-color:red;" src="https://blog.xieyaxin.top/favicon.svg" alt="">
+        <span style="background-color:red;">文字</span>
+    </div>
+</div>
+```
+:::
