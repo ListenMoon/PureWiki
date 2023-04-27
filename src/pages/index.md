@@ -2,7 +2,7 @@
 layout: "@blog/layouts/BlogPage.astro"
 title: 编程百科
 hideMenu: true
-heroImage: https://w.wallhaven.cc/full/zy/wallhaven-zyxvqy.jpg
+heroImage: https://w.wallhaven.cc/full/ex/wallhaven-ex3m8k.jpg
 ---
 
 ## 博客使用指南
