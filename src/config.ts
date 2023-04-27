@@ -20,7 +20,7 @@ export const CollectTitle = "🍬收藏"
  * always: 总是打开文件夹
  * dir:    只打开子文件全是文件夹的文件夹
  */
-export const expandTreeType: "always" | "dir" | "close" = "close"
+export const expandTreeType: "always" | "dir" | "close" = "dir"
 
 /**
  * true: 如果没有头图且文章中存在图片，则显示第一个图片替代头图
