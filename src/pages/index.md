@@ -1,6 +1,7 @@
 ---
 layout: "@blog/layouts/BlogPage.astro"
 hideMenu: true
+title: 编程百科
 mode: chinese
 heroImage: https://w.wallhaven.cc/full/9d/wallhaven-9dz1e8.jpg
 ---
