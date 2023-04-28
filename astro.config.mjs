@@ -23,6 +23,9 @@ export default defineConfig({
   server: {
     port: 3311
   },
+  build: {
+    assets: 'astro_'
+  },
   markdown: {
     syntaxHighlight: 'prism',
     extendDefaultPlugins: true,
