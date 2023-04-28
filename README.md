@@ -48,3 +48,9 @@ https://blog.xieyaxin.top/
 - [github-slugger](https://github.com/Flet/github-slugger)
 - [hast-util-to-string](https://github.com/rehypejs/rehype-minify/tree/main)
 - [better-directory-sort](https://www.npmjs.com/package/better-directory-sort)
+
+> Github Action 发布
+Github Pages 默认是基于 Jekyll 构建，Jekyll 是一个将纯文本转换为静态网站的工具，它构建的网站下各种目录都是特定的以下划线开头命名的文件夹，例如 _layouts、_posts ，它会忽略掉其它的以下划线开头的文件夹和文件。
+.nojekyll 就是告诉 Github Pages 当前网站不是基于 Jekyll 构建的，不要忽略掉下划线开头的文件和文件夹。
+可见 .nojekyll 主要就是用于 Github Pages 这种有默认规则的网站部署平台，如果是部署在自己的服务器上，可以把它删掉。
+反之，如果你的网站不是 Jekyll 构建的，要部署到 Github Pages ，并且包含下划线开头的文件或文件夹，那么你就需要在根目录添加一个 .nojekyll 空文件。
