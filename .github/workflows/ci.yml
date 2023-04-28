@@ -44,9 +44,9 @@ jobs:
             # 构建
             - name: build
               run: pnpm build
-            - name: Deploy
-              uses: JamesIves/github-pages-deploy-action@releases/v3
+            - name: Deploy 🚀
+              uses: JamesIves/github-pages-deploy-action@v4
               with:
-                ACCESS_TOKEN: ${{ secrets.TOKEN }}
-                BRANCH: gh-pages
-                FOLDER: dist
+                token: ${{ secrets.TOKEN }}
+                branch: gh-pages
+                folder: dist
