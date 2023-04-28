@@ -1,0 +1,52 @@
+name: Build web
+on:
+    push:
+        branches:
+            - master
+            - main
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            # 检出仓库
+            - name: Checkout
+              uses: actions/checkout@v3
+            # 安装nodejs
+            - name: Install 16.15.0 Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 16.15.0
+                  registry-url: "https://registry.npmjs.org"
+            # 安装pnpm
+            - uses: pnpm/action-setup@v2
+              name: Install pnpm
+              id: pnpm-install
+              with:
+                  version: 7.18.2
+                  run_install: false
+            # 获取pnpm缓存地址
+            - name: Get pnpm store directory
+              id: pnpm-cache
+              shell: bash
+              run: |
+                  echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+            # pnpm缓存设置
+            - uses: actions/cache@v3
+              name: Setup pnpm cache
+              with:
+                  path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-
+            # 安装依赖
+            - name: Install dependencies
+              run: pnpm install
+            # 构建
+            - name: build
+              run: pnpm build
+            - name: Deploy
+              uses: JamesIves/github-pages-deploy-action@releases/v3
+              with:
+                ACCESS_TOKEN: ${{ secrets.TOKEN }}
+                BRANCH: gh-pages
+                FOLDER: dist
