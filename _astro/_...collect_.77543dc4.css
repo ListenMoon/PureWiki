@@ -1,0 +1,1 @@
+.paging{margin:15px 0;display:flex;text-indent:0}.paging .before{flex:1}.paging .next{text-align:right;flex:1}@media (max-width: 920px){.paging{display:block;text-align:left}.paging .before{flex:auto}.paging .next{text-align:left;flex:auto}}

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+	<head>
+        <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="generator" content="Astro v2.2.2">
+
+<!-- Primary Meta Tags -->
+<title>css中line-height属性各个单位详解</title>
+<meta name="title" content="css中line-height属性各个单位详解">
+<meta name="description" content="">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.xieyaxin.top/post/CSS/css%E4%B8%ADline-height%E5%B1%9E%E6%80%A7%E5%90%84%E4%B8%AA%E5%8D%95%E4%BD%8D%E8%AF%A6%E8%A7%A3/">
+<meta property="og:title" content="css中line-height属性各个单位详解">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://blog.xieyaxin.top/post/CSS/css%E4%B8%ADline-height%E5%B1%9E%E6%80%A7%E5%90%84%E4%B8%AA%E5%8D%95%E4%BD%8D%E8%AF%A6%E8%A7%A3/">
+<meta property="twitter:title" content="css中line-height属性各个单位详解">
+<meta property="twitter:description" content="">
+<meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
+	<link rel="stylesheet" href="/_astro/_...collect_.77543dc4.css" />
+<link rel="stylesheet" href="/_astro/about.9777ac06.css" />
+<link rel="stylesheet" href="/_astro/about.1a331efb.css" /><script type="module" src="/_astro/hoisted.8c9af858.js"></script>
+<script type="module" src="/_astro/page.0ab18a5d.js"></script></head>
+
+	<body>
+    <div class="layout">
+      <div class="left">
+        <div class="wrapper">
+          <header>
+	<h2>
+		<a href="/" style="color: inherit;text-decoration: none;">编程百科</a>
+	</h2>
+	<nav>
+		<a href="/" class="astro-EIMMU3LG">
+	门楣
+</a>
+		<a href="/post" class="active astro-EIMMU3LG">
+	归档
+</a>
+		<a href="/collect" class="astro-EIMMU3LG">
+	收藏
+</a>
+		<a href="/note" class="astro-EIMMU3LG">
+	自述
+</a>
+		<a href="/rss.xml" class="astro-EIMMU3LG">
+	Rss
+</a>
+        <a href="#" class="astro-EIMMU3LG" id="searchButton">
+	搜索
+</a>
+		<!-- <HeaderLink href="/demo">Demo</HeaderLink> -->
+	</nav>
+</header>
+          <div class="tree" id="tree">
+    <details open="true" style="direction: ltr;">
+        <summary>
+            <span class="tree-item">文章</span>
+            <a href="https://github.com/ListenMoon/PureWiki/new/master/article" target="_blank" class="op">新建</a>
+        </summary>
+        <details data-path="/post/文字处理">
+        <summary>
+            
+        <span title="文字处理" class="tree-item">文字处理</span><a target="_blank" href="https://github.com/ListenMoon/PureWiki/new/master/article/文字处理" class="op">新建</a>
+        
+      </summary>
+      <details>
+        <summary>
+            
+        
+        <a rel="prefetch" href="/post/文字处理/怎么用unified.js自定义元素输出" title="怎么用unified.js自定义元素输出.mdx" class="tree-item tree-md-file mdx-file"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">怎么用unified.js自定义元素输出.mdx</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/article/文字处理/怎么用unified.js自定义元素输出.mdx" class="op">编辑</a>
+      </summary>
+      
+    </details>
+    </details><details data-path="/post/CSS" open>
+        <summary>
+            
+        <span title="CSS" class="tree-item">CSS</span><a target="_blank" href="https://github.com/ListenMoon/PureWiki/new/master/article/CSS" class="op">新建</a>
+        
+      </summary>
+      <details>
+        <summary>
+            
+        
+        <a rel="prefetch" href="/post/CSS/行内元素的细小留白" title="行内元素的细小留白.md" class="tree-item tree-md-file"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">行内元素的细小留白.md</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/article/CSS/行内元素的细小留白.md" class="op">编辑</a>
+      </summary>
+      
+    </details><details>
+        <summary>
+            
+        
+        <a rel="prefetch" href="/post/CSS/有关伪元素的思考" title="有关伪元素的思考.md" class="tree-item tree-md-file"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">有关伪元素的思考.md</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/article/CSS/有关伪元素的思考.md" class="op">编辑</a>
+      </summary>
+      
+    </details><details>
+        <summary>
+            
+        
+        <a rel="prefetch" href="/post/CSS/组合选择符" title="组合选择符.md" class="tree-item tree-md-file"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">组合选择符.md</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/article/CSS/组合选择符.md" class="op">编辑</a>
+      </summary>
+      
+    </details><details open>
+        <summary>
+            
+        
+        <a rel="" href="/post/CSS/css中line-height属性各个单位详解" title="css中line-height属性各个单位详解.md" class="tree-item tree-md-file active"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">css中line-height属性各个单位详解.md</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/article/CSS/css中line-height属性各个单位详解.md" class="op">编辑</a>
+      </summary>
+      
+    </details><details>
+        <summary>
+            
+        
+        <a rel="prefetch" href="/post/CSS/img之间存在间隙" title="img之间存在间隙.mdx" class="tree-item tree-md-file mdx-file"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">img之间存在间隙.mdx</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/article/CSS/img之间存在间隙.mdx" class="op">编辑</a>
+      </summary>
+      
+    </details>
+    </details><details>
+        <summary>
+            
+        
+        <a rel="prefetch" href="/post/博客使用指南" title="博客使用指南.mdx" class="tree-item tree-md-file mdx-file"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">博客使用指南.mdx</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/article/博客使用指南.mdx" class="op">编辑</a>
+      </summary>
+      
+    </details><details>
+        <summary>
+            
+        
+        <a rel="prefetch" href="/post/MD测试文档" title="MD测试文档.md" class="tree-item tree-md-file"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">MD测试文档.md</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/article/MD测试文档.md" class="op">编辑</a>
+      </summary>
+      
+    </details><details>
+        <summary>
+            
+        
+        <a rel="prefetch" href="/post/MDX测试文档" title="MDX测试文档.mdx" class="tree-item tree-md-file mdx-file"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">MDX测试文档.mdx</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/article/MDX测试文档.mdx" class="op">编辑</a>
+      </summary>
+      
+    </details><details>
+        <summary>
+            
+        
+        <a rel="prefetch" href="/post/PureWiki主题" title="PureWiki主题.md" class="tree-item tree-md-file"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">PureWiki主题.md</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/article/PureWiki主题.md" class="op">编辑</a>
+      </summary>
+      
+    </details>
+    </details>
+</div>
+          <!-- 为了快速将元素设置 -->
+          <script src="/scripts/init.js"></script>
+        </div>
+      </div>
+      <div class="right">
+        <main>
+          <article class="typo article">
+                <!-- {filePath && <div style="font-size: .75em;color: #bdbdbd;">{filePath.slice(1).replace(/\//g," > ")}</div>} -->
+				<h1 class="title">css中line-height属性各个单位详解</h1>
+				<div style="line-height: 1.5;">
+                    <div style="font-size: 0.75em;color: #bdbdbd;"><time>
+                        创建于 2023年1月9日 17:07:57
+                    </time></div>
+                    
+                </div>
+				<a href="https://github.com/ListenMoon/PureWiki/edit/master/article/CSS/css中line-height属性各个单位详解.md" target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>
+				<hr>
+				<div class="article__content">
+                    
+	<p>我们都知道css中line-height属性用于调整行高，它的值有一些不同的单位，本文将详细介绍这些单位的作用和一些区别。</p>
+<p>语法规则如下</p>
+<p>line-height: normal | <code>&#x3C;number></code> | <code>&#x3C;length></code> | <code>&#x3C;percentage></code></p>
+<p>如果子元素没有指定行高，那么将默认继承父元素的行高，继承的时候父元素行高带单位和不带单位有一些区别。</p>
+<p>为了方便，下面效果中我设置了背景颜色，以便观察行高到底是多少</p>
+<h2 id="normal">normal</h2>
+<p>设置值为normal时 行高根据浏览器默认决定，不同浏览器可能有不同的值。</p>
+<h2 id="使用单位px">使用单位px</h2>
+<p>使用px单位表示行高为多少像素</p>
+<div style="position:relative;overflow:hidden;margin: 1.5em 0;"><div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;float:left;">demo</div><iframe id="" class="demo" style="width: 100%;border: 1px solid #e9e9e9;display: block;box-sizing: border-box;" height="300px" frameborder="0" allowfullscreen srcdoc="<!DOCTYPE html>                                <html lang=&#x22;en&#x22;>                                <head>                                    <meta charset=&#x22;UTF-8&#x22;>                                    <meta http-equiv=&#x22;X-UA-Compatible&#x22; content=&#x22;IE=edge&#x22;>                                    <meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;>                                    <title>demo</title>                                </head>                                <body>                                    
+<div style=&#x22;font-size: 20px;
+		line-height: 20px;&#x22;>
+			<p style=&#x22;background: orange;&#x22;>我是父元素 字体大小20px 行高25px</p>
+			<div style=&#x22;font-size:30px
+			&#x22;>
+				<p style=&#x22;background: green;&#x22;>我是子元素的内容 字体大小30px 行高继承了父元素行高25px</p>
+			</div>
+		</div>                                </body>                                </html>"></iframe><div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;"><details><summary style="cursor: pointer;">查看源码</summary><div style="padding: 0 1em;font-size:.75em;overflow: hidden;"><pre class="language-html"><code is:raw="" class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+		<span class="token property">line-height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>我是父元素 字体大小20px 行高25px<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">font-size</span><span class="token punctuation">:</span>30px
+			</span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>我是子元素的内容 字体大小30px 行高继承了父元素行高25px<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span></code></pre></div></details></div></div>
+<h2 id="使用百分数或em单位">使用百分数或em单位</h2>
+<p>120%和1.2em效果完全相同。如果某个元素设置行高为1.5em，它的行高就是 1.5乘以 它的字体大小</p>
+<div style="position:relative;overflow:hidden;margin: 1.5em 0;"><div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;float:left;">demo</div><iframe id="" class="demo" style="width: 100%;border: 1px solid #e9e9e9;display: block;box-sizing: border-box;" height="300px" frameborder="0" allowfullscreen srcdoc="<!DOCTYPE html>                                <html lang=&#x22;en&#x22;>                                <head>                                    <meta charset=&#x22;UTF-8&#x22;>                                    <meta http-equiv=&#x22;X-UA-Compatible&#x22; content=&#x22;IE=edge&#x22;>                                    <meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;>                                    <title>demo</title>                                </head>                                <body>                                    
+<p style=&#x22;font-size: 20px; line-height: 1.5em; background: #abcdef;&#x22;>我字体大小20px,行高1.5em 算出值就是20*1.5为30px</p>                                </body>                                </html>"></iframe><div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;"><details><summary style="cursor: pointer;">查看源码</summary><div style="padding: 0 1em;font-size:.75em;overflow: hidden;"><pre class="language-html"><code is:raw="" class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span> <span class="token property">line-height</span><span class="token punctuation">:</span> 1.5em<span class="token punctuation">;</span> <span class="token property">background</span><span class="token punctuation">:</span> #abcdef<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>我字体大小20px,行高1.5em 算出值就是20*1.5为30px<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span></code></pre></div></details></div></div>
+<p>如果上面这个例子 行高1.5em 其实它的行高是30px</p>
+<p>如果他有子元素，子元素继承的行高是它计算后的行高30px</p>
+<div style="position:relative;overflow:hidden;margin: 1.5em 0;"><div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;float:left;">demo</div><iframe id="" class="demo" style="width: 100%;border: 1px solid #e9e9e9;display: block;box-sizing: border-box;" height="300px" frameborder="0" allowfullscreen srcdoc="<!DOCTYPE html>                                <html lang=&#x22;en&#x22;>                                <head>                                    <meta charset=&#x22;UTF-8&#x22;>                                    <meta http-equiv=&#x22;X-UA-Compatible&#x22; content=&#x22;IE=edge&#x22;>                                    <meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;>                                    <title>demo</title>                                </head>                                <body>                                    
+<div style=&#x22;font-size: 20px; line-height: 150%;&#x22;>
+<p style=&#x22;background: orange;&#x22;>我是父元素 字体大小20px 行高150% 计算后30px</p>
+<div style=&#x22;font-size: 30px;&#x22;>
+<p style=&#x22;background: green;&#x22;>我是子元素 字体30px 行高继承父元素行高30px</p>
+</div>
+</div>                                </body>                                </html>"></iframe><div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;"><details><summary style="cursor: pointer;">查看源码</summary><div style="padding: 0 1em;font-size:.75em;overflow: hidden;"><pre class="language-html"><code is:raw="" class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span> <span class="token property">line-height</span><span class="token punctuation">:</span> 150%<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>我是父元素 字体大小20px 行高150% 计算后30px<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">font-size</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>我是子元素 字体30px 行高继承父元素行高30px<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span></code></pre></div></details></div></div>
+<h2 id="不带单位">不带单位</h2>
+<p>不带单位表示行高为元素字体大小乘以该数字。如果子元素继承父元素的该属性，则只继承了该数字，实际行高由该系数乘以各个元素自己的字体大小而定</p>
+<div style="position:relative;overflow:hidden;margin: 1.5em 0;"><div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;float:left;">demo</div><iframe id="" class="demo" style="width: 100%;border: 1px solid #e9e9e9;display: block;box-sizing: border-box;" height="300px" frameborder="0" allowfullscreen srcdoc="<!DOCTYPE html>                                <html lang=&#x22;en&#x22;>                                <head>                                    <meta charset=&#x22;UTF-8&#x22;>                                    <meta http-equiv=&#x22;X-UA-Compatible&#x22; content=&#x22;IE=edge&#x22;>                                    <meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;>                                    <title>demo</title>                                </head>                                <body>                                    
+<div style=&#x22;font-size: 20px; line-height: 1.5;&#x22;>
+<p style=&#x22;background: orange;&#x22;>我是父元素 字体大小20px 行高1.5 计算后30px</p>
+<div style=&#x22;font-size: 30px;&#x22;>
+<p style=&#x22;background: green;&#x22;>我是子元素 字体30px 行高继承系数1.5 计算后是45px</p>
+</div>
+</div>                                </body>                                </html>"></iframe><div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;"><details><summary style="cursor: pointer;">查看源码</summary><div style="padding: 0 1em;font-size:.75em;overflow: hidden;"><pre class="language-html"><code is:raw="" class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span> <span class="token property">line-height</span><span class="token punctuation">:</span> 1.5<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>我是父元素 字体大小20px 行高1.5 计算后30px<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">font-size</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>我是子元素 字体30px 行高继承系数1.5 计算后是45px<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span></code></pre></div></details></div></div>
+<h2 id="总结">总结</h2>
+<p>由于不带单位的时候只继承了系数，推荐使用这种方式。</p>
+    <div class="paging">
+        <div class="before">
+            <div>上一篇：<a href="/post/CSS/组合选择符">组合选择符</a></div>
+        </div>
+        <div class="next">
+            <div>下一篇：<a href="/post/CSS/img之间存在间隙">img之间存在间隙</a></div>
+        </div>
+    </div>
+
+                </div>
+		</article>
+        
+
+        </main>
+        <footer>
+    &copy; 2023
+    <a href="https://github.com/npmrun" target="_blank">NPMRUN</a>. All rights reserved.
+    <p>
+        <span>Built with ♥ by <a href="https://github.com/ListenMoon/PureWiki">PureWiki</a></span>
+        <span style="margin-left: 6px;">Powered By <a href="https://astro.build/" target="_blank">Astro</a></span>
+    </p>
+</footer>
+      </div>
+      <div class="side"><ul class="posttop">
+    <li>
+            <a class="posttop__post posttop__image" href="/post/PureWiki主题">
+                <div class="posttop__post__cover"><img src="https://img1.imgtp.com/2023/04/12/JBgAjWiS.jpg" alt=""></div>
+                <div class="posttop__post__title">PureWiki主题</div>
+                <div class="posttop__post__content">一个简单的主题</div>
+            </a>
+        </li>
+    
+</ul><ul class="astro-JRWIVBLV">
+			<div class="title astro-JRWIVBLV">目录</div>
+		<li class="astro-JRWIVBLV"><a class="head astro-JRWIVBLV" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="normal" href="#normal">
+                                                    # normal
+                                                </a></li><li class="astro-JRWIVBLV"><a class="head astro-JRWIVBLV" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="使用单位px" href="#使用单位px">
+                                                    # 使用单位px
+                                                </a></li><li class="astro-JRWIVBLV"><a class="head astro-JRWIVBLV" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="使用百分数或em单位" href="#使用百分数或em单位">
+                                                    # 使用百分数或em单位
+                                                </a></li><li class="astro-JRWIVBLV"><a class="head astro-JRWIVBLV" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="不带单位" href="#不带单位">
+                                                    # 不带单位
+                                                </a></li><li class="astro-JRWIVBLV"><a class="head astro-JRWIVBLV" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="总结" href="#总结">
+                                                    # 总结
+                                                </a></li>
+        
+		</ul></div>
+    </div>
+    <div class="toTop" id="toTop">
+        <svg class="icon" style="width: 2em;height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M780.288 750.592H244.736V415.744C244.736 229.376 396.288 79.872 460.8 24.576c29.696-24.576 71.68-24.576 101.376 0 65.536 55.296 217.088 204.8 217.088 391.168v334.848z m-453.632-81.92h371.712V415.744c0-150.528-128-277.504-186.368-326.656-57.344 49.152-186.368 176.128-186.368 326.656v252.928zM509.952 87.04z" fill="#333C4F"></path><path d="M326.656 750.592H148.48c-43.008 0-78.848-34.816-78.848-78.848v-76.8c0-26.624 13.312-51.2 34.816-65.536l221.184-146.432v367.616z m-175.104-81.92h92.16v-133.12l-92.16 61.44v71.68zM875.52 750.592H697.344V384l221.184 146.432c22.528 14.336 34.816 38.912 34.816 65.536v76.8c1.024 41.984-34.816 77.824-77.824 77.824z m-96.256-81.92h92.16v-71.68l-92.16-61.44v133.12zM513.024 489.472c-64.512 0-116.736-52.224-116.736-116.736S449.536 256 513.024 256s116.736 52.224 116.736 116.736-52.224 116.736-116.736 116.736z m0-151.552c-18.432 0-34.816 15.36-34.816 34.816s15.36 34.816 34.816 34.816 34.816-15.36 34.816-34.816S532.48 337.92 513.024 337.92zM512 1017.856c-22.528 0-40.96-18.432-40.96-40.96v-163.84c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v163.84c0 22.528-18.432 40.96-40.96 40.96zM351.232 953.344c-22.528 0-40.96-18.432-40.96-40.96v-66.56c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v66.56c0 22.528-18.432 40.96-40.96 40.96zM673.792 953.344c-22.528 0-40.96-18.432-40.96-40.96v-66.56c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v66.56c0 22.528-18.432 40.96-40.96 40.96z" fill="#333C4F"></path></svg>
+    </div>
+    <div id="search-mask">
+</div>
+<div id="search-container" class="md:w-[800px]">
+    <div id="search-content" class="bg-white transition-opacity duration-300 opacity-0 rounded-[6px] md:p-[3px] p-[8px] overflow-hidden">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/gh/MihaiValentin/lunr-languages/lunr.stemmer.support.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/gh/MihaiValentin/lunr-languages/lunr.zh.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<section class="astro-7QW2IF4I">
+    <div class="searchBoxContainer astro-7QW2IF4I">
+        <input type="text" id="searchBox" autocomplete="on" class="searchBox w-full px-3 py-2 astro-7QW2IF4I" style="width: 100%;padding: .5rem .75rem;color: inherit;font-family: inherit;font-size: 100%;font-weight: inherit;line-height: inherit;margin: 0;border: none;box-sizing: border-box;" placeholder="搜索..." data-test="search-input">
+    </div>
+    
+    <!-- Search Results -->
+    <div id="searchResults" class="searchResults lg:pl-8 astro-7QW2IF4I"></div>
+
+    <!-- Search TS -->
+    <script lang="ts">
+        let lunrIndex;
+        let lunrResult;
+        let pagesIndex;
+        const bigramTokeniser = (obj, metadata) => {
+            if (obj == null || obj == undefined) {
+                return [];
+            }
+            let str = obj.toString().trim().toLowerCase();
+            let tokens = [];
+            for (let i = 0; i <= str.length - 2; i++) {
+                let tokenMetadata = lunr.utils.clone(metadata) || {};
+                tokenMetadata["position"] = [i, i + 2];
+                tokenMetadata["index"] = tokens.length;
+                tokens.push(new lunr.Token(str.slice(i, i + 2), tokenMetadata));
+            }
+            return tokens;
+        };
+        const queryNgramSeparator = (query) => {
+            const str = query.toString().trim().toLowerCase();
+            const tokens = [];
+            for (let i = 0; i <= str.length - 2; i++) {
+                tokens.push(str.slice(i, i + 2));
+            }
+            return tokens.join(" ");
+        };
+        const index = "/search-index.json";
+        const initLunr = () => {
+            let request = new XMLHttpRequest();
+            request.open("GET", index, true);
+            request.onload = function () {
+                if (this.status >= 200 && this.status < 400) {
+                    pagesIndex = JSON.parse(this.response);
+                    lunrIndex = lunr(function () {
+                        this.use(lunr.zh);
+                        this.tokenizer = bigramTokeniser;
+                        this.pipeline.reset();
+                        this.ref("slug");
+                        this.field("title", { boost: 10 });
+                        this.field("body");
+                        this.metadataWhitelist = ["position"];
+                        pagesIndex.forEach((page) => {
+                            this.add(page);
+                        }, this);
+                    });
+                } else {
+                    console.error("Error getting Hugo index flie");
+                }
+            };
+            request.onerror = function () {
+                console.error("connection error");
+            };
+            request.send();
+        };
+        /**
+         * Searching pages using lunr
+         * @param {String} query Query string for searching
+         * @return {Object[]} Array of search results
+         */
+        const search = (query) => {
+            lunrResult = lunrIndex.search(queryNgramSeparator(query));
+            return lunrResult.map((result) => {
+                return pagesIndex.filter((page) => {
+                    return page.slug === result.ref;
+                })[0];
+            });
+        };
+        const initUI = () => {
+            const searchBox = document.querySelector("#searchBox");
+            if (searchBox === null) {
+                return;
+            }
+            searchBox.addEventListener("keyup", function (event) {
+                let searchResultsArea =
+                    document.querySelector("#searchResults");
+                let query = event.currentTarget.value;
+                // Only trigger a search when 2 chars. at least have been provided
+                if (query.length < 2) {
+                    searchResultsArea.style.display = "none";
+                    return;
+                }
+                // Display search results
+                renderResults(search(query));
+                searchResultsArea.style.display = "block";
+            });
+        };
+        /**
+         * Rendering search results
+         * @param {Object[]} results Array of search results
+         */
+        const renderResults = (results) => {
+            const searchResults = document.querySelector("#searchResults");
+            const query = document.querySelector("#searchBox").value;
+            const BODY_LENGTH = 100;
+            const MAX_PAGES = 10;
+            // Clear search result
+            while (searchResults.firstChild)
+                searchResults.removeChild(searchResults.firstChild);
+            // Show message when results is empty
+            if (!results.length) {
+                let resultPage = document.createElement("div");
+                resultPage.className = "searchResultPage";
+                resultPage.innerHTML =
+                    'No results found for query "' + query + '"';
+                searchResults.append(resultPage);
+                return;
+            }
+            let instance = new Mark(document.querySelector("#searchResults"));
+            // Only show the ten first results
+            results.slice(0, MAX_PAGES).forEach((result, idx) => {
+                let resultPage = document.createElement("div");
+                resultPage.className = "searchResultPage";
+                let metadata = lunrResult[idx].matchData.metadata;
+                let resultTitle = document.createElement("a");
+                resultTitle.className = "searchResultTitle";
+                resultTitle.href = `/post/${result.slug}`;
+                resultTitle.innerHTML = result.title;
+                resultPage.append(resultTitle);
+                const body = metadata[Object.keys(metadata)[0]].body;
+                if (body) {
+                    let matchPosition = body.position[0][0];
+                    let bodyStartPosition =
+                        matchPosition - BODY_LENGTH / 2 > 0
+                            ? matchPosition - BODY_LENGTH / 2
+                            : 0;
+                    let resultBody = document.createElement("div");
+                    resultBody.className = "searchResultBody";
+                    resultBody.innerHTML = result.body.substr(
+                        bodyStartPosition,
+                        BODY_LENGTH
+                    );
+                    resultPage.append(resultBody);
+                } else {
+                    let resultBody = document.createElement("div");
+                    resultBody.className = "searchResultBody";
+                    resultBody.innerHTML = result.body.substr(0, 120);
+                    resultPage.append(resultBody);
+                }
+                searchResults.append(resultPage);
+            });
+            instance.mark(query, {
+                className: "highlight"
+            });
+        };
+        initLunr();
+        initUI();
+        function initSeach() {
+            const searchBox = document.querySelector("#searchBox");
+            if (searchBox === null) {
+                return;
+            }
+            let searchResultsArea = document.querySelector("#searchResults");
+            let query = searchBox.value;
+            if (query.length < 2) {
+                searchResultsArea.style.display = "none";
+                return;
+            }
+            renderResults(search(query));
+            searchResultsArea.style.display = "block";
+        }
+        const searchBox = document.querySelector("#searchBox");
+        searchBox.addEventListener("select", () => {
+            console.log("select");
+        });
+        setTimeout(() => {
+            initSeach();
+        }, 500);
+    </script>
+</section>
+    </div>
+</div>
+
+<script lang="ts">
+    const searchBoxEl = document.getElementById("searchBox");
+    
+    const searchMask = document.getElementById("search-mask");
+    const searchButton = document.getElementById("searchButton");
+    const searchContainer = document.getElementById("search-container");
+    searchButton.addEventListener("click", () => {
+        let isHave = searchContainer.classList.contains("search-show");
+        if (!isHave) {
+            searchContainer.classList.add("search-show");
+            searchMask.style.opacity = 1;
+            searchMask.style.pointerEvents = "auto";
+            searchBoxEl.focus()
+            document.body.style.setProperty("overflow", "hidden", "important");
+        }
+    });
+    searchMask.addEventListener("click", () => {
+        let isHave = searchContainer.classList.contains("search-show");
+        if (isHave) {
+            searchContainer.classList.remove("search-show");
+            searchMask.style.opacity = 0;
+            searchMask.style.pointerEvents = "none";
+            document.body.style.setProperty("overflow", "auto");
+        }
+    });
+</script>
+    
+	</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://blog.xieyaxin.top/sitemap-index.xml
