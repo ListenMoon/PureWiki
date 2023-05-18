@@ -3,7 +3,8 @@ layout: "@blog/layouts/BlogPage.astro"
 hideMenu: true
 title: 编程百科
 mode: chinese
-heroImage: https://w.wallhaven.cc/full/9d/wallhaven-9dz1e8.jpg
+# heroImage: https://w.wallhaven.cc/full/9d/wallhaven-9dz1e8.jpg
+heroImage: /bg.mp4
 ---
 
 欢迎来到我的博客，这里是一片净土，没有其他乱七八糟的事情，唯有不变的初心。

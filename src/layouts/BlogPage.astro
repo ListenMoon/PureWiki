@@ -37,7 +37,7 @@ let { title, description, filePath, _head, heroImage, hideSide = false, hideMenu
     // }
 ---
 <Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu}>
-	{heroImage && <img class="hero-image" src={heroImage} alt="" />}
+	{heroImage.includes(".mp4") ? <video class="hero-image" src={heroImage} autoplay muted loop /> : <img class="hero-image" src={heroImage} alt="" />}
 	<article class:list={["typo article",mode]}>
 	{enableRemote && filePath && <a href={getEditURL(filePath)} target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>}
 	{enableRemote && filePath && <hr>}
