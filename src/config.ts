@@ -27,6 +27,11 @@ export const expandTreeType: "always" | "dir" | "close" = "dir"
  */
 export const showArticleHeroImage = false
 
+export const AuthorAvater = 'https://xieyaxin.top/1432272769.jpg';
+export const AuthorName = 'NPMRUN';
+export const AuthorDesc = '来自南方小城<br>期望遇见良人♥!';
+export const StartTime = [2023,0o2,23,20,55,32];
+
 export const FooterAuthor = 'NPMRUN';
 export const FooterName = 'PureWiki';
 export const FooterRepo = 'https://github.com/ListenMoon/PureWiki';

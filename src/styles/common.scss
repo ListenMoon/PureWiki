@@ -201,6 +201,9 @@ mark.highlight {
             margin-right: 4px;
         }
     }
+    &.chinese .doc-card{
+        text-indent: 0;
+    }
     &.chinese .article__content {
         text-indent: 1.5em;
         font-weight: 300;
@@ -248,6 +251,7 @@ mark.highlight {
     height: 460px;
     width: 100%;
     object-fit: cover;
+    background-color: #b9b9b9;
     @include media-pc(sm) {
         height: 200px;
     }

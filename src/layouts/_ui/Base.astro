@@ -2,6 +2,7 @@
 import BaseHead from '@blog/components/BaseHead.astro';
 import Header from '@blog/components/Header.astro';
 import Footer from '@blog/components/Footer.astro';
+import UserInfo from '@blog/components/UserInfo.astro';
 import { publishedTree, getTopPublished } from "@blog/utils"
 import { publishedTree as aaa } from "@blog/utils/collect"
 import DocTree from "@blog/components/DocTree/DocTree.astro"
@@ -52,7 +53,7 @@ let { title, description, hideSide, hideMenu } = Astro.props as Props
         <Footer />
       </div>
       {
-        !hideSide && (<div class="side"><PostTop posts={topArticles}></PostTop>{!hideMenu && <slot name="side"/>}</div>)
+        !hideSide && (<div class="side"><UserInfo/><PostTop posts={topArticles}></PostTop>{!hideMenu && <slot name="side"/>}</div>)
       }
     </div>
     <div class="toTop" id="toTop">
