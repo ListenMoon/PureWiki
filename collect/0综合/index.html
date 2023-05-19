@@ -26,7 +26,7 @@
 <meta property="twitter:description">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
 	<link rel="stylesheet" href="/astro_/_...collect_.77543dc4.css" />
-<link rel="stylesheet" href="/astro_/about.2dca7033.css" />
+<link rel="stylesheet" href="/astro_/about.208e82f9.css" />
 <link rel="stylesheet" href="/astro_/about.1a331efb.css" /><script type="module" src="/astro_/hoisted.8c9af858.js"></script>
 <script type="module" src="/astro_/page.0ab18a5d.js"></script></head>
 
@@ -98,6 +98,13 @@
         <summary>
             
         
+        <a rel="prefetch" href="/collect/软件推荐" title="软件推荐.mdx" class="tree-item tree-md-file mdx-file"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">软件推荐.mdx</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/collect/软件推荐.mdx" class="op">编辑</a>
+      </summary>
+      
+    </details><details>
+        <summary>
+            
+        
         <a rel="prefetch" href="/collect/速记表" title="速记表.mdx" class="tree-item tree-md-file mdx-file"><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">速记表.mdx</div></a><a target="_blank" href="https://github.com/ListenMoon/PureWiki/edit/master/collect/速记表.mdx" class="op">编辑</a>
       </summary>
       
@@ -162,7 +169,58 @@
     </p>
 </footer>
       </div>
-      <div class="side"><ul class="posttop">
+      <div class="side"><div class="userinfo-wrapper">
+    
+    <div class="userinfo">
+        <div>NPMRUN</div>
+        <img src="https://xieyaxin.top/1432272769.jpg" alt="NPMRUN">
+    </div>
+    <div class="user_content">来自南方小城<br>期望遇见良人♥!</div>
+</div>
+<div style="margin: 0 20px;margin-top: 12px;text-align: center;">
+    <div>该站点已稳定运行：</div>
+    <div id="sitetime"></div>
+</div>
+<script>(function(){const StartTime = [2023,2,23,20,55,32];
+
+    function siteTime(){
+        window.setTimeout("window.siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        // @ts-ignore
+        var t1 = Date.UTC.apply(null, StartTime); //北京时间2017-09-16 00:00:00创建网站的时间
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML=+diffYears+"年"+diffDays+"天"+diffHours+"时"+diffMinutes+"分钟"+diffSeconds+"秒";
+    }
+    // @ts-ignore
+    window.siteTime = siteTime;
+    // @ts-ignore
+    window.siteTime();
+})();</script><ul class="posttop">
     <li>
             <a class="posttop__post posttop__image" href="/post/PureWiki主题">
                 <div class="posttop__post__cover"><img src="https://img1.imgtp.com/2023/04/12/JBgAjWiS.jpg" alt=""></div>
