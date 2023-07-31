@@ -1,0 +1,21 @@
+---
+import Page from "../layouts/Page.astro";
+import { publishedDict, publishedList } from "@blog/utils";
+
+const list = await publishedList();
+---
+
+<Page title="博客" description="博客" hideSide>
+  <div style="padding: 50px;">
+    {
+      // list.slice(0, 10).map((article) => {
+      list.map((article) => {
+        return (
+          <a style="display: block;padding: 6px 0;" href={article.url}>
+            {article.title} --- {article.url}
+          </a>
+        );
+      })
+    }
+  </div>
+</Page>

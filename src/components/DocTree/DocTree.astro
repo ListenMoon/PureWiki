@@ -36,7 +36,17 @@ const { isBlog = false } = Astro.props as Props;
       </details>
     ) : (
       <div style="direction: ltr;padding-left: 17px;">
-        <DocTreeSelf {...Astro.props} />
+        <div>
+          <a
+            href="/cate"
+            style={`display: flex;color:inherit;border:0;text-decoration: none;margin-bottom: 10px;`}
+          >
+            <span title="全部" class:list={["tree-item"]}>
+              全部
+            </span>
+          </a>
+        </div>
+        <DocTreeSelf {...Astro.props} depth={0} />
       </div>
     )
   }

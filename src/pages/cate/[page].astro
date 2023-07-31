@@ -1,0 +1,25 @@
+---
+import Page from "../../layouts/Page.astro";
+import { publishedList } from "@blog/utils";
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await publishedList();
+  return paginate(posts, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+---
+
+<Page title="博客" description="博客" hideSide>
+  <div style="padding: 50px;">
+    {
+      page.data.map((article) => {
+        return (
+          <a style="display: block;padding: 6px 0;" href={article.url}>
+            {article.title} --- {article.url}
+          </a>
+        );
+      })
+    }
+  </div>
+</Page>
