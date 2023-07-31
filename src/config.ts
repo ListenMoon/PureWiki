@@ -9,6 +9,13 @@ export const SITE_LANG = "zh-cn"
 export const SITE_TITLE = '编程百科';
 export const SITE_DESCRIPTION = '花径不曾缘客扫，蓬门今始为君开!';
 
+
+export const SITE_TYPE: ESITETYPE = ESITETYPE.BLOG
+export const enum ESITETYPE {
+    WIKI,
+    BLOG
+}
+
 /**
  * 左侧文件夹标题
  */
@@ -30,7 +37,7 @@ export const showArticleHeroImage = false
 export const AuthorAvater = 'https://xieyaxin.top/1432272769.jpg';
 export const AuthorName = 'NPMRUN';
 export const AuthorDesc = '来自南方小城<br>期望遇见良人♥!';
-export const StartTime = [2023,0o2,23,20,55,32];
+export const StartTime = [2023, 0o2, 23, 20, 55, 32];
 
 export const FooterAuthor = 'NPMRUN';
 export const FooterName = 'PureWiki';

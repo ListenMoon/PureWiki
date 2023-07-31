@@ -31,6 +31,8 @@ function co(data: any, cb: any) {
                     name: temp, // 
                     // 用于匹配激活菜单
                     active: "/post/" + tempArr.slice(1).slice(0, num).join('/').replace(/\.(md|mdx)$/g, ''),
+                    // 文件夹才有的字段
+                    cateActive: "/cate/" + tempArr.slice(1).slice(0, num).join('/').replace(/\.(md|mdx)$/g, ''),
                     // 用于github的仓库地址完整路径,应该是跟下面那个差不多
                     path: "/article/" + tempArr.slice(1).slice(0, num).join('/').replace(/\.(md|mdx)$/g, ''),
                     // 文件地址，用于github的仓库地址完整路径
@@ -43,6 +45,7 @@ function co(data: any, cb: any) {
                 if (num === tempArr.length - 1) {
                     // 文件
                     delete v.children
+                    delete v.cateActive
                     v.data = value
                 }
                 curFiles.push(v)
@@ -93,8 +96,25 @@ export async function publishedTree() {
     return tree
 }
 
-export async function publishedList() {
+export async function publishedDict() {
     const tree = await publishedTree()
+    let sorted = [];
+    (function readTree(list: any) {
+        for (let i = 0; i < list.length; i++) {
+            const item = list[i];
+            if (!item.data) {
+                sorted.push(item)
+            }
+            if (item.children && item.children.length) {
+                readTree(item.children)
+            }
+        }
+    })(tree)
+    return sorted
+}
+
+export async function publishedList(allTree?: any) {
+    const tree = allTree ?? await publishedTree()
     let sorted = [];
     (function readTree(list: any) {
         for (let i = 0; i < list.length; i++) {
@@ -115,8 +135,8 @@ export async function publishedList() {
     return sorted.map(v => v.data)
 }
 
-export async function sortPublishedList() {
-    let posts = await publishedList()
+export async function sortPublishedList(allTree?: any) {
+    let posts = await publishedList(allTree)
     posts = posts.sort((a, b) => {
         if (b.pubTimestamp && a.pubTimestamp) {
             return b.pubTimestamp - a.pubTimestamp;

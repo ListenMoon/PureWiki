@@ -1,56 +1,143 @@
 ---
-import {getEditURL, getNewURL, enableRemote, expandTreeType} from "@blog/config"
-import { betterDirectorySort } from "@blog/utils/better-directory-sort"
+import {
+  getEditURL,
+  getNewURL,
+  enableRemote,
+  expandTreeType,
+  SITE_TYPE,
+  ESITETYPE,
+} from "@blog/config";
+import { betterDirectorySort } from "@blog/utils/better-directory-sort";
 export type One = {
-  name: string
-  path: string
-  active: string
-  filePath: string
-  data?: any
-  children: One[]
-}
+  name: string;
+  path: string;
+  active: string;
+  cateActive?: string;
+  filePath: string;
+  data?: any;
+  children: One[];
+};
 
 export interface Props {
-  list: One[]
+  list: One[];
+  depth?: number;
+  isBlog?: boolean;
 }
 
-const { list } = Astro.props as Props
+const { list, depth = 0, isBlog = false } = Astro.props as Props;
 
-function isActive(url: string, isFolder?:boolean){
-  let pathArr = decodeURIComponent(Astro.url.pathname).slice(1).replace(/\/$/, '').split("/")
-  let urlArr = url.slice(1).split("/")
+function isActive(url: string, isFolder?: boolean) {
+  let pathArr = decodeURIComponent(Astro.url.pathname)
+    .slice(1)
+    .replace(/\/$/, "")
+    .split("/");
+  let urlArr = url.slice(1).split("/");
+  
+  if (isBlog) {
+    if (pathArr[0] === "post") {
+      pathArr[0] = "cate";
+      return pathArr.slice(0, -1).join("/") === urlArr.join("/");
+    }
+    return pathArr.join("/") === urlArr.join("/");
+  }
+
   for (let i = 0; i < urlArr.length; i++) {
     const one = urlArr[i];
-    if(one !== pathArr[i]) return false
+    if (one !== pathArr[i]) return false;
   }
-  return true
-//   return decodeURIComponent(Astro.url.pathname).replace(/\/$/, '').startsWith(url);
+  return true;
+  //   return decodeURIComponent(Astro.url.pathname).replace(/\/$/, '').startsWith(url);
 }
 
 function haveFolderInChildren(v: One) {
-  if(v.data) return false
-  if(expandTreeType === "always") return true
-  if(expandTreeType === "close") return false
-  if(expandTreeType === "dir") {
-    if(v.children.find(v=>!v.data)){
-        return true
+  if (v.data) return false;
+  if (expandTreeType === "always") return true;
+  if (expandTreeType === "close") return false;
+  if (expandTreeType === "dir") {
+    if (v.children.find((v) => !v.data)) {
+      return true;
     } else {
-        return false
+      return false;
     }
   }
 }
-
 ---
 
-{list.map(v=>{
-    const url = v.path
-    const vpath = !v.data?v.active:'' as any
-    return <details data-path={vpath || false} open={isActive(v.active, !v.data) || haveFolderInChildren(v)}>
+{
+  list.map((v) => {
+    const url = v.path;
+    const vpath = !v.data ? v.active : ("" as any);
+    return !isBlog ? (
+      <details
+        data-path={vpath || false}
+        open={isActive(v.active, !v.data) || haveFolderInChildren(v)}
+      >
         <summary>
-            
-        {!v.data && <><span title={v.name} class:list={["tree-item", !!v.data && isActive(v.active)?'active':'']}>{v.name}</span>{enableRemote && <a target="_blank" href={getNewURL(url)} class="op">新建</a>}</>}
-        {!!v.data && <><a rel={isActive(v.active)?"":"prefetch"} href={v.data.url} title={v.name} class:list={["tree-item tree-md-file", !!v.data && isActive(v.active)?'active':'', v.name.endsWith(".mdx")?'mdx-file':'']}><div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{v.name}</div></a>{enableRemote && <a target="_blank" href={getEditURL(v.filePath)} class="op">编辑</a>}</>}
-      </summary>
-      {Array.isArray(v.children) && <Astro.self list={v.children} />}
-    </details>
-  })}
+          {!v.data && (
+            <>
+              <span
+                title={v.name}
+                class:list={[
+                  "tree-item",
+                  !!v.data && isActive(v.active) ? "active" : "",
+                ]}
+              >
+                {v.name}
+              </span>
+              {enableRemote && (
+                <a target="_blank" href={getNewURL(url)} class="op">
+                  新建
+                </a>
+              )}
+            </>
+          )}
+          {!!v.data && (
+            <>
+              <a
+                rel={isActive(v.active) ? "" : "prefetch"}
+                href={v.data.url}
+                title={v.name}
+                class:list={[
+                  "tree-item tree-md-file",
+                  !!v.data && isActive(v.active) ? "active" : "",
+                  v.name.endsWith(".mdx") ? "mdx-file" : "",
+                ]}
+              >
+                <div style="flex: 1;width: 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+                  {v.name}
+                </div>
+              </a>
+              {enableRemote && (
+                <a target="_blank" href={getEditURL(v.filePath)} class="op">
+                  编辑
+                </a>
+              )}
+            </>
+          )}
+        </summary>
+        {Array.isArray(v.children) && <Astro.self list={v.children} isBlog={isBlog}/>}
+      </details>
+    ) : (
+      <div>
+        {!v.data && (
+          <a
+            href={v.cateActive}
+            style={`display: flex;padding-left:${
+              depth * 17
+            }px;color:inherit;border:0;text-decoration: none;`}
+          >
+            <span
+              title={v.name}
+              class:list={["tree-item", isActive(v.cateActive) ? "active" : ""]}
+            >
+              {v.name}
+            </span>
+          </a>
+        )}
+        {Array.isArray(v.children) && (
+          <Astro.self depth={depth + 1} list={v.children} isBlog={isBlog}/>
+        )}
+      </div>
+    );
+  })
+}

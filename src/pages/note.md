@@ -1,9 +1,10 @@
 ---
 layout: "@blog/layouts/BlogPage.astro"
-title: 自述
+title: TODO
 description: ""
 comment: true
 heroImage: /hero/cc.png
 ---
 
-以上就是全部想说的话。
+- [ ] 博客平台
+    将左侧变成菜单，右侧变成列表的形式

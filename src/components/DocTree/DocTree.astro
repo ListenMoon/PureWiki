@@ -1,55 +1,72 @@
 ---
-import DocTreeSelf from "./DocTreeSelf.astro"
-import { getNewURL, enableRemote } from "@blog/config"
+import DocTreeSelf from "./DocTreeSelf.astro";
+import { getNewURL, enableRemote, SITE_TYPE, ESITETYPE } from "@blog/config";
 export type One = {
-  name: string
-  path: string
-  active: string
-  filePath: string
-  data?: any
-  children: One[]
-}
+  name: string;
+  path: string;
+  active: string;
+  cateActive?: string;
+  filePath: string;
+  data?: any;
+  children: One[];
+};
 
 export interface Props {
-  list: One[]
-  title: string
+  list: One[];
+  title: string;
+  isBlog?: boolean;
 }
+
+const { isBlog = false } = Astro.props as Props;
 ---
+
 <div class="tree" id="tree">
-    <details open="true" style="direction: ltr;">
+  {
+    !isBlog ? (
+      <details open="true" style="direction: ltr;">
         <summary>
-            <span class="tree-item">{ Astro.props.title }</span>
-            { enableRemote && <a href={getNewURL("/article")} target="_blank" class="op">新建</a>}
+          <span class="tree-item">{Astro.props.title}</span>
+          {enableRemote && (
+            <a href={getNewURL("/article")} target="_blank" class="op">
+              新建
+            </a>
+          )}
         </summary>
-        <DocTreeSelf {...Astro.props}></DocTreeSelf>
-    </details>
+        <DocTreeSelf {...Astro.props} />
+      </details>
+    ) : (
+      <div style="direction: ltr;padding-left: 17px;">
+        <DocTreeSelf {...Astro.props} />
+      </div>
+    )
+  }
 </div>
 
 <style is:global lang="scss">
-.tree{
+  .tree {
     flex: 1;
     direction: rtl;
     overflow: auto;
     padding: 4px 0;
     position: relative;
     width: 300px;
-    font-size: .875em;
+    font-size: 0.875em;
     font-weight: 400;
-    color: rgba(25, 23, 17, .8);
-    fill: rgba(25, 23, 17, .8);
+    color: rgba(25, 23, 17, 0.8);
+    fill: rgba(25, 23, 17, 0.8);
     z-index: 0;
     user-select: none;
-    @include media-pc(sm){
+    @include media-pc(sm) {
       width: 100%;
     }
-}
+  }
 
-/*去掉前面默认的小黑三角*/
-.tree details summary::-webkit-details-marker{
-    display:none; 
-}
+  /*去掉前面默认的小黑三角*/
+  .tree details summary::-webkit-details-marker {
+    display: none;
+  }
 
-.tree summary{
+  .tree summary {
     outline: 0;
     padding-left: 17px;
     list-style: none;
@@ -59,61 +76,62 @@ export interface Props {
     display: -webkit-flex;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    overflow: hidden; 
-}
+    overflow: hidden;
+  }
 
-.tree .tree-md-file:before{
-  content: '';
-  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjczNDAyMTUyMTkwIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEyODAgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjYyMzIiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjUwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTExODcuNiAxMTguMkg5Mi40QzQxLjQgMTE4LjIgMCAxNTkuNiAwIDIxMC40djYwM2MwIDUxIDQxLjQgOTIuNCA5Mi40IDkyLjRoMTA5NS40YzUxIDAgOTIuNC00MS40IDkyLjItOTIuMlYyMTAuNGMwLTUwLjgtNDEuNC05Mi4yLTkyLjQtOTIuMnpNNjc3IDcyMS4ySDU1NHYtMjQwbC0xMjMgMTUzLjgtMTIzLTE1My44djI0MEgxODQuNlYzMDIuOGgxMjNsMTIzIDE1My44IDEyMy0xNTMuOGgxMjN2NDE4LjR6IG0yNzAuNiA2LjJMNzYzIDUxMkg4ODZWMzAyLjhoMTIzVjUxMkgxMTMyeiIgcC1pZD0iNjIzMyIgZmlsbD0iIzhjOGM4YyI+PC9wYXRoPjwvc3ZnPg==") center no-repeat !important;
-  background-size: contain !important;
-}
+  .tree .tree-md-file:before {
+    content: "";
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjczNDAyMTUyMTkwIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEyODAgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjYyMzIiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjUwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTExODcuNiAxMTguMkg5Mi40QzQxLjQgMTE4LjIgMCAxNTkuNiAwIDIxMC40djYwM2MwIDUxIDQxLjQgOTIuNCA5Mi40IDkyLjRoMTA5NS40YzUxIDAgOTIuNC00MS40IDkyLjItOTIuMlYyMTAuNGMwLTUwLjgtNDEuNC05Mi4yLTkyLjQtOTIuMnpNNjc3IDcyMS4ySDU1NHYtMjQwbC0xMjMgMTUzLjgtMTIzLTE1My44djI0MEgxODQuNlYzMDIuOGgxMjNsMTIzIDE1My44IDEyMy0xNTMuOGgxMjN2NDE4LjR6IG0yNzAuNiA2LjJMNzYzIDUxMkg4ODZWMzAyLjhoMTIzVjUxMkgxMTMyeiIgcC1pZD0iNjIzMyIgZmlsbD0iIzhjOGM4YyI+PC9wYXRoPjwvc3ZnPg==")
+      center no-repeat !important;
+    background-size: contain !important;
+  }
 
+  .tree .tree-md-file.mdx-file:before {
+    content: "";
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjczNDAyMTUyMTkwIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEyODAgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjYyMzIiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjUwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTExODcuNiAxMTguMkg5Mi40QzQxLjQgMTE4LjIgMCAxNTkuNiAwIDIxMC40djYwM2MwIDUxIDQxLjQgOTIuNCA5Mi40IDkyLjRoMTA5NS40YzUxIDAgOTIuNC00MS40IDkyLjItOTIuMlYyMTAuNGMwLTUwLjgtNDEuNC05Mi4yLTkyLjQtOTIuMnpNNjc3IDcyMS4ySDU1NHYtMjQwbC0xMjMgMTUzLjgtMTIzLTE1My44djI0MEgxODQuNlYzMDIuOGgxMjNsMTIzIDE1My44IDEyMy0xNTMuOGgxMjN2NDE4LjR6IG0yNzAuNiA2LjJMNzYzIDUxMkg4ODZWMzAyLjhoMTIzVjUxMkgxMTMyeiIgcC1pZD0iNjIzMyIgZmlsbD0iIzhjOGM4YyI+PC9wYXRoPjwvc3ZnPg==")
+      center no-repeat !important;
+    background-size: contain !important;
+  }
 
-.tree .tree-md-file.mdx-file:before{
-  content: '';
-  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjczNDAyMTUyMTkwIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEyODAgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjYyMzIiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjUwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTExODcuNiAxMTguMkg5Mi40QzQxLjQgMTE4LjIgMCAxNTkuNiAwIDIxMC40djYwM2MwIDUxIDQxLjQgOTIuNCA5Mi40IDkyLjRoMTA5NS40YzUxIDAgOTIuNC00MS40IDkyLjItOTIuMlYyMTAuNGMwLTUwLjgtNDEuNC05Mi4yLTkyLjQtOTIuMnpNNjc3IDcyMS4ySDU1NHYtMjQwbC0xMjMgMTUzLjgtMTIzLTE1My44djI0MEgxODQuNlYzMDIuOGgxMjNsMTIzIDE1My44IDEyMy0xNTMuOGgxMjN2NDE4LjR6IG0yNzAuNiA2LjJMNzYzIDUxMkg4ODZWMzAyLjhoMTIzVjUxMkgxMTMyeiIgcC1pZD0iNjIzMyIgZmlsbD0iIzhjOGM4YyI+PC9wYXRoPjwvc3ZnPg==") center no-repeat !important;
-  background-size: contain !important;
-}
-
-
-.tree summary:not(:only-child){
-    background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.354 2.646A.5.5 0 0 0 4.5 3v6a.5.5 0 0 0 .854.354l3-3a.5.5 0 0 0 0-.708l-3-3z' fill='%23000' fill-opacity='.45'/%3E%3C/svg%3E") 4px center no-repeat;
-}
-.tree details[open]>summary:not(:only-child){
+  .tree summary:not(:only-child) {
+    background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.354 2.646A.5.5 0 0 0 4.5 3v6a.5.5 0 0 0 .854.354l3-3a.5.5 0 0 0 0-.708l-3-3z' fill='%23000' fill-opacity='.45'/%3E%3C/svg%3E")
+      4px center no-repeat;
+  }
+  .tree details[open] > summary:not(:only-child) {
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.354 5.354A.5.5 0 0 0 9 4.5H3a.5.5 0 0 0-.354.854l3 3a.5.5 0 0 0 .708 0l3-3z' fill='%23000' fill-opacity='.45'/%3E%3C/svg%3E");
-}
-.tree details{
-    padding-left: 15px
-}
-.tree>details{
-    padding-left: 10px
-}
-summary.active{
-  background-color: #1abc9c1a !important;
-}
-.op{
-  display: none;
-  font-size: .8em;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-summary:hover .op{
-  display: block;
-}
+  }
+  .tree details {
+    padding-left: 15px;
+  }
+  .tree > details {
+    padding-left: 10px;
+  }
+  summary.active {
+    background-color: #1abc9c1a !important;
+  }
+  .op {
+    display: none;
+    font-size: 0.8em;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  summary:hover .op {
+    display: block;
+  }
 
-// 激活时显示操作按钮 START
-// summary .active+.op{
-//   display: block;
-// }
-// 激活时显示操作按钮 END
+  // 激活时显示操作按钮 START
+  // summary .active+.op{
+  //   display: block;
+  // }
+  // 激活时显示操作按钮 END
 
-/* summary.active .tree-item::after{
+  /* summary.active .tree-item::after{
   content: "";
   opacity: 1;
   background: #1abc9c1a !important;
 } */
 
-.tree-item{
+  .tree-item {
     flex: 1;
     width: 0;
     text-overflow: ellipsis;
@@ -130,20 +148,20 @@ summary:hover .op{
     line-height: 1;
     padding: 5px 0;
     cursor: default;
-}
-.tree details summary a{
-  border: 0;
-  color: inherit;
-  cursor: pointer;
-}
- .tree-item:hover{
-   text-decoration: none;
-}
-// .tree details summary:hover{
-//     background-color: #1abc9c1a;
-// }
-.tree-item::after{
-    content: '';
+  }
+  .tree details summary a {
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+  }
+  .tree-item:hover {
+    text-decoration: none;
+  }
+  // .tree details summary:hover{
+  //     background-color: #1abc9c1a;
+  // }
+  .tree-item::after {
+    content: "";
     position: absolute;
     left: 0;
     right: 0;
@@ -154,28 +172,29 @@ summary:hover .op{
     // border-bottom-left-radius: 4px;
     z-index: -1;
     // opacity: 0;
-    transition: .2s;
-}
-.tree-item:hover::after{
+    transition: 0.2s;
+  }
+  .tree-item:hover::after {
     background: #1abc9c1a;
-}
-.tree-item.active::after{
+  }
+  .tree-item.active::after {
     background: #1abc9c48;
     border-right: 4px solid #1abc9c;
-}
-// summary .active{
-//     color: rgb(142, 50, 220) !important;
-// }
+  }
+  // summary .active{
+  //     color: rgb(142, 50, 220) !important;
+  // }
 
-.tree-item::before{
-    content: '';
+  .tree-item::before {
+    content: "";
     width: 20px;
     height: 20px;
     flex-shrink: 0;
     margin-right: 5px;
-    background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M.833 3.75c0-.92.746-1.667 1.667-1.667h5.417c.247 0 .481.11.64.3l1.833 2.2h7.11c.92 0 1.667.747 1.667 1.667v10c0 .92-.747 1.667-1.667 1.667h-15c-.92 0-1.667-.746-1.667-1.667V3.75zm6.693 0H2.5v4.584h15V6.25H10a.833.833 0 0 1-.64-.3l-1.834-2.2zM17.5 10h-15v6.25h15V10z' fill='%23000' fill-opacity='.45'/%3E%3C/svg%3E") center no-repeat;
-}
-.tree details[open]>summary:not(:only-child)>.tree-item::before{
+    background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M.833 3.75c0-.92.746-1.667 1.667-1.667h5.417c.247 0 .481.11.64.3l1.833 2.2h7.11c.92 0 1.667.747 1.667 1.667v10c0 .92-.747 1.667-1.667 1.667h-15c-.92 0-1.667-.746-1.667-1.667V3.75zm6.693 0H2.5v4.584h15V6.25H10a.833.833 0 0 1-.64-.3l-1.834-2.2zM17.5 10h-15v6.25h15V10z' fill='%23000' fill-opacity='.45'/%3E%3C/svg%3E")
+      center no-repeat;
+  }
+  .tree details[open] > summary:not(:only-child) > .tree-item::before {
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.917 2.083c.247 0 .481.11.64.3l1.833 2.2h5.443c.92 0 1.667.747 1.667 1.667v1.667h.833a.833.833 0 0 1 .817.997l-1.666 8.333a.833.833 0 0 1-.817.67H1.677a.814.814 0 0 1-.157-.013.83.83 0 0 1-.687-.82V3.75c0-.92.746-1.667 1.667-1.667h5.417zM10 6.25a.833.833 0 0 1-.64-.3l-1.834-2.2H2.5v6.564l.441-1.766a.833.833 0 0 1 .809-.631h12.083V6.25H10zm-7.266 10L4.4 9.584h12.916l-1.334 6.666H2.733z' fill='%23000' fill-opacity='.45'/%3E%3C/svg%3E");
-}
+  }
 </style>

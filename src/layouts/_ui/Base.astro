@@ -1,47 +1,58 @@
 ---
-import BaseHead from '@blog/components/BaseHead.astro';
-import Header from '@blog/components/Header.astro';
-import Footer from '@blog/components/Footer.astro';
-import UserInfo from '@blog/components/UserInfo.astro';
-import { publishedTree, getTopPublished } from "@blog/utils"
-import { publishedTree as aaa } from "@blog/utils/collect"
-import DocTree from "@blog/components/DocTree/DocTree.astro"
-import Search from "@blog/components/SearchInput/Search.astro"
-import PostTop from "@blog/components/PostTop.astro"
-import { SITE_LANG, TreeTitle, CollectTitle  } from '@blog/config';
+import BaseHead from "@blog/components/BaseHead.astro";
+import Header from "@blog/components/Header.astro";
+import Footer from "@blog/components/Footer.astro";
+import UserInfo from "@blog/components/UserInfo.astro";
+import { publishedTree, getTopPublished } from "@blog/utils";
+import { publishedTree as aaa } from "@blog/utils/collect";
+import DocTree from "@blog/components/DocTree/DocTree.astro";
+import Search from "@blog/components/SearchInput/Search.astro";
+import PostTop from "@blog/components/PostTop.astro";
+import {
+  SITE_LANG,
+  TreeTitle,
+  CollectTitle,
+  SITE_TYPE,
+  ESITETYPE,
+} from "@blog/config";
 
-let articles = await publishedTree()
-let isCollect = false
-if(Astro.url.pathname.startsWith("/collect")){
-    articles = await aaa()
-    isCollect = true
+let articles = await publishedTree();
+let isCollect = false;
+if (Astro.url.pathname.startsWith("/collect")) {
+  articles = await aaa();
+  isCollect = true;
 }
 
-const topArticles = await getTopPublished()
+const topArticles = await getTopPublished();
 
 export interface Props {
-  title: string
-  description: string
-  hideSide: boolean
-  hideMenu: boolean
+  title: string;
+  description: string;
+  hideSide: boolean;
+  hideMenu: boolean;
 }
 
-let { title, description, hideSide, hideMenu } = Astro.props as Props
+let { title, description, hideSide, hideMenu } = Astro.props as Props;
 
+const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
 ---
 
 <!DOCTYPE html>
-<html lang={ SITE_LANG }>
-	<head>
-        <BaseHead title={title} description={description} />
-	</head>
+<html lang={SITE_LANG}>
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
 
-	<body>
+  <body>
     <div class="layout">
       <div class="left">
         <div class="wrapper">
-          <Header title={title}/>
-          <DocTree title={isCollect?CollectTitle:TreeTitle} list={articles}></DocTree>
+          <Header title={title} />
+          <DocTree
+            isBlog={isBlog}
+            title={isCollect ? CollectTitle : TreeTitle}
+            list={articles}
+          />
           <!-- 为了快速将元素设置 -->
           <script is:inline src="/scripts/init.js"></script>
         </div>
@@ -53,13 +64,29 @@ let { title, description, hideSide, hideMenu } = Astro.props as Props
         <Footer />
       </div>
       {
-        !hideSide && (<div class="side"><UserInfo/><PostTop posts={topArticles}></PostTop>{!hideMenu && <slot name="side"/>}</div>)
+        !hideSide && (
+          <div class="side">
+            <PostTop posts={topArticles} />
+            {!hideMenu && <slot name="side" />}
+          </div>
+        )
       }
     </div>
     <div class="toTop" id="toTop">
-        <svg class="icon" style="width: 2em;height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M780.288 750.592H244.736V415.744C244.736 229.376 396.288 79.872 460.8 24.576c29.696-24.576 71.68-24.576 101.376 0 65.536 55.296 217.088 204.8 217.088 391.168v334.848z m-453.632-81.92h371.712V415.744c0-150.528-128-277.504-186.368-326.656-57.344 49.152-186.368 176.128-186.368 326.656v252.928zM509.952 87.04z" fill="#333C4F" /><path d="M326.656 750.592H148.48c-43.008 0-78.848-34.816-78.848-78.848v-76.8c0-26.624 13.312-51.2 34.816-65.536l221.184-146.432v367.616z m-175.104-81.92h92.16v-133.12l-92.16 61.44v71.68zM875.52 750.592H697.344V384l221.184 146.432c22.528 14.336 34.816 38.912 34.816 65.536v76.8c1.024 41.984-34.816 77.824-77.824 77.824z m-96.256-81.92h92.16v-71.68l-92.16-61.44v133.12zM513.024 489.472c-64.512 0-116.736-52.224-116.736-116.736S449.536 256 513.024 256s116.736 52.224 116.736 116.736-52.224 116.736-116.736 116.736z m0-151.552c-18.432 0-34.816 15.36-34.816 34.816s15.36 34.816 34.816 34.816 34.816-15.36 34.816-34.816S532.48 337.92 513.024 337.92zM512 1017.856c-22.528 0-40.96-18.432-40.96-40.96v-163.84c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v163.84c0 22.528-18.432 40.96-40.96 40.96zM351.232 953.344c-22.528 0-40.96-18.432-40.96-40.96v-66.56c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v66.56c0 22.528-18.432 40.96-40.96 40.96zM673.792 953.344c-22.528 0-40.96-18.432-40.96-40.96v-66.56c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v66.56c0 22.528-18.432 40.96-40.96 40.96z" fill="#333C4F" /></svg>
+      <svg
+        class="icon"
+        style="width: 2em;height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path
+          d="M780.288 750.592H244.736V415.744C244.736 229.376 396.288 79.872 460.8 24.576c29.696-24.576 71.68-24.576 101.376 0 65.536 55.296 217.088 204.8 217.088 391.168v334.848z m-453.632-81.92h371.712V415.744c0-150.528-128-277.504-186.368-326.656-57.344 49.152-186.368 176.128-186.368 326.656v252.928zM509.952 87.04z"
+          fill="#333C4F"></path><path
+          d="M326.656 750.592H148.48c-43.008 0-78.848-34.816-78.848-78.848v-76.8c0-26.624 13.312-51.2 34.816-65.536l221.184-146.432v367.616z m-175.104-81.92h92.16v-133.12l-92.16 61.44v71.68zM875.52 750.592H697.344V384l221.184 146.432c22.528 14.336 34.816 38.912 34.816 65.536v76.8c1.024 41.984-34.816 77.824-77.824 77.824z m-96.256-81.92h92.16v-71.68l-92.16-61.44v133.12zM513.024 489.472c-64.512 0-116.736-52.224-116.736-116.736S449.536 256 513.024 256s116.736 52.224 116.736 116.736-52.224 116.736-116.736 116.736z m0-151.552c-18.432 0-34.816 15.36-34.816 34.816s15.36 34.816 34.816 34.816 34.816-15.36 34.816-34.816S532.48 337.92 513.024 337.92zM512 1017.856c-22.528 0-40.96-18.432-40.96-40.96v-163.84c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v163.84c0 22.528-18.432 40.96-40.96 40.96zM351.232 953.344c-22.528 0-40.96-18.432-40.96-40.96v-66.56c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v66.56c0 22.528-18.432 40.96-40.96 40.96zM673.792 953.344c-22.528 0-40.96-18.432-40.96-40.96v-66.56c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v66.56c0 22.528-18.432 40.96-40.96 40.96z"
+          fill="#333C4F"></path></svg
+      >
     </div>
-    <Search></Search>
+    <Search />
     <script src="@blog/scripts/main.ts"></script>
-	</body>
+  </body>
 </html>
