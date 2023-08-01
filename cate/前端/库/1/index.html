@@ -4,7 +4,7 @@
     <!-- Global Metadata --><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta name="generator" content="Astro v2.9.6">
+<meta name="generator" content="Astro v2.9.7">
 
 <!-- Primary Meta Tags -->
 <title>分类</title>
@@ -24,7 +24,8 @@
 <meta property="twitter:title" content="分类">
 <meta property="twitter:description" content="分类">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
-  <link rel="stylesheet" href="/astro_/about.c5fec383.css" /><script type="module" src="/astro_/hoisted.d65a942b.js"></script>
+  <link rel="stylesheet" href="/astro_/cate.6a0ed1ad.css" />
+<link rel="stylesheet" href="/astro_/about.8157dd9c.css" /><script type="module" src="/astro_/hoisted.d65a942b.js"></script>
 <script type="module" src="/astro_/page.10202da5.js"></script></head>
 
   <body>
@@ -60,10 +61,10 @@
           <div style="background-color: #eee;height:10px;"></div>
           <div class="tree" id="tree">
   <div style="direction: ltr;padding-left: 17px;">
-        <div>
-          <a href="/cateAll" style="display: flex;color:inherit;border:0;text-decoration: none;margin-bottom: 10px;">
+        <div style="padding:6px 17px; margin-left: -17px;position:sticky;top: 0;background: white;border-bottom:1px solid #eee;">
+          <a href="/cateAll" style="display: flex;color:inherit;border:0;text-decoration: none;">
             <span title="所有文章" class="tree-item">
-                所有文章
+              所有文章
             </span>
           </a>
         </div>
@@ -146,18 +147,64 @@
         <main>
           
     <div style="padding: 50px;">
-        <a style="display: block;padding: 10px 0;border-bottom: 1px solid #f3f3f3;" href="/post/前端/库/floating-ui使用方式">
-    <div class="title" style="font-size: 25px;">
-        floating-ui使用方式
-    </div>
-</a>
-        <div style="margin: 20px auto;display: flex; width: 450px;justify-content: space-between;">
-        
-        <div>总数：1</div>
-        <div>总页数：1</div>
-        <div>当前页码：1</div>
-        
+        <div class="article-card mx-[-25px] md:mx-0">
+  <a class="posttop__post" href="/post/前端/库/floating-ui使用方式">
+    
+    <!-- <div class="posttop__post__cover">
+      <img
+        src={article.heroImage
+          ? article.heroImage
+          : "https://picsum.photos/1280/780?random="+Math.random()*10000}
+        alt=""
+      />
+    </div> -->
+
+    <div class="posttop__post__title">floating-ui使用方式</div>
+    <span style="font-size: 12px;margin-bottom: .1em;position: relative;">
+      创建于：2023年6月29日 00:13:42
+    </span>
+    
+  </a>
 </div>
+        <div class="pa-wrapper">
+  <div class="btn-group">
+    <a class="pa-button pa-active">1</a>
+  </div>
+</div>
+
+<!-- <div
+  style="margin: 20px auto;display: flex; width: 450px;justify-content: space-between;"
+>
+  <div>
+    {
+      hasBefore && (
+        <a
+          href={`/${base}${url ? "/" + url : ""}${
+            curPage > 1 ? `/${curPage - 1}` : ""
+          }`}
+        >
+          上一页
+        </a>
+      )
+    }
+  </div> -->
+<!-- <div>总数：{count}</div> -->
+<!-- <div>总页数：{totalPage}</div> -->
+<!-- <div>当前页码：{curPage}</div> -->
+<!-- {[...Array(totalPage)].map((v, i) => {
+
+    return <div>{ i + 1} </div>
+  })}
+  <div>{curPage}</div>
+  <div>
+    {
+      hasNext && (
+        <a href={`/${base}${url ? "/" + url : ""}/${curPage + 1}`}>下一页</a>
+      )
+    }
+  </div>
+</div> -->
+        
     </div>
 
         </main>
@@ -226,7 +273,10 @@
             <ul class="posttop">
     <li>
             <a class="posttop__post posttop__image" href="/post/PureWiki主题">
-                <div class="posttop__post__cover"><img src="https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png" alt=""></div>
+                <div class="posttop__post__cover">
+                    <img src="https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png" alt="">
+                        // <img src="https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png" alt="">
+                </div>
                 <div class="posttop__post__title">PureWiki主题</div>
                 <div class="posttop__post__content">一个简单的主题</div>
             </a>
