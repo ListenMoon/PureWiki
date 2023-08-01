@@ -5,9 +5,7 @@ const totalPage = Math.ceil(count / pageSize)
 const hasBefore = curPage > 1
 const hasNext = curPage < totalPage
 ---
-<div>当前总数：{count}</div>
-        <div>当前页码：{curPage}</div>
-
+<div style="margin: 20px auto;display: flex; width: 450px;justify-content: space-between;">
         {
             hasBefore && (
                 <a href={`/${base}${url?'/'+url:''}${curPage > 1 ? `/${curPage - 1}` : ''}`}>
@@ -15,4 +13,8 @@ const hasNext = curPage < totalPage
                 </a>
             )
         }
+        <div>总数：{count}</div>
+        <div>总页数：{totalPage}</div>
+        <div>当前页码：{curPage}</div>
         {hasNext && <a href={`/${base}${url?'/'+url:''}/${curPage + 1}`}>下一页</a>}
+</div>

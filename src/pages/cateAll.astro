@@ -1,11 +1,11 @@
 ---
 import Page from '@blog/layouts/Page.astro'
-import { publishedList } from '@blog/utils'
+import { sortPublishedList } from '@blog/utils'
 import { PageSize } from '@blog/config'
 import Preview from '@blog/components/Preview.astro'
 import Pagination from '@blog/components/Pagination.astro'
 
-const list = await publishedList(undefined, true)
+const list = await sortPublishedList()
 
 const count = list.length
 const curPage = 1

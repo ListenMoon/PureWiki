@@ -1,7 +1,7 @@
 ---
 title: PureWiki主题
 description: 一个简单的主题
-heroImage: https://img1.imgtp.com/2023/04/12/JBgAjWiS.jpg
+heroImage: https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png
 heroPosition: top
 top: true
 pubDate: 2022/11/15 16:05:35
@@ -10,15 +10,10 @@ updatedDate: 2022/11/15 16:05:56
 
 [TOC]
 
-> 打算另开新项目，重构整个项目，主打Book,不同的book布局不一样。
-
-对于该主题，主要目的是为可展示文章的，提供一个树状菜单，可以简单当作一个界面纯净的Wiki。
-
-界面总感觉有点怪怪的。
-
 ## 特性
 
-1. 文章可用元输入如下（有一些其他的，可以自己看代码，tpyings尚不完善，得看布局代码）
+1. 文章可用元输入如下（有一些其他的，可以自己看代码，tpyings 尚不完善，得看布局代码）
+
     ```
     title: Markdown测试       <!-- 必须，文章标题 -->
     description: 描述         <!-- 描述，可用作seo，文章中暂未展示 -->
@@ -40,6 +35,7 @@ updatedDate: 2022/11/15 16:05:56
     ```
     效果：:abbr[提示]{title="提示"}
 4. 支持面板
+
     ```
     ::::card
     横排排版演示
@@ -62,11 +58,13 @@ updatedDate: 2022/11/15 16:05:56
     :::
     ::::
     ```
+
     横排已经可以了，竖排感觉也没啥用。
-5. 可配置头图为文章中的第一张图片，只需要将配置的`showArticleHeroImage`设置为true即可。
-6. 文章提供了直接在github编辑功能，自行配置即可
+
+5. 可配置头图为文章中的第一张图片，只需要将配置的`showArticleHeroImage`设置为 true 即可。
+6. 文章提供了直接在 github 编辑功能，自行配置即可
 7. 增加`mermaid`渲染流程图时序图（暂时提供两个）
-    ```
+    ````
         ```flow
         flowchart TD
             A[/Christmas\]
@@ -76,33 +74,37 @@ updatedDate: 2022/11/15 16:05:56
             C -->|Two| E[\iPhone\]
             C -->|Three| F[Car]
         ```
-    ```
-    ```
+    ````
+    ````
         ```sequence
         ```
-    ```
+    ````
 8. 增加`mathjax`渲染公式
+
     ```
     $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
 
     $$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
     ```
+
 9. 提供`iframe`命令和`iframec`命令  
-    `iframe`为收缩框默认打开  
-    `iframec`为收缩框默认关闭
+   `iframe`为收缩框默认打开  
+   `iframec`为收缩框默认关闭
+
     ```
     ::iframe[流程图Demo]{url=/demo/flowchart.html}
     ::iframec[流程图Demo]{url=/demo/flowchart.html}
     ```
-    目前版本能够展示url的网页,效果如下：
-    ::iframe[流程图Demo]{url=/demo/flowchart.html}
+
+    目前版本能够展示 url 的网页,效果如下：
+    ::iframe[流程图 Demo]{url=/demo/flowchart.html}
     ::iframec[时序图]{url=/demo/sequence-diagrams.html}
 
-    ::iframe[BiliBili]{url="//player.bilibili.com/player.html?aid=690345969&bvid=BV1N24y117QE&cid=895902728&page=1"}
+    <!-- ::iframe[BiliBili]{url="//player.bilibili.com/player.html?aid=690345969&bvid=BV1N24y117QE&cid=895902728&page=1"} -->
 
 10. 提供`demo`命令
 
-    ```
+    ````
         :::demo
         ```html
         <div>
@@ -112,35 +114,62 @@ updatedDate: 2022/11/15 16:05:56
         </div>
         ```
         :::
-    ```
+    ````
+
     效果：
     :::demo
+
     ```html
     <div>
-        <div>before content<div>
-        text
-        <div>after content<div>
+        <div>
+            before content
+            <div>
+                text
+                <div>
+                    after content
+                    <div></div>
+                </div>
+            </div>
+        </div>
     </div>
     ```
+
     :::
-    
+
     ```
     ::demo{path="/demo/flowchart.html"}
     ```
+
     效果：
     ::demo{path="/demo/flowchart.html"}
 
+## 配置
+
+该配置文件在`src/config.ts`中：
+
+1. `SITE_TYPE`:
+   值：`ESITETYPE.BLOG`,`ESITETYPE.WIKI`
+   默认值：`ESITETYPE.BLOG`
+   说明：博客模式与 wiki 模式，主要区别是左侧菜单是一个完整的文件树还是菜单树
+2. `Show_Sub_Article`
+   值：true,fasle
+   默认值：fasle
+   说明：在博客模式下，点击菜单显示的是所有孙子节点文章还是只显示子文章
+3. `PageSize`
+   值：number
+   默认值：10
+   说明：分页个数
+
+4. 待续
 
 ## 截图欣赏
 
-![图 1](/article/Pure%20Wiki%20%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92_2022-11-15_15-16-09-33.png)  
-![图 2](/article/Pure%20Wiki%20%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92_2022-11-15_15-16-09-58.png)  
+![图 0](/article/PureWiki主题/2023-08-01_01-14-42-23.png)   
 
- 
 ## 开发计划
 
-- [x] 图片alt显示
-- [x] 上一页与下一页
-- [x] 搜索(简陋实现，需改进)
-- [x] `mdx`全局组件实现，无需引入(初步实现)
-- [ ] 文章不显示在文件夹下，而是点击文件夹展示文章列表
+-   [x] 图片 alt 显示
+-   [x] 上一页与下一页
+-   [x] 搜索(简陋实现，需改进)
+-   [x] `mdx`全局组件实现，无需引入(初步实现)
+-   [x] 文章不显示在文件夹下，而是点击文件夹展示文章列表

@@ -1,12 +1,12 @@
 ---
 import Page from '@blog/layouts/Page.astro'
 import Preview from '@blog/components/Preview.astro'
-import { publishedList } from '@blog/utils'
+import { sortPublishedList } from '@blog/utils'
 import { PageSize } from '@blog/config'
 import Pagination from '@blog/components/Pagination.astro'
 
 export async function getStaticPaths({ paginate }) {
-    const posts = await publishedList(undefined, true)
+    const posts = await sortPublishedList()
     return paginate(posts, { pageSize: PageSize })
 }
 
