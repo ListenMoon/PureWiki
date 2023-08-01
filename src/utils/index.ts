@@ -1,5 +1,5 @@
 import type { Post } from '#/post';
-import { isDev, showArticleHeroImage } from '@blog/config';
+import { ESITETYPE, isDev, showArticleHeroImage, Show_Sub_Article, SITE_TYPE } from '@blog/config';
 import type { MarkdownInstance } from 'astro';
 import { articleDir, articleRoute } from '@blog/share';
 import { betterDirectorySort } from './better-directory-sort';
@@ -113,20 +113,30 @@ export async function publishedDict() {
     return sorted
 }
 
-export async function publishedList(allTree?: any) {
+export async function publishedList(allTree?: any, showAll?: boolean) {
     const tree = allTree ?? await publishedTree()
+    const isTree = !!allTree
     let sorted = [];
-    (function readTree(list: any) {
-        for (let i = 0; i < list.length; i++) {
-            const item = list[i];
+    if(SITE_TYPE === ESITETYPE.BLOG && !Show_Sub_Article && !showAll){
+        for (let i = 0; i < tree.length; i++) {
+            const item = tree[i];
             if (item.data) {
                 sorted.push(item)
             }
-            if (item.children && item.children.length) {
-                readTree(item.children)
-            }
         }
-    })(tree)
+    }else{
+        (function readTree(list: any) {
+            for (let i = 0; i < list.length; i++) {
+                const item = list[i];
+                if (item.data) {
+                    sorted.push(item)
+                }
+                if (item.children && item.children.length) {
+                    readTree(item.children)
+                }
+            }
+        })(tree)
+    }
     for (let i = 0; i < sorted.length; i++) {
         const item = sorted[i];
         item.data.beforeArticle = sorted[i - 1]?.data

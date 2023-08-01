@@ -1,0 +1,15 @@
+---
+const { article } = Astro.props
+---
+
+<a
+    style="display: block;padding: 10px 0;border-bottom: 1px solid #f3f3f3;"
+    href={article.url}
+>
+    <div class="title" style="font-size: 25px;">
+        {article.title}
+    </div>
+    <div class="desc" style="">
+        {article.description}
+    </div>
+</a>

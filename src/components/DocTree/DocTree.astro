@@ -18,6 +18,17 @@ export interface Props {
 }
 
 const { isBlog = false } = Astro.props as Props;
+
+function isActive() {
+  let pathArr = decodeURIComponent(Astro.url.pathname)
+    .slice(1)
+    .replace(/\/$/, "")
+    .split("/");
+  if((pathArr.length === 2 && pathArr[0] === "post") || (pathArr.length === 1 && pathArr[0] === "cate")){
+    return true
+  }
+  return false
+}
 ---
 
 <div class="tree" id="tree">
@@ -41,8 +52,8 @@ const { isBlog = false } = Astro.props as Props;
             href="/cate"
             style={`display: flex;color:inherit;border:0;text-decoration: none;margin-bottom: 10px;`}
           >
-            <span title="全部" class:list={["tree-item"]}>
-              全部
+            <span title="根节点" class:list={["tree-item", isActive() ? "active" : ""]}>
+              根节点
             </span>
           </a>
         </div>

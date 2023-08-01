@@ -4,7 +4,7 @@ import type { Post } from "#/post";
 import BlogPost from "../../layouts/BlogPost.astro"
 
 export async function getStaticPaths() {
-	const posts = await publishedList();
+	const posts = await publishedList(undefined, true);
 	return posts.map((post) => {
 		return {
 			params: { post: post.slug },

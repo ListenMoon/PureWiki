@@ -1,0 +1,55 @@
+---
+import { publishedDict, publishedList } from '@blog/utils'
+import Page from '@blog/layouts/Page.astro'
+import { PageSize } from '@blog/config'
+import Preview from '@blog/components/Preview.astro'
+import Pagination from '@blog/components/Pagination.astro'
+
+export async function getStaticPaths() {
+    // https://claude.ai/chat/57928701-3f12-42b5-aaef-63448b9a93d4
+    // 如何分页
+    const cates = await publishedDict()
+    const result = []
+    for (let i = 0; i < cates.length; i++) {
+        const cate = cates[i]
+        const allData = await publishedList(cate.children)
+        let index = 0
+        do {
+            let list = allData.slice(index * PageSize, (index + 1) * PageSize)
+            const name = cate.cateActive.split('/').slice(2).join('/')
+            result.push({
+                params: {
+                    cate: name,
+                    page: index + 1,
+                },
+                props: {
+                    data: list,
+                    count: allData.length,
+                    curPage: index + 1,
+                    url: name,
+                },
+            })
+            index++
+        } while (allData.slice(index * PageSize, (index + 1) * PageSize).length)
+    }
+    return result
+}
+
+const { data, count, curPage, url } = Astro.props as {
+    url: any
+    data: any
+    count: number
+    curPage: number
+}
+---
+
+<Page title="博客" description="博客" hideSide>
+    <div style="padding: 50px;">
+        {
+            data.map((article) => {
+                return <Preview article={article} />
+            })
+        }
+        <Pagination pageSize={PageSize} url={url} curPage={curPage} count={count}></Pagination>
+    </div>
+</Page>

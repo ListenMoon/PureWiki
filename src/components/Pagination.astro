@@ -1,0 +1,18 @@
+---
+const { pageSize, curPage, count, url  } = Astro.props
+
+const totalPage = Math.ceil(count / pageSize)
+const hasBefore = curPage > 1
+const hasNext = curPage < totalPage
+---
+<div>当前总数：{count}</div>
+        <div>当前页码：{curPage}</div>
+
+        {
+            hasBefore && (
+                <a href={`/cate${url?'/'+url:''}${curPage > 1 ? `/${curPage - 1}` : ''}`}>
+                    上一页
+                </a>
+            )
+        }
+        {hasNext && <a href={`/cate${url?'/'+url:''}/${curPage + 1}`}>下一页</a>}

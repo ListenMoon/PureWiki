@@ -1,25 +1,27 @@
 ---
-import Page from "../../layouts/Page.astro";
-import { publishedList } from "@blog/utils";
+import Page from '@blog/layouts/Page.astro'
+import Preview from '@blog/components/Preview.astro'
+import { publishedList } from '@blog/utils'
+import { PageSize } from '@blog/config'
+import Pagination from '@blog/components/Pagination.astro'
 
 export async function getStaticPaths({ paginate }) {
-  const posts = await publishedList();
-  return paginate(posts, { pageSize: 10 });
+    const posts = await publishedList()
+    return paginate(posts, { pageSize: PageSize })
 }
 
-const { page } = Astro.props;
+const { page } = Astro.props
+const count = page.total
+const curPage = page.currentPage
 ---
 
 <Page title="博客" description="博客" hideSide>
-  <div style="padding: 50px;">
-    {
-      page.data.map((article) => {
-        return (
-          <a style="display: block;padding: 6px 0;" href={article.url}>
-            {article.title} --- {article.url}
-          </a>
-        );
-      })
-    }
-  </div>
+    <div style="padding: 50px;">
+        {
+            page.data.map((article) => {
+                return <Preview article={article} />
+            })
+        }
+        <Pagination pageSize={PageSize} curPage={curPage} count={count}></Pagination>
+    </div>
 </Page>

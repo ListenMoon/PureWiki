@@ -38,6 +38,10 @@ function isActive(url: string, isFolder?: boolean) {
       pathArr[0] = "cate";
       return pathArr.slice(0, -1).join("/") === urlArr.join("/");
     }
+    if(Astro.params.page !== undefined){
+        // 说明有分页的参数
+        return pathArr.slice(0, -1).join("/") === urlArr.join("/");
+    }
     return pathArr.join("/") === urlArr.join("/");
   }
 
