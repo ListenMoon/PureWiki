@@ -146,7 +146,7 @@ export async function publishedList(allTree?: any, showAll?: boolean) {
 }
 
 export async function sortPublishedList(allTree?: any) {
-    let posts = await publishedList(allTree)
+    let posts = await publishedList(allTree, true)
     posts = posts.sort((a, b) => {
         if (b.pubTimestamp && a.pubTimestamp) {
             return b.pubTimestamp - a.pubTimestamp;
