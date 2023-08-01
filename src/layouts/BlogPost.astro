@@ -14,17 +14,18 @@ if(Astro.url.pathname.startsWith("/collect")){
 export interface extendProps {
 	hideSide: boolean
     hideMenu?: boolean
+    showTree?: boolean
 }
 export type Props = Partial<PostProps> & extendProps
 
-let { title, description, pubTimestamp, updatedTimestamp, heroImage, _images, filePath, _head, hideSide= false, hideMenu = false, mode} = getPost(Astro.props as Props) as Props
+let { title, description, pubTimestamp, updatedTimestamp, heroImage, _images, filePath, _head, hideSide= false, hideMenu = false, mode, showTree} = getPost(Astro.props as Props) as Props
 
 // if(showArticleHeroImage && _images && !!_images.length){
 // 	heroImage = _images[0].url
 // }
 
 ---
-<Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu}>
+<Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu} showTree={showTree}>
 		{heroImage && <img class="hero-image" src={heroImage} alt="" />}
 		<article class:list={["typo article",mode]}>
             {SITE_TYPE === ESITETYPE.BLOG && <span style="font-size: .75em;color: #bdbdbd;">

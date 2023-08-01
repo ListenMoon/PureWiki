@@ -29,10 +29,11 @@ export interface Props {
   title: string;
   description: string;
   hideSide: boolean;
+  showTree: boolean;
   hideMenu: boolean;
 }
 
-let { title, description, hideSide, hideMenu } = Astro.props as Props;
+let { title, description, hideSide, hideMenu, showTree } = Astro.props as Props;
 
 const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
 ---
@@ -48,11 +49,12 @@ const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
       <div class="left">
         <div class="wrapper">
           <Header title={title} />
-          <DocTree
+          <div style="background-color: #eee;height:10px;"></div>
+          { showTree && <DocTree
             isBlog={isBlog}
             title={isCollect ? CollectTitle : TreeTitle}
             list={articles}
-          />
+          /> }
           <!-- 为了快速将元素设置 -->
           <script is:inline src="/scripts/init.js"></script>
         </div>
@@ -66,6 +68,7 @@ const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
       {
         !hideSide && (
           <div class="side">
+            <UserInfo></UserInfo>
             <PostTop posts={topArticles} />
             {!hideMenu && <slot name="side" />}
           </div>

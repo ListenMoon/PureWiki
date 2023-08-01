@@ -43,7 +43,7 @@ const { data, count, curPage, url } = Astro.props as {
 }
 ---
 
-<Page title="分类" description="分类" hideSide>
+<Page title="分类" description="分类" showTree>
     <div style="padding: 50px;">
         {
             data.map((article) => {
