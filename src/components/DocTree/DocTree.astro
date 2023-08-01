@@ -24,17 +24,20 @@ function isActive() {
     .slice(1)
     .replace(/\/$/, "")
     .split("/");
-  if((pathArr.length === 2 && pathArr[0] === "post") || (pathArr.length === 1 && pathArr[0] === "cate")){
-    return true
+  if (
+    (pathArr.length === 2 && pathArr[0] === "post") ||
+    (pathArr.length === 1 && pathArr[0] === "cate")
+  ) {
+    return true;
   }
-  return false
+  return false;
 }
 ---
 
 <div class="tree" id="tree">
   {
     !isBlog ? (
-      <details open="true" style="direction: ltr;">
+      <details open="true" style="direction: ltr;" class="my-[10px]">
         <summary>
           <span class="tree-item">{Astro.props.title}</span>
           {enableRemote && (
@@ -47,13 +50,13 @@ function isActive() {
       </details>
     ) : (
       <div style="direction: ltr;padding-left: 17px;">
-        <div>
+        <div style="padding:6px 17px; margin-left: -17px;position:sticky;top: 0;background: white;border-bottom:1px solid #eee;">
           <a
             href="/cateAll"
-            style={`display: flex;color:inherit;border:0;text-decoration: none;margin-bottom: 10px;`}
+            style={`display: flex;color:inherit;border:0;text-decoration: none;`}
           >
             <span title="所有文章" class:list={["tree-item"]}>
-                所有文章
+              所有文章
             </span>
           </a>
         </div>
@@ -62,7 +65,10 @@ function isActive() {
             href="/cate"
             style={`display: flex;color:inherit;border:0;text-decoration: none;`}
           >
-            <span title="根节点" class:list={["tree-item", isActive() ? "active" : ""]}>
+            <span
+              title="根节点"
+              class:list={["tree-item", isActive() ? "active" : ""]}
+            >
               根节点
             </span>
           </a>
@@ -78,7 +84,7 @@ function isActive() {
     flex: 1;
     direction: rtl;
     overflow: auto;
-    padding: 4px 0;
+    // padding: 4px 0;
     position: relative;
     width: 300px;
     font-size: 0.875em;

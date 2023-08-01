@@ -11,7 +11,15 @@ const { posts } = Astro.props as Props
     { !!posts.length && posts.map(v=>{
         return <li>
             <a class:list={["posttop__post",!!v.heroImage?'posttop__image':'']} href={v.url}>
-                {!!v.heroImage && <div class="posttop__post__cover"><img src={v.heroImage} alt=""></div>}
+                {!!v.heroImage && <div class="posttop__post__cover">
+                    {v.heroImage &&
+                        (v.heroImage.includes(".mp4") ? (
+                        <video src={v.heroImage} autoplay muted loop />
+                        ) : (
+                        <img src={v.heroImage} alt="" />
+                        ))}
+                        // <img src={v.heroImage} alt="">
+                </div>}
                 <div class="posttop__post__title">{v.title}</div>
                 { !! v.description && <div class="posttop__post__content">{v.description}</div> }
             </a>
@@ -61,6 +69,11 @@ const { posts } = Astro.props as Props
                 // filter: blur(1.875em) brightness(.7);
                 filter: blur(0.2em) brightness(.7);
                 img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                video{
                     width: 100%;
                     height: 100%;
                     object-fit: cover;

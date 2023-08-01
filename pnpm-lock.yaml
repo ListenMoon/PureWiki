@@ -13,6 +13,9 @@ dependencies:
   '@astrojs/sitemap':
     specifier: ^2.0.1
     version: 2.0.1
+  '@sarissa/pagination':
+    specifier: ^1.0.3
+    version: 1.0.3
   astro:
     specifier: ^2.9.6
     version: 2.9.6(@types/node@18.17.1)(sass@1.64.1)
@@ -918,6 +921,10 @@ packages:
       picocolors: 1.0.0
       tiny-glob: 0.2.9
       tslib: 2.5.0
+    dev: false
+
+  /@sarissa/pagination@1.0.3:
+    resolution: {integrity: sha512-JP3HKb/5e5sVP2+PjBGNXcqX0GUpvS4lLBpYWJNNG6YBOl7uO7hLVxXrWT/LTb+a7ujK6aGr1Kv3svk8ExWp4A==}
     dev: false
 
   /@tootallnate/once@2.0.0:

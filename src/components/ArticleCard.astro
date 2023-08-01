@@ -1,50 +1,33 @@
 ---
-const { article } = Astro.props;
+const props = Astro.props;
 ---
 
-<div class="article-card mx-[-25px] md:mx-0">
+<div class="article-card">
   <a
-    class:list={["posttop__post", !!article.heroImage ? "posttop__image" : ""]}
-    href={article.url}
+    class:list={["posttop__post", !!props.heroImage ? "posttop__image" : ""]}
+    href={props.url}
   >
     {
-      !!article.heroImage && (
+      !!props.heroImage && (
         <div class="posttop__post__cover">
-          {article.heroImage &&
-            (article.heroImage.includes(".mp4") ? (
-              <video src={article.heroImage} autoplay muted loop />
-            ) : (
-              <img src={article.heroImage} alt="" />
-            ))}
-          // <img src={article.heroImage} alt="" />
+          <img src={props.heroImage} alt="" />
         </div>
       )
     }
-    <!-- <div class="posttop__post__cover">
-      <img
-        src={article.heroImage
-          ? article.heroImage
-          : "https://picsum.photos/1280/780?random="+Math.random()*10000}
-        alt=""
-      />
-    </div> -->
-
-    <div class="posttop__post__title">{article.title}</div>
-    <span style="font-size: 12px;margin-bottom: .1em;position: relative;">
-      创建于：{
-        new Date(article.pubTimestamp).toLocaleDateString("zh-cn", {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-          hour: "numeric",
-          minute: "numeric",
-          second: "numeric",
-        })
-      }
+    <div class="posttop__post__title">{props.title}</div>
+    <span style="font-size: 12px;margin-bottom: .1em;">
+        创建于：{new Date(props.pubTimestamp).toLocaleDateString('zh-cn', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+        })}
     </span>
     {
-      !!article.description && (
-        <div class="posttop__post__content">{article.description}</div>
+      !!props.description && (
+        <div class="posttop__post__content">{props.description}</div>
       )
     }
   </a>
@@ -82,11 +65,6 @@ const { article } = Astro.props;
         // filter: blur(1.875em) brightness(.7);
         filter: blur(0.2em) brightness(0.7);
         img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-        video {
           width: 100%;
           height: 100%;
           object-fit: cover;

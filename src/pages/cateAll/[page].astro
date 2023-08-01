@@ -23,5 +23,8 @@ const curPage = page.currentPage
             })
         }
         <Pagination base="cateAll" pageSize={PageSize} curPage={curPage} count={count}></Pagination>
+        {
+            page.data.length === 0 && <div style="font-size:25px;text-align:center;color: grey;">没有知识的荒原</div>
+        }
     </div>
 </Page>

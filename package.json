@@ -17,6 +17,7 @@
     "@astrojs/prefetch": "^0.3.0",
     "@astrojs/rss": "^2.4.3",
     "@astrojs/sitemap": "^2.0.1",
+    "@sarissa/pagination": "^1.0.3",
     "astro": "^2.9.6",
     "astro-robots-txt": "^0.5.0",
     "github-slugger": "^2.0.0",

@@ -1,11 +1,12 @@
 ---
 import Page from '@blog/layouts/Page.astro'
-import { sortPublishedList } from '@blog/utils'
+import { publishedList } from '@blog/utils'
 import { PageSize } from '@blog/config'
 import Preview from '@blog/components/Preview.astro'
 import Pagination from '@blog/components/Pagination.astro'
+import ArticleCard from '@blog/components/ArticleCard.astro'
 
-const list = await sortPublishedList()
+const list = await publishedList(undefined, true)
 
 const count = list.length
 const curPage = 1
@@ -19,5 +20,8 @@ const curPage = 1
             })
         }
         <Pagination base="cateAll" pageSize={PageSize} curPage={curPage} count={count}></Pagination>
+        {
+            list.slice(0, PageSize).length === 0 && <div style="font-size:25px;text-align:center;color: grey;">没有知识的荒原</div>
+        }
     </div>
 </Page>

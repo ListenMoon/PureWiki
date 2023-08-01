@@ -45,5 +45,8 @@ const { data, url, count, curPage } = Astro.props as {
             })
         }
         <Pagination pageSize={PageSize} url={url} curPage={curPage} count={count}></Pagination>
+        {
+            data.length === 0 && <div style="font-size:25px;text-align:center;color: grey;">没有知识的荒原</div>
+        }
     </div>
 </Page>

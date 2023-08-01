@@ -2,7 +2,9 @@
 .serif {
   /* font-family: Palatino, Optima, Georgia, serif; */
 }
-
+.typo a{
+  color: #1abc9c;
+}
 .typo code {
   color: #c7254e;
   background-color: #f9f2f4;

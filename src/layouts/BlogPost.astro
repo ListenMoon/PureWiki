@@ -26,7 +26,7 @@ let { title, description, pubTimestamp, updatedTimestamp, heroImage, _images, fi
 
 ---
 <Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu} showTree={showTree}>
-		{heroImage && <img class="hero-image" src={heroImage} alt="" />}
+        {heroImage && (heroImage.includes(".mp4") ? <video class="hero-image" src={heroImage} autoplay muted loop /> : <img class="hero-image" src={heroImage} alt="" />)}
 		<article class:list={["typo article",mode]}>
             {SITE_TYPE === ESITETYPE.BLOG && <span style="font-size: .75em;color: #bdbdbd;">
                 <a href="/cate">根节点</a><span style="padding: 0 3px;">{'>'}</span></span>}

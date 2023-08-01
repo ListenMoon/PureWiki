@@ -1,20 +1,74 @@
 ---
-const { pageSize, curPage, count, url, base ="cate"  } = Astro.props
+import { Pagination } from "@sarissa/pagination";
+const { pageSize, curPage, count, url, base = "cate" } = Astro.props;
 
-const totalPage = Math.ceil(count / pageSize)
-const hasBefore = curPage > 1
-const hasNext = curPage < totalPage
+const totalPage = Math.ceil(count / pageSize);
+const hasBefore = curPage > 1;
+const hasNext = curPage < totalPage;
 ---
-<div style="margin: 20px auto;display: flex; width: 450px;justify-content: space-between;">
-        {
-            hasBefore && (
-                <a href={`/${base}${url?'/'+url:''}${curPage > 1 ? `/${curPage - 1}` : ''}`}>
-                    上一页
-                </a>
-            )
-        }
-        <div>总数：{count}</div>
-        <div>总页数：{totalPage}</div>
-        <div>当前页码：{curPage}</div>
-        {hasNext && <a href={`/${base}${url?'/'+url:''}/${curPage + 1}`}>下一页</a>}
-</div>
+
+<Pagination
+  activeButton="pa-active"
+  button="pa-button"
+  buttonGroup="btn-group"
+  disabledButton="btn-disabled"
+  outerDiv="pa-wrapper"
+  currentPage={curPage}
+  totalPage={totalPage}
+  url={`${base}${url ? "/" + url : ""}`}
+/>
+<style is:global lang="scss">
+  .pa-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .pa-active {
+    background-color: rgb(251 146 60/1) !important;
+  }
+  .pa-button {
+    padding: 15px 18px;
+    line-height: 1;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0 0 0 / 0.1),
+      0 1px 2px -1px rgb(0 0 0 / 0.1);
+    border-radius: 0.25rem;
+    color: rgb(255 255 255/1);
+    background-color: rgb(148 163 184/1);
+    margin-left: 8px;
+    &:first-child {
+      margin-left: 0;
+    }
+    cursor: pointer;
+  }
+</style>
+<!-- <div
+  style="margin: 20px auto;display: flex; width: 450px;justify-content: space-between;"
+>
+  <div>
+    {
+      hasBefore && (
+        <a
+          href={`/${base}${url ? "/" + url : ""}${
+            curPage > 1 ? `/${curPage - 1}` : ""
+          }`}
+        >
+          上一页
+        </a>
+      )
+    }
+  </div> -->
+<!-- <div>总数：{count}</div> -->
+<!-- <div>总页数：{totalPage}</div> -->
+<!-- <div>当前页码：{curPage}</div> -->
+<!-- {[...Array(totalPage)].map((v, i) => {
+
+    return <div>{ i + 1} </div>
+  })}
+  <div>{curPage}</div>
+  <div>
+    {
+      hasNext && (
+        <a href={`/${base}${url ? "/" + url : ""}/${curPage + 1}`}>下一页</a>
+      )
+    }
+  </div>
+</div> -->
