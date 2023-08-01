@@ -49,8 +49,18 @@ function isActive() {
       <div style="direction: ltr;padding-left: 17px;">
         <div>
           <a
-            href="/cate"
+            href="/cateAll"
             style={`display: flex;color:inherit;border:0;text-decoration: none;margin-bottom: 10px;`}
+          >
+            <span title="全部" class:list={["tree-item"]}>
+              全部
+            </span>
+          </a>
+        </div>
+        <div>
+          <a
+            href="/cate"
+            style={`display: flex;color:inherit;border:0;text-decoration: none;`}
           >
             <span title="根节点" class:list={["tree-item", isActive() ? "active" : ""]}>
               根节点
