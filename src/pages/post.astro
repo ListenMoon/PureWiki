@@ -9,7 +9,7 @@ import { sortPublishedList } from "@blog/utils"
 let posts = await sortPublishedList()
 
 ---
-<Page title={SITE_TITLE + '-文章'} description={SITE_DESCRIPTION} hideSide>
+<Page title={SITE_TITLE + '-文章'} description={SITE_DESCRIPTION} hideSide showTree>
 	<section style="padding: 1em 1.2em 1em;">
 				<ul class="page-post">
 					{posts.map((post) => (
