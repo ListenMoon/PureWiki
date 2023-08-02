@@ -29,8 +29,10 @@ var loadingBar = document.querySelector(".loading-bar");
 var progress = document.querySelector(".loading-bar .progress");
 var timer = null;
 
+let lastURL = ''
 // Pjax 开始时执行的函数
 document.addEventListener("pjax:send", function () {
+    lastURL = location.href
   // 进度条默认已经加载 20%
   var loadingBarWidth = 20;
   // 进度条的最大增加宽度
@@ -57,6 +59,9 @@ document.addEventListener("pjax:send", function () {
 
 // Pjax 完成之后执行的函数
 document.addEventListener("pjax:complete", function () {
+    if(lastURL !== location.href){     
+        window.scrollTo(0, 0)
+    }
   clearInterval(timer);
   progress.style.width = "100%";
   loadingBar.classList.remove("loading");
