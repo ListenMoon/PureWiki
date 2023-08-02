@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="zh-cn">
   <head>
     <!-- Global Metadata --><meta charset="utf-8">
@@ -25,9 +24,7 @@
 <meta property="twitter:title" content="前端">
 <meta property="twitter:description">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
-  <link rel="stylesheet" href="/astro_/_...collect_.77543dc4.css" />
-<link rel="stylesheet" href="/astro_/about.8157dd9c.css" />
-<link rel="stylesheet" href="/astro_/about.1a331efb.css" /><script type="module" src="/astro_/hoisted.d65a942b.js"></script>
+  <link rel="stylesheet" href="/astro_/about.bb694f27.css" /><script type="module" src="/astro_/hoisted.b8f1523a.js"></script>
 <script type="module" src="/astro_/page.10202da5.js"></script></head>
 
   <body>
@@ -54,14 +51,13 @@
 		<a href="/rss.xml" class="astro-EIMMU3LG">
 	Rss
 </a>
-        <a href="#" class="astro-EIMMU3LG" id="searchButton">
-	搜索
-</a>
+        <div style="display: inline-block;color: #1abc9c;cursor:pointer;" id="searchButton">搜索</div>
 		<!-- <HeaderLink href="/demo">Demo</HeaderLink> -->
 	</nav>
 </header>
           <div style="background-color: #eee;height:10px;"></div>
-          <div class="tree" id="tree">
+          <div class="tree-wrapper" style="flex: 1;height:0;display:flex;flex-direction: column">
+            <div class="tree" id="tree">
   <details open="true" style="direction: ltr;" class="my-[10px]">
         <summary>
           <span class="tree-item">🍬收藏</span>
@@ -210,12 +206,13 @@
       </details>
       </details>
 </div>
+          </div>
           <!-- 为了快速将元素设置 -->
           <script src="/scripts/init.js"></script>
         </div>
       </div>
       <div class="right">
-        <main>
+        <main id="pjax-container">
           <article class="typo article collect">
             <span style="font-size: .75em;color: #bdbdbd;">
                 <a href="/cate">根节点</a><span style="padding: 0 3px;">&gt;</span></span>
@@ -272,8 +269,8 @@
     </p>
 </footer>
       </div>
-      <div class="side">
-            <div class="userinfo-wrapper">
+      <div class="side show">
+        <div class="userinfo-wrapper">
     
     <div class="userinfo">
         <div>NPMRUN</div>
@@ -325,7 +322,7 @@
     // @ts-ignore
     window.siteTime();
 })();</script>
-            <ul class="posttop">
+        <ul class="posttop">
     <li>
             <a class="posttop__post posttop__image" href="/post/PureWiki主题">
                 <div class="posttop__post__cover">
@@ -338,18 +335,29 @@
         </li>
     
 </ul>
-            <ul class="astro-JRWIVBLV">
-			<div class="title astro-JRWIVBLV">目录</div>
-		<li class="astro-JRWIVBLV"><a class="head astro-JRWIVBLV" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="工具" href="#工具">
+        <div class="_headtree show">
+            <ul class="head-tree">
+			<div class="title">目录</div>
+		<li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="工具" href="#工具">
                                                     # 工具
-                                                </a></li><li class="astro-JRWIVBLV"><a class="head astro-JRWIVBLV" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="视觉交互" href="#视觉交互">
+                                                </a></li><li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="视觉交互" href="#视觉交互">
                                                     # 视觉交互
-                                                </a></li><li class="astro-JRWIVBLV"><a class="head astro-JRWIVBLV" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="树组件" href="#树组件">
+                                                </a></li><li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="树组件" href="#树组件">
                                                     # 树组件
                                                 </a></li>
         
 		</ul>
+        </div>
+      </div>
+      <!-- {
+        !hideSide && (
+          <div class="side">
+            <UserInfo></UserInfo>
+            <PostTop posts={topArticles} />
+            {!hideMenu && <slot name="side" />}
           </div>
+        )
+      } -->
     </div>
     <div class="toTop" id="toTop">
       <svg class="icon" style="width: 2em;height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M780.288 750.592H244.736V415.744C244.736 229.376 396.288 79.872 460.8 24.576c29.696-24.576 71.68-24.576 101.376 0 65.536 55.296 217.088 204.8 217.088 391.168v334.848z m-453.632-81.92h371.712V415.744c0-150.528-128-277.504-186.368-326.656-57.344 49.152-186.368 176.128-186.368 326.656v252.928zM509.952 87.04z" fill="#333C4F"></path><path d="M326.656 750.592H148.48c-43.008 0-78.848-34.816-78.848-78.848v-76.8c0-26.624 13.312-51.2 34.816-65.536l221.184-146.432v367.616z m-175.104-81.92h92.16v-133.12l-92.16 61.44v71.68zM875.52 750.592H697.344V384l221.184 146.432c22.528 14.336 34.816 38.912 34.816 65.536v76.8c1.024 41.984-34.816 77.824-77.824 77.824z m-96.256-81.92h92.16v-71.68l-92.16-61.44v133.12zM513.024 489.472c-64.512 0-116.736-52.224-116.736-116.736S449.536 256 513.024 256s116.736 52.224 116.736 116.736-52.224 116.736-116.736 116.736z m0-151.552c-18.432 0-34.816 15.36-34.816 34.816s15.36 34.816 34.816 34.816 34.816-15.36 34.816-34.816S532.48 337.92 513.024 337.92zM512 1017.856c-22.528 0-40.96-18.432-40.96-40.96v-163.84c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v163.84c0 22.528-18.432 40.96-40.96 40.96zM351.232 953.344c-22.528 0-40.96-18.432-40.96-40.96v-66.56c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v66.56c0 22.528-18.432 40.96-40.96 40.96zM673.792 953.344c-22.528 0-40.96-18.432-40.96-40.96v-66.56c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v66.56c0 22.528-18.432 40.96-40.96 40.96z" fill="#333C4F"></path></svg>
@@ -565,7 +573,7 @@ is:inline
     </div>
 </div>
 
-<script lang="ts">
+<script lang="ts" data-pjax>
     const searchBoxEl = document.getElementById("searchBox");
     
     const searchMask = document.getElementById("search-mask");
@@ -591,6 +599,9 @@ is:inline
         }
     });
 </script>
+    <div class="loading-bar">
+        <div class="progress"></div>
+    </div>
     
   </body>
 </html>
