@@ -15,7 +15,14 @@ var pjax = new Pjax({
       ".layout .side",
     //   ".layout .side ._headtree",
     ],
-    // scrollRestoration: true
+    "history": true,
+    "scrollTo": false,
+    // https://www.zhangxinxu.com/wordpress/2022/05/history-scrollrestoration/
+    "scrollRestoration": false,
+    "cacheBust": false,
+    "debug": false,
+    "currentUrlFullReload": false,
+    "timeout": 0
 })
 
 var loadingBar = document.querySelector(".loading-bar");
