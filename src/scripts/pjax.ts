@@ -11,7 +11,7 @@ var pjax = new Pjax({
       "title",
       "meta[name=description]",
       "#pjax-container",
-      ".layout .left .wrapper",
+      ".layout .left .wrapper .tree-wrapper",
       ".layout .side",
     //   ".layout .side ._headtree",
     ],

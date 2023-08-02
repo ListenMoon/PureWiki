@@ -50,11 +50,13 @@ const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
         <div class="wrapper">
           <Header title={title} />
           <div style="background-color: #eee;height:10px;"></div>
-          { showTree && <DocTree
-            isBlog={isBlog}
-            title={isCollect ? CollectTitle : TreeTitle}
-            list={articles}
-          /> }
+          <div class="tree-wrapper" style="flex: 1;height:0;display:flex;flex-direction: column">
+            { showTree && <DocTree
+                isBlog={isBlog}
+                title={isCollect ? CollectTitle : TreeTitle}
+                list={articles}
+              /> }
+          </div>
           <!-- 为了快速将元素设置 -->
           <script is:inline src="/scripts/init.js"></script>
         </div>
