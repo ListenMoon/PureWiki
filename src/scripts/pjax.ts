@@ -7,22 +7,22 @@
 import Pjax from "pjax";
 
 var pjax = new Pjax({
-    selectors: [
-      "title",
-      "meta[name=description]",
-      "#pjax-container",
-      ".layout .left .wrapper .tree-wrapper",
-      ".layout .side",
+  selectors: [
+    "title",
+    "meta[name=description]",
+    "#pjax-container",
+    ".layout .left .wrapper .tree-wrapper",
+    ".layout .side",
     //   ".layout .side ._headtree",
-    ],
-    "history": true,
-    "scrollTo": false,
-    // https://www.zhangxinxu.com/wordpress/2022/05/history-scrollrestoration/
-    "scrollRestoration": false,
-    "cacheBust": false,
-    "debug": false,
-    "currentUrlFullReload": false,
-    "timeout": 0
+  ],
+  "history": true,
+  "scrollTo": false,
+  // https://www.zhangxinxu.com/wordpress/2022/05/history-scrollrestoration/
+  "scrollRestoration": false,
+  "cacheBust": false,
+  "debug": false,
+  "currentUrlFullReload": false,
+  "timeout": 0
 })
 
 var loadingBar = document.querySelector(".loading-bar");
@@ -32,7 +32,7 @@ var timer = null;
 let lastURL = ''
 // Pjax 开始时执行的函数
 document.addEventListener("pjax:send", function () {
-    lastURL = location.href
+  lastURL = location.href
   // 进度条默认已经加载 20%
   var loadingBarWidth = 20;
   // 进度条的最大增加宽度
@@ -59,9 +59,9 @@ document.addEventListener("pjax:send", function () {
 
 // Pjax 完成之后执行的函数
 document.addEventListener("pjax:complete", function () {
-    if(lastURL !== location.href){     
-        window.scrollTo(0, 0)
-    }
+  if (lastURL !== location.href) {
+    window.scrollTo(0, 0)
+  }
   clearInterval(timer);
   progress.style.width = "100%";
   loadingBar.classList.remove("loading");
@@ -71,4 +71,37 @@ document.addEventListener("pjax:complete", function () {
   }, 400);
 
   _initColor()
+
+  updatePjax()
+  reload()
 });
+
+
+function reload() {
+  document
+    .querySelector("script[data-pjax], .pjax-reload script")
+    ?.forEach(function (elem) {
+      var id = element.id || "";
+      var src = element.src || "";
+      var code = element.text || element.textContent || element.innerHTML || "";
+      var parent = element.parentNode;
+      var script = document.createElement("script");
+
+      parent.removeChild(element);
+
+      if (id !== "") {
+        script.id = element.id;
+      }
+
+      if (src !== "") {
+        script.src = src;
+        script.async = false;
+      }
+
+      if (code !== "") {
+        script.appendChild(document.createTextNode(code));
+      }
+
+      parent.appendChild(script);
+    });
+}

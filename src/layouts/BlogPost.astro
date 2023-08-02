@@ -15,10 +15,11 @@ export interface extendProps {
 	hideSide: boolean
     hideMenu?: boolean
     showTree?: boolean
+    collect?: boolean
 }
 export type Props = Partial<PostProps> & extendProps
 
-let { title, description, pubTimestamp, updatedTimestamp, heroImage, _images, filePath, _head, hideSide= false, hideMenu = false, mode, showTree} = getPost(Astro.props as Props) as Props
+let { title, description, pubTimestamp, updatedTimestamp, heroImage, _images, filePath, _head, hideSide= false, hideMenu = false, mode, showTree, collect = false} = getPost(Astro.props as Props) as Props
 
 // if(showArticleHeroImage && _images && !!_images.length){
 // 	heroImage = _images[0].url
@@ -29,7 +30,7 @@ let { title, description, pubTimestamp, updatedTimestamp, heroImage, _images, fi
         {heroImage && (heroImage.includes(".mp4") ? <video class="hero-image" src={heroImage} autoplay muted loop /> : <img class="hero-image" src={heroImage} alt="" />)}
 		<article class:list={["typo article",mode]}>
             {SITE_TYPE === ESITETYPE.BLOG && <span style="font-size: .75em;color: #bdbdbd;">
-                <a href="/cate">根节点</a><span style="padding: 0 3px;">{'>'}</span></span>}
+                <a href={collect?'/collect':"/cate"}>根节点</a><span style="padding: 0 3px;">{'>'}</span></span>}
                 {SITE_TYPE === ESITETYPE.BLOG && filePath && (filePath.slice(1).split("/").map((v,i)=>{
                     const array = filePath.slice(1).split("/")
                     const isNotLast = i !== (array.length as any) - 1
