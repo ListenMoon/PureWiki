@@ -50,22 +50,31 @@ const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
         <div class="wrapper">
           <Header title={title} />
           <div style="background-color: #eee;height:10px;"></div>
-          { showTree && <DocTree
-            isBlog={isBlog}
-            title={isCollect ? CollectTitle : TreeTitle}
-            list={articles}
-          /> }
+          <div class="tree-wrapper" style="flex: 1;height:0;display:flex;flex-direction: column">
+            { showTree && <DocTree
+                isBlog={isBlog}
+                title={isCollect ? CollectTitle : TreeTitle}
+                list={articles}
+              /> }
+          </div>
           <!-- 为了快速将元素设置 -->
           <script is:inline src="/scripts/init.js"></script>
         </div>
       </div>
       <div class="right">
-        <main>
+        <main id="pjax-container">
           <slot />
         </main>
         <Footer />
       </div>
-      {
+      <div class="side" class:list={[!hideSide?'show':'']}>
+        <UserInfo></UserInfo>
+        <PostTop posts={topArticles} />
+        <div class="_headtree" class:list={[!hideMenu?'show':'']}>
+            <slot name="side" />
+        </div>
+      </div>
+      <!-- {
         !hideSide && (
           <div class="side">
             <UserInfo></UserInfo>
@@ -73,7 +82,7 @@ const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
             {!hideMenu && <slot name="side" />}
           </div>
         )
-      }
+      } -->
     </div>
     <div class="toTop" id="toTop">
       <svg
@@ -90,6 +99,9 @@ const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
       >
     </div>
     <Search />
+    <div class="loading-bar">
+        <div class="progress"></div>
+    </div>
     <script src="@blog/scripts/main.ts"></script>
   </body>
 </html>

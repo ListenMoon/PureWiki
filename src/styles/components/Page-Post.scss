@@ -1,0 +1,15 @@
+ul.page-post{
+    list-style-type: none;
+    padding: unset;
+    li {
+        display: flex;
+    }
+    li time {
+        flex: 0 0 130px;
+        font-style: italic;
+        color: #595959;
+    }
+    li a:visited {
+        color: #8e32dc;
+    }
+}

@@ -6,6 +6,12 @@
 @import "./typo.css";
 @import "viewerjs/dist/viewer.css";
 
+@import "./components/Page-Post.scss";
+@import "./components/HeadTree.scss";
+@import "./components/DocTree.scss";
+@import "./components/Pagination.scss";
+@import "./components/Preview.scss";
+
 html,
 body {
     background: #eee;
@@ -15,6 +21,59 @@ body {
         WenQuanYi Micro Hei, sans-serif;
     font-display: fallback;
 }
+
+// 文章中的上一页下一页
+.paging{
+    margin: 15px 0;
+    display: flex;
+    text-indent: 0;
+    .before{
+        flex: 1;
+    }
+    .next{
+        text-align: right;
+        flex: 1;
+    }
+    @include media-pc(sm) {
+        display: block;
+        text-align: left;
+        .before{
+            flex: auto;
+        }
+        .next{
+            text-align: left;
+            flex: auto;
+        }
+    }
+}
+
+.loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity .4s linear;
+  
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #1abc9c;
+      box-shadow: 0 0 10px rgba(26, 188, 156, .7);
+    }
+  
+    &.loading {
+      opacity: 1;
+      transition: none;
+  
+      .progress {
+        transition: width .4s ease;
+      }
+    }
+  }
 
 pre,
 code {
@@ -144,8 +203,18 @@ mark.highlight {
         top: 0;
         width: 300px;
         box-sizing: border-box;
+        display: none;
+        &.show{
+            display: block;
+        }
         @include media-pc(md) {
+            display: none !important;
+        }
+        ._headtree{
             display: none;
+            &.show{
+                display: block;
+            }
         }
     }
     .left {

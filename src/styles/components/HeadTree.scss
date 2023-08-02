@@ -1,0 +1,28 @@
+ul.head-tree{
+    margin-top: 1em;
+    .title{
+        height: 35px;
+        line-height: 35px;
+        font-weight: bold;
+        padding: 0 1em;
+    }
+    li{
+        padding: 0 1em;
+        a {
+            color: #19171199;
+        }
+    }
+    .active{
+        background-color: #1abc9c27;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #1abc9c;
+            width: 4px;
+        }
+    }
+}

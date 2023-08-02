@@ -19,31 +19,6 @@ const {
 	post,
 } = Astro.props as { post: Post };
 ---
-<style is:global lang="scss">
-    .paging{
-        margin: 15px 0;
-        display: flex;
-        text-indent: 0;
-        .before{
-            flex: 1;
-        }
-        .next{
-            text-align: right;
-            flex: 1;
-        }
-        @include media-pc(sm) {
-            display: block;
-            text-align: left;
-            .before{
-                flex: auto;
-            }
-            .next{
-                text-align: left;
-                flex: auto;
-            }
-        }
-    }
-</style>
 <BlogPost {...post} showTree>
 	<Content />
     <div class="paging">
