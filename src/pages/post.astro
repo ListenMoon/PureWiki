@@ -9,26 +9,9 @@ import { sortPublishedList } from "@blog/utils"
 let posts = await sortPublishedList()
 
 ---
-	<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li time {
-				flex: 0 0 130px;
-				font-style: italic;
-				color: #595959;
-			}
-			ul li a:visited {
-				color: #8e32dc;
-			}
-		</style>
 <Page title={SITE_TITLE + '-文章'} description={SITE_DESCRIPTION} hideSide>
 	<section style="padding: 1em 1.2em 1em;">
-				<ul>
+				<ul class="page-post">
 					{posts.map((post) => (
 						<li>
 							<time datetime={post.pubDate}>

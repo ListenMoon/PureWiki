@@ -60,12 +60,19 @@ const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
         </div>
       </div>
       <div class="right">
-        <main>
+        <main id="pjax-container">
           <slot />
         </main>
         <Footer />
       </div>
-      {
+      <div class="side" class:list={[!hideSide?'show':'']}>
+        <UserInfo></UserInfo>
+        <PostTop posts={topArticles} />
+        <div class="_headtree" class:list={[!hideMenu?'show':'']}>
+            <slot name="side" />
+        </div>
+      </div>
+      <!-- {
         !hideSide && (
           <div class="side">
             <UserInfo></UserInfo>
@@ -73,7 +80,7 @@ const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
             {!hideMenu && <slot name="side" />}
           </div>
         )
-      }
+      } -->
     </div>
     <div class="toTop" id="toTop">
       <svg
@@ -90,6 +97,9 @@ const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
       >
     </div>
     <Search />
+    <div class="loading-bar">
+        <div class="progress"></div>
+    </div>
     <script src="@blog/scripts/main.ts"></script>
   </body>
 </html>

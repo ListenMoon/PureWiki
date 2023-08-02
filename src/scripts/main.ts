@@ -1,5 +1,6 @@
 import View from "viewerjs";
 import mermaid from "mermaid"
+import "./pjax"
 
 mermaid.init({
     theme: 'neutral',
@@ -92,6 +93,11 @@ initColor();
 window.addEventListener("scroll", function () {
     initColor();
 });
+// @ts-ignore
+window._initColor = ()=>{
+    activeIndex = 0
+    initColor()
+}
 
 function scrollIntoView(traget: string | number) {
   let isNum = false
