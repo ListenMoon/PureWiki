@@ -87,6 +87,12 @@ export async function publishedTree() {
             }
         }
         return list.sort((a, b) => {
+            if(SITE_TYPE === ESITETYPE.BLOG){
+                return betterDirectorySort(
+                    { name: a.name, isDirectory: !!a.data },
+                    { name: b.name, isDirectory: !!b.data },
+                );
+            }
             return betterDirectorySort(
                 { name: a.name, isDirectory: !a.data },
                 { name: b.name, isDirectory: !b.data },
@@ -113,11 +119,26 @@ export async function publishedDict() {
     return sorted
 }
 
-export async function publishedList(allTree?: any, showAll?: boolean) {
+export async function publishedList(allTree?: any, showAll?: boolean, isSortAll?: boolean) {
     const tree = allTree ?? await publishedTree()
     const isTree = !!allTree
     let sorted = [];
     if(SITE_TYPE === ESITETYPE.BLOG && !Show_Sub_Article && !showAll){
+        if(!isSortAll){
+            tree.sort((a, b) => {
+                if(!b.data || !a.data){
+                    return 0
+                }
+                if (b?.data?.updatedTimestamp && a?.data?.updatedTimestamp) {
+                    return b?.data?.updatedTimestamp - a?.data?.updatedTimestamp;
+                }
+                if (b?.data?.pubTimestamp && a?.data?.pubTimestamp) {
+                    return b?.data?.pubTimestamp - a?.data?.pubTimestamp;
+                } else {
+                    return -1;
+                }
+            })
+        }
         for (let i = 0; i < tree.length; i++) {
             const item = tree[i];
             if (item.data) {
@@ -126,6 +147,21 @@ export async function publishedList(allTree?: any, showAll?: boolean) {
         }
     }else{
         (function readTree(list: any) {
+            if(SITE_TYPE === ESITETYPE.BLOG && !isSortAll){
+                list = list.sort((a, b) => {
+                    if(!b.data || !a.data){
+                        return 0
+                    }
+                    if (b?.data?.updatedTimestamp && a?.data?.updatedTimestamp) {
+                        return b?.data?.updatedTimestamp - a?.data?.updatedTimestamp;
+                    }
+                    if (b?.data?.pubTimestamp && a?.data?.pubTimestamp) {
+                        return b?.data?.pubTimestamp - a?.data?.pubTimestamp;
+                    } else {
+                        return -1;
+                    }
+                })
+            }
             for (let i = 0; i < list.length; i++) {
                 const item = list[i];
                 if (item.data) {
@@ -136,6 +172,24 @@ export async function publishedList(allTree?: any, showAll?: boolean) {
                 }
             }
         })(tree)
+        if(isSortAll){
+            // TODO 全文排序
+            sorted = sorted.sort((a, b) => {
+                if(!b.data || !a.data){
+                    return 0
+                }
+                // if (b?.data?.updatedTimestamp && a?.data?.updatedTimestamp) {
+                //     return b?.data?.updatedTimestamp - a?.data?.updatedTimestamp;
+                // }
+                if (b?.data?.pubTimestamp && a?.data?.pubTimestamp) {
+                    return b?.data?.pubTimestamp - a?.data?.pubTimestamp;
+                } else if (!b?.data?.pubTimestamp && !a?.data?.pubTimestamp) {
+                    return 0
+                } else {
+                    return -1;
+                }
+            })
+        }
     }
     for (let i = 0; i < sorted.length; i++) {
         const item = sorted[i];
@@ -146,14 +200,7 @@ export async function publishedList(allTree?: any, showAll?: boolean) {
 }
 
 export async function sortPublishedList(allTree?: any) {
-    let posts = await publishedList(allTree, true)
-    posts = posts.sort((a, b) => {
-        if (b.pubTimestamp && a.pubTimestamp) {
-            return b.pubTimestamp - a.pubTimestamp;
-        } else {
-            return -1;
-        }
-    });
+    let posts = await publishedList(allTree, true, true)
     return posts
 }
 

@@ -71,6 +71,11 @@ function isActive() {
             >
               根节点
             </span>
+            {enableRemote && (
+                <div data-href={getNewURL("/article")} class="op">
+                新建
+                </div>
+            )}
           </a>
         </div>
         <DocTreeSelf {...Astro.props} depth={0} />

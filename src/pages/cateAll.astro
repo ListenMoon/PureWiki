@@ -1,12 +1,12 @@
 ---
 import Page from '@blog/layouts/Page.astro'
-import { publishedList } from '@blog/utils'
+import { publishedList, sortPublishedList } from '@blog/utils'
 import { PageSize } from '@blog/config'
 import Preview from '@blog/components/Preview.astro'
 import Pagination from '@blog/components/Pagination.astro'
-import ArticleCard from '@blog/components/ArticleCard.astro'
 
-const list = await publishedList(undefined, true)
+// const list = await publishedList(undefined, true)
+const list = await sortPublishedList()
 
 const count = list.length
 const curPage = 1
@@ -16,7 +16,7 @@ const curPage = 1
     <div style="padding: 50px;">
         {
             list.slice(0, PageSize).map((article) => {
-                return <Preview article={article} />
+                return <Preview sort article={article} />
             })
         }
         <Pagination base="cateAll" pageSize={PageSize} curPage={curPage} count={count}></Pagination>

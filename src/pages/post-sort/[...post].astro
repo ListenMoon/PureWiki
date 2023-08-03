@@ -1,14 +1,14 @@
 ---
-import { published, publishedList } from '@blog/utils/collect'
+import { published, sortPublishedList } from '@blog/utils'
 import type { Post } from '#/post'
-import BlogPost from '../../layouts/BlogPost.astro'
+import BlogPost from '@blog/layouts/BlogPost.astro'
 import PagePreviewCard from '@blog/components/PagePreviewCard.astro'
-
+// 用于所有文章界面，主要体现在上一篇跟下一篇的区别上
 export async function getStaticPaths() {
-    const posts = await publishedList()
+    const posts = await sortPublishedList(undefined, true)
     return posts.map((post) => {
         return {
-            params: { collect: post.slug },
+            params: { post: post.slug },
             props: { post },
         }
     })
@@ -21,13 +21,13 @@ const {
 } = Astro.props as { post: Post }
 ---
 
-<BlogPost {...post} showTree collect>
+<BlogPost {...post} showTree>
     <Content />
     <div class="paging">
         <div class="before">
             {
                 post.beforeArticle && (
-                    <PagePreviewCard article={post.beforeArticle}>
+                    <PagePreviewCard sort article={post.beforeArticle}>
                         上一篇
                     </PagePreviewCard>
                 )
@@ -39,7 +39,7 @@ const {
         <div class="next">
             {
                 post.nextArticle && (
-                    <PagePreviewCard article={post.nextArticle}>
+                    <PagePreviewCard sort article={post.nextArticle}>
                         下一篇
                     </PagePreviewCard>
                 )

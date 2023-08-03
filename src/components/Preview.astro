@@ -1,8 +1,11 @@
 ---
-const { article } = Astro.props;
+const { article, sort = false } = Astro.props;
+if(sort && article.url && !article.url.startsWith("/post-sort")){
+    article.url = article.url.replace(/^\/post/, "/post-sort")
+}
 ---
 
-<div class="article-card mx-[-25px] md:mx-0">
+<div class="article-card">
   <a
     class:list={["posttop__post", !!article.heroImage ? "posttop__image" : ""]}
     href={article.url}
@@ -47,5 +50,10 @@ const { article } = Astro.props;
         <div class="posttop__post__content">{article.description}</div>
       )
     }
+    {
+        !article.description && (
+          <div class="posttop__post__content" style="color: #bdbdbd;">作者很懒，没有写描述，请看标题脑补！！！</div>
+        )
+      }
   </a>
 </div>

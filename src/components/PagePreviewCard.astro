@@ -1,0 +1,47 @@
+---
+const { article, sort = false } = Astro.props
+
+if (sort && article.url && !article.url.startsWith('/post-sort')) {
+    article.url = article.url.replace(/^\/post/, '/post-sort')
+}
+---
+
+<div class="article-card-page">
+    <a
+        class:list={[
+            'posttop__post',
+            !!article.heroImage ? 'posttop__image' : '',
+        ]}
+        href={article.url}
+    >
+        {
+            !!article.heroImage && (
+                <div class="posttop__post__cover">
+                    {article.heroImage &&
+                        (article.heroImage.includes('.mp4') ? (
+                            <video
+                                src={article.heroImage}
+                                autoplay
+                                muted
+                                loop
+                            />
+                        ) : (
+                            <img src={article.heroImage} alt="" />
+                        ))}
+                    // <img src={article.heroImage} alt="" />
+                </div>
+            )
+        }
+        <!-- <div class="posttop__post__cover">
+      <img
+        src={article.heroImage
+          ? article.heroImage
+          : "https://picsum.photos/1280/780?random="+Math.random()*10000}
+        alt=""
+      />
+    </div> -->
+
+        <div class="posttop__post__title"><slot /></div>
+        <div class="posttop__post__content">{article.title}</div>
+    </a>
+</div>

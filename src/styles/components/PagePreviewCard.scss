@@ -1,19 +1,8 @@
-.article-card {
-    margin: 0 -25px;
-    @media (min-width: 650px) {
-        & {
-            margin: 0 0;
-            margin-bottom: 25px;
-        }
-    }
-    margin-bottom: 25px;
-    &:last-child {
-        margin-bottom: 0;
-    }
+.article-card-page {
     .posttop__post {
         border: 1px solid #e2e2e2;
         padding: 0.2em 1em;
-        height: 135px;
+        //   height: 60px;
         border-radius: 12px;
         display: block;
         color: inherit;
@@ -22,9 +11,6 @@
         overflow: hidden;
         &.posttop__image {
             color: white;
-        }
-        &:hover {
-            text-decoration: none;
         }
         &:hover:not(.posttop__image) {
             text-decoration: none !important;
@@ -60,8 +46,8 @@
         &__title {
             font-weight: 500;
             line-height: 1;
-            font-size: 1.5em;
-            padding-top: 0.5em;
+            font-size: 0.75em;
+            padding-top: 1em;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -69,13 +55,14 @@
         }
         &__content {
             word-break: break-all;
-            font-size: 0.875em;
+            // color: #1abc9c;
+            font-size: 1em;
             margin-top: 0.2em;
             margin-bottom: 0.5em;
             position: relative;
             display: -webkit-box;
             -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 1;
             overflow: hidden;
             text-overflow: ellipsis;
             word-break: break-all;

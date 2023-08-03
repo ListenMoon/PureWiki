@@ -11,39 +11,35 @@
 @import "./components/DocTree.scss";
 @import "./components/Pagination.scss";
 @import "./components/Preview.scss";
+@import "./components/PagePreviewCard.scss";
 
 html,
 body {
     background: #eee;
     height: 100%;
-    font-family: "LXGW WenKai Mono Lite", "Hiragino Sans GB","冬青黑", PingFang SC, Verdana, Helvetica Neue,
-        Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif,
-        WenQuanYi Micro Hei, sans-serif;
+    font-family: "LXGW WenKai Mono Lite", "Hiragino Sans GB", "冬青黑",
+        PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB,
+        Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
     font-display: fallback;
 }
 
 // 文章中的上一页下一页
-.paging{
-    margin: 15px 0;
-    display: flex;
+.paging {
+    margin-top: 10px;
+    border-top: 1px solid rgba(60, 60, 67, 0.12);
+    padding-top: 24px;
+    display: grid;
+    grid-row-gap: 8px;
     text-indent: 0;
-    .before{
-        flex: 1;
+
+    @media (min-width: 640px) {
+        & {
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 16px;
+        }
     }
-    .next{
+    .next {
         text-align: right;
-        flex: 1;
-    }
-    @include media-pc(sm) {
-        display: block;
-        text-align: left;
-        .before{
-            flex: auto;
-        }
-        .next{
-            text-align: left;
-            flex: auto;
-        }
     }
 }
 
@@ -53,27 +49,27 @@ body {
     left: 0;
     z-index: 99999;
     opacity: 0;
-    transition: opacity .4s linear;
-  
+    transition: opacity 0.4s linear;
+
     .progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: #1abc9c;
-      box-shadow: 0 0 10px rgba(26, 188, 156, .7);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #1abc9c;
+        box-shadow: 0 0 10px rgba(26, 188, 156, 0.7);
     }
-  
+
     &.loading {
-      opacity: 1;
-      transition: none;
-  
-      .progress {
-        transition: width .4s ease;
-      }
+        opacity: 1;
+        transition: none;
+
+        .progress {
+            transition: width 0.4s ease;
+        }
     }
-  }
+}
 
 pre,
 code {
@@ -204,15 +200,15 @@ mark.highlight {
         width: 300px;
         box-sizing: border-box;
         display: none;
-        &.show{
+        &.show {
             display: block;
         }
         @include media-pc(md) {
             display: none !important;
         }
-        ._headtree{
+        ._headtree {
             display: none;
-            &.show{
+            &.show {
                 display: block;
             }
         }
@@ -271,7 +267,7 @@ mark.highlight {
             margin-right: 4px;
         }
     }
-    &.chinese .doc-card{
+    &.chinese .doc-card {
         text-indent: 0;
     }
     &.chinese .article__content {

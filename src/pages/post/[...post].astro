@@ -1,36 +1,52 @@
 ---
-import { published, publishedList } from "@blog/utils";
-import type { Post } from "#/post";
-import BlogPost from "../../layouts/BlogPost.astro"
+import { published, publishedList } from '@blog/utils'
+import type { Post } from '#/post'
+import BlogPost from '@blog/layouts/BlogPost.astro'
+import PagePreviewCard from '@blog/components/PagePreviewCard.astro'
 
 export async function getStaticPaths() {
-	const posts = await publishedList(undefined, true);
-	return posts.map((post) => {
-		return {
-			params: { post: post.slug },
-			props: { post },
-		};
-	});
+    const posts = await publishedList(undefined, true)
+    return posts.map((post) => {
+        return {
+            params: { post: post.slug },
+            props: { post },
+        }
+    })
 }
 
 // Destructure to get both `Astro.props.post` and `Astro.props.post.Content`
 const {
-	post: { Content, _rawString, _images, _head },
-	post,
-} = Astro.props as { post: Post };
+    post: { Content, _rawString, _images, _head },
+    post,
+} = Astro.props as { post: Post }
 ---
+
 <BlogPost {...post} showTree>
-	<Content />
+    <Content />
     <div class="paging">
         <div class="before">
             {
-                post.beforeArticle && <div>上一篇：<a href={post.beforeArticle?.url}>{post.beforeArticle?.title}</a></div>
+                post.beforeArticle && (
+                    <PagePreviewCard article={post.beforeArticle}>
+                        上一篇
+                    </PagePreviewCard>
+                )
             }
+            <!-- {
+                post.beforeArticle && <div>上一篇：<a href={post.beforeArticle?.url}>{post.beforeArticle?.title}</a></div>
+            } -->
         </div>
         <div class="next">
             {
-                post.nextArticle && <div>下一篇：<a href={post.nextArticle?.url}>{post.nextArticle?.title}</a></div>
+                post.nextArticle && (
+                    <PagePreviewCard article={post.nextArticle}>
+                        下一篇
+                    </PagePreviewCard>
+                )
             }
+            <!-- {
+                post.nextArticle && <div>下一篇：<a href={post.nextArticle?.url}>{post.nextArticle?.title}</a></div>
+            } -->
         </div>
     </div>
 </BlogPost>
