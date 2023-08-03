@@ -10,6 +10,7 @@ var pjax = new Pjax({
   selectors: [
     "title",
     "meta[name=description]",
+    ".layout .left header nav",
     "#pjax-container",
     ".layout .left .wrapper .tree-wrapper",
     ".layout .side",
