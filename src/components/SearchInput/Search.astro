@@ -38,6 +38,11 @@ import SearchInput from "./SearchInput.astro"
         transform: translate(-50% , -50%);
         z-index: 99;
         width: 80%;
+        @media (min-width: 640px) {
+            & {
+                width: 40%;
+            }
+        }
     }
     #search-content{
         background-color: white;

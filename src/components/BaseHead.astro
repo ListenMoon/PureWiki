@@ -2,6 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '@blog/styles/common.scss';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@blog/config';
 
 export interface Props {
 	title: string;
@@ -19,9 +20,9 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<title>{title || SITE_TITLE}</title>
+<meta name="title" content={title || SITE_TITLE} />
+<meta name="description" content={description || SITE_DESCRIPTION} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
