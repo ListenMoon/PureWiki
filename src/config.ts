@@ -6,7 +6,7 @@ export const isDev = MODE === 'development';
 export const isProd = MODE === 'production';
 
 export const SITE_LANG = "zh-cn"
-export const SITE_TITLE = '编程百科';
+export const SITE_TITLE = "浪淘沙";
 export const SITE_DESCRIPTION = '花径不曾缘客扫，蓬门今始为君开!';
 
 // 博客模式下，是否展示祖孙节点的文章

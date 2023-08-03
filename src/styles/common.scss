@@ -23,6 +23,33 @@ body {
     font-display: fallback;
 }
 
+.site-title{
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.2em;
+    letter-spacing: .5em;
+    display: block;
+    line-height: 1;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+    font-family: "Press Start 2P";
+    // -webkit-text-stroke: 1px greenyellow;
+    animation: neon1 1.5s ease-in-out infinite alternate;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+@keyframes neon1 {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 20px #1abc9c, 0 0 40px #1abc9c, #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;;
+    }
+    to {
+        text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 14px #fff, 0 0 10px #1abc9c, 0 0 15px #1abc9c, #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;;
+    }
+}
+
 // 文章中的上一页下一页
 .paging {
     margin-top: 10px;

@@ -1,12 +1,12 @@
 ---
 import Page from '@blog/layouts/Page.astro'
 import Preview from '@blog/components/Preview.astro'
-import { sortPublishedList } from '@blog/utils'
+import { publishedList } from '@blog/utils'
 import { PageSize } from '@blog/config'
 import Pagination from '@blog/components/Pagination.astro'
 
 export async function getStaticPaths({ paginate }) {
-    const posts = await sortPublishedList()
+    const posts = await publishedList(undefined, true)
     return paginate(posts, { pageSize: PageSize })
 }
 
@@ -19,7 +19,7 @@ const curPage = page.currentPage
     <div style="padding: 50px;">
         {
             page.data.map((article) => {
-                return <Preview sort article={article} />
+                return <Preview article={article} />
             })
         }
         <Pagination base="cateAll" pageSize={PageSize} curPage={curPage} count={count}></Pagination>

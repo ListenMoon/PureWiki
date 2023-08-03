@@ -1,8 +1,5 @@
 ---
-const { article, sort = false } = Astro.props;
-if(sort && article.url && !article.url.startsWith("/post-sort")){
-    article.url = article.url.replace(/^\/post/, "/post-sort")
-}
+const { article } = Astro.props;
 ---
 
 <div class="article-card">
