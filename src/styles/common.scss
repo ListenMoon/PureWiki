@@ -41,6 +41,43 @@ body {
     }
 }
 
+.custom-btn {
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase; 
+    cursor: pointer;
+    background: linear-gradient(90deg, #1abc9c, #7795fa, #bf68c7, #1abc9c);
+    background-size: 400%;
+    border-radius: 60px;
+    &:hover {
+        animation: animate 8s linear infinite;
+    }
+    a{
+        color: #fff;
+        line-height: 56px;
+        &:hover {
+            color: #fff;
+        }
+        &:hover::before{
+            border: none;
+        }
+    }
+
+    @keyframes animate {
+        0% {
+            background-position: 0%;
+        }
+
+        100% {
+            background-position: 400%;
+        }
+    }
+}
+
 @keyframes neon1 {
     from {
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 20px #1abc9c, 0 0 40px #1abc9c, #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;;

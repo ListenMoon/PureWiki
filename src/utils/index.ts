@@ -178,13 +178,17 @@ export async function publishedList(allTree?: any, showAll?: boolean, isSortAll?
                 if(!b.data || !a.data){
                     return 0
                 }
+                if (!b?.data?.pubTimestamp) {
+                    return -1
+                }
+                if(!a?.data?.pubTimestamp){
+                    return 0
+                }
                 // if (b?.data?.updatedTimestamp && a?.data?.updatedTimestamp) {
                 //     return b?.data?.updatedTimestamp - a?.data?.updatedTimestamp;
                 // }
                 if (b?.data?.pubTimestamp && a?.data?.pubTimestamp) {
                     return b?.data?.pubTimestamp - a?.data?.pubTimestamp;
-                } else if (!b?.data?.pubTimestamp && !a?.data?.pubTimestamp) {
-                    return 0
                 } else {
                     return -1;
                 }

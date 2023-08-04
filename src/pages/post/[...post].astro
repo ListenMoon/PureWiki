@@ -1,11 +1,12 @@
 ---
-import { published, publishedList } from '@blog/utils'
+import { published, publishedList, sortPublishedList } from '@blog/utils'
 import type { Post } from '#/post'
 import BlogPost from '@blog/layouts/BlogPost.astro'
 import PagePreviewCard from '@blog/components/PagePreviewCard.astro'
 
 export async function getStaticPaths() {
-    const posts = await publishedList(undefined, true)
+    // const posts = await publishedList(undefined, true)
+    const posts = await sortPublishedList()
     return posts.map((post) => {
         return {
             params: { post: post.slug },

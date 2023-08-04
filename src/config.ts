@@ -1,6 +1,12 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
+/**
+ * 说明：
+ * 1. 文章内的上一页下一页使用的是所有文章的数据，即你点击的文章的上下页是所有文章中的列表对应的上下页，
+ *    而不是具体分类中的上下页
+ */
+
 const { MODE } = import.meta.env;
 export const isDev = MODE === 'development';
 export const isProd = MODE === 'production';
