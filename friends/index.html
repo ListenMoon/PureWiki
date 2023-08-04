@@ -4,7 +4,7 @@
     <!-- Global Metadata --><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta name="generator" content="Astro v2.10.0">
+<meta name="generator" content="Astro v2.10.1">
 
 <!-- Primary Meta Tags -->
 <title>友链</title>
@@ -24,7 +24,7 @@
 <meta property="twitter:title" content="友链">
 <meta property="twitter:description">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
-  <link rel="stylesheet" href="/astro_/about.f012838a.css" /><script type="module" src="/astro_/hoisted.1f6937b0.js"></script>
+  <link rel="stylesheet" href="/astro_/about.f012838a.css" /><script type="module" src="/astro_/hoisted.12bc896f.js"></script>
 <script type="module" src="/astro_/page.10202da5.js"></script></head>
 
   <body>
@@ -169,7 +169,9 @@
             <h2 id="友好联邦">友好联邦</h2>
 <p>暂无</p>
 <blockquote>
-<p>评论框无法显示时请刷新一下看看，谢谢。</p>
+<p>评论框无法显示时请刷新一下看看，谢谢。<br/>
+主要是因为使用的pjax，页面更新时utteranc执行初始化，但script中的document.currentScript是无值状态，导致无法替换那个script标签。<br/>
+后面有时间改改！</p>
 </blockquote>
         </div>
 	</article>
