@@ -42,6 +42,8 @@ const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
 <html lang={SITE_LANG}>
   <head>
     <BaseHead title={title} description={description} />
+    <link is:raw rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script is:raw src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
   </head>
 
   <body>

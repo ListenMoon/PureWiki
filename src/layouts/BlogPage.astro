@@ -36,6 +36,29 @@ let { title, description, filePath, _head, heroImage, hideSide = false, hideMenu
     //         <div class="giscus-frame" style="padding: 25px;box-sizing: border-box;"></div>
     //     )
     // }
+
+    // {
+    //     isProd && comment && (
+    //         <style is:global>
+    //             .utterances{
+    //                 max-width: 100% !important;
+                    
+    //             }    
+    //             .utterances iframe{
+    //                 padding: 0 25px;
+    //                 box-sizing: border-box;
+    //             }
+    //         </style>
+    //         <script is:raw src="https://utteranc.es/client.js"
+    //             repo="ListenMoon/PureWiki"
+    //                 issue-term="pathname"
+    //                 label="收录"
+    //                 theme="github-light"
+    //                 crossorigin="anonymous"
+    //                 async>
+    //         </script>
+    //     )
+    // }
 ---
 <Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu} showTree={showTree}>
 	{heroImage && (heroImage.includes(".mp4") ? <video class="hero-image" src={heroImage} autoplay muted loop /> : <img class="hero-image" src={heroImage} alt="" />)}
@@ -48,23 +71,31 @@ let { title, description, filePath, _head, heroImage, hideSide = false, hideMenu
 	</article>
     {
         isProd && comment && (
+            <div id="gitalk-container"></div>
             <style is:global>
-                .utterances{
+                #gitalk-container{
                     max-width: 100% !important;
                     
                 }    
-                .utterances iframe{
+                #gitalk-container{
                     padding: 0 25px;
+                    padding-bottom: 25px;
                     box-sizing: border-box;
                 }
             </style>
-            <script is:raw src="https://utteranc.es/client.js"
-                repo="ListenMoon/PureWiki"
-                    issue-term="pathname"
-                    label="收录"
-                    theme="github-light"
-                    crossorigin="anonymous"
-                    async>
+            <script is:raw>
+             setTimeout(() => {
+                const gitalk = new Gitalk({
+                clientID: '8718e90a59995ab7b301',
+                clientSecret: '7bd4b73f54fc47dc2d6a2221f3781211afd1eed2',
+                repo: 'PureWiki',      // The repository of store comments,
+                owner: 'ListenMoon',
+                admin: ['npmrun'],
+                id: location.pathname,      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+            gitalk.render('gitalk-container')
+             }, 0);
             </script>
         )
     }
