@@ -24,6 +24,8 @@
 <meta property="twitter:title" content="收藏">
 <meta property="twitter:description" content="">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
   <link rel="stylesheet" href="/astro_/about.412a24fc.css" /><script type="module" src="/astro_/hoisted.12bc896f.js"></script>
 <script type="module" src="/astro_/page.10202da5.js"></script></head>
 
@@ -239,16 +241,29 @@
 </blockquote>
         </div>
 	</article>
-    <style is:global>
-                .utterances{
+    <div id="gitalk-container"></div><style is:global>
+                #gitalk-container{
                     max-width: 100% !important;
                     
                 }    
-                .utterances iframe{
+                #gitalk-container{
                     padding: 0 25px;
+                    padding-bottom: 25px;
                     box-sizing: border-box;
                 }
-            </style><script src="https://utteranc.es/client.js" repo="ListenMoon/PureWiki" issue-term="pathname" label="收录" theme="github-light" crossorigin="anonymous" async>
+            </style><script>
+             setTimeout(() => {
+                const gitalk = new Gitalk({
+                clientID: '8718e90a59995ab7b301',
+                clientSecret: '7bd4b73f54fc47dc2d6a2221f3781211afd1eed2',
+                repo: 'PureWiki',      // The repository of store comments,
+                owner: 'ListenMoon',
+                admin: ['npmrun'],
+                id: location.pathname,      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+            gitalk.render('gitalk-container')
+             }, 0);
             </script>
 
         </main>
