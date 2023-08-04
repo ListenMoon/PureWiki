@@ -1,4 +1,4 @@
-const script = document.createElement("script")
+var script = document.createElement("script")
 script.setAttribute("src", "https://utteranc.es/client.js")
 script.setAttribute("repo", "ListenMoon/PureWiki")
 script.setAttribute("issue-term", "pathname")
@@ -13,11 +13,11 @@ script.onerror = function(){
     }
 }
 
-const sc = document.getElementById("utteranc-sc")
-let parentNode = sc.parentNode
+var sc = document.getElementById("utteranc-sc")
+var parentNode = sc.parentNode
 parentNode.removeChild(sc)
 parentNode.appendChild(script)
 
-if(document.currentScript){
+if(document.currentScript && document.currentScript.parentNode){
     document.currentScript.parentNode.removeChild(document.currentScript)
 }
