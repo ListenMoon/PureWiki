@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
   <link rel="stylesheet" href="/astro_/about.412a24fc.css" />
-<link rel="stylesheet" href="/astro_/about.dcc259fb.css" /><script type="module" src="/astro_/hoisted.12bc896f.js"></script>
+<link rel="stylesheet" href="/astro_/about.dcc259fb.css" /><script type="module" src="/astro_/hoisted.56f97f2d.js"></script>
 <script type="module" src="/astro_/page.10202da5.js"></script></head>
 
   <body>
@@ -64,7 +64,7 @@
           <div class="tree-wrapper" style="flex: 1;height:0;display:flex;flex-direction: column">
             <div class="tree" id="tree">
   <div style="direction: ltr;padding-left: 17px;">
-        <div style="padding:6px 17px; margin-left: -17px;position:sticky;top: 0;background: white;border-bottom:1px solid #eee;">
+        <div style="padding:10px 0;padding-left:17px; margin-left: -17px;position:sticky;top: 0;background: #f8f8f8;">
           <a href="/cateAll" style="display: flex;color:inherit;border:0;text-decoration: none;">
             <span title="所有文章" class="tree-item">
               所有文章
@@ -93,6 +93,16 @@
       </div><div>
         
         
+      </div><div>
+        <a href="/cate/0杂文" style="display: flex;padding-left:0px;color:inherit;border:0;text-decoration: none;">
+            <span title="0杂文" class="tree-item">
+              0杂文
+            </span>
+          </a>
+        <div>
+        
+        
+      </div>
       </div><div>
         <a href="/cate/前端" style="display: flex;padding-left:0px;color:inherit;border:0;text-decoration: none;">
             <span title="前端" class="tree-item">
@@ -173,11 +183,6 @@
     <div class="article__content">
       <h2 id="友好联邦">友好联邦</h2>
 <p>暂无</p>
-<blockquote>
-<p>评论框无法显示时请刷新一下看看，谢谢。<br/>
-主要是因为使用的pjax，页面更新时utteranc执行初始化，但script中的document.currentScript是无值状态，导致无法替换那个script标签。<br/>
-后面有时间改改！</p>
-</blockquote>
     </div>
   </article>
   
@@ -202,7 +207,7 @@
     
     <div class="userinfo">
         <div>NPMRUN</div>
-        <img src="https://xieyaxin.top/me.jpeg" alt="NPMRUN">
+        <img src="https://life.xieyaxin.top/usr/uploads/2022/05/1432272769.jpg" alt="NPMRUN">
     </div>
     <div class="user_content">来自南方小城<br>希望结交益友♥!</div>
 </div>
@@ -498,11 +503,11 @@ is:inline
 </div>
 
 <script lang="ts">
-    const searchBoxEl = document.getElementById("searchBox");
+    var searchBoxEl = document.getElementById("searchBox");
     
-    const searchMask = document.getElementById("search-mask");
-    const searchButton = document.getElementById("searchButton");
-    const searchContainer = document.getElementById("search-container");
+    var searchMask = document.getElementById("search-mask");
+    var searchButton = document.getElementById("searchButton");
+    var searchContainer = document.getElementById("search-container");
     searchButton.addEventListener("click", () => {
         let isHave = searchContainer.classList.contains("search-show");
         if (!isHave) {
