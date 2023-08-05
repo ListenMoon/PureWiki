@@ -60,11 +60,11 @@ import SearchInput from "./SearchInput.astro"
     }
 </style>
 <script lang="ts">
-    const searchBoxEl = document.getElementById("searchBox");
+    var searchBoxEl = document.getElementById("searchBox");
     
-    const searchMask = document.getElementById("search-mask");
-    const searchButton = document.getElementById("searchButton");
-    const searchContainer = document.getElementById("search-container");
+    var searchMask = document.getElementById("search-mask");
+    var searchButton = document.getElementById("searchButton");
+    var searchContainer = document.getElementById("search-container");
     searchButton.addEventListener("click", () => {
         let isHave = searchContainer.classList.contains("search-show");
         if (!isHave) {

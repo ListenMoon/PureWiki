@@ -10,7 +10,7 @@ var pjax = new Pjax({
   selectors: [
     "title",
     "meta[name=description]",
-    ".layout .left header nav",
+    ".layout .left header nav a",
     "#pjax-container",
     ".layout .left .wrapper .tree-wrapper",
     ".layout .side",
@@ -80,8 +80,9 @@ document.addEventListener("pjax:complete", function () {
 
 function reload() {
   document
-    .querySelector("script[data-pjax], .pjax-reload script")
-    ?.forEach(function (elem) {
+    // .querySelector("script[data-pjax], .pjax-reload script")
+    .querySelectorAll("script[data-pjax]")
+    ?.forEach(function (element) {
       var id = element.id || "";
       var src = element.src || "";
       var code = element.text || element.textContent || element.innerHTML || "";

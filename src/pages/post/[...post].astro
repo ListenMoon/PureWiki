@@ -3,10 +3,16 @@ import { published, publishedList, sortPublishedList } from '@blog/utils'
 import type { Post } from '#/post'
 import BlogPost from '@blog/layouts/BlogPost.astro'
 import PagePreviewCard from '@blog/components/PagePreviewCard.astro'
+import { ESITETYPE, SITE_TYPE } from '@root/src/config'
 
 export async function getStaticPaths() {
-    // const posts = await publishedList(undefined, true)
-    const posts = await sortPublishedList()
+    let posts = []
+    if (SITE_TYPE === ESITETYPE.BLOG) {
+        posts = await sortPublishedList()
+    }
+    if (SITE_TYPE === ESITETYPE.WIKI) {
+        posts = await publishedList(undefined, true)
+    }
     return posts.map((post) => {
         return {
             params: { post: post.slug },
