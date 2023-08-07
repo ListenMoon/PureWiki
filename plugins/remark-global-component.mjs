@@ -6,25 +6,26 @@ import * as acorn from "acorn";
 // import { mdxJsxFromMarkdown } from "mdast-util-mdx-jsx";
 import fg from "fast-glob";
 
+const list = fg
+    .sync(["src/mdxGlobal/**/*"])
+    .map((v) => {
+        let result = v.match(/src\/mdxGlobal\/(.*?)$/);
+        if (result && result[1]) {
+            return result[1];
+        }
+    })
+    .filter((v) => v);
+
 // https://github.com/syntax-tree/mdast-util-mdxjs-esm
 // https://github.com/withastro/astro/search?q=mdxjsEsm
 // mdx插件
 export default function remarkGlobalComponent() {
     return (tree, file) => {
-        const list = fg
-            .sync(["src/mdxGlobal/**/*"])
-            .map((v) => {
-                let result = v.match(/src\/mdxGlobal\/(.*?)$/);
-                if (result && result[1]) {
-                    return result[1];
-                }
-            })
-            .filter((v) => v);
         const components = list
             .map((v) => {
-                const name = v.match(/(.*?)\./)
-                if(name && name[1]){
-                    return `import ${name[1]} from '@blog/mdxGlobal/${v}'\r\n`
+                const name = v.match(/(.*?)\./);
+                if (name && name[1]) {
+                    return `import ${name[1]} from '@blog/mdxGlobal/${v}'\r\n`;
                 }
             })
             .filter((v) => v)
