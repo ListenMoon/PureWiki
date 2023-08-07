@@ -13,7 +13,7 @@ const { article } = Astro.props
     >
         {
             !!article.heroImage && (
-                <div class="posttop__post__cover">
+                <div style="pointer-events: none;" class="posttop__post__cover">
                     {article.heroImage &&
                         (article.heroImage.includes('.mp4') ? (
                             <video

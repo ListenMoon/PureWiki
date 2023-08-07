@@ -1,0 +1,80 @@
+---
+import { sortPublishedList } from "@blog/utils";
+
+let posts = await sortPublishedList();
+const curUrl = decodeURIComponent(Astro.url.pathname);
+
+let pathArr = decodeURIComponent(Astro.url.pathname)
+  .slice(1)
+  .replace(/\/$/, "")
+  .split("/")
+  .slice(0, -1);
+let caterr = decodeURIComponent(Astro.url.pathname)
+  .slice(1)
+  .replace(/\/$/, "")
+  .split("/")
+let list = [];
+if (Astro.url.pathname.startsWith("/post/")) {
+  list = posts.filter((v) => {
+    const isMatch = v.url.startsWith(`/${pathArr.join("/")}`)
+    const isMatchLength = v.url.slice(1).split("/").length  === (pathArr.length + 1)
+    return isMatch && isMatchLength
+  });
+} else if (Astro.url.pathname.startsWith("/cate/")) {
+  let aa = `/${caterr.join("/")}`.replace("/cate/", "/post/")
+  list = posts.filter((v) =>{
+    const isMatch = v.url.startsWith(aa)
+    const isMatchLength = v.url.split("/").slice(1).length === (caterr.length + 1)
+    return isMatch && isMatchLength
+  });
+} else {
+  list = posts;
+}
+---
+
+<div class="left-article">
+  <div style="padding: 5px 10px;font-weight: bold;background: white;position:sticky;top: 0;border-bottom: 1px solid #eee;">
+    目录文章
+  </div>
+  {
+    list.map((v) => {
+      return (
+        <a
+          class="item"
+          href={v.url}
+          title={v.title}
+          class:list={[curUrl === v.url ? "active" : ""]}
+        >
+          {v.title}
+        </a>
+      );
+    })
+  }
+  {
+    list.length == 0 && (<div style="text-align:center; color: #bbbbbb">空空如也</div>)
+  }
+</div>
+<script is:raw>
+function heightToTop1(ele) {
+  //ele为指定跳转到该位置的DOM节点
+  let root = document.body;
+  let height = 0;
+  do {
+    height += ele.offsetTop;
+    ele = ele.offsetParent;
+  } while (ele !== root);
+  const top = document.querySelector(".left-article-scroll").offsetTop;
+  const clientHeight = document.querySelector(".left-article-scroll")
+    .parentNode.clientHeight;
+  return height - top - clientHeight / 2 + 20;
+}
+
+setTimeout(() => {
+  var el = document.querySelector(".left-article .active");
+  var aa = heightToTop1(el);
+  document.querySelector(".left-article-scroll").scrollTo({
+    top: aa,
+    behavior: "smooth",
+  });
+  }, 20);
+</script>

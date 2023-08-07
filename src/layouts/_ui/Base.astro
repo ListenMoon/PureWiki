@@ -15,6 +15,7 @@ import {
   SITE_TYPE,
   ESITETYPE,
 } from "@blog/config";
+import LeftArticle from "@root/src/components/LeftArticle.astro";
 
 let articles = await publishedTree();
 let isCollect = false;
@@ -36,6 +37,7 @@ export interface Props {
 let { title, description, hideSide, hideMenu, showTree } = Astro.props as Props;
 
 const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
+const isArticleDetailPage = Astro.url.pathname.startsWith("/post/")
 ---
 
 <!DOCTYPE html>
@@ -59,6 +61,18 @@ const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
                 list={articles}
               /> }
           </div>
+              <div style="background-color: #eee;height:10px;"></div>
+              <div class="tree-wrapper" style="flex-basis: 30%;height:0;display:flex;flex-direction: column">
+                <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
+                  <div style="direction: ltr;flex:1;">
+                    {
+                      SITE_TYPE === ESITETYPE.BLOG && (
+                        <LeftArticle slot="leftBottom"></LeftArticle>
+                      )
+                    }
+                  </div>
+                </div>
+              </div>
           <!-- 为了快速将元素设置 -->
           <script is:inline src="/scripts/init.js"></script>
         </div>

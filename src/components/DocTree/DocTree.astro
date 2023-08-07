@@ -83,3 +83,25 @@ function isActive() {
     )
   }
 </div>
+<script is:raw>
+    function heightToTop(ele){
+        if(!ele) return 0
+        //ele为指定跳转到该位置的DOM节点
+        let root = document.body;
+        let height = 0;
+        do{
+            height += ele.offsetTop;
+            ele = ele.offsetParent;
+        }while( ele !== root )
+        const top = document.querySelector(".tree-wrapper .tree").offsetTop
+        const clientHeight = document.querySelector(".tree-wrapper .tree").parentNode.clientHeight
+        return height - top - clientHeight/2 + 20;
+    }
+    
+    setTimeout(()=>{
+      document.querySelector(".tree-wrapper .tree").scrollTo({
+          top:  heightToTop(document.querySelector(".tree-wrapper .tree .tree-item.active")),
+          behavior:'smooth'
+      })
+    }, 20)
+</script>

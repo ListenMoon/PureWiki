@@ -84,7 +84,7 @@ function initColor() {
         }
       }
     });
-    if (activeIndex != -1) {
+    if (activeIndex != -1 && headElement[activeIndex]) {
       // @ts-ignore
       headElement[activeIndex].style.color = "#8e32dc";
       if (!headElement[activeIndex].parentElement.classList.contains("active")) {

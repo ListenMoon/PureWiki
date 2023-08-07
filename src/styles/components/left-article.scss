@@ -1,0 +1,26 @@
+.left-article {
+    .item {
+        display: block;
+        color: inherit;
+        text-decoration: wavy;
+        padding: 3px 12px;
+
+    }
+
+    .active {
+        color: inherit;
+        background-color: #1abc9c;
+        background-color: rgba(26, 188, 156, 0.1529411765);
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #1abc9c;
+            width: 4px;
+        }
+    }
+}
