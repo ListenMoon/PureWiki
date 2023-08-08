@@ -46,7 +46,7 @@ export const expandTreeType: "always" | "dir" | "close" = "dir"
 export const showArticleHeroImage = false
 
 // export const AuthorAvater = 'https://xieyaxin.top/me.jpeg';
-export const AuthorAvater = 'https://life.xieyaxin.top/usr/uploads/2022/05/1432272769.jpg';
+export const AuthorAvater = '/avatar.jpg';
 export const AuthorName = 'NPMRUN';
 export const AuthorDesc = '来自南方小城<br>希望结交益友♥!';
 export const StartTime = [2023, 0o2, 23, 20, 55, 32];
@@ -57,8 +57,8 @@ export const FooterRepo = 'https://github.com/ListenMoon/PureWiki';
 
 // 远程地址，可自行修改对应的操作
 export const enableRemote = true // 是否显示远程编辑按钮
-const bitbucketNewURL = "https://bitbucket.org/qqvv/pure-wiki/create-file/33bf038960e3e8f3ef4e93c9f0d18906cfcb364e__placeholder__/?at=master"
-const bitbucketEidtURL = "https://bitbucket.org/qqvv/pure-wiki/src/master__placeholder__?mode=edit&at=master"
+// const bitbucketNewURL = "https://bitbucket.org/qqvv/pure-wiki/create-file/33bf038960e3e8f3ef4e93c9f0d18906cfcb364e__placeholder__/?at=master"
+// const bitbucketEidtURL = "https://bitbucket.org/qqvv/pure-wiki/src/master__placeholder__?mode=edit&at=master"
 const githubEditURL = 'https://github.com/ListenMoon/PureWiki/edit/master__placeholder__'
 const githubNewURL = 'https://github.com/ListenMoon/PureWiki/new/master__placeholder__'
 export function getEditURL(url: string) {
