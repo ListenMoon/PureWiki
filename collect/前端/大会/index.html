@@ -4,7 +4,7 @@
     <!-- Global Metadata --><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta name="generator" content="Astro v2.10.1">
+<meta name="generator" content="Astro v2.10.3">
 
 <!-- Primary Meta Tags -->
 <title>前端</title>
@@ -26,7 +26,7 @@
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <link rel="stylesheet" href="/astro_/about.c2dc502e.css" /><script type="module" src="/astro_/hoisted.62a8ec71.js"></script>
+  <link rel="stylesheet" href="/astro_/about.c0e3bfda.css" /><script type="module" src="/astro_/hoisted.5eaa6392.js"></script>
 <script type="module" src="/astro_/page.10202da5.js"></script></head>
 
   <body>
@@ -61,7 +61,7 @@
 </header>
           <div style="background-color: #eee;height:10px;"></div>
           <div class="tree-wrapper" style="flex: 1;height:0;display:flex;flex-direction: column">
-            <div class="tree" id="tree">
+                <div class="tree" id="tree">
   <details open="true" style="direction: ltr;" class="my-[10px]">
         <summary>
           <span class="tree-item">🍬收藏</span>
@@ -224,7 +224,7 @@
       </details>
       </details>
 </div>
-<script>
+<!-- <script is:raw>
     function heightToTop(ele){
         if(!ele) return 0
         //ele为指定跳转到该位置的DOM节点
@@ -245,74 +245,20 @@
           behavior:'smooth'
       })
     }, 20)
-</script>
-          </div>
-              <div style="background-color: #eee;height:10px;"></div>
+</script> -->
+              </div>
+              <!-- <div style="background-color: #eee;height:10px;"></div>
               <div class="tree-wrapper" style="flex-basis: 30%;height:0;display:flex;flex-direction: column">
                 <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
                   <div style="direction: ltr;flex:1;">
-                    <div class="left-article">
-  <div style="padding: 5px 10px;font-weight: bold;background: white;position:sticky;top: 0;border-bottom: 1px solid #eee;">
-    目录文章
-  </div>
-  <a href="/post/0杂文/服务器docker的升级" title="服务器docker的升级" class="item">
-          服务器docker的升级
-        </a><a href="/post/小说/罪大恶极之人" title="罪大恶极之人" class="item">
-          罪大恶极之人
-        </a><a href="/post/CSS/a标签嵌套a标签" title="a标签嵌套a标签" class="item">
-          a标签嵌套a标签
-        </a><a href="/post/前端/库/floating-ui使用方式" title="floating-ui使用方式" class="item">
-          floating-ui使用方式
-        </a><a href="/post/博客使用指南" title="博客使用指南" class="item">
-          博客使用指南
-        </a><a href="/post/CSS/img之间存在间隙" title="img之间存在间隙" class="item">
-          img之间存在间隙
-        </a><a href="/post/文字处理/怎么用unified.js自定义元素输出" title="怎么用unified.js自定义元素输出" class="item">
-          怎么用unified.js自定义元素输出
-        </a><a href="/post/MDX测试文档" title="MDX测试文档" class="item">
-          MDX测试文档
-        </a><a href="/post/CSS/css中line-height属性各个单位详解" title="css中line-height属性各个单位详解" class="item">
-          css中line-height属性各个单位详解
-        </a><a href="/post/CSS/组合选择符" title="组合选择符" class="item">
-          组合选择符
-        </a><a href="/post/CSS/有关伪元素的思考" title="有关伪元素的思考" class="item">
-          有关伪元素的思考
-        </a><a href="/post/CSS/行内元素的细小留白" title="行内元素的细小留白" class="item">
-          行内元素的细小留白
-        </a><a href="/post/PureWiki主题" title="PureWiki主题" class="item">
-          PureWiki主题
-        </a><a href="/post/MD测试文档" title="MD测试文档" class="item">
-          MD测试文档
-        </a>
-  
-</div>
-<script>
-function heightToTop1(ele) {
-  //ele为指定跳转到该位置的DOM节点
-  let root = document.body;
-  let height = 0;
-  do {
-    height += ele.offsetTop;
-    ele = ele.offsetParent;
-  } while (ele !== root);
-  const top = document.querySelector(".left-article-scroll").offsetTop;
-  const clientHeight = document.querySelector(".left-article-scroll")
-    .parentNode.clientHeight;
-  return height - top - clientHeight / 2 + 20;
-}
-
-setTimeout(() => {
-  var el = document.querySelector(".left-article .active");
-  var aa = heightToTop1(el);
-  document.querySelector(".left-article-scroll").scrollTo({
-    top: aa,
-    behavior: "smooth",
-  });
-  }, 20);
-</script>
+                    {
+                      SITE_TYPE === ESITETYPE.BLOG && (
+                        <LeftArticle slot="leftBottom"></LeftArticle>
+                      )
+                    }
                   </div>
                 </div>
-              </div>
+              </div> -->
           <!-- 为了快速将元素设置 -->
           <script src="/scripts/init.js"></script>
         </div>
@@ -321,7 +267,7 @@ setTimeout(() => {
         <main id="pjax-container">
           <article class="typo article collect">
             <span style="font-size: .75em;color: #bdbdbd;">
-                <a href="/collect">根节点</a><span style="padding: 0 3px;">&gt;</span></span>
+                <a href="/collect">顶层</a><span style="padding: 0 3px;">&gt;</span></span>
                 <span style="font-size: .75em;color: #bdbdbd;">
                         <a href="/cate/前端">前端</a>
                         <span style="padding: 0 3px;">&gt;</span>
