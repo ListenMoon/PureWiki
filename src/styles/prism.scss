@@ -2,7 +2,7 @@
 @import "prism-theme-vars/base.css";
 
 :root {
-    --prism-font-size: .875em;
+    --prism-font-size: 1em;
     --prism-line-height: 1.5em;
     --prism-font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
     --prism-foreground: #393a34;
@@ -28,7 +28,7 @@
 
 :root[data-theme="night"] {
     --prism-scheme: dark;
-    --prism-font-size: .875em;
+    --prism-font-size: 1em;
     --prism-line-height: 1.5em;
     --prism-font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
     --prism-foreground: #d4cfbf;

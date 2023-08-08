@@ -63,13 +63,13 @@ function isActive() {
         <div>
           <a
             href="/cate"
-            style={`display: flex;color:inherit;border:0;text-decoration: none;`}
+            style={`display: flex;color:inherit;border:0;text-decoration: none;margin: 5px 0;`}
           >
             <span
-              title="根节点"
+              title="顶层"
               class:list={["tree-item", isActive() ? "active" : ""]}
             >
-              根节点
+            顶层
             </span>
             {enableRemote && (
                 <div data-href={getNewURL("/article")} class="op">
@@ -83,7 +83,7 @@ function isActive() {
     )
   }
 </div>
-<script is:raw>
+<!-- <script is:raw>
     function heightToTop(ele){
         if(!ele) return 0
         //ele为指定跳转到该位置的DOM节点
@@ -104,4 +104,4 @@ function isActive() {
           behavior:'smooth'
       })
     }, 20)
-</script>
+</script> -->
