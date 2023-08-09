@@ -26,7 +26,7 @@
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <link rel="stylesheet" href="/astro_/about.c0e3bfda.css" /><script type="module" src="/astro_/hoisted.5eaa6392.js"></script>
+  <link rel="stylesheet" href="/astro_/about.c0e3bfda.css" /><script type="module" src="/astro_/hoisted.208ac75d.js"></script>
 <script type="module" src="/astro_/page.10202da5.js"></script></head>
 
   <body>
@@ -81,15 +81,6 @@
           </a>
         </div>
         <div>
-        
-        
-      </div><div>
-        
-        
-      </div><div>
-        
-        
-      </div><div>
         
         
       </div><div>
@@ -164,6 +155,23 @@
         
         
       </div>
+      </div><div>
+        <a href="/cate/Vue" style="display: flex;padding-left:0px;color:inherit;border:0;text-decoration: none;">
+            <span title="Vue" class="tree-item">
+              Vue
+            </span>
+          </a>
+        <div>
+        <a href="/cate/Vue/Vue3" style="display: flex;padding-left:17px;color:inherit;border:0;text-decoration: none;">
+            <span title="Vue3" class="tree-item">
+              Vue3
+            </span>
+          </a>
+        <div>
+        
+        
+      </div>
+      </div>
       </div>
       </div>
 </div>
@@ -234,25 +242,25 @@
 <p>进而言之，他们能将内容编译为语法树，将语法树编译为内容。它能够处理<code>markdown</code>,<code>html</code>或者纯文本，将其转化为结构化数据，再将结构化数据输出对应文件，这几者之间可操作的事情就多了。</p>
 <p>Unified本身是一个相当小的模块，充当统一处理不同内容格式的接口。围绕某种格式，有一个生态系统,其中包括：</p>
 <ul>
-<li><a href="https://unifiedjs.com/explore/project/remarkjs/remark/">remark</a> Markdown</li>
-<li><a href="https://unifiedjs.com/explore/project/rehypejs/rehype/">rehype</a> HTML</li>
-<li><a href="https://unifiedjs.com/explore/project/retextjs/retext/">retext</a> Natural language</li>
-<li><a href="https://unifiedjs.com/explore/project/redotjs/redot/">redot</a> Graphviz</li>
+<li><a href="https://unifiedjs.com/explore/project/remarkjs/remark/" target="_blank">remark</a> Markdown</li>
+<li><a href="https://unifiedjs.com/explore/project/rehypejs/rehype/" target="_blank">rehype</a> HTML</li>
+<li><a href="https://unifiedjs.com/explore/project/retextjs/retext/" target="_blank">retext</a> Natural language</li>
+<li><a href="https://unifiedjs.com/explore/project/redotjs/redot/" target="_blank">redot</a> Graphviz</li>
 </ul>
 <p>语法树的规范如下：</p>
 <ul>
-<li><a href="https://github.com/syntax-tree/unist">unist</a> Universal Syntax Tree</li>
-<li><a href="https://github.com/syntax-tree/mdast">mdast</a> Markdown Abstract Syntax Tree format</li>
-<li><a href="https://github.com/syntax-tree/hast">hast</a> HTML Abstract Syntax Tree format</li>
-<li><a href="https://github.com/syntax-tree/xast">xast</a> XML Abstract Syntax Tree format</li>
-<li><a href="https://github.com/syntax-tree/esast">esast</a> ECMAScript Abstract Syntax Tree format</li>
-<li><a href="https://github.com/syntax-tree/nlcst">nlcst</a> Natural Language Concrete Syntax Tree format</li>
+<li><a href="https://github.com/syntax-tree/unist" target="_blank">unist</a> Universal Syntax Tree</li>
+<li><a href="https://github.com/syntax-tree/mdast" target="_blank">mdast</a> Markdown Abstract Syntax Tree format</li>
+<li><a href="https://github.com/syntax-tree/hast" target="_blank">hast</a> HTML Abstract Syntax Tree format</li>
+<li><a href="https://github.com/syntax-tree/xast" target="_blank">xast</a> XML Abstract Syntax Tree format</li>
+<li><a href="https://github.com/syntax-tree/esast" target="_blank">esast</a> ECMAScript Abstract Syntax Tree format</li>
+<li><a href="https://github.com/syntax-tree/nlcst" target="_blank">nlcst</a> Natural Language Concrete Syntax Tree format</li>
 </ul>
 <p>还有一些其他的构建块:</p>
 <ul>
-<li><a href="https://github.com/syntax-tree">syntax-tree</a> Low-level utilities for building plugins</li>
-<li><a href="https://unifiedjs.com/explore/package/vfile/">vfile</a> Virtual file format for text processing</li>
-<li><a href="https://unifiedjs.com/explore/project/mdx-js/mdx/">MDX</a> Markdown and JSX</li>
+<li><a href="https://github.com/syntax-tree" target="_blank">syntax-tree</a> Low-level utilities for building plugins</li>
+<li><a href="https://unifiedjs.com/explore/package/vfile/" target="_blank">vfile</a> Virtual file format for text processing</li>
+<li><a href="https://unifiedjs.com/explore/project/mdx-js/mdx/" target="_blank">MDX</a> Markdown and JSX</li>
 </ul>
 <h2 id="工作流程">工作流程</h2>
 <p>说了这么多，那他们是怎么工作的呢？其实就是分了三步：</p>
@@ -264,21 +272,21 @@
 <li>输出：<br/>
 最后一步是采用（调整后的）格式并将其字符串化为Markdown，HTML或文本（可能与输入格式不同！）</li>
 </ol>
-<p><a href="https://unifiedjs.com/explore/package/unified/">unified</a> 可以 Node.js 中以编程方式使用。通过构建步骤，它也可以在浏览器中使用处理器的 CLI 版本、Grunt 插件、Gulp 插件也存在</p>
-<p><a href="https://unifiedjs.com/explore/package/unified/">unified</a>的独特之处在于它可以在同一过程中在格式之间切换，例如Markdown到HTML。这允许更强大的合成，以下插件桥接格式：</p>
+<p><a href="https://unifiedjs.com/explore/package/unified/" target="_blank">unified</a> 可以 Node.js 中以编程方式使用。通过构建步骤，它也可以在浏览器中使用处理器的 CLI 版本、Grunt 插件、Gulp 插件也存在</p>
+<p><a href="https://unifiedjs.com/explore/package/unified/" target="_blank">unified</a>的独特之处在于它可以在同一过程中在格式之间切换，例如Markdown到HTML。这允许更强大的合成，以下插件桥接格式：</p>
 <ul>
-<li><a href="https://unifiedjs.com/explore/package/remark-rehype/"><code>remark-rehype</code></a> Markdown to HTML</li>
-<li><a href="https://unifiedjs.com/explore/package/rehype-remark/"><code>rehype-remark</code></a> HTML to Markdown</li>
-<li><a href="https://unifiedjs.com/explore/package/remark-retext/"><code>remark-retext</code></a> Markdown to prose</li>
-<li><a href="https://unifiedjs.com/explore/package/rehype-retext/"><code>rehype-retext</code></a> HTML to prose</li>
+<li><a href="https://unifiedjs.com/explore/package/remark-rehype/" target="_blank"><code>remark-rehype</code></a> Markdown to HTML</li>
+<li><a href="https://unifiedjs.com/explore/package/rehype-remark/" target="_blank"><code>rehype-remark</code></a> HTML to Markdown</li>
+<li><a href="https://unifiedjs.com/explore/package/remark-retext/" target="_blank"><code>remark-retext</code></a> Markdown to prose</li>
+<li><a href="https://unifiedjs.com/explore/package/rehype-retext/" target="_blank"><code>rehype-retext</code></a> HTML to prose</li>
 </ul>
 <blockquote>
 <p>参考</p>
 <ol>
-<li><a href="https://www.npmjs.com/package/remark-html">https://www.npmjs.com/package/remark-html</a></li>
-<li><a href="https://marvinsblog.net/post/2022-04-18-markdown-with-remark/">https://marvinsblog.net/post/2022-04-18-markdown-with-remark/</a></li>
-<li><a href="https://unifiedjs.com/learn/">https://unifiedjs.com/learn/</a></li>
-<li><a href="https://github.com/vmarkdown/remark-render/blob/master/src/compiler.js">https://github.com/vmarkdown/remark-render/blob/master/src/compiler.js</a></li>
+<li><a href="https://www.npmjs.com/package/remark-html" target="_blank">https://www.npmjs.com/package/remark-html</a></li>
+<li><a href="https://marvinsblog.net/post/2022-04-18-markdown-with-remark/" target="_blank">https://marvinsblog.net/post/2022-04-18-markdown-with-remark/</a></li>
+<li><a href="https://unifiedjs.com/learn/" target="_blank">https://unifiedjs.com/learn/</a></li>
+<li><a href="https://github.com/vmarkdown/remark-render/blob/master/src/compiler.js" target="_blank">https://github.com/vmarkdown/remark-render/blob/master/src/compiler.js</a></li>
 </ol>
 </blockquote>
     <div class="paging">
@@ -307,11 +315,8 @@
         </div>
         <div class="next">
             <div class="article-card-page">
-    <a class="posttop__post posttop__image" href="/post/MDX测试文档">
-        <div style="pointer-events: none;" class="posttop__post__cover">
-                    <video src="/bg.mp4" autoplay muted loop></video>
-                    // <img src="/bg.mp4" alt="">
-                </div>
+    <a class="posttop__post" href="/post/CSS/css中line-height属性各个单位详解">
+        
         <!-- <div class="posttop__post__cover">
       <img
         src={article.heroImage
@@ -324,7 +329,7 @@
         <div class="posttop__post__title">
                         下一篇
                     </div>
-        <div class="posttop__post__content">MDX测试文档</div>
+        <div class="posttop__post__content">css中line-height属性各个单位详解</div>
     </a>
 </div>
             <!-- {
