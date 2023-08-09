@@ -33,6 +33,8 @@ export const PageSize = 10
 export const TreeTitle = "文章"
 export const CollectTitle = "🍬收藏"
 
+export const ShowDraft = false
+
 /**
  * 左侧文件夹打开遵循方式
  * always: 总是打开文件夹

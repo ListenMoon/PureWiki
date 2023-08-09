@@ -73,6 +73,7 @@ document.addEventListener("pjax:complete", function () {
   }, 400);
 
   _initColor()
+//   _initLinks()
 
   updatePjax()
   reload()

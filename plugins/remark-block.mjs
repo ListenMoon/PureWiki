@@ -4,6 +4,8 @@
 import { visit } from 'unist-util-visit';
 import { h } from 'hastscript';
 import { toString } from 'hast-util-to-string';
+import {toHast} from 'mdast-util-to-hast'
+import {toHtml} from 'hast-util-to-html'
 import { runHighlighterWithAstro } from "@astrojs/prism/dist/highlighter";
 import Slugger from 'github-slugger';
 // import path from 'path';
@@ -16,6 +18,22 @@ export default function calloutsPlugin() {
   return (tree, file) => {
     
     slugs.reset();
+
+    visit(tree, "link", (node) => {
+        node.target="_blank"
+        const url = node.url
+        const hast = toHast(node)
+        if(hast){
+            if(url.startsWith("http")){
+                hast.properties["target"] = "_blank"
+            }
+            if(url.endsWith(".woff2") || url.endsWith(".zip")){
+                hast.properties["target"] = "_blank"
+            }
+        }
+        node.type = "html"
+        node.value = toHtml(hast)
+    })
 
     const images = [];
     visit(tree, 'image', (node) => {

@@ -1,0 +1,36 @@
+---
+title: vModelText的探究
+description: ""
+pubDate: 2023/8/9 09:43:29
+---
+
+## 起始
+
+今天学习掘金的文章，看到一篇[关于vue3技巧的文章](https://juejin.cn/post/7264532077574668303#heading-0)，学习到主要两个点，如下：
+1. `pinia-plugin-persistedstate` 插件
+    这应该是pinia的持久化插件，vuex时期也有类似的，既然是别人推荐的，想必也是好用的。
+2. `vModelText`
+    这个是一个官方的自定义指令，对应的指令是`v-model`,这竟然从没了解过，可以给其添加修饰符
+    ```ts
+    <script setup>
+    import { ref, vModelText } from 'vue'
+
+    const value = ref("")
+
+    // 为' v-model '指令定义一个名为'capitalize '的自定义修饰符
+    vModelText.beforeUpdate = function (el, { value, modifiers }) {
+        // 检查' v-model '指令中是否存在' capitalize '修饰符
+        if (value && modifiers.capitalize) {
+        el.value = el.value.toUpperCase()
+        }
+    }
+    </script>
+
+    <template>
+    <input type="text" v-model.capitalize="value" />
+    </template>
+    ```
+
+## 探究
+
+其源码在[这里](https://gitee.com/fe-mirror/vue3/blob/main/packages/runtime-dom/src/directives/vModel.ts#L41), 可以看到它主要是一个指令，

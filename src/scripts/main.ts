@@ -51,13 +51,26 @@ window.updatePjax = function () {
 }
 
 // a标签新页面打开
-const links = document.links;
-for (let i = 0, linksLength = links.length; i < linksLength; i++) {
-  const link = links[i];
-  if (link.hostname != window.location.hostname) {
-    link.target = "_blank";
-  }
-}
+// function initLinks(){
+//     const links = document.links;
+//     for (let i = 0, linksLength = links.length; i < linksLength; i++) {
+//         const link = links[i];
+//         if(link.href.startsWith("http")){
+//             link.target = "_blank";
+//         }
+//         if(link.href.endsWith(".woff2") || link.href.endsWith(".zip")){
+//             link.target = "_blank";
+//         }
+//         if (link.hostname != window.location.hostname) {
+//             link.target = "_blank";
+//         }
+//     }
+// }
+// initLinks()
+// // @ts-ignore
+// window._initLinks = () => {
+//     initLinks()
+// }
 
 // 文章详情页
 const allTitleSelector =

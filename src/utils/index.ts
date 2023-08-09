@@ -1,5 +1,5 @@
 import type { Post } from '#/post';
-import { ESITETYPE, isDev, showArticleHeroImage, Show_Sub_Article, SITE_TYPE } from '@blog/config';
+import { ESITETYPE, isDev, showArticleHeroImage, Show_Sub_Article, SITE_TYPE, ShowDraft } from '@blog/config';
 import type { MarkdownInstance } from 'astro';
 import { articleDir, articleRoute } from '@blog/share';
 import { betterDirectorySort } from './better-directory-sort';
@@ -10,6 +10,9 @@ function co(data: any, cb: any) {
     for (let i = 0; i < array.length; i++) {
         let value = cb(data[array[i]])
         if (!value.title) {
+            continue
+        }
+        if(!ShowDraft && value.isDraft){
             continue
         }
         if (!isDev && value.isDraft) {
@@ -285,6 +288,9 @@ export async function published(): Promise<Post[]> {
         .filter((post) => post.frontmatter.title)
         .map((post) => single(post))
         .filter((post) => isDev || !post.isDraft);
+    if(!ShowDraft){
+        allPosts.filter((post) => !post.isDraft)
+    }
     allPosts = allPosts.sort((a, b) => {
         if (b.pubTimestamp && a.pubTimestamp) {
             return b.pubTimestamp - a.pubTimestamp;
