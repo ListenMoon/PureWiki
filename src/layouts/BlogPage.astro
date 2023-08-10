@@ -60,6 +60,7 @@ let {
       <slot />
     </div>
   </article>
+  <slot name="footer" slot="footer"></slot>
   {isProd && comment && <Comment />}
   <HeadTree slot="side" head={_head} />
 </Base>

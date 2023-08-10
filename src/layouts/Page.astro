@@ -13,4 +13,7 @@ export type Props = Partial<PostProps> & extendProps
 
 let { title, description, hideSide, hideMenu, showTree } = getPost(Astro.props as Props) as Props
 ---
-<Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu} showTree={showTree}><slot /></Base>
+<Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu} showTree={showTree}>
+	<slot />
+	<slot name="footer" slot="footer"></slot>
+</Base>

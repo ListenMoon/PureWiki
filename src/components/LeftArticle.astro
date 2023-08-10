@@ -14,14 +14,15 @@ let caterr = decodeURIComponent(Astro.url.pathname)
   .replace(/\/$/, "")
   .split("/")
 let list = [];
+
 if (Astro.url.pathname.startsWith("/post/")) {
   list = posts.filter((v) => {
     const isMatch = v.url.startsWith(`/${pathArr.join("/")}`)
     const isMatchLength = v.url.slice(1).split("/").length  === (pathArr.length + 1)
     return isMatch && isMatchLength
   });
-} else if (Astro.url.pathname.startsWith("/cate/")) {
-  let aa = `/${caterr.join("/")}`.replace("/cate/", "/post/")
+} else if (Astro.url.pathname.startsWith("/cate/") || Astro.url.pathname === "/cate") {
+  let aa = `/${caterr.join("/")}`.replace("/cate", "/post")
   list = posts.filter((v) =>{
     const isMatch = v.url.startsWith(aa)
     const isMatchLength = v.url.split("/").slice(1).length === (caterr.length + 1)
@@ -30,6 +31,7 @@ if (Astro.url.pathname.startsWith("/post/")) {
 } else {
   list = posts;
 }
+// class:list={[curUrl === v.url ? "active" : ""]}
 ---
 
 <div class="left-article">
@@ -43,8 +45,7 @@ if (Astro.url.pathname.startsWith("/post/")) {
           class="item"
           href={v.url}
           title={v.title}
-          class:list={[curUrl === v.url ? "active" : ""]}
-        >
+          >
           {v.title}
         </a>
       );
@@ -54,7 +55,7 @@ if (Astro.url.pathname.startsWith("/post/")) {
     list.length == 0 && (<div style="text-align:center; color: #bbbbbb">空空如也</div>)
   }
 </div>
-<script is:raw>
+<!-- <script is:raw>
 function heightToTop1(ele) {
   //ele为指定跳转到该位置的DOM节点
   let root = document.body;
@@ -77,4 +78,4 @@ setTimeout(() => {
     behavior: "smooth",
   });
   }, 20);
-</script>
+</script> -->
