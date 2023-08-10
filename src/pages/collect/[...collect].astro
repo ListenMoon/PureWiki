@@ -23,7 +23,7 @@ const {
 
 <BlogPost {...post} showTree collect>
     <Content />
-    <div class="paging">
+    <div slot="footer" class="paging">
         <div class="before">
             {
                 post.beforeArticle && (
