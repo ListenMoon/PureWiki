@@ -4,7 +4,7 @@
     <!-- Global Metadata --><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta name="generator" content="Astro v2.10.4">
+<meta name="generator" content="Astro v2.10.5">
 
 <!-- Primary Meta Tags -->
 <title>生涯</title>
@@ -26,8 +26,8 @@
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <link rel="stylesheet" href="/astro_/about.c0e3bfda.css" />
-<link rel="stylesheet" href="/astro_/about.dcc259fb.css" /><script type="module" src="/astro_/hoisted.208ac75d.js"></script>
+  <link rel="stylesheet" href="/astro_/about.bc309bf0.css" />
+<link rel="stylesheet" href="/astro_/about.dcc259fb.css" /><script type="module" src="/astro_/hoisted.29a086ab.js"></script>
 <script type="module" src="/astro_/page.10202da5.js"></script></head>
 
   <body>
@@ -209,18 +209,70 @@
     }, 20)
 </script> -->
               </div>
-              <!-- <div style="background-color: #eee;height:10px;"></div>
-              <div class="tree-wrapper" style="flex-basis: 30%;height:0;display:flex;flex-direction: column">
-                <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
-                  <div style="direction: ltr;flex:1;">
-                    {
-                      SITE_TYPE === ESITETYPE.BLOG && (
-                        <LeftArticle slot="leftBottom"></LeftArticle>
-                      )
-                    }
-                  </div>
-                </div>
-              </div> -->
+          <div style="background-color: #eee;height:10px;display:none" class="tree-wrapper-up"></div>
+          <div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;display:none">
+            <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
+              <div style="direction: ltr;flex:1;">
+                <div class="left-article">
+  <div style="padding: 5px 10px;font-weight: bold;background: white;position:sticky;top: 0;border-bottom: 1px solid #eee;">
+    目录文章
+  </div>
+  <a class="item" href="/post/开源项目/怎么阅读开源项目的源码" title="怎么阅读开源项目的源码">
+          怎么阅读开源项目的源码
+        </a><a class="item" href="/post/Vue/Vue3/vModelText的探究" title="vModelText的探究">
+          vModelText的探究
+        </a><a class="item" href="/post/0杂文/服务器docker的升级" title="服务器docker的升级">
+          服务器docker的升级
+        </a><a class="item" href="/post/小说/罪大恶极之人" title="罪大恶极之人">
+          罪大恶极之人
+        </a><a class="item" href="/post/CSS/a标签嵌套a标签" title="a标签嵌套a标签">
+          a标签嵌套a标签
+        </a><a class="item" href="/post/前端/库/floating-ui使用方式" title="floating-ui使用方式">
+          floating-ui使用方式
+        </a><a class="item" href="/post/CSS/img之间存在间隙" title="img之间存在间隙">
+          img之间存在间隙
+        </a><a class="item" href="/post/文字处理/怎么用unified.js自定义元素输出" title="怎么用unified.js自定义元素输出">
+          怎么用unified.js自定义元素输出
+        </a><a class="item" href="/post/CSS/css中line-height属性各个单位详解" title="css中line-height属性各个单位详解">
+          css中line-height属性各个单位详解
+        </a><a class="item" href="/post/CSS/组合选择符" title="组合选择符">
+          组合选择符
+        </a><a class="item" href="/post/CSS/有关伪元素的思考" title="有关伪元素的思考">
+          有关伪元素的思考
+        </a><a class="item" href="/post/CSS/行内元素的细小留白" title="行内元素的细小留白">
+          行内元素的细小留白
+        </a><a class="item" href="/post/PureWiki主题" title="PureWiki主题">
+          PureWiki主题
+        </a>
+  
+</div>
+<!-- <script is:raw>
+function heightToTop1(ele) {
+  //ele为指定跳转到该位置的DOM节点
+  let root = document.body;
+  let height = 0;
+  do {
+    height += ele.offsetTop;
+    ele = ele.offsetParent;
+  } while (ele !== root);
+  const top = document.querySelector(".left-article-scroll").offsetTop;
+  const clientHeight = document.querySelector(".left-article-scroll")
+    .parentNode.clientHeight;
+  return height - top - clientHeight / 2 + 20;
+}
+
+setTimeout(() => {
+  var el = document.querySelector(".left-article .active");
+  var aa = heightToTop1(el);
+  document.querySelector(".left-article-scroll").scrollTo({
+    top: aa,
+    behavior: "smooth",
+  });
+  }, 20);
+</script> -->
+              </div>
+            </div>
+          </div>
           <!-- 为了快速将元素设置 -->
           <script src="/scripts/init.js"></script>
         </div>
@@ -246,8 +298,10 @@
     </div>
   </article>
   
+  
 
         </main>
+        
         <footer>
     &copy; 2023
     <a href="https://github.com/npmrun" target="_blank">NPMRUN</a>. All rights reserved.
