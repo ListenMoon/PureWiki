@@ -7,22 +7,22 @@
 <meta name="generator" content="Astro v2.10.4">
 
 <!-- Primary Meta Tags -->
-<title>分类</title>
-<meta name="title" content="分类">
-<meta name="description" content="分类">
+<title>怎么阅读开源项目的源码</title>
+<meta name="title" content="怎么阅读开源项目的源码">
+<meta name="description" content="花径不曾缘客扫，蓬门今始为君开!">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://blog.xieyaxin.top/cate/%E6%96%87%E5%AD%97%E5%A4%84%E7%90%86/">
-<meta property="og:title" content="分类">
-<meta property="og:description" content="分类">
+<meta property="og:url" content="https://blog.xieyaxin.top/post/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/%E6%80%8E%E4%B9%88%E9%98%85%E8%AF%BB%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%BA%90%E7%A0%81/">
+<meta property="og:title" content="怎么阅读开源项目的源码">
+<meta property="og:description" content="">
 <meta property="og:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://blog.xieyaxin.top/cate/%E6%96%87%E5%AD%97%E5%A4%84%E7%90%86/">
-<meta property="twitter:title" content="分类">
-<meta property="twitter:description" content="分类">
+<meta property="twitter:url" content="https://blog.xieyaxin.top/post/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/%E6%80%8E%E4%B9%88%E9%98%85%E8%AF%BB%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%BA%90%E7%A0%81/">
+<meta property="twitter:title" content="怎么阅读开源项目的源码">
+<meta property="twitter:description" content="">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -41,7 +41,7 @@
 		<a href="/" class="astro-EIMMU3LG">
 	门楣
 </a>
-		<a href="/post" class="astro-EIMMU3LG">
+		<a href="/post" class="active astro-EIMMU3LG">
 	归档
 </a>
 		<a href="/collect" class="astro-EIMMU3LG">
@@ -95,7 +95,7 @@
       </div>
       </div><div>
         <a href="/cate/开源项目" style="display: flex;padding-left:0px;color:inherit;border:0;text-decoration: none;">
-            <span title="开源项目" class="tree-item">
+            <span title="开源项目" class="tree-item active">
               开源项目
             </span>
           </a>
@@ -122,7 +122,7 @@
       </div>
       </div><div>
         <a href="/cate/文字处理" style="display: flex;padding-left:0px;color:inherit;border:0;text-decoration: none;">
-            <span title="文字处理" class="tree-item active">
+            <span title="文字处理" class="tree-item">
               文字处理
             </span>
           </a>
@@ -226,12 +226,48 @@
       </div>
       <div class="right">
         <main id="pjax-container">
-          
-    <div style="padding: 50px;">
-        <div class="article-card">
-  <a class="posttop__post" href="/post/文字处理/怎么用unified.js自定义元素输出">
-    
-    <!-- <div class="posttop__post__cover">
+          <article class="typo article">
+            <span style="font-size: .75em;color: #bdbdbd;">
+                <a href="/cate">顶层</a><span style="padding: 0 3px;">&gt;</span></span>
+                <span style="font-size: .75em;color: #bdbdbd;">
+                        <a href="/cate/开源项目">开源项目</a>
+                        <span style="padding: 0 3px;">&gt;</span>
+                    </span><span style="font-size: .75em;color: #bdbdbd;">
+                        怎么阅读开源项目的源码.mdx
+                        <span style="padding: 0 3px;"></span>
+                    </span>
+                <!-- {filePath && <div style="font-size: .75em;color: #bdbdbd;">{filePath.slice(1).replace(/\//g," > ")}</div>} -->
+				<h1 class="title">怎么阅读开源项目的源码</h1>
+				<div style="line-height: 1.5;">
+                    <div style="font-size: 0.75em;color: #bdbdbd;"><time>
+                        创建于 2023年8月10日 16:31:41
+                    </time></div>
+                    
+                </div>
+				<a href="https://github.com/ListenMoon/PureWiki/edit/master/article/开源项目/怎么阅读开源项目的源码.mdx" target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>
+				<hr>
+				<div class="article__content">
+                    
+    <ol>
+<li>github 的 commit 历史记录</li>
+</ol>
+<p>例如<a href="https://github.com/vuejs/core/commits/main" target="_blank">vue3 的源码</a>的提交，可以清晰的看到每一个提交的具体内容。</p>
+<ol start="2">
+<li>git log —reverse</li>
+</ol>
+<p>执行<code>git log --oneline --reverse &gt; commits.txt</code>,会将所有的提交信息打印到 commits.txt 中，之后可以按顺序一个个 checkout 即可</p>
+    <div class="paging">
+        <div class="before">
+            
+            <!-- {
+                post.beforeArticle && <div>上一篇：<a href={post.beforeArticle?.url}>{post.beforeArticle?.title}</a></div>
+            } -->
+        </div>
+        <div class="next">
+            <div class="article-card-page">
+    <a class="posttop__post" href="/post/Vue/Vue3/vModelText的探究">
+        
+        <!-- <div class="posttop__post__cover">
       <img
         src={article.heroImage
           ? article.heroImage
@@ -240,53 +276,21 @@
       />
     </div> -->
 
-    <div class="posttop__post__title">怎么用unified.js自定义元素输出</div>
-    <span style="font-size: 12px;margin-bottom: .1em;position: relative;">
-      创建于：2023年2月13日 11:15:37
-    </span>
-    
-    <div class="posttop__post__content" style="color: #bdbdbd;">作者很懒，没有写描述，请看标题脑补！！！</div>
-  </a>
+        <div class="posttop__post__title">
+                        下一篇
+                    </div>
+        <div class="posttop__post__content">vModelText的探究</div>
+    </a>
 </div>
-        <div class="pa-wrapper">
-  <div class="btn-group">
-    <a class="pa-button pa-active">1</a>
-  </div>
-</div>
-<!-- <div
-  style="margin: 20px auto;display: flex; width: 450px;justify-content: space-between;"
->
-  <div>
-    {
-      hasBefore && (
-        <a
-          href={`/${base}${url ? "/" + url : ""}${
-            curPage > 1 ? `/${curPage - 1}` : ""
-          }`}
-        >
-          上一页
-        </a>
-      )
-    }
-  </div> -->
-<!-- <div>总数：{count}</div> -->
-<!-- <div>总页数：{totalPage}</div> -->
-<!-- <div>当前页码：{curPage}</div> -->
-<!-- {[...Array(totalPage)].map((v, i) => {
-
-    return <div>{ i + 1} </div>
-  })}
-  <div>{curPage}</div>
-  <div>
-    {
-      hasNext && (
-        <a href={`/${base}${url ? "/" + url : ""}/${curPage + 1}`}>下一页</a>
-      )
-    }
-  </div>
-</div> -->
-        
+            <!-- {
+                post.nextArticle && <div>下一篇：<a href={post.nextArticle?.url}>{post.nextArticle?.title}</a></div>
+            } -->
+        </div>
     </div>
+
+                </div>
+		</article>
+        
 
         </main>
         <footer>
@@ -365,7 +369,11 @@
     
 </ul>
         <div class="_headtree show">
-            
+            <ul class="head-tree">
+			<div class="title">目录</div>
+		
+        <div style="margin: 0 20px;">无</div>
+		</ul>
         </div>
       </div>
       <!-- {
