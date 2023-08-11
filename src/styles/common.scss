@@ -97,9 +97,14 @@ body {
     display: grid;
     grid-row-gap: 8px;
     text-indent: 0;
-    margin: 0 1em;
+    margin: 0;
     padding: 1em;
     background-color: white;
+    @media (min-width: 640px) {
+        & {
+            margin: 0 1em;
+        }
+    }
     @media (min-width: 640px) {
         & {
             grid-template-columns: repeat(2, 1fr);

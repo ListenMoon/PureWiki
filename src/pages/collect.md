@@ -3,7 +3,7 @@ layout: "@blog/layouts/BlogPage.astro"
 title: 收藏
 description: ""
 showTree: true
-comment: true
+comment: false
 heroImage: /hero/ff.png
 pubDate: 2023/1/19 22:34:31
 ---
