@@ -1,0 +1,113 @@
+---
+const { desc, title, url, avatar } = Astro.props
+---
+
+<div class="usercard">
+    <div class="wrapper-img">
+        <img
+            class="avatar"
+            style="clip-path: url(#roundedPolygon)"
+            src={avatar}
+            alt="npmrun"
+        />
+        <a class="shadow" href={url} target="_blank">前往</a>
+    </div>
+    <div>{title}</div>
+    {
+        desc && (
+            <div class="content">
+                <div class="desc">{desc ? desc : '暂无'}</div>
+            </div>
+        )
+    }
+</div>
+
+<style is:raw>
+    .usercard {
+        position: relative;
+        width: calc(16.66666666% - 10px);
+        margin-top: 12px;
+        display: inline-flex;
+        align-items: center;
+        flex-direction: column;
+        .wrapper-img {
+            width: 68px;
+            position: relative;
+            overflow: hidden;
+            height: 68px;
+        }
+        .shadow {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 68px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            clip-path: url(#roundedPolygon);
+            background-color: rgba(0, 0, 0, 0.35);
+            color: white;
+            transition: top 0.3s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                color: white;
+            }
+        }
+        .avatar {
+            position: relative;
+            width: 68px;
+            height: 68px;
+        }
+        &:hover .shadow {
+            top: 0;
+        }
+        &:hover .content {
+            height: 68px;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-sizing: border-box !important;
+            overflow: hidden;
+            width: 200px;
+            height: 0;
+            transition: height 0.3s ease-in-out;
+            background-color: white;
+            position: absolute;
+            z-index: 10;
+            top: 34px;
+            margin-top: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            .title {
+                font-size: 1.2em;
+                padding: 0 6px;
+            }
+            .desc {
+                font-size: 0.875em;
+                padding: 0 6px;
+            }
+        }
+    }
+    @media (max-width: 1366px) {
+        .usercard {
+            width: calc(25% - 10px);
+        }
+    }
+    @media (max-width: 1200px) {
+        .usercard {
+            width: calc(33.333333% - 10px);
+        }
+    }
+    @media (max-width: 920px) {
+        .usercard {
+            width: calc(50% - 10px);
+        }
+    }
+</style>
