@@ -11,7 +11,7 @@ import grayMatter from "gray-matter";
         return pathname.replace(/\.md/, '');
     }
 
-    const contentFilePaths = await FastGlob(["**/*.md", "!drafts/**/*.md"], {
+    const contentFilePaths = await FastGlob(["**/*.{md,mdx}", "!drafts/**/*.{md,mdx}"], {
         cwd: contentDir,
     });
 
