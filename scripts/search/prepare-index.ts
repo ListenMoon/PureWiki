@@ -8,7 +8,7 @@ import grayMatter from "gray-matter";
     const contentDir = path.join(process.cwd(), "./article");
     const indexFile = path.join(publicDir, "search-index.json");
     const getSlugFromPathname = (pathname) => {
-        return pathname.replace(/\.md/, '');
+        return pathname.replace(/\.md$/, '').replace(/\.mdx$/, '');
     }
 
     const contentFilePaths = await FastGlob(["**/*.{md,mdx}", "!drafts/**/*.{md,mdx}"], {
