@@ -58,7 +58,7 @@ export default function collectPlugin() {
                             title: desc
                         },
                         isCard ? [
-                            Block("tagName", { class: "doc-card-title" }, [{
+                            Block(tagName, { class: "doc-card-title" }, [{
                                 type: "text",
                                 value: title
                             }]),
@@ -88,6 +88,7 @@ export default function collectPlugin() {
                                 Block(
                                     "a",
                                     {
+                                        target: "_blank",
                                         href: url,
                                         class: "doc-card-tag",
                                     },

@@ -7,6 +7,7 @@
 import Pjax from "pjax";
 
 var pjax = new Pjax({
+  elements: 'a[href]:not([target="_blank"]), form[action]',
   selectors: [
     "title",
     "meta[name=description]",
@@ -77,7 +78,7 @@ document.addEventListener("pjax:complete", function () {
   }, 400);
 
   _initColor()
-//   _initLinks()
+  //   _initLinks()
 
   updatePjax()
   reload()
@@ -112,4 +113,16 @@ function reload() {
 
       parent.appendChild(script);
     });
+    removePjaxAttr()
 }
+
+function removePjaxAttr() {
+  const links = document.links;
+  for (let i = 0, linksLength = links.length; i < linksLength; i++) {
+    const link = links[i];
+    if (link.getAttribute("target") === "_blank") {
+      link.removeAttribute("data-pjax-state")
+    }
+  }
+}
+removePjaxAttr()

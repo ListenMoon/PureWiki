@@ -31,7 +31,7 @@ export const PageSize = 10
  * 左侧文件夹标题
  */
 export const TreeTitle = "文章"
-export const CollectTitle = "🍬收藏"
+export const CollectTitle = "🍬仓库"
 
 export const ShowDraft = false
 
