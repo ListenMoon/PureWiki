@@ -1,3 +1,8 @@
+[build]
+  command = "git lfs install && git lfs pull && pnpm build"
+[build.environment]
+  GIT_LFS_SKIP_SMUDGE = "1"
+  GIT_LFS_SKIP_CLEAN = "1"
 [[headers]]
   for = "/files/*"
   [headers.values]
