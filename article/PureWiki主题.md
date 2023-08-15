@@ -142,6 +142,7 @@ updatedDate: 2022/11/15 16:05:56
 
     效果：
     ::demo{path="/demo/flowchart.html"}
+    ::demo{path="/demo/字体/HarmonyOS/index.html"}
 
 ## 配置
 

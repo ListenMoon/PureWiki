@@ -26,6 +26,10 @@ async function praseDemo() {
             const titleReg = /<title>(.*?)<\/title>/i.exec(content);
             if (titleReg && titleReg[1]) {
                 title = titleReg[1];
+                if(!title.startsWith("Public:")){
+                    continue
+                }
+                title = title.replace("Public:", "")
             }
             const descReg = /<meta name="description" content="(.*?)">/i.exec(
                 content

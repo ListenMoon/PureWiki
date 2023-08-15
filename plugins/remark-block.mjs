@@ -202,7 +202,7 @@ export default function calloutsPlugin() {
                     {
                         type: "html",
                         __handled: true,
-                        value: `<div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;">右键查看框架代码</div>`
+                        value: `<div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;">${attributes.path}</div>`
                     },
                 ]
             }
