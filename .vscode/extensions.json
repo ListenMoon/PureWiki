@@ -4,7 +4,8 @@
     "hancel.markdown-image",
     "d3vnu1l.template-generator-vscode",
     "antfu.browse-lite",
-    "jsynowiec.vscode-insertdatestring"
+    "jsynowiec.vscode-insertdatestring",
+    "lpubsppop01.vscode-auto-timestamp"
   ],
   "unwantedRecommendations": []
 }

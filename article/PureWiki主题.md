@@ -5,10 +5,10 @@ heroImage: https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png
 heroPosition: top
 top: true
 pubDate: 2023/08/04 14:40:00
-updatedDate: 2023/08/16 10:55:41
+updatedDate: 2023/08/16 11:50:14
 ---
 
-[TOC]
+[TOC] 
 
 ## 特性
 
@@ -22,5 +22,4 @@ updatedDate: 2023/08/16 10:55:41
     heroImage: ""             <!-- 文章头图 -->
     top: true                 <!-- 展示在右上方 -->
     mode: chinese             <!-- 首行缩进 -->
-    mode: collect             <!-- 文章不被rss收录 -->
     ```
