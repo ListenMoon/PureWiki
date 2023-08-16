@@ -19,5 +19,8 @@
   "insertDateString.format": "YYYY/MM/DD hh:mm:ss",
   "insertDateString.formatDate": "YYYY/MM/DD",
   "insertDateString.formatTime": "hh:mm:ss",
-  "files.associations": { "*.mdx": "markdown" }
+  "files.associations": { "*.mdx": "markdown" },
+  "lpubsppop01.autoTimeStamp.lineLimit": 10, //前十行定义的以下两种字段会自动更新时间戳
+  "lpubsppop01.autoTimeStamp.birthTimeStart":"pubDate: ",
+  "lpubsppop01.autoTimeStamp.modifiedTimeStart":"updatedDate: "
 }

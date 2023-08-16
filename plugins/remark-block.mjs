@@ -202,7 +202,7 @@ export default function calloutsPlugin() {
                     {
                         type: "html",
                         __handled: true,
-                        value: `<div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;">${attributes.path}</div>`
+                        value: `<div style="background: #e9e9e9;padding: 0 1em;font-size:.75em;"><a href="${attributes.path}" target="_blank">查看源站</a></div>`
                     },
                 ]
             }
