@@ -54,7 +54,7 @@ export const AuthorDesc = '来自南方小城<br>希望结交益友♥!';
 export const StartTime = [2023, 0o2, 23, 20, 55, 32];
 
 export const FooterAuthor = 'NPMRUN';
-export const FooterName = 'PureWiki';
+export const FooterName = '失落之城';
 export const FooterRepo = 'https://github.com/ListenMoon/PureWiki';
 
 // 远程地址，可自行修改对应的操作
