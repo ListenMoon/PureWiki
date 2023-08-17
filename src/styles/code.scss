@@ -1,0 +1,93 @@
+// 代码块apple样式
+.code-figure {
+    margin: var(--prism-block-margin-y) var(--prism-block-margin-x);
+    border: 1px solid #e2e2e2;
+    border-radius: 0.5em;
+    overflow: hidden;
+
+    pre[class*="language-"] {
+        border-radius: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    figcaption.line-numbers-head {
+        width: 100%;
+        color: #8d949e;
+        background-color: #f5f6f7;
+        zoom: 1;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+        border-bottom: 1px solid #e2e2e2;
+
+        .language {
+            font-size: 0.6em;
+            margin-left: 5px;
+        }
+    }
+
+    figcaption.line-numbers-head .custom-carbon-dot {
+        display: inline-block;
+        margin: 0 4px;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+    }
+
+    figcaption.line-numbers-head .custom-carbon-dot--red {
+        background-color: #ff5f56;
+    }
+
+    figcaption.line-numbers-head .custom-carbon-dot--yellow {
+        background-color: #ffbd2e;
+    }
+
+    figcaption.line-numbers-head .custom-carbon-dot--green {
+        background-color: #27c93f;
+    }
+
+    figcaption.line-numbers-head .custom-carbon {
+        padding: 2px 0 0 9px;
+        height: 2em;
+        display: flex;
+        align-items: center;
+
+        .text {
+            flex: 1;
+            width: 0;
+        }
+
+        .copy-btn {
+            padding: 0 8px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.8em;
+            color: #ddd;
+            transition: color 0.2s linear;
+
+            &:hover {
+                color: unset;
+            }
+        }
+    }
+
+    pre.line-numbers {
+        margin-top: 0;
+        padding: 10px 1em 1em 1em;
+        background-color: #f5f6f7;
+        border-bottom-left-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+    }
+
+    figcaption.code-caption {
+        border-top: 1px solid #e2e2e2;
+        font-size: 0.8em;
+        color: var(--prism-foreground) !important;
+        padding: var(--prism-block-padding-y) var(--prism-block-padding-x);
+        background-color: var(--prism-background);
+    }
+
+    // 代码块apple样式End
+}

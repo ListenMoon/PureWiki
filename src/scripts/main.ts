@@ -1,5 +1,6 @@
 import View from "viewerjs";
 import mermaid from "mermaid"
+import ClipboardJS from "clipboard";
 import "./pjax"
 
 mermaid.init({
@@ -180,3 +181,29 @@ function init() {
 }
 init()
 window.addEventListener("scroll", init);
+
+var clipboard = new ClipboardJS('.typo.article .article__content .code-figure .copy-btn', {
+  text: function (trigger) {
+    return trigger.nextElementSibling.innerHTML;
+  },
+});
+clipboard.on('success', function (e) {
+  const el = e.trigger as HTMLDivElement;
+  e.clearSelection();
+  el.style.color = 'green';
+  el.innerHTML = '已复制';
+  setTimeout(() => {
+    el.style.color = '';
+    el.innerHTML = '复制';
+  }, 2500);
+});
+
+clipboard.on('error', function (e) {
+  const el = e.trigger as HTMLDivElement;
+  el.style.color = 'red';
+  el.innerHTML = '复制';
+  setTimeout(() => {
+    el.style.color = '';
+    el.innerHTML = '复制';
+  }, 2500);
+});

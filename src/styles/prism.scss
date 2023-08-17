@@ -6,7 +6,7 @@
     --prism-line-height: 1.5em;
     --prism-font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
     --prism-foreground: #393a34;
-    --prism-background: #f6f8fa;
+    --prism-background: var(--code-bg-color, #f6f8fa);
     --prism-comment: #a0ada0;
     --prism-string: #b56959;
     --prism-literal: #2f8a89;

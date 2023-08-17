@@ -81,7 +81,7 @@ const isArticleDetailPage = Astro.url.pathname.startsWith("/post/") // || Astro.
             </div>
           </div>
           <!-- 为了快速将元素设置 -->
-          <script is:inline src="/scripts/init.js"></script>
+          <!-- <script is:inline src="/scripts/init.js"></script> -->
         </div>
       </div>
       <div class="right">
@@ -91,6 +91,7 @@ const isArticleDetailPage = Astro.url.pathname.startsWith("/post/") // || Astro.
         <slot name="footer"></slot>
         <div class="comment-wrapper">
             { isProd && showComment && <Comment /> }
+            <!-- { showComment && <Comment /> } -->
         </div>
         <Footer />
       </div>
