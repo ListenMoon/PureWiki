@@ -31,8 +31,8 @@ const { article } = Astro.props;
 
     <div class="posttop__post__title">{article.title}</div>
     <span style="font-size: 12px;margin-bottom: .1em;position: relative;">
-      创建于：{
-        new Date(article.pubTimestamp).toLocaleDateString("zh-cn", {
+      {article.updatedTimestamp?'上次修改于':'创建于'}：{
+        new Date(article.updatedTimestamp || article.pubTimestamp).toLocaleDateString("zh-cn", {
           year: "numeric",
           month: "short",
           day: "numeric",
