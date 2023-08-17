@@ -24,11 +24,8 @@
 <meta property="twitter:title" content="生涯">
 <meta property="twitter:description">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <link rel="stylesheet" href="/astro_/career.bbb7ada2.css" />
-<link rel="stylesheet" href="/astro_/about.7944d505.css" />
-<link rel="stylesheet" href="/astro_/about.dcc259fb.css" /><script type="module" src="/astro_/hoisted.c4a85f25.js"></script>
+  <link rel="stylesheet" href="/astro_/about.4145abf9.css" />
+<link rel="stylesheet" href="/astro_/about.bbb7ada2.css" /><script type="module" src="/astro_/hoisted.8e9c5e20.js"></script>
 <script type="module" src="/astro_/page.10202da5.js"></script></head>
 
   <body>
@@ -43,7 +40,7 @@
 		<a href="/" class="astro-EIMMU3LG">
 	门楣
 </a>
-		<a href="/post" class="astro-EIMMU3LG">
+		<a href="/posts" class="astro-EIMMU3LG">
 	归档
 </a>
 		<a href="/collect" class="astro-EIMMU3LG">
@@ -61,11 +58,12 @@
 		<!-- <HeaderLink href="/demo">Demo</HeaderLink> -->
 	</nav>
 </header>
-          <div style="background-color: #eee;height:10px;"></div>
+          <!-- <div style="background-color: var(--bg-color);height:10px;"></div> -->
+          <div style="margin-bottom:10px;"></div>
           <div class="tree-wrapper" style="flex: 1;height:0;display:flex;flex-direction: column">
                 <div class="tree" id="tree">
   <div style="direction: ltr;padding-left: 17px;">
-        <div style="padding:10px 0;padding-left:17px; margin-left: -17px;position:sticky;top: 0;background: #f8f8f8;">
+        <div style="padding:10px 0;padding-left:17px; margin-left: -17px;position:sticky;top: 0;background: var(--light-bg-color);">
           <a href="/cateAll" style="display: flex;color:inherit;border:0;text-decoration: none;">
             <span title="所有文章" class="tree-item">
               所有文章
@@ -74,17 +72,31 @@
         </div>
         <div>
           <a href="/cate" style="display: flex;color:inherit;border:0;text-decoration: none;margin: 5px 0;">
-            <span title="顶层" class="tree-item">
-            顶层
+            <span title="未分类" class="tree-item">
+            未分类
             </span>
-            <div data-href="https://github.com/ListenMoon/PureWiki/new/master/article" class="op">
+            <!-- {enableRemote && (
+                <div data-href={getNewURL("/article")} class="op">
                 新建
                 </div>
+            )} -->
           </a>
         </div>
         <div>
         
         
+      </div><div>
+        <a href="/cate/小说" style="display: flex;padding-left:0px;color:inherit;border:0;text-decoration: none;">
+            <span title="小说" class="tree-item">
+              小说
+            </span>
+          </a>
+        <div>
+        
+        
+      </div>
+
+
       </div>
 
 
@@ -113,15 +125,17 @@
     }, 20)
 </script> -->
               </div>
-          <div style="background-color: #eee;height:10px;display:none" class="tree-wrapper-up"></div>
+          <div style="margin-bottom:10px;display:none" class="tree-wrapper-up"></div>
           <div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;display:none">
             <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
               <div style="direction: ltr;flex:1;">
                 <div class="left-article">
-  <div style="padding: 5px 10px;font-weight: bold;background: white;position:sticky;top: 0;border-bottom: 1px solid #eee;">
+  <div style="padding: 5px 10px;font-weight: bold;background: var(--light-bg-color);position:sticky;top: 0;">
     目录文章
   </div>
-  <a class="item" href="/post/PureWiki主题" title="PureWiki主题">
+  <a class="item" href="/post/小说/罪大恶极之人" title="罪大恶极之人">
+          罪大恶极之人
+        </a><a class="item" href="/post/PureWiki主题" title="PureWiki主题">
           PureWiki主题
         </a>
   
@@ -159,7 +173,7 @@ setTimeout(() => {
       </div>
       <div class="right">
         <main id="pjax-container">
-          <img class="hero-image" src="https://w.wallhaven.cc/full/9d/wallhaven-9dz1e8.jpg" alt=""><article class="typo article">
+          <img class="hero-image" src="https://w.wallhaven.cc/full/9d/wallhaven-9dz1e8.jpg" style="object-position: center;" alt="生涯"><article class="typo article">
     <a href="https://github.com/ListenMoon/PureWiki/edit/master/src/pages/career.mdx" target="_blank" style="margin: 6px 0;display: inline-block;">
           在源文件编辑
         </a>
@@ -179,9 +193,13 @@ setTimeout(() => {
   </article>
   
   
+  
 
         </main>
         
+        <div class="comment-wrapper">
+            
+        </div>
         <footer>
     &copy; 2023
     <a href="https://github.com/npmrun" target="_blank">NPMRUN</a>. All rights reserved.

@@ -24,10 +24,8 @@
 <meta property="twitter:title" content="TODO">
 <meta property="twitter:description" content="">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <link rel="stylesheet" href="/astro_/about.7944d505.css" />
-<link rel="stylesheet" href="/astro_/about.dcc259fb.css" /><script type="module" src="/astro_/hoisted.c4a85f25.js"></script>
+  <link rel="stylesheet" href="/astro_/about.4145abf9.css" />
+<link rel="stylesheet" href="/astro_/about.bbb7ada2.css" /><script type="module" src="/astro_/hoisted.8e9c5e20.js"></script>
 <script type="module" src="/astro_/page.10202da5.js"></script></head>
 
   <body>
@@ -42,7 +40,7 @@
 		<a href="/" class="astro-EIMMU3LG">
 	门楣
 </a>
-		<a href="/post" class="astro-EIMMU3LG">
+		<a href="/posts" class="astro-EIMMU3LG">
 	归档
 </a>
 		<a href="/collect" class="astro-EIMMU3LG">
@@ -60,19 +58,22 @@
 		<!-- <HeaderLink href="/demo">Demo</HeaderLink> -->
 	</nav>
 </header>
-          <div style="background-color: #eee;height:10px;"></div>
+          <!-- <div style="background-color: var(--bg-color);height:10px;"></div> -->
+          <div style="margin-bottom:10px;"></div>
           <div class="tree-wrapper" style="flex: 1;height:0;display:flex;flex-direction: column">
                 
               </div>
-          <div style="background-color: #eee;height:10px;display:none" class="tree-wrapper-up"></div>
+          <div style="margin-bottom:10px;display:none" class="tree-wrapper-up"></div>
           <div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;display:none">
             <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
               <div style="direction: ltr;flex:1;">
                 <div class="left-article">
-  <div style="padding: 5px 10px;font-weight: bold;background: white;position:sticky;top: 0;border-bottom: 1px solid #eee;">
+  <div style="padding: 5px 10px;font-weight: bold;background: var(--light-bg-color);position:sticky;top: 0;">
     目录文章
   </div>
-  <a class="item" href="/post/PureWiki主题" title="PureWiki主题">
+  <a class="item" href="/post/小说/罪大恶极之人" title="罪大恶极之人">
+          罪大恶极之人
+        </a><a class="item" href="/post/PureWiki主题" title="PureWiki主题">
           PureWiki主题
         </a>
   
@@ -110,7 +111,7 @@ setTimeout(() => {
       </div>
       <div class="right">
         <main id="pjax-container">
-          <img class="hero-image" src="/hero/cc.png" alt=""><article class="typo article">
+          <img class="hero-image" src="/hero/cc.png" style="object-position: center;" alt="TODO"><article class="typo article">
     <a href="https://github.com/ListenMoon/PureWiki/edit/master/src/pages/note.md" target="_blank" style="margin: 6px 0;display: inline-block;">
           在源文件编辑
         </a>
@@ -124,14 +125,17 @@ setTimeout(() => {
   </article>
   
   
-<div id="utteranc-sc" style="text-align: center;padding: 25px 0">
-  <span style="">评论加载中...</span>
-</div>
-<script id="utteranc-sc" src="/libs/utteranc.client.js">
-</script>
+  
 
         </main>
         
+        <div class="comment-wrapper">
+            
+<div id="utteranc-sc" style="text-align: center;padding: 0 0;margin: 0 1em;position:relative;min-height: 100px;margin-top:1em;">
+  <span style="position:absolute;top: 50px;">评论加载中...</span>
+  <script src="/libs/utteranc.client.js"></script>
+</div>
+        </div>
         <footer>
     &copy; 2023
     <a href="https://github.com/npmrun" target="_blank">NPMRUN</a>. All rights reserved.
