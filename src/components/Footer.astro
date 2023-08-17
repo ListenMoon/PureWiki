@@ -1,14 +1,14 @@
 ---
-import { FooterAuthor, FooterName, FooterRepo } from "@blog/config";
+import { AuthorName, AuthorRepo, SITE_TITLE, SITE_REPO } from "@blog/config";
 const today = new Date();
 ---
 
 <footer>
     &copy; {today.getFullYear()}
-    <a href="https://github.com/npmrun" target="_blank">{FooterAuthor}</a>. All rights reserved.
+    <a href={AuthorRepo} target="_blank">{AuthorName}</a>. All rights reserved.
     <p>
-        <span>Built with ♥ by <a href={FooterRepo}
-            >{FooterName}</a></span>
+        <span>Built with ♥ by <a href={SITE_REPO}
+            >{SITE_TITLE}</a></span>
         <span style="margin-left: 6px;">Powered By <a href="https://astro.build/" target="_blank">Astro</a></span>
     </p>
 </footer>

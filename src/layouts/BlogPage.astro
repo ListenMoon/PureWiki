@@ -20,6 +20,7 @@ let {
   filePath,
   _head,
   heroImage,
+  heroPosition="center",
   hideSide = false,
   hideMenu = false,
   mode,
@@ -34,13 +35,14 @@ let {
   hideSide={hideSide}
   hideMenu={hideMenu}
   showTree={showTree}
+  showComment={comment}
 >
   {
     heroImage &&
       (heroImage.includes(".mp4") ? (
-        <video class="hero-image" src={heroImage} autoplay muted loop />
+        <video class="hero-image" src={heroImage} style={`object-position: ${heroPosition};`} autoplay muted loop />
       ) : (
-        <img class="hero-image" src={heroImage} alt="" />
+        <img class="hero-image" src={heroImage} style={`object-position: ${heroPosition};`} alt={title} />
       ))
   }
   <article class:list={["typo article", mode]}>
@@ -61,6 +63,6 @@ let {
     </div>
   </article>
   <slot name="footer" slot="footer"></slot>
-  {isProd && comment && <Comment />}
+  <!-- {comment && <Comment />} -->
   <HeadTree slot="side" head={_head} />
 </Base>

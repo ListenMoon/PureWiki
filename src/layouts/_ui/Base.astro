@@ -8,6 +8,7 @@ import { publishedTree as aaa } from "@blog/utils/collect";
 import DocTree from "@blog/components/DocTree/DocTree.astro";
 import Search from "@blog/components/SearchInput/Search.astro";
 import PostTop from "@blog/components/PostTop.astro";
+import Comment from "@blog/components/Comment.astro";
 import {
   SITE_LANG,
   TreeTitle,
@@ -15,6 +16,7 @@ import {
   SITE_TYPE,
   ESITETYPE,
   ShowLeftMenu,
+  isProd,
 } from "@blog/config";
 import LeftArticle from "@root/src/components/LeftArticle.astro";
 
@@ -33,9 +35,10 @@ export interface Props {
   hideSide: boolean;
   showTree: boolean;
   hideMenu: boolean;
+  showComment: boolean;
 }
 
-let { title, description, hideSide, hideMenu, showTree } = Astro.props as Props;
+let { title, description, hideSide, hideMenu, showTree, showComment } = Astro.props as Props;
 
 const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
 const isArticleDetailPage = Astro.url.pathname.startsWith("/post/") // || Astro.url.pathname.startsWith("/cate")
@@ -45,8 +48,6 @@ const isArticleDetailPage = Astro.url.pathname.startsWith("/post/") // || Astro.
 <html lang={SITE_LANG}>
   <head>
     <BaseHead title={title} description={description} />
-    <link is:raw rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-    <script is:raw src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
   </head>
 
   <body>
@@ -54,7 +55,8 @@ const isArticleDetailPage = Astro.url.pathname.startsWith("/post/") // || Astro.
       <div class="left">
         <div class="wrapper">
           <Header title={title} />
-          <div style="background-color: #eee;height:10px;"></div>
+          <!-- <div style="background-color: var(--bg-color);height:10px;"></div> -->
+          <div style="margin-bottom:10px;"></div>
           {
             ShowLeftMenu && (
                 <div class="tree-wrapper" style="flex: 1;height:0;display:flex;flex-direction: column">
@@ -66,7 +68,7 @@ const isArticleDetailPage = Astro.url.pathname.startsWith("/post/") // || Astro.
               </div>
             )
           }
-          <div style={`background-color: #eee;height:10px;${isArticleDetailPage?'':'display:none'}`} class="tree-wrapper-up"></div>
+          <div style={`margin-bottom:10px;${isArticleDetailPage?'':'display:none'}`} class="tree-wrapper-up"></div>
           <div class="tree-wrapper articles" style={`flex-basis: 30%;height:0;display:flex;flex-direction: column;${isArticleDetailPage?'':'display:none'}`}>
             <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
               <div style="direction: ltr;flex:1;">
@@ -87,6 +89,9 @@ const isArticleDetailPage = Astro.url.pathname.startsWith("/post/") // || Astro.
           <slot />
         </main>
         <slot name="footer"></slot>
+        <div class="comment-wrapper">
+            { isProd && showComment && <Comment /> }
+        </div>
         <Footer />
       </div>
       <div class="side" class:list={[!hideSide?'show':'']}>

@@ -4,13 +4,14 @@ description: 一个Astro主题
 heroImage: https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png
 heroPosition: top
 top: true
+comment: true
 pubDate: 2023/08/04 14:40:00
-updatedDate: 2023/08/16 11:50:14
+updatedDate: 2023/08/17 15:38:18
 ---
 
-[TOC] 
+[TOC]
 
-## 特性
+## Meta
 
 1. 文章可用元输入如下（有一些其他的，可以自己看代码，tpyings 尚不完善，得看布局代码）
 
@@ -20,6 +21,174 @@ updatedDate: 2023/08/16 11:50:14
     pubDate: 2022/5/12        <!-- 发布日期 -->
     updatedDate: 2023/01/01   <!-- 修改日期-->
     heroImage: ""             <!-- 文章头图 -->
+    heroPosition: ""          <!-- 文章头图显示位置，默认center -->
     top: true                 <!-- 展示在右上方 -->
     mode: chinese             <!-- 首行缩进 -->
     ```
+
+## 特性
+
+### 内嵌标题
+
+```
+[TOC]
+```
+
+效果：
+
+[TOC]
+
+### markdown 指令转 html
+
+```
+:abbr[提示]{title="提示"}
+```
+
+效果：
+:abbr[提示]{title="提示"}
+
+### 面板
+
+```
+::::card
+横排排版演示
+:::card-title
+横排排版演示
+:::
+::::
+
+::::card{#vertical}
+竖排排版演示
+:::card-title
+竖排排版演示
+:::
+::::
+```
+
+效果：
+::::card
+横排排版演示
+:::card-title
+横排排版演示
+:::
+::::
+::::card{#vertical}
+竖排排版演示
+:::card-title
+竖排排版演示
+:::
+::::
+
+### 配置头图为文章中的第一张图片
+
+将配置的`showArticleHeroImage`设置为 true
+
+### 启用在源文件编辑
+
+将配置的`enableRemote`设置为 true，其源码地址也需要配置
+
+-   githubEditURL
+-   githubNewURL
+
+### mermaid
+
+````
+```flow
+flowchart TD
+    A[/Christmas\]
+    A -->|Get money| B[\Go shopping/]
+    B --> C{Let me thinksssss<br/>ssssssssssssssssssssss<br/>sssssssssssssssssssssssssss}
+    C -->|One| D[/Laptop/]
+    C -->|Two| E[\iPhone\]
+    C -->|Three| F[Car]
+```
+````
+
+效果：
+
+```flow
+flowchart TD
+    A[/Christmas\]
+    A -->|Get money| B[\Go shopping/]
+    B --> C{Let me thinksssss<br/>ssssssssssssssssssssss<br/>sssssssssssssssssssssssssss}
+    C -->|One| D[/Laptop/]
+    C -->|Two| E[\iPhone\]
+    C -->|Three| F[Car]
+```
+
+### mathjax
+
+```
+    $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
+
+    $$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+```
+
+效果：
+$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
+$$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+
+### 命令 iframe 和 iframec
+
+`iframe`为收缩框默认打开  
+`iframec`为收缩框默认关闭
+
+````
+```
+::iframe[流程图Demo]{url=/demo/字体/HarmonyOS/index.html}
+::iframec[流程图Demo]{url=/demo/字体/HarmonyOS/index.html}
+```
+````
+
+效果
+::iframe[流程图 Demo]{url=/demo/字体/HarmonyOS/index.html}
+::iframec[流程图 Demo]{url=/demo/字体/HarmonyOS/index.html}
+
+### 命令 demo
+
+````
+:::demo
+```html
+<div>
+    <div>before content<div>
+    text
+    <div>after content<div>
+</div>
+```
+:::
+````
+
+效果：
+:::demo
+
+```html
+<div>
+    <div>
+        before content
+        <div>
+            text
+            <div>
+                after content
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+:::
+
+引用其他 demo:
+
+```
+::demo{path="/demo/字体/HarmonyOS/index.html"}
+```
+
+效果：
+::demo{path="/demo/字体/HarmonyOS/index.html"}
+
+## 开发计划
+
+> 暂无新功能的想法，有啥想法的可以说
+
+-   [ ] 优化代码与样式

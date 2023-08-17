@@ -12,8 +12,10 @@
         &.posttop__image {
             color: white;
         }
+        &:hover {
+            // text-decoration: none !important;
+        }
         &:hover:not(.posttop__image) {
-            text-decoration: none !important;
             border: 1px solid #1abc9c;
         }
         &.posttop__image{

@@ -9,6 +9,7 @@
     font-weight: 400;
     color: rgba(25, 23, 17, 0.8);
     fill: rgba(25, 23, 17, 0.8);
+    background-color: var(--panel-bg-color);
     z-index: 0;
     user-select: none;
     @include media-pc(sm) {

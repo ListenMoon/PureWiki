@@ -23,30 +23,32 @@ const {
 
 <BlogPost {...post} showTree collect>
     <Content />
-    <div slot="footer" class="paging">
-        <div class="before">
-            {
-                post.beforeArticle && (
-                    <PagePreviewCard article={post.beforeArticle}>
-                        上一篇
-                    </PagePreviewCard>
-                )
-            }
-            <!-- {
-                post.beforeArticle && <div>上一篇：<a href={post.beforeArticle?.url}>{post.beforeArticle?.title}</a></div>
-            } -->
+    {
+        (post.beforeArticle || post.nextArticle) && <div slot="footer" class="paging">
+            <div class="before">
+                {
+                    post.beforeArticle && (
+                        <PagePreviewCard article={post.beforeArticle}>
+                            上一篇
+                        </PagePreviewCard>
+                    )
+                }
+                <!-- {
+                    post.beforeArticle && <div>上一篇：<a href={post.beforeArticle?.url}>{post.beforeArticle?.title}</a></div>
+                } -->
+            </div>
+            <div class="next">
+                {
+                    post.nextArticle && (
+                        <PagePreviewCard article={post.nextArticle}>
+                            下一篇
+                        </PagePreviewCard>
+                    )
+                }
+                <!-- {
+                    post.nextArticle && <div>下一篇：<a href={post.nextArticle?.url}>{post.nextArticle?.title}</a></div>
+                } -->
+            </div>
         </div>
-        <div class="next">
-            {
-                post.nextArticle && (
-                    <PagePreviewCard article={post.nextArticle}>
-                        下一篇
-                    </PagePreviewCard>
-                )
-            }
-            <!-- {
-                post.nextArticle && <div>下一篇：<a href={post.nextArticle?.url}>{post.nextArticle?.title}</a></div>
-            } -->
-        </div>
-    </div>
+    }
 </BlogPost>

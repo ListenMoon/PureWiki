@@ -18,6 +18,7 @@ var pjax = new Pjax({
     ".layout .side",
     ".tree-wrapper-up",
     ".paging",
+    ".comment-wrapper",
     ".layout .left .wrapper .tree-wrapper.articles",
     // ".left-article .item",
     //   ".layout .side ._headtree",

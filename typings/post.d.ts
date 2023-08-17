@@ -7,7 +7,7 @@ export type PostProps = {
   hideSide: boolean // 是否隐藏右侧边栏
   author: string // 文章作者
   pubDate: string // 文章创建时间
-  updatedDate: string // 文章更新时间
+  updatedDate: 2023/08/17 15:18:22
   pubTimestamp: number // 发布文章时间戳
   updatedTimestamp?: number // 更新文章时间戳
   isDraft: boolean // 是否是草稿

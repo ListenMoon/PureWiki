@@ -1,3 +1,5 @@
+@import "./root.scss";
+
 @import "lxgw-wenkai-lite-webfont/style.css";
 
 @import "./reset.css";
@@ -14,9 +16,11 @@
 @import "./components/Preview.scss";
 @import "./components/PagePreviewCard.scss";
 
+
+
 html,
 body {
-    background: #eee;
+    background: var(--bg-color);
     height: 100%;
     // font-family: HarmonyOS_Medium;
     font-family: "LXGW WenKai Mono Lite", "Hiragino Sans GB", "冬青黑",
@@ -99,7 +103,7 @@ body {
     text-indent: 0;
     margin: 0;
     padding: 1em;
-    background-color: white;
+    background-color: var(--mian-bg-color);
     @media (min-width: 640px) {
         & {
             margin: 0 1em;
@@ -264,7 +268,7 @@ mark.highlight {
         border: 0;
     }
     .side {
-        background: #fff;
+        background: var(--panel-bg-color);
         overflow-y: auto;
         position: sticky;
         height: 100vh;
@@ -287,7 +291,7 @@ mark.highlight {
         }
     }
     .left {
-        background: #fff;
+        // background: #fff;
         // direction: rtl;
         overflow-y: auto;
         position: sticky;
@@ -310,14 +314,13 @@ mark.highlight {
     .right {
         flex: 1;
         width: 0;
-        background: #eee;
         display: flex;
         flex-direction: column;
         main {
             flex: 1;
             height: 0;
             margin: 0 1em;
-            background-color: #fff;
+            background-color: var(--mian-bg-color);
             @include media-pc(sm) {
                 margin: 0;
             }
@@ -399,6 +402,7 @@ mark.highlight {
 // 标题栏
 header {
     padding: 15px;
+    background-color: var(--panel-bg-color);
     nav a {
         margin: 0 0.2em;
     }

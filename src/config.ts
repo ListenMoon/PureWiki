@@ -14,6 +14,7 @@ export const isProd = MODE === 'production';
 export const SITE_LANG = "zh-cn"
 export const SITE_TITLE = "失落之城";
 export const SITE_DESCRIPTION = '花径不曾缘客扫，蓬门今始为君开!';
+export const SITE_REPO = 'https://github.com/ListenMoon/PureWiki';
 
 export const ShowLeftMenu = true
 
@@ -50,12 +51,9 @@ export const showArticleHeroImage = false
 // export const AuthorAvater = 'https://xieyaxin.top/me.jpeg';
 export const AuthorAvater = '/avatar.jpg';
 export const AuthorName = 'NPMRUN';
+export const AuthorRepo = 'https://github.com/npmrun';
 export const AuthorDesc = '来自南方小城<br>希望结交益友♥!';
 export const StartTime = [2023, 0o2, 23, 20, 55, 32];
-
-export const FooterAuthor = 'NPMRUN';
-export const FooterName = 'PureWiki';
-export const FooterRepo = 'https://github.com/ListenMoon/PureWiki';
 
 // 远程地址，可自行修改对应的操作
 export const enableRemote = true // 是否显示远程编辑按钮
