@@ -7,11 +7,13 @@ import { SITE_TITLE } from '../config';
 		<a href="/" class="site-title" data-shadow={SITE_TITLE}>{SITE_TITLE}</a>
 	</h2>
 	<nav>
-		<HeaderLink href="/">门楣</HeaderLink>
-		<HeaderLink href="/posts">归档</HeaderLink>
-		<HeaderLink href="/collect">仓库</HeaderLink>
-		<HeaderLink href="/career">生涯</HeaderLink>
-		<HeaderLink href="/friends">友链</HeaderLink>
+		<div class="links" style="display: inline;">
+            <HeaderLink href="/">门楣</HeaderLink>
+            <HeaderLink href="/posts">归档</HeaderLink>
+            <HeaderLink href="/collect">仓库</HeaderLink>
+            <HeaderLink href="/career">生涯</HeaderLink>
+            <HeaderLink href="/friends">友链</HeaderLink>
+        </div>
 		<!-- <HeaderLink href="/note">TODO</HeaderLink> -->
 		<!-- <HeaderLink href="/rss.xml">Rss</HeaderLink> -->
         <div style="display: inline-block;color: #1abc9c;cursor:pointer;" id="searchButton">搜索</div>
