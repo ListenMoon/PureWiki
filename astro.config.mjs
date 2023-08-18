@@ -29,13 +29,13 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: 'prism',
     extendDefaultPlugins: true,
-    remarkPlugins: [Directive, remarkCollect, remarkCode, popupPlugin, [remarkBlock, {}], remarkMath, remarkFlow, remarkBreaks],
+    remarkPlugins: [Directive, remarkCollect, popupPlugin, [remarkBlock, {}], remarkCode, remarkMath, remarkFlow, remarkBreaks],
     rehypePlugins: [rehypeMathjax]
   },
   integrations: [mdx({
     extendMarkdownConfig: false,
     syntaxHighlight: 'prism',
-    remarkPlugins: [remarkGlobalComponent, Directive, remarkCollect, remarkCode, popupPlugin, [remarkBlock, {}], remarkMath, remarkFlow, remarkBreaks],
+    remarkPlugins: [remarkGlobalComponent, Directive, remarkCollect, popupPlugin, [remarkBlock, {}], remarkCode, remarkMath, remarkFlow, remarkBreaks],
     rehypePlugins: [rehypeMathjax]
   }), prefetch({
     selector: "a[href^='/post/']",
