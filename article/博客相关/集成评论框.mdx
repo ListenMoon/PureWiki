@@ -1,0 +1,85 @@
+---
+title: 集成评论框
+description: ""
+comment: true
+pubDate: 2023/8/18 11:26:24
+updatedDate: 2023/08/18 11:50:00
+---
+
+## 起因
+
+对于这个博客来说，我尝试了许多评论插件，例如 giscus，utteranc，gitalk 啥的，都是基于 github 的，有的是 github 的讨论，又是 github 的 issue，这样的好处是邮件自动集成了，但用起来总感觉有点垃圾。
+
+最后，我选择了 utteranc，这个集成比较简单，不需要啥 clientID 啥的，评论输出再 github 的 issue 中。
+
+## 探索
+
+按照[官网](https://utteranc.es/)提供的集成代码来说是可以的，但是当使用了 pjax 时就需要修改了。
+
+```html
+<script
+    src="https://utteranc.es/client.js"
+    repo="[ENTER REPO HERE]"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async
+></script>
+```
+
+由于`client.js`使用的时`document.currentScript`来定位该 script 元素，当界面刷新时自然不会有啥问题，但是 pjax 是不刷新界面二十直接替换 dom 的，即使 script 重新替换执行，[document.currentScript](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/currentScript)的值变成了`null`(由于是在 pjax 的回调中执行的，**应该是这个原因，可能得测试看看**),表示就找不到这个 script 了，也就无法替换掉 script 生成评论框了。
+
+总之呢，我们换一种方法就是了，我将上面这段代码用 document 生成然后插入到 dom 中就好了。
+
+```js 静态文件：\libs\utteranc.client.js
+var script = document.createElement("script");
+script.setAttribute("src", "https://utteranc.es/client.js");
+script.setAttribute("repo", "ListenMoon/PureWiki");
+script.setAttribute("issue-term", "pathname");
+script.setAttribute("label", "收录");
+script.setAttribute("theme", "github-light");
+script.setAttribute("crossorigin", "anonymous");
+script.setAttribute("async", "");
+
+script.onerror = function () {
+    if (sc) {
+        sc.innerText = "评论加载失败，刷新重试";
+    }
+};
+var sc = document.getElementById("utteranc-sc");
+// var parentNode = sc.parentNode;
+sc.appendChild(script);
+
+if (document.currentScript && document.currentScript.parentNode) {
+    document.currentScript.parentNode.removeChild(document.currentScript);
+}
+```
+
+```html 界面上集成
+<style is:global>
+    .utterances {
+        max-width: 100% !important;
+        background: var(--mian-bg-color);
+    }
+    .utterances iframe {
+        padding: 0 25px;
+        box-sizing: border-box;
+    }
+</style>
+<div
+    id="utteranc-sc"
+    style="text-align: center;padding: 0 0;margin: 0 1em;position:relative;min-height: 100px;margin-top:1em;"
+>
+    <span
+        style="position:absolute;top: 50px;left:50%;transform: translateX(-50%);"
+        >评论加载中...</span
+    >
+    <script is:raw src="/libs/utteranc.client.js"></script>
+</div>
+```
+
+如此，替换的就是`<script is:raw src="/libs/utteranc.client.js"></script>`这个 script 了。这样的话刷新跟 pjax 都是支持的。
+
+## 结论
+
+有问题思考怎么解决问题，解决不了就换个问题。
