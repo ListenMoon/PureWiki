@@ -2,18 +2,16 @@
 // https://github.com/syntax-tree/mdast#code
 
 import { visit } from "unist-util-visit";
-import { runHighlighterWithAstro } from "@astrojs/prism/dist/highlighter";
+// import { runHighlighterWithAstro } from "@astrojs/prism/dist/highlighter";
+import {toHast} from 'mdast-util-to-hast'
+import {toHtml} from 'hast-util-to-html'
 
 export default function remarkCode() {
     return function (tree) {
         visit(tree, "code", (node) => {
+            let html = toHtml(toHast(node))
             let { lang, value, meta } = node;
             node.type = "html";
-            let { html, classLanguage } = runHighlighterWithAstro(
-                lang,
-                value
-            );
-            let classes = [classLanguage];
             node.value = `<figure class="code-figure">
                     <figcaption class="line-numbers-head">
                         <div class="custom-carbon">
@@ -25,9 +23,7 @@ export default function remarkCode() {
                         <textarea placeholder="." title="." style="display: none;">${value}</textarea>
                     </div>
                     </figcaption>
-                    <pre class="line-numbers ${classes.join(
-                " "
-            )}"><code is:raw class="${classLanguage}">${html}</code></pre>${!!meta
+                    ${html}${!!meta
                     ? `<figcaption class="code-caption">${meta}</figcaption>`
                     : ""
                 }

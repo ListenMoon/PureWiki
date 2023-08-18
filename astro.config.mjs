@@ -16,6 +16,11 @@ import browserslist from "browserslist";
 import { resolveToEsbuildTarget } from "esbuild-plugin-browserslist";
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax';
+import rehypePrism from 'rehype-prism' // 只支持以下三个插件，如需更多需要自己实现
+
+// https://www.npmjs.com/package/remark-prism
+// https://www.npmjs.com/package/rehype-prism
+// https://prismjs.com/plugins/copy-to-clipboard/
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,16 +32,16 @@ export default defineConfig({
     assets: 'astro_'
   },
   markdown: {
-    syntaxHighlight: 'prism',
+    syntaxHighlight: false,
     extendDefaultPlugins: true,
     remarkPlugins: [Directive, remarkCollect, popupPlugin, [remarkBlock, {}], remarkCode, remarkMath, remarkFlow, remarkBreaks],
-    rehypePlugins: [rehypeMathjax]
+    rehypePlugins: [[rehypePrism, { plugins: ['line-numbers', 'copy-to-clipboard', 'toolbar'] }], rehypeMathjax]
   },
   integrations: [mdx({
     extendMarkdownConfig: false,
-    syntaxHighlight: 'prism',
+    syntaxHighlight: false,
     remarkPlugins: [remarkGlobalComponent, Directive, remarkCollect, popupPlugin, [remarkBlock, {}], remarkCode, remarkMath, remarkFlow, remarkBreaks],
-    rehypePlugins: [rehypeMathjax]
+    rehypePlugins: [[rehypePrism, { plugins: ['line-numbers', 'copy-to-clipboard', 'toolbar'] }], rehypeMathjax]
   }), prefetch({
     selector: "a[href^='/post/']",
     throttle: 3
