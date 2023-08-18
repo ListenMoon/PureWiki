@@ -7,22 +7,22 @@
 <meta name="generator" content="Astro v2.10.9">
 
 <!-- Primary Meta Tags -->
-<title>分类</title>
-<meta name="title" content="分类">
-<meta name="description" content="分类">
+<title>image-rendering</title>
+<meta name="title" content="image-rendering">
+<meta name="description" content="用于设置图像缩放算法。它适用于元素本身，适用于元素其他属性中的图像，也应用于子元素。">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://blog.xieyaxin.top/cate/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/1/">
-<meta property="og:title" content="分类">
-<meta property="og:description" content="分类">
+<meta property="og:url" content="https://blog.xieyaxin.top/post/CSS/image-rendering/">
+<meta property="og:title" content="image-rendering">
+<meta property="og:description" content="用于设置图像缩放算法。它适用于元素本身，适用于元素其他属性中的图像，也应用于子元素。">
 <meta property="og:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://blog.xieyaxin.top/cate/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/1/">
-<meta property="twitter:title" content="分类">
-<meta property="twitter:description" content="分类">
+<meta property="twitter:url" content="https://blog.xieyaxin.top/post/CSS/image-rendering/">
+<meta property="twitter:title" content="image-rendering">
+<meta property="twitter:description" content="用于设置图像缩放算法。它适用于元素本身，适用于元素其他属性中的图像，也应用于子元素。">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
   <link rel="stylesheet" href="/astro_/about.373aa7d6.css" />
 <link rel="stylesheet" href="/astro_/about.bbb7ada2.css" /><script type="module" src="/astro_/hoisted.959c8f11.js"></script>
@@ -89,7 +89,7 @@
         
       </div><div>
         <a href="/cate/博客相关" style="display: flex;padding-left:0px;color:inherit;border:0;text-decoration: none;">
-            <span title="博客相关" class="tree-item active">
+            <span title="博客相关" class="tree-item">
               博客相关
             </span>
           </a>
@@ -101,7 +101,7 @@
 
       </div><div>
         <a href="/cate/CSS" style="display: flex;padding-left:0px;color:inherit;border:0;text-decoration: none;">
-            <span title="CSS" class="tree-item">
+            <span title="CSS" class="tree-item active">
               CSS
             </span>
           </a>
@@ -139,16 +139,18 @@
     }, 20)
 </script> -->
               </div>
-          <div style="margin-bottom:10px;display:none" class="tree-wrapper-up"></div>
-          <div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;display:none">
+          <div style="margin-bottom:10px;" class="tree-wrapper-up"></div>
+          <div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;">
             <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
               <div style="direction: ltr;flex:1;">
                 <div class="left-article">
   <div style="padding: 5px 10px;font-weight: bold;background: var(--light-bg-color);position:sticky;top: 0;">
     目录文章
   </div>
+  <a class="item" href="/post/CSS/image-rendering" title="image-rendering">
+          image-rendering
+        </a>
   
-  <div style="text-align:center; color: #bbbbbb">空空如也</div>
 </div>
 <!-- <script is:raw>
 function heightToTop1(ele) {
@@ -183,13 +185,92 @@ setTimeout(() => {
       </div>
       <div class="right">
         <main id="pjax-container">
-          
-	
-    <div style="padding: 50px;">
-        <div class="article-card">
-  <a class="posttop__post" href="/post/博客相关/集成评论框">
+          <article class="typo article">
+            <!-- {SITE_TYPE === ESITETYPE.BLOG && <span style="font-size: .75em;color: #bdbdbd;">
+                <a href={collect?'/collect':"/cate"}>未分类</a><span style="padding: 0 3px;">{'>'}</span></span>} -->
+                <span style="font-size: .75em;color: #bdbdbd;">
+                        <a href="/cate/CSS">CSS</a>
+                        <span style="padding: 0 3px;">&gt;</span>
+                    </span><span style="font-size: .75em;color: #bdbdbd;">
+                        image-rendering.mdx
+                        <span style="padding: 0 3px;"></span>
+                    </span>
+                <!-- {filePath && <div style="font-size: .75em;color: #bdbdbd;">{filePath.slice(1).replace(/\//g," > ")}</div>} -->
+				<h1 class="title">image-rendering</h1>
+				<div style="line-height: 1.5;">
+                    <div style="font-size: 0.75em;color: #bdbdbd;"><time>
+                        创建于 2023年8月18日 15:39:35
+                    </time></div>
+                    <div style="font-size: 0.75em;color: #bdbdbd;">
+                            上次修改于 <time>2023年8月18日 15:47:35</time>
+                        </div>
+                </div>
+				<a href="https://github.com/ListenMoon/PureWiki/edit/master/article/CSS/image-rendering.mdx" target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>
+				<hr>
+				<div class="article__content">
+                    
+    <p><code>image-rendering</code> 用于设置图像缩放算法。它适用于元素本身，适用于元素其他属性中的图像，也应用于子元素。</p>
+<p>当页面作者指定的尺寸不是图像的原始尺寸时，用户代理将缩放图像。缩放也可能由于用户互动（双指缩放）而发生。举个例子，如果有一张尺寸为 100×100px 的图片，但作者有意将尺寸设置为 200×200px（或 50×50px），然后，图片便会根据 image-rendering 指定的算法，缩小或放大到新尺寸。此属性对于未缩放的图像没有影响。</p>
+<h2 id="属性值">属性值</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">属性</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">auto</td><td align="left">自 Gecko 1.9（Firefox 3.0）起，Gecko 使用双线性（bilinear）算法进行重新采样（高质量）。</td></tr><tr><td align="left"><abbr title="实验性">smooth</abbr></td><td align="left">应使用能最大化图像客观观感的算法来缩放图像。特别地，会“平滑”颜色的缩放算法是可以接受的，例如双线性插值。这适用于照片等类型的图像。</td></tr><tr><td align="left"><abbr title="实验性">high-quality</abbr></td><td align="left">与 smooth 相同，但更倾向于高质量的缩放。如果系统资源受到限制，在考虑降低哪些图像的质量以及降低到什么程度时，high-quality 的图像应该优先于任何其他值的图像。</td></tr><tr><td align="left">crisp-edges</td><td align="left">必须使用可有效保留对比度和图像中的边缘的算法来对图像进行缩放，并且，该算法既不会平滑颜色，又不会在处理过程中为图像引入模糊。合适的算法包括最近邻居（nearest-neighbor）算法和其他非平滑缩放算法，比如 2×SaI 和 hqx-* 系列算法。此属性值适用于像素艺术作品，例如一些网页游戏中的图像。</td></tr><tr><td align="left">pixelated</td><td align="left">放大图像时，使用最近邻居算法，因此，图像看着像是由大块像素组成的。缩小图像时，算法与 auto 相同。</td></tr></tbody></table>
+<blockquote>
+<p>备注： 早期草案中出现的 optimizationQuality 和 optimizationSpeed （来自 SVG 的对应值）分别被定义为 smooth 和 pixelated。</p>
+</blockquote>
+<details style="margin-bottom:1.2em" open="true"><summary style="background:#f3f3f3;padding:.3em .6em;cursor:pointer;user-select:none"><abbr title="https://interactive-examples.mdn.mozilla.net/pages/css/image-rendering.html">地址</abbr> / 示例</summary><iframe id="" class="" style="width:100%;border:1px solid #e9e9e9" height="300px" frameborder="0" allowfullscreen="true" src="https://interactive-examples.mdn.mozilla.net/pages/css/image-rendering.html"></iframe></details>
+<h2 id="资料">资料</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/image-rendering" target="_blank">https://developer.mozilla.org/zh-CN/docs/Web/CSS/image-rendering</a></li>
+<li><a href="https://segmentfault.com/q/1010000010391524" target="_blank">https://segmentfault.com/q/1010000010391524</a></li>
+</ul>
     
-    <!-- <div class="posttop__post__cover">
+                </div>
+		</article>
+        
+        
+
+        </main>
+        <div class="footer-wrapper">
+            <div class="paging">
+            <div class="before">
+                
+                <!-- {
+                    post.beforeArticle && <div>上一篇：<a href={post.beforeArticle?.url}>{post.beforeArticle?.title}</a></div>
+                } -->
+            </div>
+            <div class="next">
+                <div class="article-card-page">
+    <a class="posttop__post" href="/post/博客相关/集成评论框">
+        
+        <!-- <div class="posttop__post__cover">
       <img
         src={article.heroImage
           ? article.heroImage
@@ -198,59 +279,17 @@ setTimeout(() => {
       />
     </div> -->
 
-    <div class="posttop__post__title">集成评论框</div>
-    <span style="font-size: 12px;margin-bottom: .1em;position: relative;">
-      上次修改于：2023年8月18日 11:50:00
-    </span>
-    
-    <div class="posttop__post__content" style="color: #bdbdbd;">作者很懒，没有写描述，请看标题脑补！！！</div>
-  </a>
+        <div class="posttop__post__title">
+                            下一篇
+                        </div>
+        <div class="posttop__post__content">集成评论框</div>
+    </a>
 </div>
-        <div class="pa-wrapper">
-  <div class="btn-group">
-    <a class="pa-button pa-active">1</a>
-  </div>
-</div>
-<!-- <div
-  style="margin: 20px auto;display: flex; width: 450px;justify-content: space-between;"
->
-  <div>
-    {
-      hasBefore && (
-        <a
-          href={`/${base}${url ? "/" + url : ""}${
-            curPage > 1 ? `/${curPage - 1}` : ""
-          }`}
-        >
-          上一页
-        </a>
-      )
-    }
-  </div> -->
-<!-- <div>总数：{count}</div> -->
-<!-- <div>总页数：{totalPage}</div> -->
-<!-- <div>当前页码：{curPage}</div> -->
-<!-- {[...Array(totalPage)].map((v, i) => {
-
-    return <div>{ i + 1} </div>
-  })}
-  <div>{curPage}</div>
-  <div>
-    {
-      hasNext && (
-        <a href={`/${base}${url ? "/" + url : ""}/${curPage + 1}`}>下一页</a>
-      )
-    }
-  </div>
-</div> -->
-        
-    </div>
-
-	
-
-        </main>
-        <div class="footer-wrapper">
-            
+                <!-- {
+                    post.nextArticle && <div>下一篇：<a href={post.nextArticle?.url}>{post.nextArticle?.title}</a></div>
+                } -->
+            </div>
+        </div>
         </div>
         <div class="comment-wrapper">
             
@@ -337,7 +376,15 @@ setTimeout(() => {
     
 </ul>
         <div class="_headtree show">
-            
+            <ul class="head-tree">
+			<div class="title">目录</div>
+		<li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="属性值" href="#属性值">
+                                                    # 属性值
+                                                </a></li><li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="资料" href="#资料">
+                                                    # 资料
+                                                </a></li>
+        
+		</ul>
         </div>
       </div>
       <!-- {
