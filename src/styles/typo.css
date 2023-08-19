@@ -2,6 +2,51 @@
 .serif {
   /* font-family: Palatino, Optima, Georgia, serif; */
 }
+.typo del{
+    text-decoration: line-through #c7254e 2px;
+}
+.typo strong{
+    position: relative;
+    z-index: 10;
+    transition: color .3s linear;
+    cursor: pointer;
+    font-weight: bolder;
+    text-decoration: underline #c7254e wavy;
+}
+.typo strong:hover{
+    content: "";
+    color: #f30;
+    text-decoration: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23ff3300' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E") repeat-x 0 100%;
+    background-size: 20px auto;
+    animation: waveMove 1s infinite linear;
+}
+
+@keyframes waveMove{
+    0% {
+        background-position: 0 100%;
+    }
+    100% {
+        background-position: -20px 100%;
+    }
+}
+/* .typo strong::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background-color: #f3ccd7;
+    z-index: -1;
+    transition: height .3s ease;
+}
+.typo strong:hover{
+    color: #c7254e;
+}
+.typo strong:hover:after{
+    height: 100%;
+} */
 .typo a{
   color: #1abc9c;
 }
@@ -220,6 +265,7 @@ caption {
   overflow: hidden;
   white-space: nowrap;
   pointer-events: none;
+  color: #c7254e;
   content: '・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・';
 }
 

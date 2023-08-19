@@ -64,18 +64,22 @@ const { desc, title, url, avatar } = Astro.props
             top: 0;
         }
         &:hover .content {
-            height: 68px;
+            min-height: 68px;
+            height: auto;
         }
         .content {
             display: flex;
             align-items: center;
             justify-content: center;
+            line-height: 1.4;
+            word-break: break-all;
             text-align: center;
             box-sizing: border-box !important;
             overflow: hidden;
             width: 200px;
+            min-height: 0;
             height: 0;
-            transition: height 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
             background-color: white;
             position: absolute;
             z-index: 10;

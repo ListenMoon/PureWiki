@@ -191,10 +191,11 @@ export default function calloutsPlugin() {
                             hProperties: {
                                 id: attributes.id ?? '',
                                 class: attributes.class ?? 'demo',
-                                style: 'width: 100%;border: 1px solid #e9e9e9;display: block;box-sizing: border-box;',
+                                style: 'width: 100%;border: 1px solid #e9e9e9;display: block;box-sizing: border-box;max-height: 350px;',
                                 height: '300px',
                                 frameborder: '0',
                                 allowfullscreen: "true",
+                                onload: "this.height = this.contentDocument.documentElement.scrollHeight",
                                 src: attributes.path
                             }
                         }
@@ -235,10 +236,11 @@ export default function calloutsPlugin() {
                             hProperties: {
                                 id: attributes.id ?? '',
                                 class: attributes.class ?? 'demo',
-                                style: 'width: 100%;border: 1px solid #e9e9e9;display: block;box-sizing: border-box;',
+                                style: 'width: 100%;border: 1px solid #e9e9e9;display: block;box-sizing: border-box;max-height: 350px;',
                                 height: '300px',
                                 frameborder: '0',
                                 allowfullscreen: "true",
+                                onload: "this.height = this.contentDocument.documentElement.scrollHeight",
                                 srcdoc: `<!DOCTYPE html>
                                 <html lang="en">
                                 <head>
