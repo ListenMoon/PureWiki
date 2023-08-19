@@ -1,0 +1,322 @@
+---
+title: CSS高宽不等图片固定比例布局的三重进化
+description: "CSS高宽不等图片固定比例布局的三重进化"
+comment: true
+pubDate: 2023/8/19 09:53:15
+updatedDate: 2023/08/19 10:40:02
+---
+
+> 转载自[张鑫旭](https://www.zhangxinxu.com/)的[CSS高宽不等图片固定比例布局的三重进化](https://www.zhangxinxu.com/wordpress/2023/07/css-image-aspect-ratio-layout/)，感觉也什么需要补充的，后续学习后慢慢修改。
+侵权立删。
+
+## 前言
+
+今天从博客中学习中学习了[CSS 高宽不等图片固定比例布局的三重进化](https://www.zhangxinxu.com/wordpress/2023/07/css-image-aspect-ratio-layout/)。主要是以下下过
+
+![图片比例1:1,跟随容器大小缩放](/article/CSS高宽不等图片固定比例布局的三重进化/2023-08-19_19-09-56-22.png)
+
+那么，我们会如何实现呢？
+
+## 实现
+
+### 百分比 padding
+
+要让一个元素内容按照固定比例显示。
+
+在过去，那个还需要兼容 IE 浏览器的年代，基本上都是使用百分比 padding 实现的，因为 padding 的百分比计算值都是相对于宽度计算的，哪怕是垂直方向。
+
+例如：
+
+```css
+div {
+    padding: 100% 100% 0 0;
+}
+```
+
+就会撑起一个 1:1 的 div 元素。
+
+我们就可以利用此特性，让图片 1:1 高宽比弹性显示。
+
+HTML 结构如下，需要三层标签，一层宽度，一层确定高宽，最后图片填充。
+
+```html
+<ul class="box">
+    <li class="list">
+        <div class="cover">
+            <img src="0.jpg" />
+        </div>
+    </li>
+    <li class="list">
+        <div class="cover">
+            <img src="1.jpg" />
+        </div>
+    </li>
+    ...
+</ul>
+```
+
+CSS 代码示意如下，为了兼容 IE9，特意使用了传统的浮动布局。
+
+```css
+.box {
+    overflow: hidden;
+}
+.list {
+    width: calc(25% - 1.5rem / 4);
+    float: left;
+    margin-bottom: 0.5rem;
+}
+.list:not(:nth-child(4n + 1)) {
+    margin-left: 0.5rem;
+}
+.cover {
+    padding: 100% 100% 0 0;
+    position: relative;
+}
+.cover img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+```
+
+由于 padding 占据了空间，所以图片需要使用绝对定位才能覆盖 div 元素的支撑空间。
+
+下图为实现后的效果：
+:::demo
+
+```html
+<style>
+    .box {
+        overflow: hidden;
+        list-style: none;
+    }
+    .list {
+        width: calc(25% - 1.5rem / 4);
+        float: left;
+        margin-bottom: 0.5rem;
+    }
+    .list:not(:nth-child(4n + 1)) {
+        margin-left: 0.5rem;
+    }
+    .cover {
+        padding: 100% 100% 0 0;
+        position: relative;
+    }
+    .cover img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+<div style="resize: horizontal;overflow: hidden;">
+    <ul class="box">
+        <li class="list">
+            <div class="cover">
+                <img src="/avatar.jpg" />
+            </div>
+        </li>
+        <li class="list">
+            <div class="cover">
+                <img src="/avatar.jpg" />
+            </div>
+        </li>
+        <li class="list">
+            <div class="cover">
+                <img src="/avatar.jpg" />
+            </div>
+        </li>
+        <li class="list">
+            <div class="cover">
+                <img src="/avatar.jpg" />
+            </div>
+        </li>
+        <li class="list">
+            <div class="cover">
+                <img src="/avatar.jpg" />
+            </div>
+        </li>
+        <li class="list">
+            <div class="cover">
+                <img src="/avatar.jpg" />
+            </div>
+        </li>
+    </ul>
+</div>
+```
+
+:::
+
+此布局效果其实 2017 年的时候就有详细介绍，有兴趣可以访问这里：[CSS 百分比 padding 实现比例固定图片自适应布局](https://www.zhangxinxu.com/wordpress/2017/08/css-percent-padding-image-layout/)
+
+### aspect-ratio 属性
+
+到了 2021 年，随着 CSS 技术的发展，固定比例的图片布局有了新的选择，这个就是 CSS `aspect-ratio`属性，专门设置元素的高宽比。
+
+不过此属性用在 IMG 元素上是没有效果的，因为图片元素具有内在尺寸，不受 aspect-ratio 属性影响。
+
+因此，使用 aspect-ratio 属性实现等比例图像弹性布局需要至少两层标签。
+
+```html
+<ul class="box">
+    <li class="list">
+        <img src="0.jpg" />
+    </li>
+    <li class="list">
+        <img src="1.jpg" />
+    </li>
+    ...
+</ul>
+```
+
+比 padding 方法，CSS 自然也简化了些，这里使用 Flex 布局示意。
+
+```css
+.box {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.list {
+    flex-basis: calc(25% - 1.5rem / 4);
+    aspect-ratio: 1 / 1;
+}
+.list img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+```
+
+是不是容易理解多了。
+
+实现效果类似下面的:
+:::demo
+
+```html
+<style>
+    .box {
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    .list {
+        flex-basis: calc(25% - 1.5rem / 4);
+        aspect-ratio: 1 / 1;
+    }
+    .list img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+<div style="resize: horizontal;overflow: hidden;">
+    <ul class="box">
+        <li class="list">
+            <img src="/avatar.jpg" />
+        </li>
+        <li class="list">
+            <img src="/avatar.jpg" />
+        </li>
+        <li class="list">
+            <img src="/avatar.jpg" />
+        </li>
+        <li class="list">
+            <img src="/avatar.jpg" />
+        </li>
+        <li class="list">
+            <img src="/avatar.jpg" />
+        </li>
+        <li class="list">
+            <img src="/avatar.jpg" />
+        </li>
+    </ul>
+</div>
+```
+
+:::
+
+关于`aspect-ratio`属性更多信息，例如和 width/height 等属性相比的优先级等，可以参考之前的这篇文章：[Chrome 88 已经支持 aspect-ratio 属性了，学起来](https://www.zhangxinxu.com/wordpress/2021/02/css-aspect-ratio/).
+
+### cqw 单位
+
+到了如今的 2023 年，又有了更加简单的方法，实现最终的布局需要只需要一层容器标签即可。
+
+```html
+<div class="box">
+    <img src="0.jpg" />
+    <img src="1.jpg" />
+    <img src="2.jpg" />
+    <img src="3.jpg" />
+    <img src="4.jpg" />
+    <img src="5.jpg" />
+</div>
+```
+
+这么给力，那是用什么东西实现的呢？
+
+嘿嘿，容器元素和 cqw 单位，具体 CSS 如下所示:
+
+```css
+.box {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    container-type: inline-size;
+}
+.box img {
+    width: calc(25cqw - 1.5rem / 4);
+    height: calc(25cqw - 1.5rem / 4);
+    object-fit: cover;
+}
+```
+
+`container-type:inline-size`可以让普通元素变成 container 容器元素，而 cqw 是容器宽度单位，1cqw=1%的容器宽度，100cqw 就是容器宽度。
+
+而本需求需要一行显示 4 个图片，因此，每个图片相对于容器的大小就很好计算了。
+
+就是这么简单。
+
+效果一样：
+
+:::demo
+
+```html
+<style>
+    .box {
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        container-type: inline-size;
+    }
+    .box img {
+        width: calc(25cqw - 1.5rem / 4);
+        height: calc(25cqw - 1.5rem / 4);
+        object-fit: cover;
+    }
+</style>
+<div style="resize: horizontal;overflow: hidden;">
+    <div class="box">
+        <img src="/avatar.jpg" />
+        <img src="/avatar.jpg" />
+        <img src="/avatar.jpg" />
+        <img src="/avatar.jpg" />
+        <img src="/avatar.jpg" />
+        <img src="/avatar.jpg" />
+    </div>
+</div>
+```
+
+:::
+
+`@container`容器规则还是很强很实用的，具体可以访问[介绍 2022 最期待且已正式支持的 CSS container 容器查询](https://www.zhangxinxu.com/wordpress/2022/09/css-container-rule/)了解更多.
