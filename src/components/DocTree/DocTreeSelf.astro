@@ -68,7 +68,7 @@ function haveFolderInChildren(v: One) {
 ---
 
 {
-  list.map((v) => {
+  list.map((v: any) => {
     const url = v.path;
     const vpath = !v.data ? v.active : ("" as any);
     return !isBlog ? (
@@ -119,7 +119,7 @@ function haveFolderInChildren(v: One) {
             </>
           )}
         </summary>
-        {Array.isArray(v.children) && <Astro.self list={v.children} isBlog={isBlog}/>}
+        {Array.isArray(v.children) && <Astro.self list={v.children} isBlog={v.isBlog ?? isBlog}/>}
       </details>
     ) : (
       <div>
@@ -139,7 +139,7 @@ function haveFolderInChildren(v: One) {
           </a>
         )}
         {Array.isArray(v.children) && (
-          <Astro.self depth={depth + 1} list={v.children} isBlog={isBlog}/>
+          <Astro.self depth={depth + 1} list={v.children} isBlog={v.isBlog ?? isBlog}/>
         )}
       </div>
     );
