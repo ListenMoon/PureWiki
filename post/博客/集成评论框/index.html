@@ -7,22 +7,22 @@
 <meta name="generator" content="Astro v2.10.12">
 
 <!-- Primary Meta Tags -->
-<title>失落之城</title>
-<meta name="title" content="失落之城">
+<title>集成评论框</title>
+<meta name="title" content="集成评论框">
 <meta name="description" content="花径不曾缘客扫，蓬门今始为君开!">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://blog.xieyaxin.top/">
-<meta property="og:title">
-<meta property="og:description">
+<meta property="og:url" content="https://blog.xieyaxin.top/post/%E5%8D%9A%E5%AE%A2/%E9%9B%86%E6%88%90%E8%AF%84%E8%AE%BA%E6%A1%86/">
+<meta property="og:title" content="集成评论框">
+<meta property="og:description" content="">
 <meta property="og:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://blog.xieyaxin.top/">
-<meta property="twitter:title">
-<meta property="twitter:description">
+<meta property="twitter:url" content="https://blog.xieyaxin.top/post/%E5%8D%9A%E5%AE%A2/%E9%9B%86%E6%88%90%E8%AF%84%E8%AE%BA%E6%A1%86/">
+<meta property="twitter:title" content="集成评论框">
+<meta property="twitter:description" content="">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
   <link rel="stylesheet" href="/astro_/about.e5ec3e7d.css" />
 <link rel="stylesheet" href="/astro_/about.f9bcfee7.css" /><script type="module" src="/astro_/hoisted.959c8f11.js"></script>
@@ -90,7 +90,7 @@
         
       </div><div>
         <a href="/cate/博客" style="display: flex;padding-left:0px;color:inherit;border:0;text-decoration: none;">
-            <span title="博客" class="tree-item">
+            <span title="博客" class="tree-item active">
               博客
             </span>
           </a>
@@ -176,25 +176,15 @@
     }, 20)
 </script> -->
               </div>
-          <div style="margin-bottom:10px;display:none" class="tree-wrapper-up"></div><div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;display:none">
+          <div style="margin-bottom:10px;" class="tree-wrapper-up"></div><div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;">
             <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
               <div style="direction: ltr;flex:1;">
                 <div class="left-article">
   <div style="padding: 5px 10px;font-weight: bold;background: var(--light-bg-color);position:sticky;top: 0;">
     目录文章
   </div>
-  <a class="item" href="/post/技术/用接口返回动态图片" title="用接口返回动态图片">
-          用接口返回动态图片
-        </a><a class="item" href="/post/技术/CSS/推荐" title="推荐">
-          推荐
-        </a><a class="item" href="/post/技术/CSS/CSS技巧/CSS高宽不等图片固定比例布局的三重进化" title="CSS高宽不等图片固定比例布局的三重进化">
-          CSS高宽不等图片固定比例布局的三重进化
-        </a><a class="item" href="/post/技术/CSS/CSS属性/image-rendering" title="image-rendering">
-          image-rendering
-        </a><a class="item" href="/post/博客/集成评论框" title="集成评论框">
+  <a class="item" href="/post/博客/集成评论框" title="集成评论框">
           集成评论框
-        </a><a class="item" href="/post/失落之城-主题" title="失落之城-主题">
-          失落之城-主题
         </a>
   
 </div>
@@ -231,26 +221,237 @@ setTimeout(() => {
       </div>
       <div class="right">
         <main id="pjax-container">
-          <video class="hero-image" src="/bg.mp4" style="object-position: center;" autoplay muted loop></video><article class="typo article">
-    <a href="https://github.com/ListenMoon/PureWiki/edit/master/src/pages/index.mdx" target="_blank" style="margin: 6px 0;display: inline-block;">
-          在源文件编辑
-        </a>
-    <hr>
-    <div class="article__content">
-      <figure class="card"><p>明月当空，照见我心，敬一杯酒，聊表情谊。</p><p>世上千载，唯你我有缘，此站相逢，尽是天意。蒙蒙胧之间，<strong>命运之轮</strong>悄悄转动。</p></figure>
-<div style="text-align:center;margin-top:20px;"><button class="custom-btn"><a href="/cateAll"><p>查看文章</p></a></button></div>
-    </div>
-  </article>
-  
-  
-  
+          <article class="typo article">
+            <!-- {SITE_TYPE === ESITETYPE.BLOG && <span style="font-size: .75em;color: #bdbdbd;">
+                <a href={collect?'/collect':"/cate"}>未分类</a><span style="padding: 0 3px;">{'>'}</span></span>} -->
+                <span style="font-size: .75em;color: #bdbdbd;">
+                        <a href="/cate/博客">博客</a>
+                        <span style="padding: 0 3px;">&gt;</span>
+                    </span><span style="font-size: .75em;color: #bdbdbd;">
+                        集成评论框.mdx
+                        <span style="padding: 0 3px;"></span>
+                    </span>
+                <!-- {filePath && <div style="font-size: .75em;color: #bdbdbd;">{filePath.slice(1).replace(/\//g," > ")}</div>} -->
+				<h1 class="title">集成评论框</h1>
+				<div style="line-height: 1.5;">
+                    <div style="font-size: 0.75em;color: #bdbdbd;"><time>
+                        创建于 2023年8月18日 11:26:24
+                    </time></div>
+                    <div style="font-size: 0.75em;color: #bdbdbd;">
+                            上次修改于 <time>2023年8月18日 11:50:00</time>
+                        </div>
+                </div>
+				<a href="https://github.com/ListenMoon/PureWiki/edit/master/article/博客/集成评论框.mdx" target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>
+				<hr>
+				<div class="article__content">
+                    
+    <h2 id="起因">起因</h2>
+<p>对于这个博客来说，我尝试了许多评论插件，例如 giscus，utteranc，gitalk 啥的，都是基于 github 的，有的是 github 的讨论，又是 github 的 issue，这样的好处是邮件自动集成了，但用起来总感觉有点垃圾。</p>
+<p>最后，我选择了 utteranc，这个集成比较简单，不需要啥 clientID 啥的，评论输出再 github 的 issue 中。</p>
+<h2 id="探索">探索</h2>
+<p>按照<a href="https://utteranc.es/" target="_blank">官网</a>提供的集成代码来说是可以的，但是当使用了 pjax 时就需要修改了。</p>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">html</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">&lt;script
+    src=&quot;https://utteranc.es/client.js&quot;
+    repo=&quot;[ENTER REPO HERE]&quot;
+    issue-term=&quot;pathname&quot;
+    theme=&quot;github-light&quot;
+    crossorigin=&quot;anonymous&quot;
+    async
+&gt;&lt;/script&gt;</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-html"><code is:raw="" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span>
+    <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://utteranc.es/client.js<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">repo</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>[ENTER REPO HERE]<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">issue-term</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pathname<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">theme</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>github-light<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">crossorigin</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>anonymous<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">async</span>
+<span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </figure>
+<p>由于<code>client.js</code>使用的时<code>document.currentScript</code>来定位该 script 元素，当界面刷新时自然不会有啥问题，但是 pjax 是不刷新界面二十直接替换 dom 的，即使 script 重新替换执行，<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/currentScript" target="_blank">document.currentScript</a>的值变成了<code>null</code>(由于是在 pjax 的回调中执行的，<strong>应该是这个原因，可能得测试看看</strong>),表示就找不到这个 script 了，也就无法替换掉 script 生成评论框了。</p>
+<p>总之呢，我们换一种方法就是了，我将上面这段代码用 document 生成然后插入到 dom 中就好了。</p>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">js</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">var script = document.createElement(&quot;script&quot;);
+script.setAttribute(&quot;src&quot;, &quot;https://utteranc.es/client.js&quot;);
+script.setAttribute(&quot;repo&quot;, &quot;ListenMoon/PureWiki&quot;);
+script.setAttribute(&quot;issue-term&quot;, &quot;pathname&quot;);
+script.setAttribute(&quot;label&quot;, &quot;收录&quot;);
+script.setAttribute(&quot;theme&quot;, &quot;github-light&quot;);
+script.setAttribute(&quot;crossorigin&quot;, &quot;anonymous&quot;);
+script.setAttribute(&quot;async&quot;, &quot;&quot;);
+
+script.onerror = function () {
+    if (sc) {
+        sc.innerText = &quot;评论加载失败，刷新重试&quot;;
+    }
+};
+var sc = document.getElementById(&quot;utteranc-sc&quot;);
+// var parentNode = sc.parentNode;
+sc.appendChild(script);
+
+if (document.currentScript &amp;&amp; document.currentScript.parentNode) {
+    document.currentScript.parentNode.removeChild(document.currentScript);
+}</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-js"><code is:raw="" class="language-js"><span class="token keyword">var</span> script <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;script&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+script<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;src&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;https://utteranc.es/client.js&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+script<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;repo&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;ListenMoon/PureWiki&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+script<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;issue-term&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;pathname&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+script<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;label&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;收录&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+script<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;theme&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;github-light&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+script<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;crossorigin&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;anonymous&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+script<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;async&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+script<span class="token punctuation">.</span><span class="token function-variable function">onerror</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>sc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        sc<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">&quot;评论加载失败，刷新重试&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sc <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;utteranc-sc&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// var parentNode = sc.parentNode;</span>
+sc<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>currentScript <span class="token operator">&amp;&amp;</span> document<span class="token punctuation">.</span>currentScript<span class="token punctuation">.</span>parentNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span>currentScript<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>currentScript<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><figcaption class="code-caption">静态文件：\libs\utteranc.client.js</figcaption>
+                </figure>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">html</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">&lt;style is:global&gt;
+    .utterances {
+        max-width: 100% !important;
+        background: var(--mian-bg-color);
+    }
+    .utterances iframe {
+        padding: 0 25px;
+        box-sizing: border-box;
+    }
+&lt;/style&gt;
+&lt;div
+    id=&quot;utteranc-sc&quot;
+    style=&quot;text-align: center;padding: 0 0;margin: 0 1em;position:relative;min-height: 100px;margin-top:1em;&quot;
+&gt;
+    &lt;span
+        style=&quot;position:absolute;top: 50px;left:50%;transform: translateX(-50%);&quot;
+        &gt;评论加载中...&lt;/span
+    &gt;
+    &lt;script is:raw src=&quot;/libs/utteranc.client.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-html"><code is:raw="" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name"><span class="token namespace">is:</span>global</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.utterances</span> <span class="token punctuation">{</span>
+        <span class="token property">max-width</span><span class="token punctuation">:</span> 100% <span class="token important">!important</span><span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--mian-bg-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.utterances iframe</span> <span class="token punctuation">{</span>
+        <span class="token property">padding</span><span class="token punctuation">:</span> 0 25px<span class="token punctuation">;</span>
+        <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>utteranc-sc<span class="token punctuation">&quot;</span></span>
+    <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value css language-css"><span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><span class="token property">padding</span><span class="token punctuation">:</span> 0 0<span class="token punctuation">;</span><span class="token property">margin</span><span class="token punctuation">:</span> 0 1em<span class="token punctuation">;</span><span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span><span class="token property">min-height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span><span class="token property">margin-top</span><span class="token punctuation">:</span>1em<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span></span>
+<span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span>
+        <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value css language-css"><span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span><span class="token property">top</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span><span class="token property">left</span><span class="token punctuation">:</span>50%<span class="token punctuation">;</span><span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-50%<span class="token punctuation">)</span><span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span></span>
+        <span class="token punctuation">&gt;</span></span>评论加载中...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span>
+    <span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name"><span class="token namespace">is:</span>raw</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/libs/utteranc.client.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre><figcaption class="code-caption">界面上集成</figcaption>
+                </figure>
+<p>如此，替换的就是<code>&lt;script is:raw src=&quot;/libs/utteranc.client.js&quot;&gt;&lt;/script&gt;</code>这个 script 了。这样的话刷新跟 pjax 都是支持的。</p>
+<h2 id="结论">结论</h2>
+<p>有问题思考怎么解决问题，解决不了就换个问题。</p>
+    
+                </div>
+		</article>
+        
+        
 
         </main>
         <div class="footer-wrapper">
-            
+            <div class="paging">
+            <div class="before">
+                <div class="article-card-page">
+    <a class="posttop__post" href="/post/技术/CSS/CSS属性/image-rendering">
+        
+        <!-- <div class="posttop__post__cover">
+      <img
+        src={article.heroImage
+          ? article.heroImage
+          : "https://picsum.photos/1280/780?random="+Math.random()*10000}
+        alt=""
+      />
+    </div> -->
+
+        <div class="posttop__post__title">
+                            上一篇
+                        </div>
+        <div class="posttop__post__content">image-rendering</div>
+    </a>
+</div>
+                <!-- {
+                    post.beforeArticle && <div>上一篇：<a href={post.beforeArticle?.url}>{post.beforeArticle?.title}</a></div>
+                } -->
+            </div>
+            <div class="next">
+                <div class="article-card-page">
+    <a class="posttop__post posttop__image" href="/post/失落之城-主题">
+        <div style="pointer-events: none;" class="posttop__post__cover">
+                    <img src="https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png" alt="">
+                    // <img src="https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png" alt="">
+                </div>
+        <!-- <div class="posttop__post__cover">
+      <img
+        src={article.heroImage
+          ? article.heroImage
+          : "https://picsum.photos/1280/780?random="+Math.random()*10000}
+        alt=""
+      />
+    </div> -->
+
+        <div class="posttop__post__title">
+                            下一篇
+                        </div>
+        <div class="posttop__post__content">失落之城-主题</div>
+    </a>
+</div>
+                <!-- {
+                    post.nextArticle && <div>下一篇：<a href={post.nextArticle?.url}>{post.nextArticle?.title}</a></div>
+                } -->
+            </div>
+        </div>
         </div>
         <div class="comment-wrapper">
             
+<div id="utteranc-sc" style="text-align: center;padding: 0 0;margin: 0 1em;position:relative;min-height: 100px;margin-top:1em;">
+  <span class="comment_label" style="position:absolute;top: 50px;left:50%;transform: translateX(-50%);">评论加载中</span>
+  <script src="/libs/utteranc.client.js"></script>
+</div>
             <!-- { showComment && <Comment /> } -->
         </div>
         <footer>
@@ -333,11 +534,17 @@ setTimeout(() => {
         </li>
     
 </ul>
-        <div class="_headtree">
+        <div class="_headtree show">
             <ul class="head-tree">
 			<div class="title">目录</div>
-		
-        <div style="margin: 0 20px;">无</div>
+		<li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="起因" href="#起因">
+                                                    # 起因
+                                                </a></li><li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="探索" href="#探索">
+                                                    # 探索
+                                                </a></li><li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="结论" href="#结论">
+                                                    # 结论
+                                                </a></li>
+        
 		</ul>
         </div>
       </div>

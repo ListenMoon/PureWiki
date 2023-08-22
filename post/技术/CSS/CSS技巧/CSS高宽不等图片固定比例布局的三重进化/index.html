@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="generator" content="Astro v2.10.12">
+
+<!-- Primary Meta Tags -->
+<title>CSS高宽不等图片固定比例布局的三重进化</title>
+<meta name="title" content="CSS高宽不等图片固定比例布局的三重进化">
+<meta name="description" content="CSS高宽不等图片固定比例布局的三重进化">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.xieyaxin.top/post/%E6%8A%80%E6%9C%AF/CSS/CSS%E6%8A%80%E5%B7%A7/CSS%E9%AB%98%E5%AE%BD%E4%B8%8D%E7%AD%89%E5%9B%BE%E7%89%87%E5%9B%BA%E5%AE%9A%E6%AF%94%E4%BE%8B%E5%B8%83%E5%B1%80%E7%9A%84%E4%B8%89%E9%87%8D%E8%BF%9B%E5%8C%96/">
+<meta property="og:title" content="CSS高宽不等图片固定比例布局的三重进化">
+<meta property="og:description" content="CSS高宽不等图片固定比例布局的三重进化">
+<meta property="og:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://blog.xieyaxin.top/post/%E6%8A%80%E6%9C%AF/CSS/CSS%E6%8A%80%E5%B7%A7/CSS%E9%AB%98%E5%AE%BD%E4%B8%8D%E7%AD%89%E5%9B%BE%E7%89%87%E5%9B%BA%E5%AE%9A%E6%AF%94%E4%BE%8B%E5%B8%83%E5%B1%80%E7%9A%84%E4%B8%89%E9%87%8D%E8%BF%9B%E5%8C%96/">
+<meta property="twitter:title" content="CSS高宽不等图片固定比例布局的三重进化">
+<meta property="twitter:description" content="CSS高宽不等图片固定比例布局的三重进化">
+<meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
+  <link rel="stylesheet" href="/astro_/about.e5ec3e7d.css" />
+<link rel="stylesheet" href="/astro_/about.f9bcfee7.css" /><script type="module" src="/astro_/hoisted.959c8f11.js"></script>
+<script type="module" src="/astro_/page.44d246ed.js"></script></head>
+
+  <body>
+    <div class="layout">
+      <div class="left">
+        <div class="wrapper">
+          <header>
+	<h2>
+		<a href="/" class="site-title" data-shadow="失落之城">失落之城</a>
+	</h2>
+	<nav>
+		<div class="links" style="display: inline;">
+            <a href="/" class="astro-EIMMU3LG">
+	门楣
+</a>
+            <a href="/posts" class="astro-EIMMU3LG">
+	归档
+</a>
+            <a href="/collect" class="astro-EIMMU3LG">
+	仓库
+</a>
+            <!-- <HeaderLink href="/career">生涯</HeaderLink> -->
+            <a href="/demos" class="astro-EIMMU3LG">
+	Demo
+</a>
+            <a href="/friends" class="astro-EIMMU3LG">
+	友链
+</a>
+        </div>
+		<!-- <HeaderLink href="/note">TODO</HeaderLink> -->
+		<!-- <HeaderLink href="/rss.xml">Rss</HeaderLink> -->
+        <div style="display: inline-block;color: #1abc9c;cursor:pointer;" id="searchButton">搜索</div>
+		<!-- <HeaderLink href="/demo">Demo</HeaderLink> -->
+	</nav>
+</header>
+          <!-- <div style="background-color: var(--bg-color);height:10px;"></div> -->
+          <div style="margin-bottom:10px;"></div>
+          <div class="tree-wrapper" style="flex: 1;height:0;display:flex;flex-direction: column">
+                <div class="tree" id="tree">
+  <div style="direction: ltr;padding-left: 17px;">
+        <div style="padding:10px 0;padding-left:17px; margin-left: -17px;position:sticky;top: 0;background: var(--light-bg-color);">
+          <a href="/cateAll" style="display: flex;color:inherit;border:0;text-decoration: none;">
+            <span title="所有文章" class="tree-item">
+              所有文章
+            </span>
+          </a>
+        </div>
+        <div>
+          <a href="/cate" style="display: flex;color:inherit;border:0;text-decoration: none;margin: 5px 0;">
+            <span title="未分类" class="tree-item">
+            未分类
+            </span>
+            <!-- {enableRemote && (
+                <div data-href={getNewURL("/article")} class="op">
+                新建
+                </div>
+            )} -->
+          </a>
+        </div>
+        <div>
+        
+        
+      </div><div>
+        <a href="/cate/博客" style="display: flex;padding-left:0px;color:inherit;border:0;text-decoration: none;">
+            <span title="博客" class="tree-item">
+              博客
+            </span>
+          </a>
+        <div>
+        
+        
+      </div>
+
+
+      </div><div>
+        <a href="/cate/技术" style="display: flex;padding-left:0px;color:inherit;border:0;text-decoration: none;">
+            <span title="技术" class="tree-item">
+              技术
+            </span>
+          </a>
+        <div>
+        
+        
+      </div><div>
+        <a href="/cate/技术/CSS" style="display: flex;padding-left:17px;color:inherit;border:0;text-decoration: none;">
+            <span title="CSS" class="tree-item">
+              CSS
+            </span>
+          </a>
+        <div>
+        
+        
+      </div><div>
+        <a href="/cate/技术/CSS/CSS技巧" style="display: flex;padding-left:34px;color:inherit;border:0;text-decoration: none;">
+            <span title="CSS技巧" class="tree-item active">
+              CSS技巧
+            </span>
+          </a>
+        <div>
+        
+        
+      </div>
+
+
+      </div><div>
+        <a href="/cate/技术/CSS/CSS属性" style="display: flex;padding-left:34px;color:inherit;border:0;text-decoration: none;">
+            <span title="CSS属性" class="tree-item">
+              CSS属性
+            </span>
+          </a>
+        <div>
+        
+        
+      </div>
+
+
+      </div>
+
+
+      </div>
+
+
+      </div>
+
+
+      </div>
+</div>
+<!-- <script is:raw>
+    function heightToTop(ele){
+        if(!ele) return 0
+        //ele为指定跳转到该位置的DOM节点
+        let root = document.body;
+        let height = 0;
+        do{
+            height += ele.offsetTop;
+            ele = ele.offsetParent;
+        }while( ele !== root )
+        const top = document.querySelector(".tree-wrapper .tree").offsetTop
+        const clientHeight = document.querySelector(".tree-wrapper .tree").parentNode.clientHeight
+        return height - top - clientHeight/2 + 20;
+    }
+    
+    setTimeout(()=>{
+      document.querySelector(".tree-wrapper .tree").scrollTo({
+          top:  heightToTop(document.querySelector(".tree-wrapper .tree .tree-item.active")),
+          behavior:'smooth'
+      })
+    }, 20)
+</script> -->
+              </div>
+          <div style="margin-bottom:10px;" class="tree-wrapper-up"></div><div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;">
+            <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
+              <div style="direction: ltr;flex:1;">
+                <div class="left-article">
+  <div style="padding: 5px 10px;font-weight: bold;background: var(--light-bg-color);position:sticky;top: 0;">
+    目录文章
+  </div>
+  <a class="item" href="/post/技术/CSS/CSS技巧/CSS高宽不等图片固定比例布局的三重进化" title="CSS高宽不等图片固定比例布局的三重进化">
+          CSS高宽不等图片固定比例布局的三重进化
+        </a>
+  
+</div>
+<!-- <script is:raw>
+function heightToTop1(ele) {
+  //ele为指定跳转到该位置的DOM节点
+  let root = document.body;
+  let height = 0;
+  do {
+    height += ele.offsetTop;
+    ele = ele.offsetParent;
+  } while (ele !== root);
+  const top = document.querySelector(".left-article-scroll").offsetTop;
+  const clientHeight = document.querySelector(".left-article-scroll")
+    .parentNode.clientHeight;
+  return height - top - clientHeight / 2 + 20;
+}
+
+setTimeout(() => {
+  var el = document.querySelector(".left-article .active");
+  var aa = heightToTop1(el);
+  document.querySelector(".left-article-scroll").scrollTo({
+    top: aa,
+    behavior: "smooth",
+  });
+  }, 20);
+</script> -->
+              </div>
+            </div>
+          </div>
+          <!-- 为了快速将元素设置 -->
+          <!-- <script is:inline src="/scripts/init.js"></script> -->
+        </div>
+      </div>
+      <div class="right">
+        <main id="pjax-container">
+          <article class="typo article">
+            <!-- {SITE_TYPE === ESITETYPE.BLOG && <span style="font-size: .75em;color: #bdbdbd;">
+                <a href={collect?'/collect':"/cate"}>未分类</a><span style="padding: 0 3px;">{'>'}</span></span>} -->
+                <span style="font-size: .75em;color: #bdbdbd;">
+                        <a href="/cate/技术">技术</a>
+                        <span style="padding: 0 3px;">&gt;</span>
+                    </span><span style="font-size: .75em;color: #bdbdbd;">
+                        <a href="/cate/技术/CSS">CSS</a>
+                        <span style="padding: 0 3px;">&gt;</span>
+                    </span><span style="font-size: .75em;color: #bdbdbd;">
+                        <a href="/cate/技术/CSS/CSS技巧">CSS技巧</a>
+                        <span style="padding: 0 3px;">&gt;</span>
+                    </span><span style="font-size: .75em;color: #bdbdbd;">
+                        CSS高宽不等图片固定比例布局的三重进化.mdx
+                        <span style="padding: 0 3px;"></span>
+                    </span>
+                <!-- {filePath && <div style="font-size: .75em;color: #bdbdbd;">{filePath.slice(1).replace(/\//g," > ")}</div>} -->
+				<h1 class="title">CSS高宽不等图片固定比例布局的三重进化</h1>
+				<div style="line-height: 1.5;">
+                    <div style="font-size: 0.75em;color: #bdbdbd;"><time>
+                        创建于 2023年8月19日 09:53:15
+                    </time></div>
+                    <div style="font-size: 0.75em;color: #bdbdbd;">
+                            上次修改于 <time>2023年8月19日 10:40:02</time>
+                        </div>
+                </div>
+				<a href="https://github.com/ListenMoon/PureWiki/edit/master/article/技术/CSS/CSS技巧/CSS高宽不等图片固定比例布局的三重进化.mdx" target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>
+				<hr>
+				<div class="article__content">
+                    
+    <blockquote>
+<p>转载自<a href="https://www.zhangxinxu.com/" target="_blank">张鑫旭</a>的<a href="https://www.zhangxinxu.com/wordpress/2023/07/css-image-aspect-ratio-layout/" target="_blank">CSS高宽不等图片固定比例布局的三重进化</a>，感觉也什么需要补充的，后续学习后慢慢修改。<br/>
+侵权立删。</p>
+</blockquote>
+<h2 id="前言">前言</h2>
+<p>今天从博客中学习中学习了<a href="https://www.zhangxinxu.com/wordpress/2023/07/css-image-aspect-ratio-layout/" target="_blank">CSS 高宽不等图片固定比例布局的三重进化</a>。主要是以下下过</p>
+<p>
+            </p><div style="text-align:center">
+                <img style="display:block;margin:0 auto;max-width:100%" alt="图片比例1:1,跟随容器大小缩放" src="/article/CSS高宽不等图片固定比例布局的三重进化/2023-08-19_19-09-56-22.png"/>
+                <div style="display:flex;justify-content:center;width:100px;white-space:nowrap;margin:0 auto;border-bottom:1px solid #e8e8e8;padding:4px 0;color:#c6c6c6;font-size:0.875em">图片比例1:1,跟随容器大小缩放</div>
+            </div>
+        <p></p>
+<p>那么，我们会如何实现呢？</p>
+<h2 id="实现">实现</h2>
+<h3 id="百分比-padding">百分比 padding</h3>
+<p>要让一个元素内容按照固定比例显示。</p>
+<p>在过去，那个还需要兼容 IE 浏览器的年代，基本上都是使用百分比 padding 实现的，因为 padding 的百分比计算值都是相对于宽度计算的，哪怕是垂直方向。</p>
+<p>例如：</p>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">css</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">div {
+    padding: 100% 100% 0 0;
+}</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-css"><code is:raw="" class="language-css"><span class="token selector">div</span> <span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 100% 100% 0 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+                </figure>
+<p>就会撑起一个 1:1 的 div 元素。</p>
+<p>我们就可以利用此特性，让图片 1:1 高宽比弹性显示。</p>
+<p>HTML 结构如下，需要三层标签，一层宽度，一层确定高宽，最后图片填充。</p>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">html</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">&lt;ul class=&quot;box&quot;&gt;
+    &lt;li class=&quot;list&quot;&gt;
+        &lt;div class=&quot;cover&quot;&gt;
+            &lt;img src=&quot;0.jpg&quot; /&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;list&quot;&gt;
+        &lt;div class=&quot;cover&quot;&gt;
+            &lt;img src=&quot;1.jpg&quot; /&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    ...
+&lt;/ul&gt;</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-html"><code is:raw="" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cover<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>0.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cover<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>1.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </figure>
+<p>CSS 代码示意如下，为了兼容 IE9，特意使用了传统的浮动布局。</p>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">css</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">.box {
+    overflow: hidden;
+}
+.list {
+    width: calc(25% - 1.5rem / 4);
+    float: left;
+    margin-bottom: 0.5rem;
+}
+.list:not(:nth-child(4n + 1)) {
+    margin-left: 0.5rem;
+}
+.cover {
+    padding: 100% 100% 0 0;
+    position: relative;
+}
+.cover img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-css"><code is:raw="" class="language-css"><span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.list</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>25% - 1.5rem / 4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+    <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.list:not(:nth-child(4n + 1))</span> <span class="token punctuation">{</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.cover</span> <span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 100% 100% 0 0<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.cover img</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">object-fit</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+                </figure>
+<p>由于 padding 占据了空间，所以图片需要使用绝对定位才能覆盖 div 元素的支撑空间。</p>
+<p>下图为实现后的效果：</p>
+<div style="position:relative;overflow:hidden;margin:1.5em 0"><div style="background:#e9e9e9;padding:0 1em;font-size:.75em;float:left">demo</div><iframe id="" class="demo" style="width:100%;border:1px solid #e9e9e9;display:block;box-sizing:border-box;max-height:350px" height="300px" frameborder="0" allowfullscreen="true" onload="this.height = this.contentDocument.documentElement.scrollHeight" srcdoc="<!DOCTYPE html>                                <html lang=&#34;en&#34;>                                <head>                                    <meta charset=&#34;UTF-8&#34;>                                    <meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;>                                    <meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;>                                    <title>demo</title>                                </head>                                <body>                                    
+<style>
+    .box {
+        overflow: hidden;
+        list-style: none;
+    }
+    .list {
+        width: calc(25% - 1.5rem / 4);
+        float: left;
+        margin-bottom: 0.5rem;
+    }
+    .list:not(:nth-child(4n + 1)) {
+        margin-left: 0.5rem;
+    }
+    .cover {
+        padding: 100% 100% 0 0;
+        position: relative;
+    }
+    .cover img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+<div style=&#34;resize: horizontal;overflow: hidden;&#34;>
+    <ul class=&#34;box&#34;>
+        <li class=&#34;list&#34;>
+            <div class=&#34;cover&#34;>
+                <img src=&#34;/avatar.jpg&#34; />
+            </div>
+        </li>
+        <li class=&#34;list&#34;>
+            <div class=&#34;cover&#34;>
+                <img src=&#34;/avatar.jpg&#34; />
+            </div>
+        </li>
+        <li class=&#34;list&#34;>
+            <div class=&#34;cover&#34;>
+                <img src=&#34;/avatar.jpg&#34; />
+            </div>
+        </li>
+        <li class=&#34;list&#34;>
+            <div class=&#34;cover&#34;>
+                <img src=&#34;/avatar.jpg&#34; />
+            </div>
+        </li>
+        <li class=&#34;list&#34;>
+            <div class=&#34;cover&#34;>
+                <img src=&#34;/avatar.jpg&#34; />
+            </div>
+        </li>
+        <li class=&#34;list&#34;>
+            <div class=&#34;cover&#34;>
+                <img src=&#34;/avatar.jpg&#34; />
+            </div>
+        </li>
+    </ul>
+</div>                                </body>                                </html>"></iframe><div style="background:#e9e9e9;padding:0 1em;font-size:.75em"><details><summary style="cursor:pointer">查看源码</summary><div style="padding:0 1em;font-size:.75em;overflow:hidden"><pre class="language-html"><code is:raw="" class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.box</span> <span class="token punctuation">{</span>
+        <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+        <span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.list</span> <span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>25% - 1.5rem / 4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+        <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.list:not(:nth-child(4n + 1))</span> <span class="token punctuation">{</span>
+        <span class="token property">margin-left</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.cover</span> <span class="token punctuation">{</span>
+        <span class="token property">padding</span><span class="token punctuation">:</span> 100% 100% 0 0<span class="token punctuation">;</span>
+        <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.cover img</span> <span class="token punctuation">{</span>
+        <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">object-fit</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value css language-css"><span class="token property">resize</span><span class="token punctuation">:</span> horizontal<span class="token punctuation">;</span><span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cover<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cover<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cover<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cover<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cover<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cover<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre></div></details></div></div>
+<p>此布局效果其实 2017 年的时候就有详细介绍，有兴趣可以访问这里：<a href="https://www.zhangxinxu.com/wordpress/2017/08/css-percent-padding-image-layout/" target="_blank">CSS 百分比 padding 实现比例固定图片自适应布局</a></p>
+<h3 id="aspect-ratio-属性">aspect-ratio 属性</h3>
+<p>到了 2021 年，随着 CSS 技术的发展，固定比例的图片布局有了新的选择，这个就是 CSS <code>aspect-ratio</code>属性，专门设置元素的高宽比。</p>
+<p>不过此属性用在 IMG 元素上是没有效果的，因为图片元素具有内在尺寸，不受 aspect-ratio 属性影响。</p>
+<p>因此，使用 aspect-ratio 属性实现等比例图像弹性布局需要至少两层标签。</p>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">html</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">&lt;ul class=&quot;box&quot;&gt;
+    &lt;li class=&quot;list&quot;&gt;
+        &lt;img src=&quot;0.jpg&quot; /&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;list&quot;&gt;
+        &lt;img src=&quot;1.jpg&quot; /&gt;
+    &lt;/li&gt;
+    ...
+&lt;/ul&gt;</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-html"><code is:raw="" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>0.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>1.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </figure>
+<p>比 padding 方法，CSS 自然也简化了些，这里使用 Flex 布局示意。</p>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">css</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">.box {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.list {
+    flex-basis: calc(25% - 1.5rem / 4);
+    aspect-ratio: 1 / 1;
+}
+.list img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-css"><code is:raw="" class="language-css"><span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">gap</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+    <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.list</span> <span class="token punctuation">{</span>
+    <span class="token property">flex-basis</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>25% - 1.5rem / 4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">aspect-ratio</span><span class="token punctuation">:</span> 1 / 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.list img</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">object-fit</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+                </figure>
+<p>是不是容易理解多了。</p>
+<p>实现效果类似下面的:</p>
+<div style="position:relative;overflow:hidden;margin:1.5em 0"><div style="background:#e9e9e9;padding:0 1em;font-size:.75em;float:left">demo</div><iframe id="" class="demo" style="width:100%;border:1px solid #e9e9e9;display:block;box-sizing:border-box;max-height:350px" height="300px" frameborder="0" allowfullscreen="true" onload="this.height = this.contentDocument.documentElement.scrollHeight" srcdoc="<!DOCTYPE html>                                <html lang=&#34;en&#34;>                                <head>                                    <meta charset=&#34;UTF-8&#34;>                                    <meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;>                                    <meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;>                                    <title>demo</title>                                </head>                                <body>                                    
+<style>
+    .box {
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    .list {
+        flex-basis: calc(25% - 1.5rem / 4);
+        aspect-ratio: 1 / 1;
+    }
+    .list img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+<div style=&#34;resize: horizontal;overflow: hidden;&#34;>
+    <ul class=&#34;box&#34;>
+        <li class=&#34;list&#34;>
+            <img src=&#34;/avatar.jpg&#34; />
+        </li>
+        <li class=&#34;list&#34;>
+            <img src=&#34;/avatar.jpg&#34; />
+        </li>
+        <li class=&#34;list&#34;>
+            <img src=&#34;/avatar.jpg&#34; />
+        </li>
+        <li class=&#34;list&#34;>
+            <img src=&#34;/avatar.jpg&#34; />
+        </li>
+        <li class=&#34;list&#34;>
+            <img src=&#34;/avatar.jpg&#34; />
+        </li>
+        <li class=&#34;list&#34;>
+            <img src=&#34;/avatar.jpg&#34; />
+        </li>
+    </ul>
+</div>                                </body>                                </html>"></iframe><div style="background:#e9e9e9;padding:0 1em;font-size:.75em"><details><summary style="cursor:pointer">查看源码</summary><div style="padding:0 1em;font-size:.75em;overflow:hidden"><pre class="language-html"><code is:raw="" class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.box</span> <span class="token punctuation">{</span>
+        <span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+        <span class="token property">gap</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+        <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.list</span> <span class="token punctuation">{</span>
+        <span class="token property">flex-basis</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>25% - 1.5rem / 4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token property">aspect-ratio</span><span class="token punctuation">:</span> 1 / 1<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.list img</span> <span class="token punctuation">{</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">object-fit</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value css language-css"><span class="token property">resize</span><span class="token punctuation">:</span> horizontal<span class="token punctuation">;</span><span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre></div></details></div></div>
+<p>关于<code>aspect-ratio</code>属性更多信息，例如和 width/height 等属性相比的优先级等，可以参考之前的这篇文章：<a href="https://www.zhangxinxu.com/wordpress/2021/02/css-aspect-ratio/" target="_blank">Chrome 88 已经支持 aspect-ratio 属性了，学起来</a>.</p>
+<h3 id="cqw-单位">cqw 单位</h3>
+<p>到了如今的 2023 年，又有了更加简单的方法，实现最终的布局需要只需要一层容器标签即可。</p>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">html</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">&lt;div class=&quot;box&quot;&gt;
+    &lt;img src=&quot;0.jpg&quot; /&gt;
+    &lt;img src=&quot;1.jpg&quot; /&gt;
+    &lt;img src=&quot;2.jpg&quot; /&gt;
+    &lt;img src=&quot;3.jpg&quot; /&gt;
+    &lt;img src=&quot;4.jpg&quot; /&gt;
+    &lt;img src=&quot;5.jpg&quot; /&gt;
+&lt;/div&gt;</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-html"><code is:raw="" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>0.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>1.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>2.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>3.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>4.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>5.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </figure>
+<p>这么给力，那是用什么东西实现的呢？</p>
+<p>嘿嘿，容器元素和 cqw 单位，具体 CSS 如下所示:</p>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">css</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">.box {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    container-type: inline-size;
+}
+.box img {
+    width: calc(25cqw - 1.5rem / 4);
+    height: calc(25cqw - 1.5rem / 4);
+    object-fit: cover;
+}</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-css"><code is:raw="" class="language-css"><span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">gap</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+    <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+    <span class="token property">container-type</span><span class="token punctuation">:</span> inline-size<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.box img</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>25cqw - 1.5rem / 4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>25cqw - 1.5rem / 4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">object-fit</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+                </figure>
+<p><code>container-type:inline-size</code>可以让普通元素变成 container 容器元素，而 cqw 是容器宽度单位，1cqw=1%的容器宽度，100cqw 就是容器宽度。</p>
+<p>而本需求需要一行显示 4 个图片，因此，每个图片相对于容器的大小就很好计算了。</p>
+<p>就是这么简单。</p>
+<p>效果一样：</p>
+<div style="position:relative;overflow:hidden;margin:1.5em 0"><div style="background:#e9e9e9;padding:0 1em;font-size:.75em;float:left">demo</div><iframe id="" class="demo" style="width:100%;border:1px solid #e9e9e9;display:block;box-sizing:border-box;max-height:350px" height="300px" frameborder="0" allowfullscreen="true" onload="this.height = this.contentDocument.documentElement.scrollHeight" srcdoc="<!DOCTYPE html>                                <html lang=&#34;en&#34;>                                <head>                                    <meta charset=&#34;UTF-8&#34;>                                    <meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;>                                    <meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;>                                    <title>demo</title>                                </head>                                <body>                                    
+<style>
+    .box {
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        container-type: inline-size;
+    }
+    .box img {
+        width: calc(25cqw - 1.5rem / 4);
+        height: calc(25cqw - 1.5rem / 4);
+        object-fit: cover;
+    }
+</style>
+<div style=&#34;resize: horizontal;overflow: hidden;&#34;>
+    <div class=&#34;box&#34;>
+        <img src=&#34;/avatar.jpg&#34; />
+        <img src=&#34;/avatar.jpg&#34; />
+        <img src=&#34;/avatar.jpg&#34; />
+        <img src=&#34;/avatar.jpg&#34; />
+        <img src=&#34;/avatar.jpg&#34; />
+        <img src=&#34;/avatar.jpg&#34; />
+    </div>
+</div>                                </body>                                </html>"></iframe><div style="background:#e9e9e9;padding:0 1em;font-size:.75em"><details><summary style="cursor:pointer">查看源码</summary><div style="padding:0 1em;font-size:.75em;overflow:hidden"><pre class="language-html"><code is:raw="" class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.box</span> <span class="token punctuation">{</span>
+        <span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+        <span class="token property">gap</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+        <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+        <span class="token property">container-type</span><span class="token punctuation">:</span> inline-size<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.box img</span> <span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>25cqw - 1.5rem / 4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>25cqw - 1.5rem / 4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token property">object-fit</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value css language-css"><span class="token property">resize</span><span class="token punctuation">:</span> horizontal<span class="token punctuation">;</span><span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/avatar.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre></div></details></div></div>
+<p><code>@container</code>容器规则还是很强很实用的，具体可以访问<a href="https://www.zhangxinxu.com/wordpress/2022/09/css-container-rule/" target="_blank">介绍 2022 最期待且已正式支持的 CSS container 容器查询</a>了解更多.</p>
+    
+                </div>
+		</article>
+        
+        
+
+        </main>
+        <div class="footer-wrapper">
+            <div class="paging">
+            <div class="before">
+                <div class="article-card-page">
+    <a class="posttop__post" href="/post/技术/CSS/推荐">
+        
+        <!-- <div class="posttop__post__cover">
+      <img
+        src={article.heroImage
+          ? article.heroImage
+          : "https://picsum.photos/1280/780?random="+Math.random()*10000}
+        alt=""
+      />
+    </div> -->
+
+        <div class="posttop__post__title">
+                            上一篇
+                        </div>
+        <div class="posttop__post__content">推荐</div>
+    </a>
+</div>
+                <!-- {
+                    post.beforeArticle && <div>上一篇：<a href={post.beforeArticle?.url}>{post.beforeArticle?.title}</a></div>
+                } -->
+            </div>
+            <div class="next">
+                <div class="article-card-page">
+    <a class="posttop__post" href="/post/技术/CSS/CSS属性/image-rendering">
+        
+        <!-- <div class="posttop__post__cover">
+      <img
+        src={article.heroImage
+          ? article.heroImage
+          : "https://picsum.photos/1280/780?random="+Math.random()*10000}
+        alt=""
+      />
+    </div> -->
+
+        <div class="posttop__post__title">
+                            下一篇
+                        </div>
+        <div class="posttop__post__content">image-rendering</div>
+    </a>
+</div>
+                <!-- {
+                    post.nextArticle && <div>下一篇：<a href={post.nextArticle?.url}>{post.nextArticle?.title}</a></div>
+                } -->
+            </div>
+        </div>
+        </div>
+        <div class="comment-wrapper">
+            
+<div id="utteranc-sc" style="text-align: center;padding: 0 0;margin: 0 1em;position:relative;min-height: 100px;margin-top:1em;">
+  <span class="comment_label" style="position:absolute;top: 50px;left:50%;transform: translateX(-50%);">评论加载中</span>
+  <script src="/libs/utteranc.client.js"></script>
+</div>
+            <!-- { showComment && <Comment /> } -->
+        </div>
+        <footer>
+    &copy; 2023
+    <a href="https://github.com/npmrun" target="_blank">NPMRUN</a>. All rights reserved.
+    <p>
+        <span>Built with ♥ by <a href="https://github.com/ListenMoon/PureWiki" target="_blank">失落之城</a></span>
+        <span style="margin-left: 6px;">Powered By <a href="https://astro.build/" target="_blank">Astro</a></span>
+    </p>
+</footer>
+      </div>
+      <div class="side show">
+        <div class="userinfo-wrapper">
+    
+    <div class="userinfo">
+        <div>NPMRUN</div>
+        <img src="/avatar.jpg" alt="NPMRUN">
+    </div>
+    <div class="user_content">来自南方小城<br>希望结交益友♥!</div>
+</div>
+<div style="margin: 0 20px;margin-top: 12px;text-align: center;margin-bottom: 12px;">
+    <div>该站点已稳定运行：</div>
+    <div id="sitetime"></div>
+</div>
+<div style="margin: 0 20px;margin-top: 12px;text-align: center;margin-bottom: 12px;">
+    <a target="_blank" href="http://memos.xieyaxin.top/" title="memos" style="background-color:#e6e0d8;line-height:1;padding:4px 8px; border-radius: 4px;display: inline-block;color:inherit;font-size: .875em;">私人语录</a>
+    <a target="_blank" href="https://kan.xieyaxin.top/" title="memos" style="background-color:#23ddc1;line-height:1;padding:4px 8px; border-radius: 4px;display: inline-block;color:inherit;font-size: .875em;margin-left: .65em;">任务看板</a>
+    <!-- <a href="/demos" title="Demo" style="background-color:#ffb000;line-height:1;padding:4px 8px; border-radius: 4px;display: inline-block;color:inherit;font-size: .875em;margin-left: .65em;">Demo</a> -->
+</div>
+<script>(function(){const StartTime = [2023,2,23,20,55,32];
+
+    function siteTime(){
+        window.setTimeout("window.siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        // @ts-ignore
+        var t1 = Date.UTC.apply(null, StartTime); //北京时间2017-09-16 00:00:00创建网站的时间
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML=+diffYears+"年"+diffDays+"天"+diffHours+"时"+diffMinutes+"分钟"+diffSeconds+"秒";
+    }
+    // @ts-ignore
+    window.siteTime = siteTime;
+    // @ts-ignore
+    window.siteTime();
+})();</script>
+        <ul class="posttop">
+    <li>
+            <a class="posttop__post posttop__image" href="/post/失落之城-主题">
+                <div class="posttop__post__cover">
+                    <img src="https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png" alt="">
+                        // <img src="https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png" alt="">
+                </div>
+                <div class="posttop__post__title">失落之城-主题</div>
+                <div class="posttop__post__content">一个Astro主题</div>
+            </a>
+        </li>
+    
+</ul>
+        <div class="_headtree show">
+            <ul class="head-tree">
+			<div class="title">目录</div>
+		<li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="前言" href="#前言">
+                                                    # 前言
+                                                </a></li><li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="实现" href="#实现">
+                                                    # 实现
+                                                </a></li><li><a class="head" style="margin-left:20px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="百分比 padding" href="#百分比-padding">
+                                                    # 百分比 padding
+                                                </a></li><li><a class="head" style="margin-left:20px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="aspect-ratio 属性" href="#aspect-ratio-属性">
+                                                    # aspect-ratio 属性
+                                                </a></li><li><a class="head" style="margin-left:20px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="cqw 单位" href="#cqw-单位">
+                                                    # cqw 单位
+                                                </a></li>
+        
+		</ul>
+        </div>
+      </div>
+      <!-- {
+        !hideSide && (
+          <div class="side">
+            <UserInfo></UserInfo>
+            <PostTop posts={topArticles} />
+            {!hideMenu && <slot name="side" />}
+          </div>
+        )
+      } -->
+      <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <!-- rounded polygon generator => https://weareoutman.github.io/rounded-polygon/ -->
+            <!-- polygon size 68 * 68 almost the same size as the image -->
+            <clipPath id="roundedPolygon">
+                <path d="M29 2.8867513459481a10 10 0 0 1 10 0l19.444863728671 11.226497308104a10 10 0 0 1 5 8.6602540378444l0 22.452994616207a10 10 0 0 1 -5 8.6602540378444l-19.444863728671 11.226497308104a10 10 0 0 1 -10 0l-19.444863728671 -11.226497308104a10 10 0 0 1 -5 -8.6602540378444l0 -22.452994616207a10 10 0 0 1 5 -8.6602540378444"></path>
+            </clipPath>
+        </defs>
+    </svg>
+    </div>
+    <div class="toTop" id="toTop">
+      <svg class="icon" style="width: 2em;height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M780.288 750.592H244.736V415.744C244.736 229.376 396.288 79.872 460.8 24.576c29.696-24.576 71.68-24.576 101.376 0 65.536 55.296 217.088 204.8 217.088 391.168v334.848z m-453.632-81.92h371.712V415.744c0-150.528-128-277.504-186.368-326.656-57.344 49.152-186.368 176.128-186.368 326.656v252.928zM509.952 87.04z" fill="#333C4F"></path><path d="M326.656 750.592H148.48c-43.008 0-78.848-34.816-78.848-78.848v-76.8c0-26.624 13.312-51.2 34.816-65.536l221.184-146.432v367.616z m-175.104-81.92h92.16v-133.12l-92.16 61.44v71.68zM875.52 750.592H697.344V384l221.184 146.432c22.528 14.336 34.816 38.912 34.816 65.536v76.8c1.024 41.984-34.816 77.824-77.824 77.824z m-96.256-81.92h92.16v-71.68l-92.16-61.44v133.12zM513.024 489.472c-64.512 0-116.736-52.224-116.736-116.736S449.536 256 513.024 256s116.736 52.224 116.736 116.736-52.224 116.736-116.736 116.736z m0-151.552c-18.432 0-34.816 15.36-34.816 34.816s15.36 34.816 34.816 34.816 34.816-15.36 34.816-34.816S532.48 337.92 513.024 337.92zM512 1017.856c-22.528 0-40.96-18.432-40.96-40.96v-163.84c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v163.84c0 22.528-18.432 40.96-40.96 40.96zM351.232 953.344c-22.528 0-40.96-18.432-40.96-40.96v-66.56c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v66.56c0 22.528-18.432 40.96-40.96 40.96zM673.792 953.344c-22.528 0-40.96-18.432-40.96-40.96v-66.56c0-22.528 18.432-40.96 40.96-40.96s40.96 18.432 40.96 40.96v66.56c0 22.528-18.432 40.96-40.96 40.96z" fill="#333C4F"></path></svg>
+    </div>
+    <div id="search-mask">
+</div>
+<div id="search-container" class="md:w-[800px]">
+    <div id="search-content" class="bg-white transition-opacity duration-300 opacity-0 rounded-[6px] md:p-[3px] p-[8px] overflow-hidden">
+        <!-- <script
+    is:inline
+    src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"
+    integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script> --><!-- <script
+    is:inline
+    src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"
+    integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script> --><!-- <script
+is:inline
+    src="https://cdn.jsdelivr.net/gh/MihaiValentin/lunr-languages/lunr.stemmer.support.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script> --><!-- <script
+is:inline
+    src="https://cdn.jsdelivr.net/gh/MihaiValentin/lunr-languages/lunr.zh.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script> --><script src="/libs/mark.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/libs/lunr.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/libs/lunr.stemmer.support.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/libs/lunr.zh.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<section class="astro-7QW2IF4I">
+    <div class="searchBoxContainer astro-7QW2IF4I">
+        <input type="text" id="searchBox" autocomplete="on" class="searchBox w-full px-3 py-2 astro-7QW2IF4I" style="width: 100%;padding: .5rem .75rem;color: inherit;font-family: inherit;font-size: 100%;font-weight: inherit;line-height: inherit;margin: 0;border: none;box-sizing: border-box;" placeholder="搜索..." data-test="search-input">
+    </div>
+    
+    <!-- Search Results -->
+    <div id="searchResults" class="searchResults lg:pl-8 astro-7QW2IF4I"></div>
+
+    <!-- Search TS -->
+    <script lang="ts">
+        let lunrIndex;
+        let lunrResult;
+        let pagesIndex;
+        const bigramTokeniser = (obj, metadata) => {
+            if (obj == null || obj == undefined) {
+                return [];
+            }
+            let str = obj.toString().trim().toLowerCase();
+            let tokens = [];
+            for (let i = 0; i <= str.length - 2; i++) {
+                let tokenMetadata = lunr.utils.clone(metadata) || {};
+                tokenMetadata["position"] = [i, i + 2];
+                tokenMetadata["index"] = tokens.length;
+                tokens.push(new lunr.Token(str.slice(i, i + 2), tokenMetadata));
+            }
+            return tokens;
+        };
+        const queryNgramSeparator = (query) => {
+            const str = query.toString().trim().toLowerCase();
+            const tokens = [];
+            for (let i = 0; i <= str.length - 2; i++) {
+                tokens.push(str.slice(i, i + 2));
+            }
+            return tokens.join(" ");
+        };
+        const index = "/search-index.json";
+        const initLunr = () => {
+            let request = new XMLHttpRequest();
+            request.open("GET", index, true);
+            request.onload = function () {
+                if (this.status >= 200 && this.status < 400) {
+                    pagesIndex = JSON.parse(this.response);
+                    lunrIndex = lunr(function () {
+                        this.use(lunr.zh);
+                        this.tokenizer = bigramTokeniser;
+                        this.pipeline.reset();
+                        this.ref("slug");
+                        this.field("title", { boost: 10 });
+                        this.field("body");
+                        this.metadataWhitelist = ["position"];
+                        pagesIndex.forEach((page) => {
+                            this.add(page);
+                        }, this);
+                    });
+                } else {
+                    console.error("Error getting Hugo index flie");
+                }
+            };
+            request.onerror = function () {
+                console.error("connection error");
+            };
+            request.send();
+        };
+        /**
+         * Searching pages using lunr
+         * @param {String} query Query string for searching
+         * @return {Object[]} Array of search results
+         */
+        const search = (query) => {
+            lunrResult = lunrIndex.search(queryNgramSeparator(query));
+            return lunrResult.map((result) => {
+                return pagesIndex.filter((page) => {
+                    return page.slug === result.ref;
+                })[0];
+            });
+        };
+        const initUI = () => {
+            const searchBox = document.querySelector("#searchBox");
+            if (searchBox === null) {
+                return;
+            }
+            searchBox.addEventListener("keyup", function (event) {
+                let searchResultsArea =
+                    document.querySelector("#searchResults");
+                let query = event.currentTarget.value;
+                // Only trigger a search when 2 chars. at least have been provided
+                if (query.length < 2) {
+                    searchResultsArea.style.display = "none";
+                    return;
+                }
+                // Display search results
+                renderResults(search(query));
+                searchResultsArea.style.display = "block";
+            });
+        };
+        /**
+         * Rendering search results
+         * @param {Object[]} results Array of search results
+         */
+        const renderResults = (results) => {
+            const searchResults = document.querySelector("#searchResults");
+            const query = document.querySelector("#searchBox").value;
+            const BODY_LENGTH = 100;
+            const MAX_PAGES = 10;
+            // Clear search result
+            while (searchResults.firstChild)
+                searchResults.removeChild(searchResults.firstChild);
+            // Show message when results is empty
+            if (!results.length) {
+                let resultPage = document.createElement("div");
+                resultPage.className = "searchResultPage";
+                resultPage.innerHTML =
+                    'No results found for query "' + query + '"';
+                searchResults.append(resultPage);
+                return;
+            }
+            let instance = new Mark(document.querySelector("#searchResults"));
+            // Only show the ten first results
+            results.slice(0, MAX_PAGES).forEach((result, idx) => {
+                let resultPage = document.createElement("div");
+                resultPage.className = "searchResultPage";
+                let metadata = lunrResult[idx].matchData.metadata;
+                let resultTitle = document.createElement("a");
+                resultTitle.className = "searchResultTitle";
+                resultTitle.href = `/post/${result.slug}`;
+                resultTitle.innerHTML = result.title;
+                resultPage.append(resultTitle);
+                const body = metadata[Object.keys(metadata)[0]].body;
+                if (body) {
+                    let matchPosition = body.position[0][0];
+                    let bodyStartPosition =
+                        matchPosition - BODY_LENGTH / 2 > 0
+                            ? matchPosition - BODY_LENGTH / 2
+                            : 0;
+                    let resultBody = document.createElement("div");
+                    resultBody.className = "searchResultBody";
+                    resultBody.innerHTML = result.body.substr(
+                        bodyStartPosition,
+                        BODY_LENGTH
+                    );
+                    resultPage.append(resultBody);
+                } else {
+                    let resultBody = document.createElement("div");
+                    resultBody.className = "searchResultBody";
+                    resultBody.innerHTML = result.body.substr(0, 120);
+                    resultPage.append(resultBody);
+                }
+                searchResults.append(resultPage);
+            });
+            instance.mark(query, {
+                className: "highlight"
+            });
+        };
+        initLunr();
+        initUI();
+        function initSeach() {
+            const searchBox = document.querySelector("#searchBox");
+            if (searchBox === null) {
+                return;
+            }
+            let searchResultsArea = document.querySelector("#searchResults");
+            let query = searchBox.value;
+            if (query.length < 2) {
+                searchResultsArea.style.display = "none";
+                return;
+            }
+            renderResults(search(query));
+            searchResultsArea.style.display = "block";
+        }
+        const searchBox = document.querySelector("#searchBox");
+        searchBox.addEventListener("select", () => {
+            console.log("select");
+        });
+        setTimeout(() => {
+            initSeach();
+        }, 500);
+    </script>
+</section>
+    </div>
+</div>
+
+<script lang="ts">
+    var searchBoxEl = document.getElementById("searchBox");
+    
+    var searchMask = document.getElementById("search-mask");
+    var searchButton = document.getElementById("searchButton");
+    var searchContainer = document.getElementById("search-container");
+    searchButton.addEventListener("click", () => {
+        let isHave = searchContainer.classList.contains("search-show");
+        if (!isHave) {
+            searchContainer.classList.add("search-show");
+            searchMask.style.opacity = 1;
+            searchMask.style.pointerEvents = "auto";
+            searchBoxEl.focus()
+            document.body.style.setProperty("overflow", "hidden", "important");
+        }
+    });
+    searchMask.addEventListener("click", () => {
+        let isHave = searchContainer.classList.contains("search-show");
+        if (isHave) {
+            searchContainer.classList.remove("search-show");
+            searchMask.style.opacity = 0;
+            searchMask.style.pointerEvents = "none";
+            document.body.style.setProperty("overflow", "auto");
+        }
+    });
+</script>
+    <div class="loading-bar">
+        <div class="progress"></div>
+    </div>
+    
+  </body>
+</html>
