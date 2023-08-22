@@ -1,0 +1,55 @@
+---
+title: 用接口返回动态图片
+description: ""
+pubDate: 2023/8/22 21:42:15
+updatedDate: 2023/08/22 21:45:25
+---
+
+## 前言
+
+之前用github写东西的时候，发现很多的人的主页都有类似的东西，就是一个动态显示的图片，每访问一次会获取新的数据展示，例如：
+
+![](https://camo.githubusercontent.com/21d169bfca4edcaf870b6b55d8c4f6064a8d26d248ff60a8d33eb55e4c316fbd/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d6e706d72756e2673686f775f69636f6e733d747275652669636f6e5f636f6c6f723d43453144324426746578745f636f6c6f723d3731383039362662675f636f6c6f723d66666666666626686964655f7469746c653d74727565)
+
+上面的图片对应的url如下：
+
+```
+https://camo.githubusercontent.com/21d169bfca4edcaf870b6b55d8c4f6064a8d26d248ff60a8d33eb55e4c316fbd/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d6e706d72756e2673686f775f69636f6e733d747275652669636f6e5f636f6c6f723d43453144324426746578745f636f6c6f723d3731383039362662675f636f6c6f723d66666666666626686964655f7469746c653d74727565
+```
+
+可以看到，这并没有图片后缀，但是它可以显示图片。
+
+在此呢，这里就粗略讲一下实现。
+
+## 探究
+
+这个[仓库](https://stackblitz.com/edit/stackblitz-starters-oqdgd3?description=&file=index.js,package.json&title=Koa%20Starter)包含了源码.
+
+可以看到，这并没有图片后缀，但是它可以显示图片。
+
+在此呢，这里就粗略讲一下实现。
+
+1. 处理图片二进制流：
+
+    ```
+    const helloWorld = ctx => {
+        const avatarPath = path.resolve(__dirname, "./public/avatar.jpg")
+        ctx.set ('Content-Type', 'image/jpeg')
+        ctx.body = fs.createReadStream(avatarPath)
+    }
+    router.get('/', helloWorld);
+    ```
+
+2. 浏览器时按照响应头的Content-Type来处理文件的，因此我加上了上面ctx.set ('Content-Type', 'image/jpeg')的这行代码，表示让浏览器按照jpg的格式处理。
+
+当然了，还存在其他的响应头，例如：
+
+- [Content-Type-Options](https://cloud.tencent.com/developer/ask/sof/28296)
+  此标头可防止基于"mime“的攻击
+- [Content-Disposition](https://www.cnblogs.com/wq-9/articles/12165056.html)
+  当用户想把请求所得的内容存为一个文件的时候提供一个默认的文件名,当你在响应类型为application/octet- stream情况下使用了这个头信息的话，那就意味着你不想直接显示内容，而是弹出一个"文件下载"的对话框，接下来就是由你来决定"打开"还是"保存" 了。有些更加具体的注意事项：https://cloud.tencent.com/developer/ask/sof/66314
+
+## 工具
+
+https://npm.runkit.com/mime
+https://www.npmjs.com/search?q=content-Type

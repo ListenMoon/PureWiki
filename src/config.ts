@@ -18,9 +18,9 @@ export const SITE_REPO = 'https://github.com/ListenMoon/PureWiki';
 
 export const ShowLeftMenu = true
 
-export const Left_Bottom_Show_Root_Sub_Article = true
+export const Left_Bottom_Show_Root_Sub_Article = false
 // 博客模式下，是否展示祖孙节点的文章
-export const Show_Sub_Article = true
+export const Show_Sub_Article = false
 export const SITE_TYPE: ESITETYPE = ESITETYPE.BLOG
 export const enum ESITETYPE {
     WIKI,

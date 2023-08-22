@@ -3,6 +3,7 @@ import mdx from '@astrojs/mdx';
 import prefetch from '@astrojs/prefetch';
 import path from 'path';
 import remarkCode from './plugins/remark-code.mjs';
+import remarkTabs from './plugins/remark-tabs.mjs';
 import remarkBlock from './plugins/remark-block.mjs';
 import remarkFlow from './plugins/remark-flow.mjs';
 import remarkCollect from './plugins/remark-collect.mjs';
@@ -29,13 +30,13 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: 'prism',
     extendDefaultPlugins: true,
-    remarkPlugins: [Directive, remarkCollect, popupPlugin, [remarkBlock, {}], remarkCode, remarkMath, remarkFlow, remarkBreaks],
+    remarkPlugins: [Directive, remarkCollect, popupPlugin, remarkTabs, [remarkBlock, {}], remarkCode, remarkMath, remarkFlow, remarkBreaks],
     rehypePlugins: [rehypeMathjax]
   },
   integrations: [mdx({
     extendMarkdownConfig: false,
     syntaxHighlight: 'prism',
-    remarkPlugins: [remarkGlobalComponent, Directive, remarkCollect, popupPlugin, [remarkBlock, {}], remarkCode, remarkMath, remarkFlow, remarkBreaks],
+    remarkPlugins: [remarkGlobalComponent, Directive, remarkCollect, popupPlugin, remarkTabs, [remarkBlock, {}], remarkCode, remarkMath, remarkFlow, remarkBreaks],
     rehypePlugins: [rehypeMathjax]
   }), prefetch({
     selector: "a[href^='/post/']",
