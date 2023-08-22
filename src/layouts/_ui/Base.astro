@@ -41,7 +41,7 @@ export interface Props {
 let { title, description, hideSide, hideMenu, showTree, showComment } = Astro.props as Props;
 
 const isBlog = isCollect ? false : SITE_TYPE === ESITETYPE.BLOG
-const isArticleDetailPage = Astro.url.pathname.startsWith("/post/") // || Astro.url.pathname.startsWith("/cate")
+const isArticleDetailPage = Astro.url.pathname.startsWith("/post/") || Astro.url.pathname.startsWith("/cate")
 ---
 
 <!DOCTYPE html>

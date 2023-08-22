@@ -1,5 +1,6 @@
 ---
 import { sortPublishedList } from "@blog/utils";
+import { Show_Sub_Article, Left_Bottom_Show_Root_Sub_Article } from "@blog/config";
 
 let posts = await sortPublishedList();
 const curUrl = decodeURIComponent(Astro.url.pathname);
@@ -8,25 +9,34 @@ let pathArr = decodeURIComponent(Astro.url.pathname)
   .slice(1)
   .replace(/\/$/, "")
   .split("/")
-  .slice(0, -1);
+
 let caterr = decodeURIComponent(Astro.url.pathname)
   .slice(1)
   .replace(/\/$/, "")
   .split("/")
+
+if(Left_Bottom_Show_Root_Sub_Article){
+    pathArr = pathArr.slice(0, 2)
+    caterr = caterr.slice(0, 2)
+}else{
+    pathArr = pathArr.slice(0, -1)
+}
+
 let list = [];
 
 if (Astro.url.pathname.startsWith("/post/")) {
   list = posts.filter((v) => {
+    
     const isMatch = v.url.startsWith(`/${pathArr.join("/")}`)
     const isMatchLength = v.url.slice(1).split("/").length  === (pathArr.length + 1)
-    return isMatch && isMatchLength
+    return isMatch && (Show_Sub_Article || isMatchLength)
   });
 } else if (Astro.url.pathname.startsWith("/cate/") || Astro.url.pathname === "/cate") {
   let aa = `/${caterr.join("/")}`.replace("/cate", "/post")
   list = posts.filter((v) =>{
     const isMatch = v.url.startsWith(aa)
     const isMatchLength = v.url.split("/").slice(1).length === (caterr.length + 1)
-    return isMatch && isMatchLength
+    return isMatch && (Show_Sub_Article || isMatchLength)
   });
 } else {
   list = posts;
