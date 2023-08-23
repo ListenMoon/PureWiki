@@ -108,6 +108,11 @@ body {
     background-color: var(--mian-bg-color);
     @media (min-width: 640px) {
         & {
+            margin: 0;
+        }
+    }
+    @media (min-width: 800px) {
+        & {
             margin: 0 1em;
         }
     }
@@ -309,6 +314,7 @@ mark.highlight {
         }
         @include media-pc(sm) {
             margin: 0;
+            width: 100%;
             margin-bottom: 15px;
             position: relative;
             height: auto;
