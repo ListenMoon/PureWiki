@@ -7,22 +7,22 @@
 <meta name="generator" content="Astro v2.10.12">
 
 <!-- Primary Meta Tags -->
-<title>生涯</title>
-<meta name="title" content="生涯">
+<title>有关computed的各种详细操作</title>
+<meta name="title" content="有关computed的各种详细操作">
 <meta name="description" content="花径不曾缘客扫，蓬门今始为君开!">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://blog.xieyaxin.top/career/">
-<meta property="og:title" content="生涯">
-<meta property="og:description">
+<meta property="og:url" content="https://blog.xieyaxin.top/post/%E6%8A%80%E6%9C%AF/Vue/Vue3/%E6%9C%89%E5%85%B3computed%E7%9A%84%E5%90%84%E7%A7%8D%E8%AF%A6%E7%BB%86%E6%93%8D%E4%BD%9C/">
+<meta property="og:title" content="有关computed的各种详细操作">
+<meta property="og:description" content="">
 <meta property="og:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://blog.xieyaxin.top/career/">
-<meta property="twitter:title" content="生涯">
-<meta property="twitter:description">
+<meta property="twitter:url" content="https://blog.xieyaxin.top/post/%E6%8A%80%E6%9C%AF/Vue/Vue3/%E6%9C%89%E5%85%B3computed%E7%9A%84%E5%90%84%E7%A7%8D%E8%AF%A6%E7%BB%86%E6%93%8D%E4%BD%9C/">
+<meta property="twitter:title" content="有关computed的各种详细操作">
+<meta property="twitter:description" content="">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
   <link rel="stylesheet" href="/astro_/about.2908bb2a.css" />
 <link rel="stylesheet" href="/astro_/about.f9bcfee7.css" /><script type="module" src="/astro_/hoisted.959c8f11.js"></script>
@@ -153,7 +153,7 @@
           </a>
         <div>
         <a href="/cate/技术/Vue/Vue3" style="display: flex;padding-left:34px;color:inherit;border:0;text-decoration: none;">
-            <span title="Vue3" class="tree-item">
+            <span title="Vue3" class="tree-item active">
               Vue3
             </span>
           </a>
@@ -200,7 +200,7 @@
     }, 20)
 </script> -->
               </div>
-          <div style="margin-bottom:10px;display:none" class="tree-wrapper-up"></div><div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;display:none">
+          <div style="margin-bottom:10px;" class="tree-wrapper-up"></div><div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;">
             <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
               <div style="direction: ltr;flex:1;width:100%;">
                 <div class="left-article">
@@ -211,18 +211,6 @@
           推荐
         </a><a class="item" href="/post/技术/Vue/Vue3/有关computed的各种详细操作" title="有关computed的各种详细操作">
           有关computed的各种详细操作
-        </a><a class="item" href="/post/技术/用接口返回动态图片" title="用接口返回动态图片">
-          用接口返回动态图片
-        </a><a class="item" href="/post/技术/CSS/推荐" title="推荐">
-          推荐
-        </a><a class="item" href="/post/技术/CSS/CSS技巧/CSS高宽不等图片固定比例布局的三重进化" title="CSS高宽不等图片固定比例布局的三重进化">
-          CSS高宽不等图片固定比例布局的三重进化
-        </a><a class="item" href="/post/技术/CSS/CSS属性/image-rendering" title="image-rendering">
-          image-rendering
-        </a><a class="item" href="/post/博客/集成评论框" title="集成评论框">
-          集成评论框
-        </a><a class="item" href="/post/失落之城-主题" title="失落之城-主题">
-          失落之城-主题
         </a>
   
 </div>
@@ -259,32 +247,270 @@ setTimeout(() => {
       </div>
       <div class="right">
         <main id="pjax-container">
-          <img class="hero-image" src="https://w.wallhaven.cc/full/9d/wallhaven-9dz1e8.jpg" style="object-position: center;" alt="生涯"><article class="typo article">
+          <article class="typo article">
+            <!-- {SITE_TYPE === ESITETYPE.BLOG && <span style="font-size: .75em;color: #bdbdbd;">
+                <a href={collect?'/collect':"/cate"}>未分类</a><span style="padding: 0 3px;">{'>'}</span></span>} -->
+                <span style="font-size: .75em;color: #bdbdbd;">
+                        <a href="/cate/技术">技术</a>
+                        <span style="padding: 0 3px;">&gt;</span>
+                    </span><span style="font-size: .75em;color: #bdbdbd;">
+                        <a href="/cate/技术/Vue">Vue</a>
+                        <span style="padding: 0 3px;">&gt;</span>
+                    </span><span style="font-size: .75em;color: #bdbdbd;">
+                        <a href="/cate/技术/Vue/Vue3">Vue3</a>
+                        <span style="padding: 0 3px;">&gt;</span>
+                    </span><span style="font-size: .75em;color: #bdbdbd;">
+                        有关computed的各种详细操作.mdx
+                        <span style="padding: 0 3px;"></span>
+                    </span>
+                <!-- {filePath && <div style="font-size: .75em;color: #bdbdbd;">{filePath.slice(1).replace(/\//g," > ")}</div>} -->
+				<h1 class="title">有关computed的各种详细操作</h1>
+				<div style="line-height: 1.5;">
+                    <div style="font-size: 0.75em;color: #bdbdbd;"><time>
+                        创建于 2023年8月23日 15:38:24
+                    </time></div>
+                    <div style="font-size: 0.75em;color: #bdbdbd;">
+                            上次修改于 <time>2023年8月23日 17:22:24</time>
+                        </div>
+                </div>
+				
+				
+				<div class="article__content">
+                    
+    <h2 id="官方概念">官方概念</h2>
+<p>该属性是属于 vue 的概念之一，主要作用就是结合响应式值，组合成一个新的值，并且会随着响应式值的更新而更新。比之使用函数来说，能够做到对值的缓存，响应式值不变化的时候值也不会变化，而函数只要重新渲染就会执行。</p>
+<p>为什么需要缓存呢？想象一下我们有一个非常耗性能的计算属性 list，需要循环一个巨大的数组并做许多计算逻辑，并且可能也有其他计算属性依赖于 list。没有缓存的话，我们会重复执行非常多次 list 的 getter，然而这实际上没有必要！如果你确定不需要缓存，那么也可以使用方法调用。</p>
+<h3 id="可写计算属性">可写计算属性</h3>
+<p>计算属性默认是只读的。但计算属性也是可以写入的，当你尝试修改一个计算属性时，你会收到一个运行时警告。只在某些特殊场景中你可能才需要用到“可写”的属性，你可以通过同时提供 getter 和 setter 来创建：</p>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">js</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">&lt;script setup&gt;
+import { ref, computed } from &#39;vue&#39;
+
+const firstName = ref(&#39;John&#39;)
+const lastName = ref(&#39;Doe&#39;)
+
+const fullName = computed({
+  // getter
+  get() {
+    return firstName.value + &#39; &#39; + lastName.value
+  },
+  // setter
+  set(newValue) {
+    // 注意：我们这里使用的是解构赋值语法
+    [firstName.value, lastName.value] = newValue.split(&#39; &#39;)
+  }
+})
+&lt;/script&gt;</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-js"><code is:raw="" class="language-js"><span class="token operator">&lt;</span>script setup<span class="token operator">&gt;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ref<span class="token punctuation">,</span> computed <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;vue&#39;</span>
+
+<span class="token keyword">const</span> firstName <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token string">&#39;John&#39;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> lastName <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token string">&#39;Doe&#39;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> fullName <span class="token operator">=</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// getter</span>
+  <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> firstName<span class="token punctuation">.</span>value <span class="token operator">+</span> <span class="token string">&#39; &#39;</span> <span class="token operator">+</span> lastName<span class="token punctuation">.</span>value
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// setter</span>
+  <span class="token function">set</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 注意：我们这里使用的是解构赋值语法</span>
+    <span class="token punctuation">[</span>firstName<span class="token punctuation">.</span>value<span class="token punctuation">,</span> lastName<span class="token punctuation">.</span>value<span class="token punctuation">]</span> <span class="token operator">=</span> newValue<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&#39; &#39;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span></code></pre>
+                </figure>
+<p>现在当你再运行 fullName.value = ‘John Doe’ 时，setter 会被调用而 firstName 和 lastName 会随之更新。</p>
+<h3 id="注意">注意</h3>
+<ul>
+<li>
+<p><strong>Getter 不应有副作用</strong></p>
+<p>计算属性的 getter 应只做计算而没有任何其他的副作用，这一点非常重要，请务必牢记。举例来说，不要在 getter 中做异步请求或者更改 DOM！一个计算属性的声明中描述的是如何根据其他值派生一个值。因此 getter 的职责应该仅为计算和返回该值。在之后的指引中我们会讨论如何使用侦听器根据其他响应式状态的变更来创建副作用。</p>
+</li>
+<li>
+<p><strong>避免直接修改计算属性值</strong></p>
+<p>从计算属性返回的值是派生状态。可以把它看作是一个“临时快照”，每当源状态发生变化时，就会创建一个新的快照。更改快照是没有意义的，因此计算属性的返回值应该被视为只读的，并且永远不应该被更改——应该更新它所依赖的源状态以触发新的计算。</p>
+</li>
+</ul>
+<blockquote>
+<p>以上部分是简要摘出了官方文档的内容。</p>
+</blockquote>
+<h2 id="项目实践">项目实践</h2>
+<p>我们主要记录用<code>computed</code>能够实现怎样简便与优雅的操作。</p>
+<h3 id="对话框的显隐控制">对话框的显隐控制</h3>
+<figure class="code-figure">
+                    <figcaption class="line-numbers-head">
+                        <div class="custom-carbon">
+                        <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                        <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+                        <div class="text"><span class="language">html</span></div>
+                        <div class="copy-btn">复制</div>
+                        <textarea placeholder="." title="." style="display:none">&lt;script setup lang=&quot;ts&quot;&gt;
+    import { computed } from &quot;vue&quot;;
+    import { ElDialog } from &quot;element-plus&quot;;
+
+    const props = defineProps&lt;{
+        visible: boolean;
+        title?: string;
+    }&gt;();
+
+    const emits = defineEmits&lt;{
+        (event: &quot;update:visible&quot;, visible: boolean): void;
+        (event: &quot;close&quot;): void;
+    }&gt;();
+
+    const dialogVisible = computed&lt;boolean&gt;({
+        get() {
+            return props.visible;
+        },
+        set(visible) {
+            emits(&quot;update:visible&quot;, visible);
+            if (!visible) {
+                emits(&quot;close&quot;);
+            }
+        },
+    });
+&lt;/script&gt;
+
+&lt;template&gt;
+    &lt;ElDialog v-model=&quot;dialogVisible&quot; :title=&quot;title&quot; width=&quot;30%&quot;&gt;
+        &lt;span&gt;This is a message&lt;/span&gt;
+        &lt;template #footer&gt;
+            &lt;span&gt;
+                &lt;el-button @click=&quot;dialogVisible = false&quot;&gt;Cancel&lt;/el-button&gt;
+                &lt;el-button type=&quot;primary&quot; @click=&quot;dialogVisible = false&quot;&gt;
+                    Confirm
+                &lt;/el-button&gt;
+            &lt;/span&gt;
+        &lt;/template&gt;
+    &lt;/ElDialog&gt;
+&lt;/template&gt;</textarea>
+                    </div>
+                    </figcaption>
+                    <pre class="line-numbers language-html"><code is:raw="" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">setup</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ts<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">import</span> <span class="token punctuation">{</span> computed <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">import</span> <span class="token punctuation">{</span> ElDialog <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;element-plus&quot;</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> props <span class="token operator">=</span> defineProps<span class="token operator">&lt;</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">visible</span><span class="token operator">:</span> boolean<span class="token punctuation">;</span>
+        title<span class="token operator">?</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> emits <span class="token operator">=</span> defineEmits<span class="token operator">&lt;</span><span class="token punctuation">{</span>
+        <span class="token punctuation">(</span>event<span class="token operator">:</span> <span class="token string">&quot;update:visible&quot;</span><span class="token punctuation">,</span> <span class="token literal-property property">visible</span><span class="token operator">:</span> boolean<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+        <span class="token punctuation">(</span>event<span class="token operator">:</span> <span class="token string">&quot;close&quot;</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> dialogVisible <span class="token operator">=</span> computed<span class="token operator">&lt;</span>boolean<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> props<span class="token punctuation">.</span>visible<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">set</span><span class="token punctuation">(</span>visible<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">emits</span><span class="token punctuation">(</span><span class="token string">&quot;update:visible&quot;</span><span class="token punctuation">,</span> visible<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visible<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">emits</span><span class="token punctuation">(</span><span class="token string">&quot;close&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ElDialog</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dialogVisible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>title<span class="token punctuation">&quot;</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>30%<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>This is a message<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">#footer</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dialogVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Cancel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dialogVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                    Confirm
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ElDialog</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </figure>
+<p>解析：</p>
+<p>可以看到<code>dialogVisible</code>是一个计算属性，当读取它时，获取到的是<code>props.visible</code>的值，当执行<code>dialogVisible.value = false</code>是，会走 set 的函数，即<code>emit</code>事件给父组件，实现了方便快捷的<code>v-model</code>支持，避免了使用<code>watch</code>。</p>
+<p>不过，可以确定的是，这种方式只能用于一个值的,如果需要多个值组合响应，最好还是要用<code>watch</code>好控制一点。</p>
+<h3 id="其他示例暂未想到">其他示例暂未想到</h3>
+<h2 id="附件资料">附件资料</h2>
+<ul>
+<li><a href="https://cn.vuejs.org/guide/essentials/computed.html" target="_blank">https://cn.vuejs.org/guide/essentials/computed.html</a></li>
+<li><a href="https://cn.vuejs.org/api/reactivity-core.html#computed" target="_blank">https://cn.vuejs.org/api/reactivity-core.html#computed</a></li>
+<li><a href="https://cn.vuejs.org/api/options-state.html#computed" target="_blank">https://cn.vuejs.org/api/options-state.html#computed</a></li>
+</ul>
     
-    
-    <div class="article__content">
-      <p>当年看天空是蓝色的，草是绿色的，人们的脸上是笑着的，我走在路上，对前路一片憧憬。<br/>
-时光匆匆而过，而今写下这篇文章，已经到了23年8月4号。犹及当年，鲜衣怒马仗剑天涯，却被时光褪去了颜色。</p>
-<p>回忆起来，整个过去的二十多年，仿佛并没有做过什么特别的事。<br/>
-一切的一切都是随波逐流，从小学初中，到高中大学，在到工作，这是一个人简简单单普通的一生。</p>
-<p>但这样的过去真的有意义吗？没有回忆，没有事件，得过且过，这样的过去，有什么值得去思考吗？<br/>
-仿佛已经错过了太多太多，无形间也失去了太多太多。<br/>
-工作这几年，忘记过过去的知识，忘记了拜读过的文章，忘记了深刻的感悟，这样的自己，我真的不后悔吗？</p>
-<p>我不知道。</p>
-<p>想要拾起逝去的时光，可以吗？想要丰富一下生活，可以吗？想要找回曾经的自己，可以吗？</p>
-<p>滴滴答答的时钟始终不停，犹豫一秒就会失去一秒。如何过接下来的人生？还需要再想想，再想想。</p>
-    </div>
-  </article>
-  
-  
-  
+                </div>
+		</article>
+        
+        
 
         </main>
         <div class="footer-wrapper">
-            
+            <div class="paging">
+            <div class="before">
+                <div class="article-card-page">
+    <a class="posttop__post" href="/post/技术/Vue/Vue3/推荐">
+        
+        <!-- <div class="posttop__post__cover">
+      <img
+        src={article.heroImage
+          ? article.heroImage
+          : "https://picsum.photos/1280/780?random="+Math.random()*10000}
+        alt=""
+      />
+    </div> -->
+
+        <div class="posttop__post__title">
+                            上一篇
+                        </div>
+        <div class="posttop__post__content">推荐</div>
+    </a>
+</div>
+                <!-- {
+                    post.beforeArticle && <div>上一篇：<a href={post.beforeArticle?.url}>{post.beforeArticle?.title}</a></div>
+                } -->
+            </div>
+            <div class="next">
+                <div class="article-card-page">
+    <a class="posttop__post" href="/post/技术/用接口返回动态图片">
+        
+        <!-- <div class="posttop__post__cover">
+      <img
+        src={article.heroImage
+          ? article.heroImage
+          : "https://picsum.photos/1280/780?random="+Math.random()*10000}
+        alt=""
+      />
+    </div> -->
+
+        <div class="posttop__post__title">
+                            下一篇
+                        </div>
+        <div class="posttop__post__content">用接口返回动态图片</div>
+    </a>
+</div>
+                <!-- {
+                    post.nextArticle && <div>下一篇：<a href={post.nextArticle?.url}>{post.nextArticle?.title}</a></div>
+                } -->
+            </div>
+        </div>
         </div>
         <div class="comment-wrapper">
             
+<div id="utteranc-sc" style="text-align: center;padding: 0 0;margin: 0 1em;position:relative;min-height: 100px;margin-top:1em;">
+  <span class="comment_label" style="position:absolute;top: 50px;left:50%;transform: translateX(-50%);">评论加载中</span>
+  <script src="/libs/utteranc.client.js"></script>
+</div>
             <!-- { showComment && <Comment /> } -->
         </div>
         <footer>
@@ -370,8 +596,22 @@ setTimeout(() => {
         <div class="_headtree show">
             <ul class="head-tree">
 			<div class="title">目录</div>
-		
-        <div style="margin: 0 20px;">无</div>
+		<li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="官方概念" href="#官方概念">
+                                                    # 官方概念
+                                                </a></li><li><a class="head" style="margin-left:20px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="可写计算属性" href="#可写计算属性">
+                                                    # 可写计算属性
+                                                </a></li><li><a class="head" style="margin-left:20px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="注意" href="#注意">
+                                                    # 注意
+                                                </a></li><li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="项目实践" href="#项目实践">
+                                                    # 项目实践
+                                                </a></li><li><a class="head" style="margin-left:20px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="对话框的显隐控制" href="#对话框的显隐控制">
+                                                    # 对话框的显隐控制
+                                                </a></li><li><a class="head" style="margin-left:20px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="其他示例暂未想到" href="#其他示例暂未想到">
+                                                    # 其他示例暂未想到
+                                                </a></li><li><a class="head" style="margin-left:10px;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;display:block" title="附件资料" href="#附件资料">
+                                                    # 附件资料
+                                                </a></li>
+        
 		</ul>
         </div>
       </div>
