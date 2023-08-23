@@ -23,13 +23,13 @@ const keys = Object.keys(demoes)
                                 <label for={`collapsible${i}`} class="label">
                                     <span>{v}</span>
                                 </label>
-                                <input
+                                <!-- <input
                                     id={`collapsible${i}`}
                                     class="toggle"
                                     style="display:none;"
                                     checked
                                     type="checkbox"
-                                />
+                                /> -->
                                 <ul
                                     style="font-size:16px;color:rgb(0, 0, 0);"
                                     class="demo"
@@ -37,6 +37,7 @@ const keys = Object.keys(demoes)
                                     {demoes[v].map((v) => (
                                         <li
                                             data-route={v.route}
+                                            data-title={v.title}
                                             class="demo"
                                             title={v.desc}
                                         >
@@ -62,12 +63,12 @@ const keys = Object.keys(demoes)
             </style>
         </ul>
         <div
-            style="position:relative;margin-bottom:50px;height:500px;width:0px;flex:1 1 0%;border:1px solid rgba(187, 187, 187, 0.637);border-radius: 4px;"
-        >
+            style="position:relative;margin-bottom:50px;height:500px;width:0px;flex:1 1 0%;border:1px solid rgba(187, 187, 187, 0.637);border-radius: 4px;display:flex;flex-direction: column;"
+        >   
+            <h1 id="iframe-title" style="padding: .2em .4em;"></h1>
             <iframe
                 id="iframeDemo"
-                style="margin-bottom:50px;"
-                height="500px"
+                style="width:100%;height: 0;flex-grow: 1;"
                 frameborder="0"
             >
             </iframe>
@@ -80,13 +81,17 @@ const keys = Object.keys(demoes)
         </div>
         <script is:raw data-pjax>
             var iframeDemo = document.getElementById('iframeDemo')
+            var iframeTitle = document.getElementById('iframe-title')
             var liEl = document.querySelectorAll('.demoes .demo')
             var loadingEl = document.querySelector('.demoes .loading')
             liEl.forEach((li) => {
                 li.addEventListener('click', (evt) => {
                     const route = evt.target.dataset.route
+                    const title = evt.target.dataset.title
                     if (route) {
                         iframeDemo.src = route
+                        iframeTitle.innerText = title
+                        history.pushState({}, "", "#"+route);
                         loadingEl.style.display = 'flex'
                         loadingEl.innerHTML = '加载中...'
                         if (iframeDemo.attachEvent) {
@@ -108,6 +113,10 @@ const keys = Object.keys(demoes)
                         }
                     }
                 })
+                console.log(location.hash.slice(1) , li.dataset.route)
+                if(location.hash && decodeURI(location.hash.slice(1)) === li.dataset.route){
+                    li.click(); // 模拟点击
+                }
             })
         </script>
     </main>

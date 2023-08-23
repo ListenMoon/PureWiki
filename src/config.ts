@@ -42,7 +42,7 @@ export const ShowDraft = false
  * always: 总是打开文件夹
  * dir:    只打开子文件全是文件夹的文件夹
  */
-export const expandTreeType: "always" | "dir" | "close" = "dir"
+export const expandTreeType: "always" | "dir" | "close" = "close"
 
 /**
  * true: 如果没有头图且文章中存在图片，则显示第一个图片替代头图
@@ -57,7 +57,7 @@ export const AuthorDesc = '来自南方小城<br>希望结交益友♥!';
 export const StartTime = [2023, 0o2, 23, 20, 55, 32];
 
 // 远程地址，可自行修改对应的操作
-export const enableRemote = true // 是否显示远程编辑按钮
+export const enableRemote = false // 是否显示远程编辑按钮
 // const bitbucketNewURL = "https://bitbucket.org/qqvv/pure-wiki/create-file/33bf038960e3e8f3ef4e93c9f0d18906cfcb364e__placeholder__/?at=master"
 // const bitbucketEidtURL = "https://bitbucket.org/qqvv/pure-wiki/src/master__placeholder__?mode=edit&at=master"
 const githubEditURL = 'https://github.com/ListenMoon/PureWiki/edit/master__placeholder__'

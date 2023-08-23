@@ -8,7 +8,9 @@
         color: inherit;
         text-decoration: wavy;
         padding: 3px 12px;
-
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
     .active {

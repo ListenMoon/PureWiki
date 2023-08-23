@@ -195,7 +195,7 @@ export default function calloutsPlugin() {
                                 height: '300px',
                                 frameborder: '0',
                                 allowfullscreen: "true",
-                                onload: "this.height = this.contentDocument.documentElement.scrollHeight",
+                                onload: "this.style.height = this.contentDocument.documentElement.scrollHeight+'px'",
                                 src: attributes.path
                             }
                         }
@@ -240,7 +240,7 @@ export default function calloutsPlugin() {
                                 height: '300px',
                                 frameborder: '0',
                                 allowfullscreen: "true",
-                                onload: "this.height = this.contentDocument.documentElement.scrollHeight",
+                                onload: "this.style.height = this.contentDocument.documentElement.scrollHeight+'px'",
                                 srcdoc: `<!DOCTYPE html>
                                 <html lang="en">
                                 <head>
