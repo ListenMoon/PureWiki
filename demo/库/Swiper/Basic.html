@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Public:Basic</title>
+        <link
+            rel="stylesheet"
+            href="https://esm.sh/swiper@8/swiper-bundle.css"
+        />
+        <style>
+            .swiper {
+                /* width: 600px; */
+                height: 300px;
+                background-color: #eee;
+            }
+            .swiper-slide {
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- https://esm.sh/ -->
+        <script type="importmap">
+            {
+                "imports": {}
+            }
+        </script>
+        <script type="module">
+            import Swiper from "https://esm.sh/swiper@8/swiper-bundle.esm.browser.min.js";
+            var swiper = new Swiper(".mySwiper", {
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+            });
+        </script>
+    </body>
+</html>

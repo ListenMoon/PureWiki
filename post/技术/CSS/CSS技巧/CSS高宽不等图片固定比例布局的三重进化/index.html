@@ -24,7 +24,7 @@
 <meta property="twitter:title" content="CSS高宽不等图片固定比例布局的三重进化">
 <meta property="twitter:description" content="CSS高宽不等图片固定比例布局的三重进化">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
-  <link rel="stylesheet" href="/astro_/about.e5ec3e7d.css" />
+  <link rel="stylesheet" href="/astro_/about.d672bfc6.css" />
 <link rel="stylesheet" href="/astro_/about.f9bcfee7.css" /><script type="module" src="/astro_/hoisted.959c8f11.js"></script>
 <script type="module" src="/astro_/page.44d246ed.js"></script></head>
 
@@ -178,7 +178,7 @@
               </div>
           <div style="margin-bottom:10px;" class="tree-wrapper-up"></div><div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;">
             <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
-              <div style="direction: ltr;flex:1;">
+              <div style="direction: ltr;flex:1;width:100%;">
                 <div class="left-article">
   <div style="padding: 5px 10px;font-weight: bold;background: var(--light-bg-color);position:sticky;top: 0;">
     目录文章
@@ -247,8 +247,8 @@ setTimeout(() => {
                             上次修改于 <time>2023年8月19日 10:40:02</time>
                         </div>
                 </div>
-				<a href="https://github.com/ListenMoon/PureWiki/edit/master/article/技术/CSS/CSS技巧/CSS高宽不等图片固定比例布局的三重进化.mdx" target="_blank" style="margin: 6px 0;display: inline-block;">在源文件编辑</a>
-				<hr>
+				
+				
 				<div class="article__content">
                     
     <blockquote>
@@ -386,7 +386,7 @@ setTimeout(() => {
                 </figure>
 <p>由于 padding 占据了空间，所以图片需要使用绝对定位才能覆盖 div 元素的支撑空间。</p>
 <p>下图为实现后的效果：</p>
-<div style="position:relative;overflow:hidden;margin:1.5em 0"><div style="background:#e9e9e9;padding:0 1em;font-size:.75em;float:left">demo</div><iframe id="" class="demo" style="width:100%;border:1px solid #e9e9e9;display:block;box-sizing:border-box;max-height:350px" height="300px" frameborder="0" allowfullscreen="true" onload="this.height = this.contentDocument.documentElement.scrollHeight" srcdoc="<!DOCTYPE html>                                <html lang=&#34;en&#34;>                                <head>                                    <meta charset=&#34;UTF-8&#34;>                                    <meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;>                                    <meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;>                                    <title>demo</title>                                </head>                                <body>                                    
+<div style="position:relative;overflow:hidden;margin:1.5em 0"><div style="background:#e9e9e9;padding:0 1em;font-size:.75em;float:left">demo</div><iframe id="" class="demo" style="width:100%;border:1px solid #e9e9e9;display:block;box-sizing:border-box;max-height:350px" height="300px" frameborder="0" allowfullscreen="true" onload="this.style.height = this.contentDocument.documentElement.scrollHeight+'px'" srcdoc="<!DOCTYPE html>                                <html lang=&#34;en&#34;>                                <head>                                    <meta charset=&#34;UTF-8&#34;>                                    <meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;>                                    <meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;>                                    <title>demo</title>                                </head>                                <body>                                    
 <style>
     .box {
         overflow: hidden;
@@ -585,7 +585,7 @@ setTimeout(() => {
                 </figure>
 <p>是不是容易理解多了。</p>
 <p>实现效果类似下面的:</p>
-<div style="position:relative;overflow:hidden;margin:1.5em 0"><div style="background:#e9e9e9;padding:0 1em;font-size:.75em;float:left">demo</div><iframe id="" class="demo" style="width:100%;border:1px solid #e9e9e9;display:block;box-sizing:border-box;max-height:350px" height="300px" frameborder="0" allowfullscreen="true" onload="this.height = this.contentDocument.documentElement.scrollHeight" srcdoc="<!DOCTYPE html>                                <html lang=&#34;en&#34;>                                <head>                                    <meta charset=&#34;UTF-8&#34;>                                    <meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;>                                    <meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;>                                    <title>demo</title>                                </head>                                <body>                                    
+<div style="position:relative;overflow:hidden;margin:1.5em 0"><div style="background:#e9e9e9;padding:0 1em;font-size:.75em;float:left">demo</div><iframe id="" class="demo" style="width:100%;border:1px solid #e9e9e9;display:block;box-sizing:border-box;max-height:350px" height="300px" frameborder="0" allowfullscreen="true" onload="this.style.height = this.contentDocument.documentElement.scrollHeight+'px'" srcdoc="<!DOCTYPE html>                                <html lang=&#34;en&#34;>                                <head>                                    <meta charset=&#34;UTF-8&#34;>                                    <meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;>                                    <meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;>                                    <title>demo</title>                                </head>                                <body>                                    
 <style>
     .box {
         list-style: none;
@@ -735,7 +735,7 @@ setTimeout(() => {
 <p>而本需求需要一行显示 4 个图片，因此，每个图片相对于容器的大小就很好计算了。</p>
 <p>就是这么简单。</p>
 <p>效果一样：</p>
-<div style="position:relative;overflow:hidden;margin:1.5em 0"><div style="background:#e9e9e9;padding:0 1em;font-size:.75em;float:left">demo</div><iframe id="" class="demo" style="width:100%;border:1px solid #e9e9e9;display:block;box-sizing:border-box;max-height:350px" height="300px" frameborder="0" allowfullscreen="true" onload="this.height = this.contentDocument.documentElement.scrollHeight" srcdoc="<!DOCTYPE html>                                <html lang=&#34;en&#34;>                                <head>                                    <meta charset=&#34;UTF-8&#34;>                                    <meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;>                                    <meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;>                                    <title>demo</title>                                </head>                                <body>                                    
+<div style="position:relative;overflow:hidden;margin:1.5em 0"><div style="background:#e9e9e9;padding:0 1em;font-size:.75em;float:left">demo</div><iframe id="" class="demo" style="width:100%;border:1px solid #e9e9e9;display:block;box-sizing:border-box;max-height:350px" height="300px" frameborder="0" allowfullscreen="true" onload="this.style.height = this.contentDocument.documentElement.scrollHeight+'px'" srcdoc="<!DOCTYPE html>                                <html lang=&#34;en&#34;>                                <head>                                    <meta charset=&#34;UTF-8&#34;>                                    <meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;>                                    <meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;>                                    <title>demo</title>                                </head>                                <body>                                    
 <style>
     .box {
         list-style: none;
