@@ -5,7 +5,17 @@
 .typo del{
     text-decoration: line-through #c7254e 2px;
 }
+
 .typo strong{
+  position: relative;
+  z-index: 10;
+  transition: color .3s linear;
+  font-weight: bolder;
+  color: #000;
+  /* text-decoration: underline #c7254e; */
+}
+
+/* .typo strong{
     position: relative;
     z-index: 10;
     transition: color .3s linear;
@@ -29,7 +39,7 @@
     100% {
         background-position: -20px 100%;
     }
-}
+} */
 /* .typo strong::after{
     content: "";
     position: absolute;

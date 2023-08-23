@@ -8,12 +8,16 @@ export interface extendProps {
 	hideSide?: boolean
 	hideMenu?: boolean
 	showTree?: boolean
+	showComment?: boolean
+	heroImage?: string
+	heroPosition?: string
 }
 export type Props = Partial<PostProps> & extendProps
 
-let { title, description, hideSide, hideMenu, showTree } = getPost(Astro.props as Props) as Props
+let { title, description, hideSide, hideMenu, showTree, showComment = false, heroImage, heroPosition="center" } = getPost(Astro.props as Props) as Props
 ---
-<Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu} showTree={showTree}>
+<Base title={title} description={description} hideSide={hideSide} hideMenu={hideMenu} showTree={showTree} showComment={showComment}>
+	{heroImage && (heroImage.includes(".mp4") ? <video class="hero-image" src={heroImage} style={`object-position: ${heroPosition};`} autoplay muted loop /> : <img style={`object-position: ${heroPosition};`} class="hero-image" src={heroImage} alt={title} />)}
 	<slot />
 	<slot name="footer" slot="footer"></slot>
 </Base>
