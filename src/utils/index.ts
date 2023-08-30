@@ -12,7 +12,7 @@ function co(data: any, cb: any) {
         if (!value.title) {
             continue
         }
-        if(!ShowDraft && value.isDraft){
+        if (!ShowDraft && value.isDraft) {
             continue
         }
         if (!isDev && value.isDraft) {
@@ -90,7 +90,7 @@ export async function publishedTree() {
             }
         }
         return list.sort((a, b) => {
-            if(SITE_TYPE === ESITETYPE.BLOG){
+            if (SITE_TYPE === ESITETYPE.BLOG) {
                 return betterDirectorySort(
                     { name: a.name, isDirectory: !!a.data },
                     { name: b.name, isDirectory: !!b.data },
@@ -126,10 +126,10 @@ export async function publishedList(allTree?: any, showAll?: boolean, isSortAll?
     const tree = allTree ?? await publishedTree()
     const isTree = !!allTree
     let sorted = [];
-    if(SITE_TYPE === ESITETYPE.BLOG && !Show_Sub_Article && !showAll){
-        if(!isSortAll){
+    if (SITE_TYPE === ESITETYPE.BLOG && !Show_Sub_Article && !showAll) {
+        if (!isSortAll) {
             tree.sort((a, b) => {
-                if(!b.data || !a.data){
+                if (!b.data || !a.data) {
                     return 0
                 }
                 if (b?.data?.updatedTimestamp && a?.data?.updatedTimestamp) {
@@ -148,11 +148,11 @@ export async function publishedList(allTree?: any, showAll?: boolean, isSortAll?
                 sorted.push(item)
             }
         }
-    }else{
+    } else {
         (function readTree(list: any) {
-            if(SITE_TYPE === ESITETYPE.BLOG && !isSortAll){
+            if (SITE_TYPE === ESITETYPE.BLOG && !isSortAll) {
                 list = list.sort((a, b) => {
-                    if(!b.data || !a.data){
+                    if (!b.data || !a.data) {
                         return 0
                     }
                     if (b?.data?.updatedTimestamp && a?.data?.updatedTimestamp) {
@@ -175,16 +175,16 @@ export async function publishedList(allTree?: any, showAll?: boolean, isSortAll?
                 }
             }
         })(tree)
-        if(isSortAll){
+        if (isSortAll) {
             // TODO 全文排序
             sorted = sorted.sort((a, b) => {
-                if(!b.data || !a.data){
+                if (!b.data || !a.data) {
                     return 0
                 }
                 if (!b?.data?.pubTimestamp) {
                     return -1
                 }
-                if(!a?.data?.pubTimestamp){
+                if (!a?.data?.pubTimestamp) {
                     return 0
                 }
                 // if (b?.data?.updatedTimestamp && a?.data?.updatedTimestamp) {
@@ -288,7 +288,7 @@ export async function published(): Promise<Post[]> {
         .filter((post) => post.frontmatter.title)
         .map((post) => single(post))
         .filter((post) => isDev || !post.isDraft);
-    if(!ShowDraft){
+    if (!ShowDraft) {
         allPosts.filter((post) => !post.isDraft)
     }
     allPosts = allPosts.sort((a, b) => {
@@ -314,6 +314,41 @@ export async function published(): Promise<Post[]> {
 export async function getTopPublished(): Promise<Post[]> {
     let allPosts = (await publishedList()).filter(v => !!v.top)
     return allPosts;
+}
+
+// 获取分类
+export async function getCategoriesByPost() {
+    let categories = new Set();
+    const list = await publishedList(undefined, true, true)
+    list.forEach(v => {
+        if (typeof v.category === "string") {
+            categories.add(v.category)
+        }
+        if (Array.isArray(v.category)) {
+            for (let i = 0; i < v.category.length; i++) {
+                const element = v.category[i];
+                categories.add(element)
+            }
+        }
+    })
+    return Array.from(categories)
+}
+// 获取标签
+export async function getTagsByPost() {
+    let tags = new Set();
+    const list = await publishedList(undefined, true, true)
+    list.forEach(v => {
+        if (typeof v.tag === "string") {
+            tags.add(v.tag)
+        }
+        if (Array.isArray(v.tag)) {
+            for (let i = 0; i < v.tag.length; i++) {
+                const element = v.tag[i];
+                tags.add(element)
+            }
+        }
+    })
+    return Array.from(tags)
 }
 
 /**
