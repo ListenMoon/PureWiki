@@ -25,7 +25,7 @@
 <meta property="twitter:description" content="用于设置图像缩放算法。它适用于元素本身，适用于元素其他属性中的图像，也应用于子元素。">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
   <link rel="stylesheet" href="/astro_/about.8de55de3.css" />
-<link rel="stylesheet" href="/astro_/about.f9bcfee7.css" /><script type="module" src="/astro_/hoisted.0a249db6.js"></script>
+<link rel="stylesheet" href="/astro_/_...post_.f9bcfee7.css" /><script type="module" src="/astro_/hoisted.0a249db6.js"></script>
 <script type="module" src="/astro_/page.44d246ed.js"></script></head>
 
   <body>
@@ -197,25 +197,53 @@
     }, 20)
 </script> -->
               </div>
-          <!-- {
-            SITE_TYPE === ESITETYPE.BLOG && (
-            <div style={`margin-bottom:10px;${isArticleDetailPage?'':'display:none'}`} class="tree-wrapper-up"></div>
-          <div class="tree-wrapper articles" style={`flex-basis: 30%;height:0;display:flex;flex-direction: column;${isArticleDetailPage?'':'display:none'}`}>
-            <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
-              <div style="direction: ltr;flex:1;width:100%;">
-                <LeftArticle slot="leftBottom"></LeftArticle>
-              </div>
-            </div>
+          <div style="margin-bottom:10px;" class="tree-wrapper-up"></div><div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;">
+        <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
+          <div style="direction: ltr;flex:1;width:100%;">
+            <div class="left-article">
+  <div style="padding: 5px 10px;font-weight: bold;background: var(--light-bg-color);position:sticky;top: 0;">
+    目录文章
+  </div>
+  <a class="item" href="/post/技术/CSS/CSS属性/image-rendering" title="image-rendering">
+          image-rendering
+        </a>
+  
+</div>
+<!-- <script is:raw>
+function heightToTop1(ele) {
+  //ele为指定跳转到该位置的DOM节点
+  let root = document.body;
+  let height = 0;
+  do {
+    height += ele.offsetTop;
+    ele = ele.offsetParent;
+  } while (ele !== root);
+  const top = document.querySelector(".left-article-scroll").offsetTop;
+  const clientHeight = document.querySelector(".left-article-scroll")
+    .parentNode.clientHeight;
+  return height - top - clientHeight / 2 + 20;
+}
+
+setTimeout(() => {
+  var el = document.querySelector(".left-article .active");
+  var aa = heightToTop1(el);
+  document.querySelector(".left-article-scroll").scrollTo({
+    top: aa,
+    behavior: "smooth",
+  });
+  }, 20);
+</script> -->
           </div>
-            )
-          } -->
+        </div>
+      </div>
           <!-- 为了快速将元素设置 -->
           <!-- <script is:inline src="/scripts/init.js"></script> -->
         </div>
       </div>
       <div class="right">
         <main id="pjax-container">
-          <article class="typo article">
+          
+        <article class="typo article">
             <!-- {SITE_TYPE === ESITETYPE.BLOG && <span style="font-size: .75em;color: #bdbdbd;">
                 <a href={collect?'/collect':"/cate"}>未分类</a><span style="padding: 0 3px;">{'>'}</span></span>} -->
                 <span style="font-size: .75em;color: #bdbdbd;">
@@ -244,8 +272,7 @@
 				
 				
 				<div class="article__content">
-                    
-    <p><code>image-rendering</code> 用于设置图像缩放算法。它适用于元素本身，适用于元素其他属性中的图像，也应用于子元素。</p>
+                    <p><code>image-rendering</code> 用于设置图像缩放算法。它适用于元素本身，适用于元素其他属性中的图像，也应用于子元素。</p>
 <p>当页面作者指定的尺寸不是图像的原始尺寸时，用户代理将缩放图像。缩放也可能由于用户互动（双指缩放）而发生。举个例子，如果有一张尺寸为 100×100px 的图片，但作者有意将尺寸设置为 200×200px（或 50×50px），然后，图片便会根据 image-rendering 指定的算法，缩小或放大到新尺寸。此属性对于未缩放的图像没有影响。</p>
 <h2 id="属性值">属性值</h2>
 
@@ -372,7 +399,7 @@
 </div>
 <div style="margin: 0 20px;margin-top: 12px;text-align: center;margin-bottom: 12px;">
     <a target="_blank" href="http://memos.xieyaxin.top/" title="memos" style="background-color:#e6e0d8;line-height:1;padding:4px 8px; border-radius: 4px;display: inline-block;color:inherit;font-size: .875em;">私人语录</a>
-    <a target="_blank" href="https://kan.xieyaxin.top/" title="memos" style="background-color:#23ddc1;line-height:1;padding:4px 8px; border-radius: 4px;display: inline-block;color:inherit;font-size: .875em;margin-left: .65em;">任务看板</a>
+    <!-- <a target="_blank" href="https://kan.xieyaxin.top/" title="memos" style="background-color:#23ddc1;line-height:1;padding:4px 8px; border-radius: 4px;display: inline-block;color:inherit;font-size: .875em;margin-left: .65em;">任务看板</a> -->
     <!-- <a href="/demos" title="Demo" style="background-color:#ffb000;line-height:1;padding:4px 8px; border-radius: 4px;display: inline-block;color:inherit;font-size: .875em;margin-left: .65em;">Demo</a> -->
 </div>
 <script>(function(){const StartTime = [2023,2,23,20,55,32];

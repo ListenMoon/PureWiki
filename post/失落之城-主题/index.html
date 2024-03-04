@@ -25,7 +25,7 @@
 <meta property="twitter:description" content="一个Astro主题">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
   <link rel="stylesheet" href="/astro_/about.8de55de3.css" />
-<link rel="stylesheet" href="/astro_/about.f9bcfee7.css" /><script type="module" src="/astro_/hoisted.0a249db6.js"></script>
+<link rel="stylesheet" href="/astro_/_...post_.f9bcfee7.css" /><script type="module" src="/astro_/hoisted.0a249db6.js"></script>
 <script type="module" src="/astro_/page.44d246ed.js"></script></head>
 
   <body>
@@ -197,25 +197,53 @@
     }, 20)
 </script> -->
               </div>
-          <!-- {
-            SITE_TYPE === ESITETYPE.BLOG && (
-            <div style={`margin-bottom:10px;${isArticleDetailPage?'':'display:none'}`} class="tree-wrapper-up"></div>
-          <div class="tree-wrapper articles" style={`flex-basis: 30%;height:0;display:flex;flex-direction: column;${isArticleDetailPage?'':'display:none'}`}>
-            <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
-              <div style="direction: ltr;flex:1;width:100%;">
-                <LeftArticle slot="leftBottom"></LeftArticle>
-              </div>
-            </div>
+          <div style="margin-bottom:10px;" class="tree-wrapper-up"></div><div class="tree-wrapper articles" style="flex-basis: 30%;height:0;display:flex;flex-direction: column;">
+        <div class="left-article-scroll" style="flex: 1;direction: rtl;overflow: auto;display:flex">
+          <div style="direction: ltr;flex:1;width:100%;">
+            <div class="left-article">
+  <div style="padding: 5px 10px;font-weight: bold;background: var(--light-bg-color);position:sticky;top: 0;">
+    目录文章
+  </div>
+  <a class="item" href="/post/失落之城-主题" title="失落之城-主题">
+          失落之城-主题
+        </a>
+  
+</div>
+<!-- <script is:raw>
+function heightToTop1(ele) {
+  //ele为指定跳转到该位置的DOM节点
+  let root = document.body;
+  let height = 0;
+  do {
+    height += ele.offsetTop;
+    ele = ele.offsetParent;
+  } while (ele !== root);
+  const top = document.querySelector(".left-article-scroll").offsetTop;
+  const clientHeight = document.querySelector(".left-article-scroll")
+    .parentNode.clientHeight;
+  return height - top - clientHeight / 2 + 20;
+}
+
+setTimeout(() => {
+  var el = document.querySelector(".left-article .active");
+  var aa = heightToTop1(el);
+  document.querySelector(".left-article-scroll").scrollTo({
+    top: aa,
+    behavior: "smooth",
+  });
+  }, 20);
+</script> -->
           </div>
-            )
-          } -->
+        </div>
+      </div>
           <!-- 为了快速将元素设置 -->
           <!-- <script is:inline src="/scripts/init.js"></script> -->
         </div>
       </div>
       <div class="right">
         <main id="pjax-container">
-          <img style="object-position: top;" class="hero-image" src="https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png" alt="失落之城-主题"><article class="typo article">
+          <img style="object-position: top;" class="hero-image" src="https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png" alt="失落之城-主题">
+        <article class="typo article">
             <!-- {SITE_TYPE === ESITETYPE.BLOG && <span style="font-size: .75em;color: #bdbdbd;">
                 <a href={collect?'/collect':"/cate"}>未分类</a><span style="padding: 0 3px;">{'>'}</span></span>} -->
                 <span style="font-size: .75em;color: #bdbdbd;">
@@ -235,8 +263,7 @@
 				
 				
 				<div class="article__content">
-                    
-    <p></p><ul class="toc">
+                    <p></p><ul class="toc">
           <li><a title="Meta" href="#meta" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:15px"># Meta</a></li><li><a title="特性" href="#特性" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:15px"># 特性</a></li><li><a title="内嵌标题" href="#内嵌标题" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:30px"># 内嵌标题</a></li><li><a title="markdown 指令转 html" href="#markdown-指令转-html" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:30px"># markdown 指令转 html</a></li><li><a title="面板" href="#面板" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:30px"># 面板</a></li><li><a title="配置头图为文章中的第一张图片" href="#配置头图为文章中的第一张图片" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:30px"># 配置头图为文章中的第一张图片</a></li><li><a title="启用在源文件编辑" href="#启用在源文件编辑" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:30px"># 启用在源文件编辑</a></li><li><a title="mermaid" href="#mermaid" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:30px"># mermaid</a></li><li><a title="mathjax" href="#mathjax" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:30px"># mathjax</a></li><li><a title="命令 iframe 和 iframec" href="#命令-iframe-和-iframec" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:30px"># 命令 iframe 和 iframec</a></li><li><a title="命令 demo" href="#命令-demo" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:30px"># 命令 demo</a></li><li><a title="Tabs" href="#tabs" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:30px"># Tabs</a></li><li><a title="开发计划" href="#开发计划" style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:15px"># 开发计划</a></li>
         </ul><p></p>
 <h2 id="meta">Meta</h2>
@@ -798,7 +825,7 @@ mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
 </div>
 <div style="margin: 0 20px;margin-top: 12px;text-align: center;margin-bottom: 12px;">
     <a target="_blank" href="http://memos.xieyaxin.top/" title="memos" style="background-color:#e6e0d8;line-height:1;padding:4px 8px; border-radius: 4px;display: inline-block;color:inherit;font-size: .875em;">私人语录</a>
-    <a target="_blank" href="https://kan.xieyaxin.top/" title="memos" style="background-color:#23ddc1;line-height:1;padding:4px 8px; border-radius: 4px;display: inline-block;color:inherit;font-size: .875em;margin-left: .65em;">任务看板</a>
+    <!-- <a target="_blank" href="https://kan.xieyaxin.top/" title="memos" style="background-color:#23ddc1;line-height:1;padding:4px 8px; border-radius: 4px;display: inline-block;color:inherit;font-size: .875em;margin-left: .65em;">任务看板</a> -->
     <!-- <a href="/demos" title="Demo" style="background-color:#ffb000;line-height:1;padding:4px 8px; border-radius: 4px;display: inline-block;color:inherit;font-size: .875em;margin-left: .65em;">Demo</a> -->
 </div>
 <script>(function(){const StartTime = [2023,2,23,20,55,32];
