@@ -12,7 +12,7 @@ export const isDev = MODE === 'development';
 export const isProd = MODE === 'production';
 
 export const SITE_LANG = "zh-cn"
-export const SITE_TITLE = "失落之城";
+export const SITE_TITLE = "PURE";
 export const SITE_DESCRIPTION = '花径不曾缘客扫，蓬门今始为君开!';
 export const SITE_REPO = 'https://github.com/ListenMoon/PureWiki';
 
