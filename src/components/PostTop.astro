@@ -7,7 +7,7 @@ export interface Props {
 const { posts } = Astro.props as Props
 ---
 
-<ul class="posttop">
+<!-- <ul class="posttop">
     { !!posts.length && posts.map(v=>{
         return <li>
             <a class:list={["posttop__post",!!v.heroImage?'posttop__image':'']} href={v.url}>
@@ -26,6 +26,16 @@ const { posts } = Astro.props as Props
         </li>
     })}
     {!posts.length && <li>空</li>}
+</ul> -->
+<ul class="posttop">
+    <li>
+        <a class:list={["posttop__post posttop__image"]} href="https://blog.xieyaxin.top" target="_blank">
+            <div class="posttop__post__cover" style="background-color: #7dd9ae;">
+            </div>
+            <div class="posttop__post__title">失眠先生</div>
+            <div class="posttop__post__content">新年新气象，欢迎来到新站点</div> 
+        </a>
+    </li>
 </ul>
 
 <style is:global lang="scss">
