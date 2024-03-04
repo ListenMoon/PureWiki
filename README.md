@@ -36,10 +36,6 @@ mode: collect             <!-- 文章不被rss收录 -->
 
 [![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ListenMoon/PureWiki)
 
-## Demo
-
-https://blog.xieyaxin.top/
-
 ## 致谢开源项目
 
 在项目中使用到的项目作者，在此十分感谢！
