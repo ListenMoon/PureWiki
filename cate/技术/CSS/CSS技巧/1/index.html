@@ -24,8 +24,8 @@
 <meta property="twitter:title" content="分类">
 <meta property="twitter:description" content="分类">
 <meta property="twitter:image" content="https://blog.xieyaxin.top/placeholder-social.jpg">
-  <link rel="stylesheet" href="/astro_/about.a7c8aea1.css" />
-<link rel="stylesheet" href="/astro_/about.f9bcfee7.css" /><script type="module" src="/astro_/hoisted.2341ec4f.js"></script>
+  <link rel="stylesheet" href="/astro_/about.8de55de3.css" />
+<link rel="stylesheet" href="/astro_/about.f9bcfee7.css" /><script type="module" src="/astro_/hoisted.0a249db6.js"></script>
 <script type="module" src="/astro_/page.44d246ed.js"></script></head>
 
   <body>
@@ -288,7 +288,7 @@
             <!-- { showComment && <Comment /> } -->
         </div>
         <footer>
-    &copy; 2023
+    &copy; 2024
     <a href="https://github.com/npmrun" target="_blank">NPMRUN</a>. All rights reserved.
     <p>
         <span>Built with ♥ by <a href="https://github.com/ListenMoon/PureWiki" target="_blank">失落之城</a></span>
@@ -354,18 +354,34 @@
     // @ts-ignore
     window.siteTime();
 })();</script>
-        <ul class="posttop">
-    <li>
-            <a class="posttop__post posttop__image" href="/post/失落之城-主题">
-                <div class="posttop__post__cover">
-                    <img src="https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png" alt="">
-                        // <img src="https://w.wallhaven.cc/full/ex/wallhaven-exwgw8.png" alt="">
-                </div>
-                <div class="posttop__post__title">失落之城-主题</div>
-                <div class="posttop__post__content">一个Astro主题</div>
+        <!-- <ul class="posttop">
+    { !!posts.length && posts.map(v=>{
+        return <li>
+            <a class:list={["posttop__post",!!v.heroImage?'posttop__image':'']} href={v.url}>
+                {!!v.heroImage && <div class="posttop__post__cover">
+                    {v.heroImage &&
+                        (v.heroImage.includes(".mp4") ? (
+                        <video src={v.heroImage} autoplay muted loop />
+                        ) : (
+                        <img src={v.heroImage} alt="" />
+                        ))}
+                        // <img src={v.heroImage} alt="">
+                </div>}
+                <div class="posttop__post__title">{v.title}</div>
+                { !! v.description && <div class="posttop__post__content">{v.description}</div> }
             </a>
         </li>
-    
+    })}
+    {!posts.length && <li>空</li>}
+</ul> --><ul class="posttop">
+    <li>
+        <a class="posttop__post posttop__image" href="https://blog.xieyaxin.top" target="_blank">
+            <div class="posttop__post__cover" style="background-color: #7dd9ae;">
+            </div>
+            <div class="posttop__post__title">失眠先生</div>
+            <div class="posttop__post__content">新年新气象，欢迎来到新站点</div> 
+        </a>
+    </li>
 </ul>
         <div class="_headtree show">
             
